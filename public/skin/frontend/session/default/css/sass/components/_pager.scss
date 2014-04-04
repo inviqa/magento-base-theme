@@ -1,0 +1,43 @@
+/*------------------------------------------------------------------
+Pager
+-------------------------------------------------------------------*/
+
+.pager {
+    margin: 1em 0;
+    p {
+        margin: 0;
+    }
+    select {
+        margin-bottom: 0.1em;
+    }
+    .amount {
+        float: left;
+        @include line-height(20);
+        strong {
+            font-weight: normal;
+        }
+    }
+    .limiter {
+        float: right;
+        @include line-height(20);
+    }
+    .pages {
+        @include rem-fallback(margin, 0, 12);
+        text-align:center;
+        @include line-height(20);
+        ol,
+        li {
+            display: inline;
+        }
+        .current {
+            font-weight: bold;
+        }
+    }
+}
+
+.pager-only {
+    clear: both;
+    .pages {
+        margin: 0;
+    }
+}

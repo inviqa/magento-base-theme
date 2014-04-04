@@ -1,0 +1,39 @@
+/** Styles
+ *
+ * sass --watch --load-path="css/sass" --style="compressed" css:css
+ * from /theme folder
+ *
+ **/
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+@import
+"normalize",
+"bourbon/bourbon",
+"grid-settings",
+"neat/neat",
+"vars",
+"fonts",
+"colours",
+"mixins/font-size",
+"mixins/line-height",
+"mixins/rem-filler",
+"extends",
+"elements/forms",
+"components/messages",
+"components/breadcrumbs",
+"components/pager",
+"components/sorter",
+"components/toolbar",
+"components/events",
+"global",
+"header",
+"footer",
+"sidebar",
+"category",
+"product",
+"cart",
+"checkout",
+"account",
+"cms";

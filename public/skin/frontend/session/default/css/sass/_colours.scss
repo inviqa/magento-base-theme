@@ -1,0 +1,63 @@
+/*------------------------------------------------------------------
+Colours
+-------------------------------------------------------------------*/
+
+/* brand */
+$color-brand-primary: #f60;
+$color-brand-light-background: #f9f9f9;
+
+/* drop-shadow */
+$color-drop-shadow: rgba(#000, 0.2);
+
+/* global-site-notice */
+$colour-global-site-notice-border: #ccc;
+$colour-global-site-notice-background: #ff9;
+
+/* typography */
+$color-body-text: #333;
+
+/* links */
+$color-link: $color-brand-primary;
+$color-link-active: #000;
+
+/* traffic lights */
+$color-error: #a94442;
+
+/* forms */
+$color-form-input-background: #fff;
+$color-form-input-border: #ccc;
+$color-form-textarea-default-value: #ccc;
+$color-form-input-disabled: #ccc;
+$color-form-input-disabled-background: $color-brand-light-background;
+$color-form-validation-error: $color-error;
+$color-form-validation-error-background: lighten($color-error, 50%);
+$color-form-validation-error-border: lighten($color-error, 40%);
+$color-form-required: $color-error;
+
+/* body */
+$color-body-background: #fff;
+$color-header-panel-wrapper-background: darken($color-brand-light-background, 20%);
+$color-header-wrapper-background: darken($color-brand-light-background, 3%);
+$color-header-usp-wrapper-background: darken($color-brand-light-background, 40%);
+
+/* switch */
+$color-switch-list-background: $color-brand-light-background;
+$color-switch-list-active-background: darken($color-brand-light-background, 3%);
+
+/* top-cart */
+$color-top-cart-block-title: $color-brand-primary;
+$color-top-cart-block-subtitle-background: darken($color-brand-light-background, 3%);
+$color-top-cart-block-content-background: $color-brand-light-background;
+$color-top-cart-actions-background: darken($color-brand-light-background, 3%);
+
+/* form-search */
+$color-form-search-background: $color-brand-light-background;
+
+/* nav-container */
+$color-nav-container-background: darken($color-brand-light-background, 5%);
+$color-nav-primary-subnav-background: darken($color-brand-light-background, 5%);
+$color-nav-primary-active-background: darken($color-brand-light-background, 10%);
+$color-nav-primary-over-background: darken($color-brand-light-background, 15%);
+
+/* footer */
+$color-footer-container-background: darken($color-brand-light-background, 5%);

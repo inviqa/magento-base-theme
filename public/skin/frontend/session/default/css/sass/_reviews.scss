@@ -1,0 +1,24 @@
+/*------------------------------------------------------------------
+Reviews
+-------------------------------------------------------------------*/
+
+/** Product Review **/
+
+.review-product-list .col-main { padding-top:0; }
+
+.product-review {}
+.product-review .product-img-box { float:left; width:285px; }
+.product-review .product-img-box .product-image { display:block; margin:0 0 15px; }
+.product-review .details { float:right; width:400px; }
+
+.product-review .details .product-name { font-size:15px; font-weight:bold; color:#151515; line-height:19px; margin:0 0 10px; }
+.product-review .details p.date { font-size:12px; font-style:italic; }
+.product-review .details p { margin:10px 0; }
+.product-review .details .review-summary-table { margin:10px 0; }
+.product-review .buttons-set { clear:both; padding:25px 0 0; }
+
+.review-product-view .col-main { background:#fff url(../images/optimised/bkg_cols.gif) repeat-y -430px 0; padding:0; }
+.review-product-view .col-main .page-title { margin-left:0; margin-right:0; }
+.review-product-view .product-review .product-img-box { padding:0 0 20px 20px; }
+.review-product-view .product-review .details { width:570px; padding:0 20px 20px 0; }
+.review-product-view .product-review .buttons-set { border-top:1px solid #d1d1d1; background:#fff; margin:0; padding:15px 20px; }

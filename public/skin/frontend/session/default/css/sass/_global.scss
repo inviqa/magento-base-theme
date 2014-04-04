@@ -1,0 +1,222 @@
+/*------------------------------------------------------------------
+Global
+-------------------------------------------------------------------*/
+
+html {
+    font-size: 75%;
+    -ms-text-size-adjust: 75%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    color: $color-body-text;
+    font-family: $font-body;
+    @extend %body-font;
+}
+
+/* Table */
+caption, th, td {
+    vertical-align: top;
+}
+
+/* Typography */
+
+h1, h2 { font-family: $font-heading; }
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3em;
+    @include rem-fallback(margin, 2, 0, 1, 0);
+}
+
+h1 { @include font-size(36); @include line-height(40); }
+h2 { @include font-size(24); @include line-height(28); }
+h3 { @include font-size(18); @include line-height(22); }
+h4 { @include font-size(16); @include line-height(20); }
+h5 { @include font-size(14); @include line-height(18); }
+h6 { @include font-size(12); @include line-height(16); }
+
+p {
+    @include rem-fallback(margin, 1, 0, 1, 0);
+}
+
+a {
+    color: $color-link;
+    text-decoration: none;
+    &:hover,
+    &:active {
+        color: $color-link-active;
+        text-decoration: underline;
+    }
+}
+
+/* Global site notices */
+.global-site-notice {
+    border-bottom: 1px solid $colour-global-site-notice-border;
+    background: $colour-global-site-notice-background;
+    .notice-inner {
+        @include outer-container;
+        @include rem-fallback(padding, 1, 0, 1, 6);
+        background: url(#{$path-images}/i_notice.gif) 20px 25px no-repeat;
+        p {
+            margin: 0;
+            @include rem-fallback(padding, 1.2, 0, 1, 0);
+        }
+        .actions {
+            @include rem-fallback(padding-top, 1);
+        }
+    }
+}
+
+/* Layout */
+
+%layout-centralize {
+    @include box-sizing(content-box);
+    @include outer-container;
+    padding: 0 percentage($outer-gutter / ($max-width + 2 * $outer-gutter));
+}
+
+body {
+    background-color: $color-body-background;
+}
+
+.main-container {
+    @extend %layout-centralize;
+    padding-top: 1em;
+}
+
+@include media($small-tablet-v-and-above) {
+    .col2-left-layout,
+    .col2-right-layout {
+        .col-main {
+            @include span-columns(9);
+        }
+    }
+    .col2-left-layout {
+        .col-left {
+            @include span-columns(3);
+        }
+    }
+    .col2-right-layout {
+        .col-right {
+            @include span-columns(3);
+        }
+    }
+    .col3-layout {
+        .col-left {
+            @include span-columns(3);
+        }
+        .col-main {
+            @include span-columns(6);
+        }
+        .col-right {
+            @include span-columns(3);
+        }
+    }
+}
+
+/* Content Columns */
+
+.col2-set {
+    .col-1,
+    .col-2 {
+        @include span-columns(6);
+    }
+    .narrow {
+        @include span-columns(4);
+    }
+    .wide {
+        @include span-columns(8);
+    }
+}
+
+.col3-set {
+    .col-1,
+    .col-2,
+    .col-3 {
+        @include span-columns(4);
+    }
+}
+
+.col4-set {
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4 {
+        @include span-columns(3);
+    }
+}
+
+/* title buttons */
+.title-buttons {
+    text-align:right;
+    h1, h2, h3, h4, h5, h6 {
+        float: left;
+    }
+    .link-print {
+        float: right;
+    }
+}
+
+/* Links */
+ul.links li {
+    display: inline;
+}
+
+/* Clears ================================================================================ */
+.account-login .form-list:after,
+.wishlist-management .table-caption:after,
+.product-options dt:after,
+#bundleProduct:after,
+.events-slider:after,
+.product-image-popup .nav:after,
+.gift-item:after,
+.block-content:after,
+.block-list li.item:after,
+.block-poll li:after,
+.currently li:after,
+.order-info:after,
+.product-view .box-related li.item:after,
+.bundle-summary .product:after,
+.collateral-tabs:after,
+.block-cart .block-content .item:after,
+.clearer:after,
+.main:after,
+.col-main:after,
+.col2-set:after,
+.col3-set:after,
+.col4-set:after,
+.search-autocomplete li:after,
+.block li.item:after,
+.block .actions:after,
+.mini-products-list li:after,
+.cms-index-index .block-featured li.item:after,
+.title-buttons:after,
+.pager:after,
+.sorter:after,
+.ratings:after,
+.add-to-box:after,
+.add-to-cart:after,
+.products-grid:after,
+.products-list li.item:after,
+.product-view:after,
+.product-view .product-img-box .more-views ul:after,
+.product-view .box-tags .form-add-tags:after,
+.product-options .options-list li:after,
+.options-container-small .product-options:after,
+.product-options-bottom:after,
+.product-review:after,
+.box-collateral:after,
+.box-collateral .box-content:after,
+.collateral-tabs .tab-content:after,
+.account-login:after,
+.cart .cart-collaterals:after,
+.cart:after,
+.opc .step-title:after,
+.checkout-progress:after,
+.clearfix:after,
+.buttons-set:after,
+.buttons-set2:after,
+.page-print .print-head:after,
+.new-product-spotlight .more-new .item:after,
+.addresses-list .col-2 li:after,
+.product-view .product-shop:after { display:block; content:"."; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; }

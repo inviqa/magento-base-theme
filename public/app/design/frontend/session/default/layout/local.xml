@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * local.xml
+ *
+ * Local layout modifications for our local theme
+ *
+ * @category    design
+ * @package     innov8_default
+ * @copyright   Copyright (c) 2014 Inviqa.
+ */
+-->
+<layout version="0.1.0">
+
+    <default>
+
+        <reference name="head">
+            <action method="removeItem"><type>js</type><name>prototype/prototype.js</name></action>
+            <action method="removeItem"><type>js</type><name>lib/ccard.js</name></action>
+            <action method="removeItem"><type>js</type><name>prototype/validation.js</name></action>
+            <action method="removeItem"><type>js</type><name>scriptaculous/builder.js</name></action>
+            <action method="removeItem"><type>js</type><name>scriptaculous/effects.js</name></action>
+            <action method="removeItem"><type>js</type><name>scriptaculous/dragdrop.js</name></action>
+            <action method="removeItem"><type>js</type><name>scriptaculous/controls.js</name></action>
+            <action method="removeItem"><type>js</type><name>scriptaculous/slider.js</name></action>
+            <action method="removeItem"><type>js</type><name>varien/js.js</name></action>
+            <action method="removeItem"><type>js</type><name>varien/form.js</name></action>
+            <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>
+            <action method="removeItem"><type>js</type><name>mage/translate.js</name></action>
+            <action method="removeItem"><type>js</type><name>mage/cookies.js</name></action>
+
+            <action method="removeItem"><type>skin_js</type><name>js/enterprise/catalogevent.js</name></action>
+            <action method="removeItem"><type>skin_js</type><name>js/iehover-fix.js</name></action>
+            <action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name></action>
+
+            <action method="addItem"><type>skin_js</type><name>js/lib/modernizr.custom.js</name></action>
+            <action method="addItem"><type>js</type><name>session/core.min.js</name></action>
+        </reference>
+
+        <reference name="before_body_end">
+            <block type="page/html_head" name="jsfooter" as="jsfooter" template="page/html/jsfooter.phtml">
+                <action method="addItem"><type>skin_js</type><name>js/scripts.min.js</name></action>
+            </block>
+        </reference>
+
+    </default>
+
+    <customer_logged_in>
+        <remove name="invitation_link_top" />
+    </customer_logged_in>
+
+</layout>

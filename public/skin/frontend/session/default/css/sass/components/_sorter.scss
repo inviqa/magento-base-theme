@@ -1,0 +1,64 @@
+/*------------------------------------------------------------------
+Sorter
+-------------------------------------------------------------------*/
+
+.sorter {
+    p {
+        margin: 0;
+    }
+    select {
+        margin-bottom: 1px;
+    }
+    .sort-by {
+        float: right;
+        @include line-height(20);
+    }
+    .view-mode {
+        float: left;
+        white-space: nowrap;
+        @include line-height(20);
+        a.list-fix,
+        a.list,
+        strong.list-fix,
+        strong.list,
+        a.grid-fix,
+        a.grid,
+        strong.grid-fix,
+        strong.grid {
+            float:left;
+            @extend %image-replacement;
+            background: url(#{$path-images}/bkg_viewmode.gif) no-repeat 0 0;
+            width: 24px;
+            height: 17px;
+            margin-top: 0.1em;
+        }
+        a.list {
+            background-position: -24px 0;
+        }
+        strong.list {
+            background-position: -24px -29px;
+        }
+        a.grid {
+            background-position: 0 0;
+        }
+        strong.grid {
+            background-position: 0 -29px;
+        }
+        a.list-fix {
+            background-position:0 -58px;
+        }
+        strong.list-fix {
+            background-position: 0 -87px;
+        }
+        a.grid-fix {
+            background-position: -24px -58px;
+        }
+        strong.grid-fix {
+            background-position: -24px -87px;
+        }
+    }
+    label {
+        float: left;
+        margin-right: 0.5em;
+    }
+}

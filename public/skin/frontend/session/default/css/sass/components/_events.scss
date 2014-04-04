@@ -1,0 +1,119 @@
+/*------------------------------------------------------------------
+Block: Events
+-------------------------------------------------------------------*/
+
+.event { background-color:#fbf4de; border-bottom:1px solid #e2d4c7; width:182px; position:static; height:144px; text-align:center; }
+.event .status { font-weight:normal; font-size:16px; display:block; padding:19px 0 0; margin:0 0 0; text-align:center; color:#cf3a00; }
+.event .event-ticker { color:#cf3a00; height:55px; }
+.event .event-ticker span { font-size:32px; line-height:40px; height:40px; padding-bottom:10px; background-image:url(../images/optimised/bkg_ticker.gif); background-repeat:no-repeat; display:inline-block; }
+
+.event .event-ticker span, x:-moz-any-link { padding-bottom:13px; }/* FireFox 2 fix */
+.event .event-ticker span, x:-moz-any-link, x:default { padding-bottom:10px; }/* FireFox 3 restore */
+
+.event .event-ticker span.days { background-position:50% 3px; }
+.event .event-ticker span.hour { background-position:50% -56px; }
+.event .event-ticker span.minute { background-position:50% -115px; }
+.event .event-ticker span.second { background-position:50% -174px; }
+.event .event-ticker span.delimiter { background:none; }
+.event .event-dates { font-size:14px; color:#555; height:51px; padding-top:4px; }
+.event .event-dates .date-part { font-weight:bold; }
+.event .event-dates .time-part { font-size:12px; }
+
+.col-main .event .event-button { background:url(../images/optimised/bkg_btn-co.gif) 0 50% no-repeat; line-height:27px !important; height:27px !important; padding:0 0 0 13px !important; vertical-align:middle; }
+.col-main .event .event-button span { width:121px; text-align:center; background:url(../images/optimised/bkg_btn-co.gif) 100% 50% no-repeat; padding:0 13px 0 0 !important; color:#fff; font:bold 15px/27px Arial, Helvetica, sans-serif !important; height:27px !important; text-transform:none; }
+
+.event p a { color:#666; font-size:11px; }
+
+.event .event-bottom { background:url(../images/optimised/bkg_slider-events.gif) no-repeat 50% 0; position:absolute; z-index:2; height:12px; width:23px; left:50%; margin-left:-11px; bottom:-12px; }
+
+.open .event-button span {}
+
+.upcoming { background:#f6f6f6; }
+.upcoming .status { color:#333; }
+.closed .event-button,
+.col-main .closed .event-button,
+.col-main .upcoming .event-button,
+.upcoming .event-button,
+.closed .event-button span,
+.col-main .closed .event-button span,
+.col-main .upcoming .event-button span,
+.upcoming .event-button span { line-height:27px !important; font-size:12px !important; color:#7c7b7b !important; background:none !important; padding:0 !important; width:auto !important; display:inline !important; text-transform:capitalize; }
+.upcoming .event-button { text-decoration:underline !important; }
+.upcoming .event-button:hover { text-decoration:none !important; }
+.upcoming p a { color:#666; }
+.upcoming .event-bottom { background-position:50% -187px; }
+
+.closed { background:#494949; }
+.closed .status,
+.closed .event-dates { color:#e2d4c7 }
+.closed .event-button {}
+
+.event-container { clear:both; border:1px solid #d0af83; position:relative; z-index:2; border-width:1px 1px; margin-top:7px; margin-bottom:-5px; height:59px; }
+.event-container .event { background-color:transparent; background-repeat:no-repeat; background-position:50% 100%; padding-bottom:18px; margin-bottom:-18px; padding-top:5px; height:52px; line-height:50px; text-align:center; width:auto; position:relative; z-index:2; border-bottom:0 !important; }
+.event-container .container { display:inline; margin:0; padding:0; background:none; }
+.event-container .status { display:inline; margin:0 10px 0 0; background:none; font-size:22px; }
+.event-container .event-ticker { display:inline; font-size:28px; height:auto; }
+.event-container .event-ticker span { line-height:50px; height:50px; padding:0; }
+
+.event-container .event-ticker span , x:-moz-any-link { padding:5px 0 5px; }/* FireFox 2 fix */
+.event-container .event-ticker span , x:-moz-any-link, x:default { padding:0; }/* FireFox 3 restore */
+
+.event-container .event .event-ticker span.days { background-position:50% 4px; }
+.event-container .event .event-ticker span.hour { background-position:50% -55px; }
+.event-container .event .event-ticker span.minute { background-position:50% -114px; }
+.event-container .event .event-ticker span.second { background-position:50% -173px; }
+
+.event-container .event-dates { display:inline; font-size:22px; height:auto; }
+.event-container .event-dates .time-part { font-size:14px; }
+.event-container .event-dates div,
+.event-container .event-dates p { display:inline; }
+
+.container-open { background:#f7d4b6 url(../images/optimised/bkg_event-container-open.gif) repeat-x 0 0; }
+.container-open .open { background-image:url(../images/optimised/bkg_event-container-open.gif); padding-top:3px; height:54px; }
+
+.container-upcoming { border-color:#d0d0d0; background:#eeeeee url(../images/optimised/bkg_event-container-upcoming.gif) repeat-x 0 0; }
+.container-upcoming .upcoming { background-image:url(../images/optimised/bkg_event-container-upcoming.gif); }
+
+.container-closed { background:#9f958c }
+
+/* Block: Events Lister */
+.col3-layout .col-main .widget-events { margin:0 -20px 1px; position:relative; z-index:1; }
+.widget-events { padding:11px; background:#f0eae3; }
+.col1-layout .col-main .widget-events { padding:12px; }
+.events-slider { position:relative; clear:both; margin:0 0 0; border:1px solid #d0c2b6; z-index:2; }
+.events-slider .slider-panel,
+.events-slider ul.slider li.slider-item,
+.events-slider .slide-button { float:left; display:inline; }
+.events-slider .event { position:relative; z-index:1; }
+
+.events-slider .slider-panel { position:relative; overflow:hidden; background:#d0c2b6; z-index:1; width:0; }
+.events-slider ul.slider { width:200000px; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=1)" !important; }
+.events-slider ul.slider li.slider-item { overflow:hidden; width:182px; height:386px; border-right:1px solid #d0c2b6; background:#f5f5f5 url(../images/optimised/bkg_block.gif) repeat-x 0 0; padding-left:0; }
+.events-slider ul.slider li.slider-item .category-name { font-size:16px; font-weight:normal; color:#454343; display:block; padding:80px 10px 0; }
+.events-slider ul.slider li.slider-item .category-show { width:182px; height:241px; background:#fff url(../images/optimised/bkg_category-info.gif) repeat-x 0 100%; overflow:hidden; text-align:center; display:block; text-decoration:none; }
+.events-slider ul.slider li.slider-item .no-event { height:401px; }
+
+.events-slider .slide-button { background:url(../images/optimised/bkg_slide-button.gif) no-repeat 0 0; position:absolute; text-indent:-999em; cursor:pointer; top:17px; width:28px; height:28px; z-index:2; overflow:hidden; }
+.events-slider .backward { left:-11px; }
+.events-slider .forward { right:-11px; background-position:0 -40px; }
+.events-slider .inactive { cursor:default; display:none; }
+
+.sidebar .widget-events { background:none; padding:0; }
+.sidebar .events-slider { border:1px solid #cfcfcf; margin:-1px -1px 0; background:#fff; padding:0; }
+.sidebar .events-slider .event { height:115px; }
+.sidebar .events-slider ul.slider li.slider-item { width:182px; height:300px; margin:0; border-color:#cfcfcf; border-width:0 1px 0 0; }
+.sidebar .events-slider ul.slider .status { padding-top:10px; padding-bottom:5px; }
+.sidebar .events-slider ul.slider .event-dates { height:40px; }
+.sidebar .events-slider ul.slider li.slider-item .category-name { font-size:16px; font-weight:normal; color:#454343; display:block; padding:50px 10px 0; }
+.sidebar .events-slider ul.slider li.slider-item .category-show { height:241px; background:#fff url(../images/optimised/bkg_category-info.gif) repeat-x 0 100%; }
+
+.sidebar .events-slider { margin-top:-1px; }
+.sidebar .events-slider .backward { left:3px; top:6px; }
+.sidebar .events-slider .forward { right:3px; top:6px; }
+
+.sidebar .events-slider .event-ticker { height:45px; }
+.sidebar .events-slider .event-ticker span { font-size:22px; line-height:28px; height:28px; padding-bottom:10px; background-image:url(../images/optimised/bkg_ticker1.gif); background-repeat:no-repeat; display:inline-block; }
+.sidebar .events-slider .event-ticker span.days { background-position:50% -10px; }
+.sidebar .events-slider .event-ticker span.hour { background-position:50% -69px; }
+.sidebar .events-slider .event-ticker span.minute { background-position:50% -128px; }
+.sidebar .events-slider .event-ticker span.second { background-position:50% -185px; }

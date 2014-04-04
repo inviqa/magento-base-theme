@@ -1,0 +1,37 @@
+/*------------------------------------------------------------------
+Global Messages
+-------------------------------------------------------------------*/
+
+.messages { width:100%; overflow:hidden; text-align:left; margin-top:10px; }
+.messages li { margin:0 0 10px; padding:0; word-wrap:break-word; }
+.messages ul { padding:10px 17px 18px; margin:0 0 -11px; background-position:35px 100%; background-repeat:no-repeat; position:relative; }
+.messages ul li { margin:0; padding:0 0 3px; }
+.messages a { text-decoration:underline; }
+.messages a:hover { text-decoration:none; }
+.messages li.error-msg,
+.messages li.success-msg,
+.messages li.note-msg,
+.messages li.notice-msg { border-style:solid !important; border-width:1px !important; font-size:12px !important; }
+p.error-msg { border-style:solid !important; padding:10px; border-width:1px !important; font-size:12px !important; margin:10px 0; }
+/* Error Message */
+.messages li.error-msg { border-color:#e9581f; background-color:#fff5f3; color:#d91a00; }
+.messages li.error-msg a { color:#d91a00; }
+.messages li.error-msg ul { /* background-image:url(../images/optimised/bkg_msg-error.gif); */ }
+p.error-msg { border-color:#e9581f; background-color:#fff5f3; color:#d91a00; }
+/* Success Message */
+.messages li.success-msg { border-color:#446423; background-color:#eff5ea; color:#3d6611; }
+.messages li.success-msg a { color:#3d6611; }
+.messages li.success-msg ul { /* background-image:url(../images/optimised/bkg_msg-success.gif); */ }
+/* Notification Message */
+.messages li.note-msg,
+.messages li.notice-msg { border-color:#fcd344; background-color:#fafaec; color:#3d6611; }
+.messages li.note-msg a,
+.messages li.notice-msg a { color:#3d6611; }
+.messages li.note-msg ul,
+.messages li.notice-msg ul { /* background-image:url(../images/optimised/bkg_msg-note.gif); */ }
+
+/* std class reset */
+.std .messages { margin-top:0; }
+.std .messages { width:auto; list-style:none !important; padding:0 !important; margin-bottom:0 !important; }
+.std .messages ul { list-style:none !important; padding-left:17px !important; margin:0 0 -11px !important; }
+

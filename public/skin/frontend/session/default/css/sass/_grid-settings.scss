@@ -1,0 +1,24 @@
+@import "neat/neat-helpers";
+
+/* Grid settings */
+$outer-gutter: 25px;
+$max-width: 1196px;
+$column: 74px;
+$gutter: 28px;
+
+/* breakpoints */
+$mobile-v: 320px;
+$mobile-h: 480px;
+$small-tablet-v: 600px;
+$tablet-v: 768px;
+$small-tablet-h: 800px;
+$tablet-h: 1024px;
+
+$mobile-only: new-breakpoint(max-width $mobile-h);
+$tablet-and-below: new-breakpoint(max-width $tablet-h);
+$tablet-only: new-breakpoint(min-width $tablet-v max-width $tablet-h);
+$tablet-and-above: new-breakpoint(min-width $tablet-v);
+
+$small-tablet-v-and-above: new-breakpoint(min-width $small-tablet-v);
+
+$desktop-only: new-breakpoint(min-width ($tablet-h + 1));

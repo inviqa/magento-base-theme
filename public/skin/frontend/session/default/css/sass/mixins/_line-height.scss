@@ -1,0 +1,5 @@
+/* Line Height */
+@mixin line-height($sizeValue){
+	line-height: ($sizeValue) + px;
+	line-height: ($sizeValue / $base_font_size) + rem;
+}
