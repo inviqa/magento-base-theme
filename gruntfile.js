@@ -7,6 +7,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         var: {
+            bowerDir: 'bower_components/',
             publicJsDir: 'public/js/',
             theme: 'session/default/',
             appDir: 'public/app/design/frontend/<%= var.theme %>',
@@ -82,7 +83,7 @@ module.exports = function(grunt) {
                         '<%= var.publicJsDir %>varien/menu.js',
                         '<%= var.publicJsDir %>mage/translate.js',
                         '<%= var.publicJsDir %>mage/cookies.js',
-                        '<%= var.publicJsDir %>jquery/jquery-1.10.2.min.js',
+                        '<%= var.bowerDir %>jquery/dist/jquery.min.js',
                         '<%= var.publicJsDir %>jquery/noconflict.js'
                     ],
                     '<%= var.skinJsDir %>scripts.min.js': [
