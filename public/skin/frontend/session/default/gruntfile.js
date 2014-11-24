@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         var: {
             bowerDir: 'bower_components/',
-            publicJsDir: '../../../../js/',/skin/frontend/session/default/gruntfile.js
+            publicJsDir: '../../../../js/',
             theme: 'session/default/',
             appDir: 'app/design/frontend/<%= var.theme %>',
             skinCssDir: 'css/',
@@ -81,6 +81,15 @@ module.exports = function(grunt) {
                         '!<%= var.skinJsDir %>lib/modernizr.custom.js',
                         '<%= var.skinJsDir %>session.js',
                         '<%= var.skinJsDir %>app/*.js'
+                    ],
+                    '<%= var.skinJsDir %>scripts-ie8.min.js': [
+                        '<%= var.skinJsDir %>lib/polyfills/selectivizr-min.js',
+                        '<%= var.skinJsDir %>lib/polyfills/nwmatcher-1.2.5-min.js',
+                        '<%= var.skinJsDir %>lib/polyfills/respond.min.js',
+                        '<%= var.skinJsDir %>lib/polyfills/media.match.min.js'
+                    ],
+                    '<%= var.skinJsDir %>scripts-ie9.min.js': [
+                        '<%= var.skinJsDir %>lib/polyfills/media.match.min.js'
                     ]
                 }
             }
