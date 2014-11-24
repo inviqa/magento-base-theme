@@ -46,7 +46,10 @@ In your browser of choice, your VM will be available at http://mast.dev
 
 ### Grunt
 
-As with all our projects, start with `npm install` before running `grunt watch`.
+After you first boot your VM, in `/public/skin/frontend/session/default` run `npm install`. After this, you can run:
+
+* `grunt watch` : the usual watch task.
+* `grunt build` : includes tasks to prepare for production including uglify and imagemin.
 
 ## Making changes
 
