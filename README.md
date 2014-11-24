@@ -1,5 +1,9 @@
 # Magento base theme
 
+The aim of the theme is to create a starting point for all projects whether they are mobile, responsive or desktop redesign projects.
+
+This would reduce the amount of time it takes to set up a new theme for a project but reducing the time spent optimising a enterprise/default magento theme which usually takes at least a day. This would also help in standardising the structure and frontend code structure of projects, improving the consistency of code and improve efficiency when woking on multiple projects.
+
 ## Wiki
 
 https://ibuildings.jira.com/wiki/display/SESSIONMX/MAST-++Magento+Session+Theme
@@ -39,3 +43,7 @@ Copy the relevant files and directories into your seed VM:
 ### In the browser
 
 In your browser of choice, your VM will be available at http://mast.dev
+
+## Making changes
+
+Currently there is no good way of pushing updates to this repo while using the hobo seed as your local environment. It is recommended that you test on your seed VM, then manually copy files over to your `mast-repo` directory where you can commit and push changes.
