@@ -44,6 +44,10 @@ Copy the relevant files and directories into your seed VM:
 
 In your browser of choice, your VM will be available at http://mast.dev
 
+### Grunt
+
+As with all our projects, start with `npm install` before running `grunt watch`.
+
 ## Making changes
 
 Currently there is no good way of pushing updates to this repo while using the hobo seed as your local environment. It is recommended that you test on your seed VM, then manually copy files over to your `mast-repo` directory where you can commit and push changes.
