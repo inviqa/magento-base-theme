@@ -1,16 +1,19 @@
 /*global module, require */
-
+//test
 module.exports = function(grunt) {
     'use strict';
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
         var: {
-            publicJsDir: '../../../../js/',
+            publicJsDir: 'public/js/',
             theme: 'session/default/',
-            appDir: 'app/design/frontend/<%= var.theme %>',
-            skinCssDir: 'css/',
-            skinJsDir: 'js/',
-            skinImagesDir: 'images/'
+            appDir: 'public/app/design/frontend/<%= var.theme %>',
+            skinDir: 'public/skin/frontend/<%= var.theme %>',
+            skinCssDir: '<%= var.skinDir %>css/',
+            skinJsDir: '<%= var.skinDir %>js/',
+            skinImagesDir: '<%= var.skinDir %>images/'
         },
         watch: {
             scss: {
@@ -26,16 +29,24 @@ module.exports = function(grunt) {
                 ]
             },
             scripts: {
-                files: ['<%= var.skinJsDir %>**/*.js', '!<%= var.skinJsDir %>scripts.min.js'],
+                files: ['<%= var.skinJsDir %>_*.js'],
                 tasks: ['uglify'],
                 options: {
                     livereload: true
                 }
             },
-            images: {
-                files: ['images-original/**/*.{png,jpg,jpeg,gif}'],
-                tasks: ['newer:imagemin']
-            }
+            //html: {
+            //    options: {
+            //        livereload: true
+            //    },
+            //    files: [
+            //        '<%= var.appDir %>**/*.{phtml,xml}'
+            //    ]
+            //},
+            //images: {
+            //    files: ['<%= var.skinImagesDir %>/**/*.{png,jpg,jpeg,gif}'],
+            //    tasks: ['newer:imagemin']
+            //}
         },
         sass: {
             dist: {
@@ -57,7 +68,7 @@ module.exports = function(grunt) {
                     report: 'min'
                 },
                 files: {
-                    '<%= var.publicJsDir %>session/core.min.js': [
+                    'public/js/session/core.min.js': [
                         '<%= var.publicJsDir %>prototype/prototype.js',
                         '<%= var.publicJsDir %>lib/ccard.js',
                         '<%= var.publicJsDir %>prototype/validation.js',
@@ -71,15 +82,13 @@ module.exports = function(grunt) {
                         '<%= var.publicJsDir %>varien/menu.js',
                         '<%= var.publicJsDir %>mage/translate.js',
                         '<%= var.publicJsDir %>mage/cookies.js',
-                        '<%= var.publicJsDir %>jquery/jquery.min.js',
-                        '<%= var.publicJsDir %>jquery/noconflict.js',
-                        '<%= var.skinJsDir %>core-overwrites.js'
+                        '<%= var.publicJsDir %>jquery/jquery-1.10.2.min.js',
+                        '<%= var.publicJsDir %>jquery/noconflict.js'
                     ],
                     '<%= var.skinJsDir %>scripts.min.js': [
                         '<%= var.skinJsDir %>lib/*.js',
                         '!<%= var.skinJsDir %>lib/modernizr.custom.js',
-                        '<%= var.skinJsDir %>session.js',
-                        '<%= var.skinJsDir %>app/*.js'
+                        '<%= var.skinJsDir %>session.js'
                     ]
                 }
             }
@@ -91,9 +100,9 @@ module.exports = function(grunt) {
             dynamic: {
                 files: [{
                     expand: true,
-                    cwd: 'images-original/',
+                    cwd: '<%= var.skinImagesDir %>',
                     src: ['**/*.{png,jpg,jpeg,gif}'],
-                    dest: 'images/'
+                    dest: '<%= var.skinImagesDir %>'
                 }]
             }
         },
@@ -102,8 +111,7 @@ module.exports = function(grunt) {
                 devFile: '<%= var.skinJsDir %>lib/modernizr.custom.js',
                 outputFile: '<%= var.skinJsDir %>lib/modernizr.custom.js',
                 extra: {
-                    printshiv: true,
-                    "cssclasses" : true
+                    printshiv: true
                 },
                 files : {
                     src: [
@@ -112,18 +120,16 @@ module.exports = function(grunt) {
                     ]
                 }
             }
-        },
-        clean: {
-            js: ['<%= var.skinJsDir %>*.js', '!<%= var.skinJsDir %>session.js'],
-            css: ['<%= var.skinCssDir %>*.css']
         }
 
     });
 
+    // measures the time each task takes
     require('time-grunt')(grunt);
     require('jit-grunt')(grunt);
 
     // Register tasks
-    grunt.registerTask('build', ['sass', 'uglify', 'imagemin']);
     grunt.registerTask('dev', ['watch']);
+    grunt.registerTask('production', ['imagemin'])
+
 };
