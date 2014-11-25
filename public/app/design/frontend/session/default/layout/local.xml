@@ -32,9 +32,10 @@
             <action method="removeItem"><type>skin_js</type><name>js/enterprise/catalogevent.js</name></action>
             <action method="removeItem"><type>skin_js</type><name>js/iehover-fix.js</name></action>
             <action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name></action>
-
-            <action method="addItem"><type>skin_js</type><name>js/lib/modernizr.custom.js</name></action>
+            
             <action method="addItem"><type>js</type><name>session/core.min.js</name></action>
+
+            <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
         </reference>
 
         <reference name="before_body_end">
