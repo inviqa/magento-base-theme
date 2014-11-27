@@ -1,72 +1,178 @@
 /*------------------------------------------------------------------
-Forms
+    Forms
+    Reference: http://goo.gl/ylfde
 -------------------------------------------------------------------*/
 
 $form-label-width: 25%;
 $form-input-box-width: 75%;
 $form-validation-icon-width: 2em;
+$form-element-padding: 0.3em 0.5em 0.2em;
 
-/* Forms */
 fieldset {
     border: 0;
+    padding: 0;
+    margin: 0 0 1em 0;
 }
-
 legend {
     display: none;
 }
 
 /** Form Elements **/
+
 input, select, textarea, button {
+    margin: 0;
+    padding: $form-element-padding;
+    font-family: inherit;
+    outline: none;
+    @include appearance(none);
+    @include box-sizing(border-box);
+    border-radius: 0;
+    min-height: 2.4em;
     vertical-align: middle;
+    &.disabled, &[disabled] {
+        background: $colour-form-input-disabled-background;
+        color: $colour-form-input-disabled;
+    }
+    @include placeholder {
+        color: $colour-form-input-disabled;
+    }
+}
+.input-text, textarea, .styled-select, .multiselect {
+    background-color: $colour-form-input-background;
+    border: 1px solid $colour-form-input-border;
+    vertical-align: top;
+    width: 100%;
 }
 
-input.input-text, textarea {
-    background-color: $color-form-input-background;
-    border: 1px solid $color-form-input-border;
-    -webkit-appearance: none; //  remove default webkit input styles
-}
-
-input.input-text,
-textarea,
-select.multiselect option {
-    padding: 0.2em;
+/* Select boxes */
+.styled-select { 
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    select {
+        width: 115%;
+        background-color: transparent; 
+        background-image: none;
+        border: none;
+        box-shadow: none;
+        padding-right: 20%;
+    }
+    &:after {
+        content: '\25BE';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 1.5em;
+        background: $colour-light-background;
+        text-align: center;
+        line-height: 2.4em;
+        pointer-events: none;
+    }
 }
 
 textarea {
     overflow: auto;
     resize: vertical;
 }
-
 textarea.default-value {
-    color: $color-form-textarea-default-value;
+    color: $colour-form-textarea-default-value;
 }
-
-input.radio,
-input.checkbox {
-    vertical-align: top;
-}
-
 input.qty {
     width: 2.5em;
 }
-
-input.disabled {
-    background: $color-form-input-disabled-background;
-    color: $color-form-input-disabled;
+.customer-dob {
+    div {
+        display: inline-block;
+        width: 4em;
+        margin-right: 0.5em; 
+    }
+    label {
+        visibility: hidden;
+    }
+    input {
+        text-align: center;
+    }
 }
+
+/* Radio buttons and checkboxes */
+$form-radio-size: 12px;
+$form-radio-dot-size: 3px;
+$form-radio-offset: 3px;
+
+input[type="radio"], 
+input[type="checkbox"] {
+    position: absolute;
+    left: -999em;
+    + span label {
+        display: block;
+        position: relative;
+        margin-bottom: 0.2em;
+        &:before {
+            content: ''; 
+            display: inline-block;
+            position: relative;
+            top: $form-radio-offset;
+            margin-right: 0.75em;
+            background: $colour-light-background;
+            height: $form-radio-size;
+            width: $form-radio-size;
+            border: $border-default;
+        }
+    }
+    &:checked + span label {
+        &:after {
+            content: '\00D7';
+            display: inline-block;
+            position: absolute;
+            top: $form-radio-offset - 1px;
+            left: 0;
+            margin: 1px;
+            height: $form-radio-size;
+            width: $form-radio-size;
+            font-size: 16px;
+            line-height: $form-radio-size;
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+}
+input[type="radio"] {
+    + span label {
+        &:before {
+            border-radius: 50%;
+        }
+    }
+    &:checked + span label {
+        &:after {
+            content: '';
+            top: $form-radio-offset;
+            left: 0;
+            width: ($form-radio-dot-size * 2);
+            height: ($form-radio-dot-size * 2);
+            margin: 1px;
+            border: ($form-radio-size/2 - $form-radio-dot-size) solid $colour-light-background;
+            background: $colour-body-text;
+            border-radius: 50%;
+        }
+    }
+}
+
 
 /* Form Validation */
 .validation-advice {
     clear: both;
-    color: $color-form-validation-error;
+    color: $colour-form-validation-error;
     padding: 0.5em 0 0 0;
 }
 
 .product-options .validation-error .options-list,
 input.input-text.validation-failed,
 textarea.validation-failed {
-    border-color: $color-form-validation-error-border;
-    background: $color-form-validation-error-background;
+    border-color: $colour-form-validation-error-border;
+    background: $colour-form-validation-error-background;
 }
 
 span.validation-passed,
@@ -81,15 +187,11 @@ div.validation-error {
 }
 
 .required em {
-    color: $color-form-required;
+    color: $colour-form-required;
     margin-right: 0.3em;
 }
-
 p.required {
-    margin: 0;
-    padding: 5px $form-validation-icon-width 7px 0;
-    text-align: right;
-    color: $color-form-required;
+    color: $colour-text-muted;
 }
 
 /* Expiration date and CVV number validation fix */
@@ -116,10 +218,17 @@ p.required {
         @include clearfix;
         margin-bottom: 1em;
         vertical-align: top;
+        .field {
+            @include clearfix;
+            margin-bottom: 1em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
     label {
         float: left;
-        padding: 0 0 0.4em 0;
+        padding: 0.5em 0 0.4em 0;
         text-align: right;
         &:after {
             content: ":";
@@ -129,7 +238,6 @@ p.required {
         float: left;
         width: 100%;
         margin-bottom: 0.2em;
-        padding-right: $form-validation-icon-width;
         a {
             margin-top: 0.5em;
         }
@@ -140,13 +248,6 @@ p.required {
     .note {
         clear: both;
     }
-    input.input-text,
-    textarea,
-    select {
-        float: left;
-        width: 100%;
-        vertical-align: top;
-    }
     p {
         margin: 0;
     }
@@ -156,15 +257,16 @@ p.required {
     .form-list {
         label {
             width: $form-label-width;
-            padding: 0.2em 1.5em 0 0;
+            padding: 0.5em 1em 0 0;
             text-align: right;
         }
         .input-box,
-        .value{
+        .value,
+        .input-range {
             width: $form-input-box-width;
+            float: right;
         }
         .input-box {
-            padding-top: 0.2em;
             padding-bottom: 0;
             margin-bottom: 0;
         }
@@ -184,73 +286,25 @@ p.required {
     }
 }
 
-ul.add-row,
-.form-list li.add-row { background:url(#{$path-images}/bkg_dots.gif) repeat-x 0 0; margin-top:15px; }
-ul.add-row .btn-remove,
-.form-list li.add-row .btn-remove { font-size:0; line-height:0; padding:5px 5px 0 0; margin:0; text-align:right; }
-.form-list .range input.input-text { float:none; width:64px; vertical-align:middle; }
-
-.form-list .control { position:relative; vertical-align:top; z-index:1; } /* row with checkbox or radio button */
-.form-list .control label { line-height:16px; }
-.form-list .control .input-box { position:absolute; left:0; margin-left:240px; line-height:16px; padding-top:1px; }
-.form-list .control input.radio { margin-top:3px; }
-
-.form-alt label { float:none; display:inline; width:auto; }
-.form-alt li { margin:0 0 5px; line-height:16px; }
-.form-alt select { width:496px; }
-.form-alt .input-box { width:496px; margin-top:5px; padding-bottom:11px; }
-.form-alt .input-text { width:480px; }
-
-.form-list-narrow label { width:105px; }
-.form-list-narrow select { width:290px; }
-.form-list-narrow input.input-text,
-.form-list-narrow textarea { width:285px; }
-.form-list-narrow .wide { width:auto; }
-.form-list-narrow .add-field .input-box { margin-left:120px; }
-.form-list-narrow .control .input-box { margin-left:120px; }
-
-.inner-form { margin:10px 0 5px; padding:10px 0 0; border:1px dashed #d1d1d1; border-width:1px; background:#f7f7f7; }
-.inner-form .form-alt label { padding-left:5px; }
-
-/* Date Of Birth */
-.form-list .customer-dob label { float:none; width:auto; padding:0; font-size:11px; font-weight:normal; color:#777; }
-.form-list .customer-dob .input-box { float:left; width:auto; margin-right:8px; }
-.form-list .customer-dob .input-box .validation-advice { display:none !important; }
-.form-list .customer-dob input.input-text { float:none; display:block; margin-bottom:2px; }
-.form-list .customer-dob .dob-day,
-.form-list .customer-dob .dob-month,
-.form-list .customer-dob .dob-year { float:left; margin-right:8px; padding-right:0 !important; background:none !important; }
-.form-list .customer-dob .dob-day .validation-advice,
-.form-list .customer-dob .dob-month .validation-advice,
-.form-list .customer-dob .dob-year .validation-advice { display:none; }
-.form-list .customer-dob .dob-day input.input-text { width:104px; }
-.form-list .customer-dob .dob-month input.input-text { width:104px; }
-.form-list .customer-dob .dob-year { margin-right:0; }
-.form-list .customer-dob .dob-year input.input-text { width:138px; }
-
-/* Combination of fields */
-.form-list li.fields { margin:0; }
-.form-list li.fields .field { @include clearfix; clear:left; padding:0 0 9px; }
-
 /*------------------------------------------------------------------
-Buttons
+    Buttons
 -------------------------------------------------------------------*/
 
-a.button {
-    background-color: #0f0;
+button, a.button {
+    background-color: $colour-form-button;
+    border: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: $colour-form-button-text;
 }
 
 /* Buttons */
 .buttons-set {
-    clear: both;
+    @include clearfix;
     margin: 1em 0;
-    padding-right: $form-validation-icon-width;
-    p.back-link {
+    .back-link {
         float: left;
         margin: 0;
-        @include media($small-tablet-v-and-above) {
-            padding-left: $form-label-width;
-        }
     }
 }
 

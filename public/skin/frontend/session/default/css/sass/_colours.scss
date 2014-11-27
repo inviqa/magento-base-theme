@@ -3,61 +3,70 @@ Colours
 -------------------------------------------------------------------*/
 
 /* brand */
-$color-brand-primary: #f60;
-$color-brand-light-background: #f9f9f9;
+$colour-brand-primary                    : #ec008c;
+
+/* backgrounds and borders */
+$colour-white-background                 : #fff;
+$colour-light-background                 : #efefef;
+$colour-border-default                   : #ccc;
 
 /* drop-shadow */
-$color-drop-shadow: rgba(#000, 0.2);
+$colour-drop-shadow                      : rgba(#000, 0.2);
 
 /* global-site-notice */
-$colour-global-site-notice-border: #ccc;
-$colour-global-site-notice-background: #ff9;
+$colour-notice-border                    : $colour-border-default;
+$colour-notice-background                : #ff9;
 
 /* typography */
-$color-body-text: #333;
+$colour-body-text                        : #333;
+$colour-text-muted                       : #999;
+$colour-text-light                       : #fff;
 
 /* links */
-$color-link: $color-brand-primary;
-$color-link-active: #000;
+$colour-link                             : $colour-brand-primary;
+$colour-link-active                      : $colour-brand-primary;
 
 /* traffic lights */
-$color-error: #a94442;
+$colour-success                          : #00ff00;
+$colour-warn                             : #ffcc00;
+$colour-error                            : #ff0000;
 
 /* forms */
-$color-form-input-background: #fff;
-$color-form-input-border: #ccc;
-$color-form-textarea-default-value: #ccc;
-$color-form-input-disabled: #ccc;
-$color-form-input-disabled-background: $color-brand-light-background;
-$color-form-validation-error: $color-error;
-$color-form-validation-error-background: lighten($color-error, 50%);
-$color-form-validation-error-border: lighten($color-error, 40%);
-$color-form-required: $color-error;
+$colour-form-input-background            : $colour-white-background;
+$colour-form-input-border                : $colour-border-default;
+$colour-form-controls                    : $colour-light-background;
+$colour-form-textarea-default-value      : $colour-border-default;
+$colour-form-input-disabled              : $colour-border-default;
+$colour-form-input-disabled-background   : $colour-light-background;
+$colour-form-validation-error            : $colour-error;
+$colour-form-validation-error-background : $colour-error;
+$colour-form-validation-error-border     : $colour-error;
+$colour-form-required                    : $colour-error;
+$colour-form-button                      : $colour-brand-primary;
+$colour-form-button-text                 : $colour-text-light;
+$colour-form-search-background           : $colour-white-background;
 
 /* body */
-$color-body-background: #fff;
-$color-header-panel-wrapper-background: darken($color-brand-light-background, 20%);
-$color-header-wrapper-background: darken($color-brand-light-background, 3%);
-$color-header-usp-wrapper-background: darken($color-brand-light-background, 40%);
+$colour-body-background                  : $colour-white-background;
+$colour-header-panel-background          : $colour-white-background;
+$colour-header-background                : $colour-white-background;
+$colour-header-usp-background            : $colour-light-background;
 
 /* switch */
-$color-switch-list-background: $color-brand-light-background;
-$color-switch-list-active-background: darken($color-brand-light-background, 3%);
+$colour-switch-list-background           : $colour-light-background;
+$colour-switch-list-active-background    : $colour-light-background;
 
 /* top-cart */
-$color-top-cart-block-title: $color-brand-primary;
-$color-top-cart-block-subtitle-background: darken($color-brand-light-background, 3%);
-$color-top-cart-block-content-background: $color-brand-light-background;
-$color-top-cart-actions-background: darken($color-brand-light-background, 3%);
-
-/* form-search */
-$color-form-search-background: $color-brand-light-background;
+$colour-top-cart-title                   : $colour-brand-primary;
+$colour-top-cart-subtitle-background     : $colour-light-background;
+$colour-top-cart-content-background      : $colour-light-background;
+$colour-top-cart-actions-background      : $colour-light-background;
 
 /* nav-container */
-$color-nav-container-background: darken($color-brand-light-background, 5%);
-$color-nav-primary-subnav-background: darken($color-brand-light-background, 5%);
-$color-nav-primary-active-background: darken($color-brand-light-background, 10%);
-$color-nav-primary-over-background: darken($color-brand-light-background, 15%);
+$colour-nav-container-background         : $colour-white-background;
+$colour-nav-primary-subnav-background    : $colour-light-background;
+$colour-nav-primary-active-background    : $colour-white-background;
+$colour-nav-primary-over-background      : $colour-white-background;
 
 /* footer */
-$color-footer-container-background: darken($color-brand-light-background, 5%);
+$colour-footer-container-background      : $colour-light-background;

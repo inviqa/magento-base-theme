@@ -9,7 +9,7 @@ Header
 }
 
 .header-panel-wrapper {
-    background-color: $color-header-panel-wrapper-background;
+    background-color: $colour-header-panel-background;
 }
 
 .header-panel {
@@ -31,6 +31,9 @@ Header
         float: right;
         li {
             margin-right: 1.6em;
+        }
+        .last {
+            margin-right: 0;
         }
     }
 }
@@ -56,7 +59,6 @@ Header
     }
     .switcher {
         cursor: pointer;
-        background: url(#{$path-images}/bkg_header-panel.gif) no-repeat 100% -73px;
         padding: 0 1em 0 0;
         &.list-opened {
             background-position: 100% -129px;
@@ -71,10 +73,10 @@ Header
     }
     a {
         display: block;
-        background: $color-switch-list-background;
+        background: $colour-switch-list-background;
         padding: 0.5em 1em;
         &:hover {
-            background: $color-switch-list-active-background;
+            background: $colour-switch-list-active-background;
         }
     }
     .current {
@@ -89,14 +91,12 @@ Header
     padding-right: 1em;
     .block-title {
         cursor: pointer;
-        background: transparent url(#{$path-images}/bkg_topcart.gif) 0 1px no-repeat;
         padding-left: 1.8em;
         strong {
             display: block;
             padding-right: 1em;
-            background: transparent url(#{$path-images}/bkg_header-panel.gif) 100% -74px no-repeat;
             font-weight: normal;
-            color: $color-top-cart-block-title;
+            color: $colour-top-cart-title;
         }
         &.expanded {
             strong { background-position: 100% -130px; }
@@ -107,20 +107,19 @@ Header
         right: 0;
         top: 1.5em;
         width: 22em;
-        background-color: $color-top-cart-block-content-background;
+        background-color: $colour-top-cart-content-background;
         @extend %drop-shadow;
     }
     .block-subtitle {
         padding: 0.5em;
         margin: 0;
-        background-color: $color-top-cart-block-subtitle-background;
+        background-color: $colour-top-cart-subtitle-background;
     }
     .close-btn {
         @extend %image-replacement;
         float: right;
         width: 13px;
         padding-top: 12px;
-        background-image: url(#{$path-images}/bkg_close.gif);
         cursor: pointer;
         position: relative;
         z-index: 1;
@@ -162,7 +161,7 @@ Header
         text-align:center;
     }
     .actions {
-        background-color: $color-top-cart-actions-background;
+        background-color: $colour-top-cart-actions-background;
         padding: 0.5em 1em;
         text-align: right;
         a {
@@ -176,19 +175,18 @@ Header
 }
 
 .header-wrapper {
-    background-color: $color-header-wrapper-background;
+    background-color: $colour-header-background;
 }
 
 .header {
     @extend %layout-centralize;
     padding-top: 1em;
     padding-bottom: 1em;
-    .logo-holder {
-        @include span-columns(3);
-    }
     h1 {
-        margin-top: 0;
-        margin-bottom: 0;
+        margin: 0;
+    }
+    .logo-holder {
+        text-align: center;
     }
     .links {
         float: right;
@@ -197,15 +195,23 @@ Header
             padding-right: 1em;
         }
     }
+    @include media($small-tablet-v-and-above) {
+        .logo-holder {
+            text-align: left;
+            @include span-columns(3);
+        }
+    }
 }
 
 /* navigation */
 .nav-container {
-    @include span-columns(6);
-    margin-top: 1em;
-    background: $color-nav-container-background;
+    @include clearfix;
+    background: $colour-nav-container-background;
     position: relative;
     z-index: 4;
+    @include media($small-tablet-v-and-above) {
+        @include span-columns(6);
+    }
 }
 
 .nav-primary {
@@ -226,7 +232,7 @@ Header
         z-index: 1;
     }
     a.level-top {
-        float:left;
+        float: left;
     }
     li.over a.level-top {
         position: relative;
@@ -234,10 +240,10 @@ Header
     }
     li {
         &.active {
-            background-color: $color-nav-primary-active-background;
+            background-color: $colour-nav-primary-active-background;
         }
         &.over {
-            background-color: $color-nav-primary-over-background;
+            background-color: $colour-nav-primary-over-background;
         }
     }
 
@@ -248,7 +254,7 @@ Header
         width: 13.5em;
         top: 3.2em;
         left: -10000px;
-        background: $color-nav-primary-subnav-background;
+        background: $colour-nav-primary-subnav-background;
         @extend %drop-shadow;
         li {
             float: none;
@@ -282,24 +288,20 @@ Header
 /* form-search */
 .header .form-search {
     $search-width: 75%;
-    @include span-columns(3);
-    margin-top: 1.6em;
     white-space: nowrap;
     label {
         display: none;
     }
-    input.input-text {
-        background: transparent url(#{$path-images}/bkg_search-input.gif) no-repeat 0 0;
-        padding-left: 2em;
+    .input-text {
         width: $search-width;
+        border-right: 0;
     }
     a {
         display: none;
     }
     button.button {
         float: right;
-        width: 20%;
-        @include rem-fallback(margin-left, 0.5);
+        width: 100% - $search-width;
     }
     .search-autocomplete {
         z-index: 999;
@@ -309,7 +311,7 @@ Header
         height: 0;
         overflow: visible;
         ul {
-            background-color: $color-form-search-background;
+            background-color: $colour-form-search-background;
             position: absolute;
             width: $search-width;
             @extend %drop-shadow;
@@ -323,10 +325,13 @@ Header
             font-weight: bold;
         }
     }
+    @include media($small-tablet-v-and-above) {
+        @include span-columns(3);
+    }
 }
 
 .header-usp-wrapper {
-    background-color: $color-header-usp-wrapper-background;
+    background-color: $colour-header-usp-background;
 }
 
 .header-usp {

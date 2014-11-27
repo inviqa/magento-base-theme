@@ -31,7 +31,7 @@ Extendable classes
 }
 
 %drop-shadow {
-    @include box-shadow(px 4px 10px -2px $color-drop-shadow);
+    @include box-shadow(px 4px 10px -2px $colour-drop-shadow);
 }
 
 %body-font {

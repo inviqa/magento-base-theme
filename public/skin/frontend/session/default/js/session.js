@@ -7,10 +7,22 @@ Validation.defaultOptions.addClassNameToContainer = true;
 var Session = (function ($) {
     "use strict";
     return {
+
+        // HOWTO: define your functions here
+
+        // wrap select form elements for styling
+        styledSelects: function () {
+            $('select:not(.multiselect)').wrap('<div class="styled-select" />');
+        },
+
         init: function (initModules) {
+
+            // HOWTO: initialise your functions
+            this.styledSelects();
+
             $.each(initModules, function(key, value) {
                 if (value === true) {
-                    Innov8[key].init();
+                    Session[key].init();
                 }
             });
         }
