@@ -1,70 +1,46 @@
 /*------------------------------------------------------------------
-Footer
+    Footer
 -------------------------------------------------------------------*/
 
-.footer-wrapper {
+footer {
     @include clearfix;
-    background: $color-footer-container-background;
+    background: $colour-footer-container-background;
     padding: 1em;
     margin-top: 1em;
 }
 
 .footer {
     @extend %layout-centralize;
-    .form-subscribe-header {
-        font-weight: bold;
-    }
-    .form-subscribe {
-        @include span-columns(3);
-        label {
-            display: block;
-            margin: 0.5em 0;
-        }
-        input.input-text {
-            width: 12em;
-            display: block;
-        }
-        button.button {
-            float: right;
-        }
-        .validation-advice {
-            width: 12em;
-        }
-        .v-fix {
-            padding-right: 0.5em;
-        }
-    }
     ul {
         display: block;
-        float: left;
         padding: 0;
-        @include span-columns(2);
-        @include rem-fallback(margin, 0, 0, 0, 2);
         li {
             display: block;
             margin-bottom: 0.5em;
         }
     }
-    .switcher-store {
-        float: right;
-        @include span-columns(2);
-        background: url(#{$path-images}/bkg_store-switch.gif) no-repeat 0 3px;
-        padding-top: 2em;
-        label {
-            display: none;
-        }
+    @include media($small-tablet-v-and-above) {
         ul {
-            float: none;
-            width: auto;
-            padding-left: 0;
-            margin-left: 0;
-            &.current {
-                display: none;
-            }
+            @include span-columns(2);
+            @include rem-fallback(margin, 0, 2, 0, 0);
         }
     }
- }
+}
 
-address.copyright {
-        margin: 1em 0;
+/* Sticky footer */
+@include media($small-tablet-v-and-above) {
+    $footer-height: 200px;
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+    .wrapper {
+        margin-bottom: $footer-height;
+    }
+    footer {
+        height: $footer-height;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
 }

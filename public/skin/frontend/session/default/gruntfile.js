@@ -83,6 +83,7 @@ module.exports = function(grunt) {
                         '<%= var.skinJsDir %>app/*.js'
                     ],
                     '<%= var.skinJsDir %>scripts-ie8.min.js': [
+                        //'<%= var.skinJsDir %>lib/polyfills/fontsmoothie-min.js',
                         '<%= var.skinJsDir %>lib/polyfills/selectivizr-min.js',
                         '<%= var.skinJsDir %>lib/polyfills/nwmatcher-1.2.5-min.js',
                         '<%= var.skinJsDir %>lib/polyfills/respond.min.js',

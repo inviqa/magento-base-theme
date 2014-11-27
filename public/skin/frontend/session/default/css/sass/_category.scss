@@ -23,9 +23,12 @@ Category
 
 /* View Type: Grid */
 .products-grid {
+    @include clearfix;
     @extend %remove-list-style;
-    li.item {
-        @include span-columns(2 of 6);
+    text-align: center;
+    .item {
+        margin-top: 1em;
+        margin-bottom: 1em;
     }
     .product-image {
         display: block;
@@ -48,6 +51,11 @@ Category
     .price-box {
         margin: 0.5em 0;
         clear: both;
+    }
+    @include media($small-tablet-v-and-above) {
+        .item {
+            @include span-columns(2 of 6);
+        }
     }
 }
 

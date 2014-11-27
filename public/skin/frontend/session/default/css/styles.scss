@@ -1,7 +1,7 @@
 /** Styles
  *
- * sass --watch --load-path="css/sass" --style="compressed" css:css
- * from /theme folder
+ * grunt watch
+ * from /theme/default folder
  *
  **/
 
@@ -13,9 +13,9 @@
 "bourbon/bourbon",
 "grid-settings",
 "neat/neat",
+"colours",
 "vars",
 "fonts",
-"colours",
 "mixins/font-size",
 "mixins/line-height",
 "mixins/rem-filler",

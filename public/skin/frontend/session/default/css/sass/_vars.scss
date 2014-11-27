@@ -1,13 +1,16 @@
 /*------------------------------------------------------------------
-Variables
+    Variables
 -------------------------------------------------------------------*/
 
 /* paths */
-$path-images: "../images/optimised";
+$path-images: "../images";
 
 /* fonts */
 $base-font-size: 12;
-$font-heading: Georgia, Times, "Times New Roman";
-$font-body: Arial, Helvetica, sans-serif;
+$font-heading: sans-serif;
+$font-body: sans-serif;
 $font-body-size: $base-font-size;
 $font-body-line-height: 16;
+
+/* Borders */
+$border-default: 1px solid $colour-border-default;

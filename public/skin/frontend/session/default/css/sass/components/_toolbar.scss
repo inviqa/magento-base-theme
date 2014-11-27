@@ -1,3 +1,19 @@
 /*------------------------------------------------------------------
-Toolbar
+    Toolbar
 -------------------------------------------------------------------*/
+
+.toolbar {
+    @include clearfix;
+    margin: 1em 0;
+    padding: 1em 0;
+    border-top: $border-default;
+    border-bottom: $border-default;
+    p {
+        margin: 0;
+    }
+    @include media($desktop-only) {
+        * > {
+            display: inline-block;
+        }
+    }
+}

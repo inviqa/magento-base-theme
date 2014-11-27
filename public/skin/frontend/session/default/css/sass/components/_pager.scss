@@ -1,43 +1,37 @@
 /*------------------------------------------------------------------
-Pager
+    Pager
 -------------------------------------------------------------------*/
 
 .pager {
-    margin: 1em 0;
-    p {
-        margin: 0;
-    }
-    select {
-        margin-bottom: 0.1em;
-    }
-    .amount {
-        float: left;
-        @include line-height(20);
-        strong {
-            font-weight: normal;
-        }
-    }
-    .limiter {
-        float: right;
-        @include line-height(20);
+    @include clearfix;
+    margin-bottom: 1em;
+    > * {
+        display: inline-block;
     }
     .pages {
-        @include rem-fallback(margin, 0, 12);
-        text-align:center;
-        @include line-height(20);
-        ol,
-        li {
+        ol, li {
             display: inline;
         }
         .current {
             font-weight: bold;
         }
     }
+    .amount {
+    }
+    .styled-select {
+        display: inline-block;
+        width: auto;
+        min-width: 4em;
+    }
+    @include media($desktop-only) {
+        float: right;
+        margin-bottom: 0;
+    }
 }
 
-.pager-only {
-    clear: both;
-    .pages {
-        margin: 0;
+.limiter {
+    margin-left: 1em;
+    > * {
+        vertical-align: middle;
     }
 }
