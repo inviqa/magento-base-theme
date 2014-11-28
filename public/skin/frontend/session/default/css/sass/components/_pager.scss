@@ -9,11 +9,24 @@
         display: inline-block;
     }
     .pages {
+        display: block;
+        strong {
+            font-weight: normal;
+        }
         ol, li {
             display: inline;
         }
         .current {
             font-weight: bold;
+        }
+        .prev:after {
+            content: '\2039';
+        }
+        .next:after {
+            content: '\203A';
+        }
+        img {
+            display: none;
         }
     }
     .amount {

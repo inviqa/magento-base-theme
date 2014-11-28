@@ -17,6 +17,7 @@ body {
 /* Images */
 img {
     max-width: 100%;
+    vertical-align: bottom;
 }
 
 /* Typography */
@@ -93,9 +94,6 @@ ol {
 dl, dt, dd {
     margin: 0;
     padding: 0;
-}
-dt, dl {
-    margin-top: 0.5em;
 }
 
 /* Layout */

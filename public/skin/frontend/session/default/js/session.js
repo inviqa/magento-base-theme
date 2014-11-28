@@ -14,7 +14,7 @@ var Session = (function ($) {
         styledSelects: function () {
             $('select:not(.multiselect)').wrap('<div class="styled-select" />');
         },
-
+        
         init: function (initModules) {
 
             // HOWTO: initialise your functions

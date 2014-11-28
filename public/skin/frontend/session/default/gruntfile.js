@@ -27,7 +27,12 @@ module.exports = function(grunt) {
                 ]
             },
             scripts: {
-                files: ['<%= var.skinJsDir %>**/*.js', '!<%= var.skinJsDir %>scripts.min.js'],
+                files: [
+                    '<%= var.skinJsDir %>**/*.js',
+                    '!<%= var.skinJsDir %>scripts.min.js',
+                    '!<%= var.skinJsDir %>scripts-ie8.min.js',
+                    '!<%= var.skinJsDir %>scripts-ie9.min.js'
+                ],
                 tasks: ['uglify'],
                 options: {
                     livereload: true

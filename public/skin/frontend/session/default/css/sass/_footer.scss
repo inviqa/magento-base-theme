@@ -11,25 +11,57 @@ footer {
 
 .footer {
     @extend %layout-centralize;
+    form {
+        @include clearfix;
+        margin: 1em 0;
+        .v-fix {
+            width: 75%;
+        }
+        button {
+            width: 25%;
+        }
+    }
     ul {
-        display: block;
+        margin: 1em 0;
         padding: 0;
+        border-top: $border-default;
         li {
             display: block;
-            margin-bottom: 0.5em;
+            padding: 0.5em;
+            border-bottom: $border-default;
         }
+    }
+    .copyright {
+        margin: 1em 0;
+        @include span-columns(12);
     }
     @include media($small-tablet-v-and-above) {
         ul {
-            @include span-columns(2);
-            @include rem-fallback(margin, 0, 2, 0, 0);
+            @include span-columns(6);
+            @include omega;
+        }
+        form {
+            @include span-columns(6);
+        }
+    }
+    @include media($desktop-only) {
+        ul {
+            @include span-columns(4);
+        }
+        form {
+            @include span-columns(4);
+        }
+        .copyright {
+            @include span-columns(4);
+            @include omega;
         }
     }
 }
 
+
 /* Sticky footer */
 @include media($small-tablet-v-and-above) {
-    $footer-height: 200px;
+    $footer-height: 250px;
     html {
         position: relative;
         min-height: 100%;

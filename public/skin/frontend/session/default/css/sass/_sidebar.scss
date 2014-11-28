@@ -44,6 +44,9 @@ Sidebar
     dt {
         font-weight: bold;
     }
+    dd {
+        margin-bottom: 1em;
+    }
     .block-subtitle {
         display: none;
     }
@@ -53,10 +56,6 @@ Sidebar
         margin-top: 1em;
     }
 }
-.block-wishlist {
-
-}
-
 /* Block: Cart */
 .sidebar .block-cart .block-title { background:#363636; padding:7px 17px; }
 .sidebar .block-cart .block-title strong { font-weight:bold; color:#fff; }
@@ -72,43 +71,6 @@ Sidebar
 .sidebar .block-cart .block-content table td { text-align:left; padding:1px 0; }
 .sidebar .block-cart  li a.btn-remove { float:none; background:none; margin:0; padding:0; width:auto; height:auto; overflow:visible; }
 
-
-
 .sidebar .mini-products-images-list li.item { float:left; padding:5px; text-align:center; }
 
 .block-products .mini-products-list .product-details { margin-left:65px; }
-
-
-
-
-
-/* Block: List */
-.block-list .block-content ol { margin:-5px -13px; }
-.block-list li.item { padding:5px 10px 5px 13px; }
-.block-list .actions { padding:5px 0 0; }
-.sidebar .block-list .product-name { font:normal 11px/1.25 Arial, Helvetica, sans-serif; color:#444; }
-.sidebar .block-list .product-name a { color:#444; }
-
-/* Block: Tags */
-.block-tags ul,
-.block-tags li { display:inline; }
-
-/* Block: Subscribe */
-.block-subscribe {}
-
-/* Block: Reorder */
-.block-reorder li { padding:5px 0; }
-.block-reorder input.checkbox { float:left; margin:3px -20px 0 0; }
-.block-reorder .product-name { margin-left:20px; font-size:11px; font-weight:normal; }
-
-
-/* Paypal */
-.sidebar .paypal-logo {
-    display: block;
-    margin: 1em 0;
-    text-align: center;
-}
-.paypal-review-order .legend { font-size:14px; font-weight:normal; margin:0 0 6px; }
-.paypal-review-order .col2-set .legend { font-weight:bold; }
-.paypal-review-order .paypal-shipping-method { padding-left:120px; }
-.paypal-review-order .paypal-shipping-method .box-title { margin:0 0 6px; }

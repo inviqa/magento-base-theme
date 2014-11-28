@@ -25,7 +25,7 @@ Header
     }
     .checkout-link {
         float: right;
-        margin-right: 1.6em;
+        margin-right: 0;
     }
     .top-links .links {
         float: right;
@@ -288,20 +288,18 @@ Header
 /* form-search */
 .header .form-search {
     $search-width: 75%;
-    white-space: nowrap;
-    label {
+    position: relative;
+    label, a {
         display: none;
     }
     .input-text {
         width: $search-width;
-        border-right: 0;
+        float: left;
     }
-    a {
-        display: none;
-    }
-    button.button {
-        float: right;
+    .button {
         width: 100% - $search-width;
+        position: absolute;
+        top: 0;
     }
     .search-autocomplete {
         z-index: 999;
@@ -325,6 +323,8 @@ Header
             font-weight: bold;
         }
     }
+}
+#search_mini_form {
     @include media($small-tablet-v-and-above) {
         @include span-columns(3);
     }
