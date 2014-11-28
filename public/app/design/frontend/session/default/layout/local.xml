@@ -6,7 +6,7 @@
  * Local layout modifications for our local theme
  *
  * @category    design
- * @package     innov8_default
+ * @package     session_default
  * @copyright   Copyright (c) 2014 Inviqa.
  */
 -->
@@ -28,14 +28,14 @@
             <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>
             <action method="removeItem"><type>js</type><name>mage/translate.js</name></action>
             <action method="removeItem"><type>js</type><name>mage/cookies.js</name></action>
-
+            <action method="removeItem"><type>skin_js</type><name>js/scripts.js</name></action>
+            <action method="removeItem"><type>skin_js</type><name>js/enterprise/wishlist.js</name></action>
             <action method="removeItem"><type>skin_js</type><name>js/enterprise/catalogevent.js</name></action>
             <action method="removeItem"><type>skin_js</type><name>js/iehover-fix.js</name></action>
             <action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name></action>
+            <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
             
             <action method="addItem"><type>js</type><name>session/core.min.js</name></action>
-
-            <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
         </reference>
 
         <reference name="before_body_end">

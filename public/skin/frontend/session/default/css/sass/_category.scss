@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------
-Category
+    Category
 -------------------------------------------------------------------*/
 
 .category-view .note-msg,
@@ -19,6 +19,13 @@ Category
 
 .category-products {
     margin: 1em 0;
+}
+.add-to-links {
+    @extend %remove-list-style;
+    margin-top: 1em;
+    .separator {
+        display: none;
+    }
 }
 
 /* View Type: Grid */
@@ -63,23 +70,18 @@ Category
 .products-list {
     @extend %remove-list-style;
     li.item {
-        margin: 2em 0;
+        @include clearfix;
     }
     .product-image {
-        float: left;
-        margin-right: -186px;
-        position: relative;
+        @include span-columns(2 of 6);
     }
     .product-shop {
-        margin-left: 186px;
+        @include span-columns(4 of 6);
     }
     .product-name {
-        margin: 0 0 0.5em 0;
     }
     .price-box {
-        margin: 1em 0;
     }
     .desc {
-        margin: 1em 0;
     }
 }
