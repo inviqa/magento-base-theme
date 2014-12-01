@@ -34,7 +34,6 @@ Clone the MAST repo into another folder:
 Copy the relevant files and directories into your seed VM:
 
     cd ~/Sites/mast
-    cp ../mast-repo/gruntfile.js ../mast-repo/package.json .
     cp -r ../mast-repo/public/skin/frontend/session/ ./public/skin/frontend/
     cp -r ../mast-repo/public/app/design/frontend/session ./public/app/design/frontend/
 
