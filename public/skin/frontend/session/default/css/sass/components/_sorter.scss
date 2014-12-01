@@ -1,11 +1,14 @@
 /*------------------------------------------------------------------
-Sorter
+    Sorter
 -------------------------------------------------------------------*/
 
 .sorter {
     @include clearfix;
     > * {
         display: inline-block;
+    }
+    @include media($desktop-only) {
+        float: left;
     }
 }
 .sort-by {

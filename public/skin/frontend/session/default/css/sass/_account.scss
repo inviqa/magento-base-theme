@@ -2,14 +2,6 @@
     Account
 -------------------------------------------------------------------*/
 
-
-
-li#remember-me-box.control { white-space:nowrap; }
-li#remember-me-box.control label { margin-right:20px; white-space:normal; }
-.account-login .form-list li.control .input-box { margin-left:113px; }
-li#remember-me-box.control .link-tip { display:inline-block; font-size:11px; line-height:16px; padding-top:2px; white-space:normal; }
-.account-login .form-list li.buttons-set { float:right; clear:none; padding-right:38px; padding-top:2px; }
-
 /* Popup Dialog Block */
 .window-overlay { background:#000; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; }
 .window-overlay { position:absolute; top:0; left:0; min-height:100%; background:#000; opacity:0.5; width:100%; z-index:990; display:none; }

@@ -254,7 +254,7 @@ p.required {
     }
 }
 
-@include media($small-tablet-v-and-above) {
+@include media($sm-tablet-and-above) {
     .form-list {
         label {
             width: $form-label-width;
@@ -302,7 +302,7 @@ button, a.button {
 /* Buttons */
 .buttons-set {
     @include clearfix;
-    margin: 1em 0;
+    @include rem-fallback(margin, 1, 0);
     .back-link {
         float: left;
         margin: 0;

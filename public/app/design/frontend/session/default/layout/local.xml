@@ -7,7 +7,7 @@
  *
  * @category    design
  * @package     session_default
- * @copyright   Copyright (c) 2014 Inviqa.
+ * @copyright   Copyright (c) 2014 Session Digital.
  */
 -->
 <layout version="0.1.0">
@@ -28,8 +28,6 @@
             <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>
             <action method="removeItem"><type>js</type><name>mage/translate.js</name></action>
             <action method="removeItem"><type>js</type><name>mage/cookies.js</name></action>
-            <action method="removeItem"><type>skin_js</type><name>js/scripts.js</name></action>
-            <action method="removeItem"><type>skin_js</type><name>js/enterprise/wishlist.js</name></action>
             <action method="removeItem"><type>skin_js</type><name>js/enterprise/catalogevent.js</name></action>
             <action method="removeItem"><type>skin_js</type><name>js/iehover-fix.js</name></action>
             <action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name></action>
@@ -48,8 +46,9 @@
     
     <catalog_product_view>
        <reference name="head">
-           <action method="removeItem"><type>skin_js</type><name>js/jqzoom/jquery-1.3.1.min.js</name></action>
-           <action method="removeItem"><type>skin_js</type><name>js/jqzoom/jquery.jqzoom1.0.1.js</name></action>
+            <action method="removeItem"><type>skin_js</type><name>js/jqzoom/jquery-1.3.1.min.js</name></action>
+            <!-- Uncomment after function call is removed from template:
+            <action method="removeItem"><type>skin_js</type><name>js/jqzoom/jquery.jqzoom1.0.1.js</name></action>-->
        </reference>
     </catalog_product_view>
 

@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------
-Header
+    Header
 -------------------------------------------------------------------*/
 
 .header-container {
@@ -14,11 +14,11 @@ Header
 
 .header-panel {
     @extend %layout-centralize;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    @include rem-fallback(padding-top, 1);
+    @include rem-fallback(padding-bottom, 1);
     .welcome-msg {
         float: left;
-        margin: 0 1em 0 0;
+        @include rem-fallback(margin, 0, 1, 0, 0);
     }
     .account-links .links {
         float: left;
@@ -30,7 +30,7 @@ Header
     .top-links .links {
         float: right;
         li {
-            margin-right: 1.6em;
+            @include rem-fallback(margin-right, 1.6);
         }
         .last {
             margin-right: 0;
@@ -52,17 +52,14 @@ Header
         float: left;
         position: relative;
         z-index: 1;
-        padding-left: 1em;
+        @include rem-fallback(padding-left, 1);
     }
     strong.current {
         font-weight: normal;
     }
     .switcher {
         cursor: pointer;
-        padding: 0 1em 0 0;
-        &.list-opened {
-            background-position: 100% -129px;
-        }
+        @include rem-fallback(padding, 0, 1, 0, 0);
     }
     ul {
         position: absolute;
@@ -75,6 +72,7 @@ Header
         display: block;
         background: $colour-switch-list-background;
         padding: 0.5em 1em;
+        @include rem-fallback(padding, 0.5, 1);
         &:hover {
             background: $colour-switch-list-active-background;
         }
@@ -195,92 +193,10 @@ Header
             padding-right: 1em;
         }
     }
-    @include media($small-tablet-v-and-above) {
+    @include media($sm-tablet-and-above) {
         .logo-holder {
             text-align: left;
             @include span-columns(3);
-        }
-    }
-}
-
-/* navigation */
-.nav-container {
-    @include clearfix;
-    background: $colour-nav-container-background;
-    position: relative;
-    z-index: 4;
-    @include media($small-tablet-v-and-above) {
-        @include span-columns(6);
-    }
-}
-
-.nav-primary {
-    /* All Levels */
-    li {
-        padding: 1em;
-        &.over {
-            z-index: 990;
-        }
-        &.parent {
-            position: relative;
-        }
-    }
-    /* 1st Level (Top Level) */
-    li.level-top {
-        float: left;
-        position: relative;
-        z-index: 1;
-    }
-    a.level-top {
-        float: left;
-    }
-    li.over a.level-top {
-        position: relative;
-        z-index: 2;
-    }
-    li {
-        &.active {
-            background-color: $colour-nav-primary-active-background;
-        }
-        &.over {
-            background-color: $colour-nav-primary-over-background;
-        }
-    }
-
-    /* 2nd Level */
-    ul,
-    div {
-        position: absolute;
-        width: 13.5em;
-        top: 3.2em;
-        left: -10000px;
-        background: $colour-nav-primary-subnav-background;
-        @extend %drop-shadow;
-        li {
-            float: none;
-            display: block;
-            padding: 0.5em 1em;
-            a {
-                display:block;
-            }
-        }
-    }
-    div ul {
-        position: static;
-        width: auto;
-        background: none;
-        padding: 0;
-
-    }
-    /* 3rd+ Level */
-    ul ul {
-        top: 0;
-    }
-    li .shown-sub {
-        left: 0;
-        z-index: 991;
-        .shown-sub {
-            left: 100%;
         }
     }
 }
@@ -325,7 +241,7 @@ Header
     }
 }
 #search_mini_form {
-    @include media($small-tablet-v-and-above) {
+    @include media($sm-tablet-and-above) {
         @include span-columns(3);
     }
 }
@@ -333,7 +249,6 @@ Header
 .header-usp-wrapper {
     background-color: $colour-header-usp-background;
 }
-
 .header-usp {
     @extend %layout-centralize;
 }
