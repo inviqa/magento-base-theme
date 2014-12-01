@@ -6,13 +6,13 @@
     @include outer-container;
 }
 .product-shop {
-    @include media($small-tablet-v-and-above) {
+    @include media($sm-tablet-and-above) {
         @include span-columns(6);
     }
 }
 .product-img-box {
     text-align: center;
-    @include media($small-tablet-v-and-above) {
+    @include media($sm-tablet-and-above) {
         @include span-columns(6);
     }
 }
@@ -24,7 +24,7 @@
 .product-options {
     @include clearfix;
     border: $border-default;
-    margin: 1em 0;
+    @include rem-fallback(margin, 1, 0);
     padding: 1em;
     dt {
         display: block;

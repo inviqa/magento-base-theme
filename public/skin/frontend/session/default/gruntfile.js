@@ -78,11 +78,12 @@ module.exports = function(grunt) {
                         '<%= var.publicJsDir %>mage/translate.js',
                         '<%= var.publicJsDir %>mage/cookies.js',
                         '<%= var.bowerDir %>jquery/dist/jquery.min.js',
-                        '<%= var.publicJsDir %>jquery/noconflict.js',
+                        '<%= var.skinJsDir %>lib/noconflict.js',
                         '<%= var.skinJsDir %>core-overwrites.js'
                     ],
                     '<%= var.skinJsDir %>scripts.min.js': [
                         '<%= var.skinJsDir %>lib/*.js',
+                        '!<%= var.skinJsDir %>lib/noconflict.js',
                         '!<%= var.skinJsDir %>lib/modernizr.custom.js',
                         '<%= var.skinJsDir %>session.js',
                         '<%= var.skinJsDir %>app/*.js'

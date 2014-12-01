@@ -3,7 +3,7 @@
 -------------------------------------------------------------------*/
 
 .tabs {
-    margin: 1em 0;
+    @include rem-fallback(margin, 1, 0);
     dt {
         border: $border-default;
         border-bottom: 0;
@@ -45,7 +45,7 @@
 .tab-container {
 }
 
-@include media($small-tablet-v-and-above) {
+@include media($sm-tablet-and-above) {
     .tabs {
         dl {
             margin: 0;

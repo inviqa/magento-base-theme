@@ -75,7 +75,7 @@ caption, th, td {
     vertical-align: top;
 }
 ul {
-    padding-left: 1.5em;
+    @include rem-fallback(padding-left, 1.5);
     &.links {
         padding-left: 0;
         li {
@@ -87,7 +87,7 @@ ol {
     list-style-type: none;
     padding-left: 0;
     &.decimal {
-        padding-left: 1.5em;
+        @include rem-fallback(padding-left, 1.5);
         list-style-type: decimal;
     }
 }
@@ -113,11 +113,11 @@ body {
 
 .main-container {
     @extend %layout-centralize;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    @include rem-fallback(padding-top, 2);
+    @include rem-fallback(padding-bottom, 2);
 }
 
-@include media($small-tablet-v-and-above) {
+@include media($sm-tablet-and-above) {
     .col2-left-layout,
     .col2-right-layout {
         .col-main {
@@ -151,7 +151,7 @@ body {
 
 .col2-set {
     @include clearfix;
-    @include media($small-tablet-v-and-above) {
+    @include media($sm-tablet-and-above) {
         .col-1,
         .col-2 {
             @include span-columns(6);

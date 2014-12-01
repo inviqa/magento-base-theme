@@ -7,31 +7,32 @@ Sidebar
         display: block;
         @include rem-fallback(margin, 1, 0);
     }
-    /* Generic Block */
-    .block {
-        @include rem-fallback(margin-bottom, 1);
-        .block-title {
-            @include rem-fallback(margin-bottom, 1);
-        }
-        .block-content {
-            ul, ol {
-                @extend %remove-list-style;
-            }
-        }
-        li a.btn-previous,
-        li a.btn-remove {
-            float: right;
-            width: 13px;
-            padding-top: 12px;
-            margin-top: 3px;
-            background: url(#{$path-images}/btn_remove.gif) no-repeat 0 0;
-        }
-        li a.btn-previous {
-            background: url(#{$path-images}/bkg_icon-back.png) no-repeat 0 0;
-        }
+}
+
+/* Generic block */
+.block {
+    @include rem-fallback(margin-bottom, 1);
+    .btn-previous, .btn-remove {
+        float: right;
+        width: 13px;
+        padding-top: 12px;
+        margin-top: 3px;
+        background: url(#{$path-images}/btn_remove.gif) no-repeat 0 0;
+    }
+    .btn-previous {
+        background: url(#{$path-images}/bkg_icon-back.png) no-repeat 0 0;
+    }
+}
+.block-title {
+    @include rem-fallback(margin-bottom, 1);
+}
+.block-content {
+    ul, ol {
+        @extend %remove-list-style;
     }
 }
 
+/* Block types */
 .block-account {
     .current {
         font-weight: bold;

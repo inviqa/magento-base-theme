@@ -5,15 +5,15 @@
 footer {
     @include clearfix;
     background: $colour-footer-container-background;
-    padding: 1em;
-    margin-top: 1em;
+    @include rem-fallback(padding, 1);
+    @include rem-fallback(margin-top, 1);
 }
 
 .footer {
     @extend %layout-centralize;
     form {
         @include clearfix;
-        margin: 1em 0;
+        @include rem-fallback(margin, 1, 0);
         .v-fix {
             width: 75%;
         }
@@ -22,20 +22,20 @@ footer {
         }
     }
     ul {
-        margin: 1em 0;
+        @include rem-fallback(margin, 1, 0);
         padding: 0;
         border-top: $border-default;
         li {
             display: block;
-            padding: 0.5em;
+            @include rem-fallback(padding, 0.5);
             border-bottom: $border-default;
         }
     }
     .copyright {
-        margin: 1em 0;
+        @include rem-fallback(margin, 1, 0);
         @include span-columns(12);
     }
-    @include media($small-tablet-v-and-above) {
+    @include media($sm-tablet-and-above) {
         ul {
             @include span-columns(6);
             @include omega;
@@ -58,9 +58,8 @@ footer {
     }
 }
 
-
 /* Sticky footer */
-@include media($small-tablet-v-and-above) {
+@include media($sm-tablet-and-above) {
     $footer-height: 250px;
     html {
         position: relative;
