@@ -18,10 +18,11 @@
 <?php echo $this->getChildHtml() ?>
 <?php echo $this->helper('core/js')->getTranslatorScript() ?>
 <?php echo $this->getIncludes() ?>
-<link rel="stylesheet" type="text/css" href="/skin/frontend/session/default/css/styles.css" media="all" />
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/styles.css'); ?>" media="all" />
 <!--[if lt IE 9]>
-<script src="/skin/frontend/session/default/js/scripts-ie8.min.js"></script>
+<script src="<?php echo $this->getSkinUrl('js/scripts-ie8.min.js') ?>"></script>
 <![endif]-->
+
 <!--[if IE 9]>
-<script src="/skin/frontend/session/default/js/scripts-ie9.min.js"></script>
+<script src="<?php echo $this->getSkinUrl('js/scripts-ie9.min.js') ?>"></script>
 <![endif]-->

@@ -83,7 +83,7 @@ module.exports = function(grunt) {
                     ],
                     '<%= var.skinJsDir %>scripts.min.js': [
                         '<%= var.skinJsDir %>lib/*.js',
-                        '!<%= var.skinJsDir %>lib/noconflict.js',
+                        '<%= var.skinJsDir %>lib/plugins/*.js',
                         '!<%= var.skinJsDir %>lib/modernizr.custom.js',
                         '<%= var.skinJsDir %>session.js',
                         '<%= var.skinJsDir %>app/*.js'

@@ -1,0 +1,94 @@
+// CSS-only multi-line ellipsis with generated content
+// yields `position:relative`, so remember to declare an eventual `position:absolute/fixed` *after* including this mixin
+@mixin limitLines(
+$maxLinesPortrait, // Mandatory: The number of lines after which the clipping should take action.
+$maxLinesLandscape: $maxLinesPortrait, // You may provide a different line limit for landscape orientation.
+    // Note that 'portrait' is our default orientation. However, if you omit $maxLinesLandscape,
+    // the value of $maxLinesPortrait is used for whatever orientation (that is, without a media query).
+
+$fgCol: #000, // Set this to the color of the text element you want to clip.
+$bgCol: #fff, // Set this to the background color of the text element you want to clip.
+$lineHeight: 1.3 // Provide the (unitless!) line-height of the text element to help position the ellipsis correctly.
+) {
+    position: relative;
+    overflow: hidden;
+
+    // root element class added via JS feature detection
+    .webkit-line-clamp & {
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+
+        // always remember:
+        // http://alistapart.com/article/every-time-you-call-a-proprietary-feature-css3-a-kitten-dies
+        -webkit-line-clamp: $maxLinesPortrait;
+
+        @if($maxLinesLandscape != $maxLinesPortrait) {
+            @media screen and (orientation:landscape) {
+                -webkit-line-clamp: $maxLinesLandscape;
+            }
+        }
+    }
+
+    html:not(.webkit-line-clamp) & {
+        max-height: $maxLinesPortrait * $lineHeight * 1em;
+
+        // Pseudo-element containing the ellipsis (see below)
+        &::before {
+            top: ($maxLinesPortrait - 1) * $lineHeight * 1em;
+        }
+
+        @if($maxLinesLandscape != $maxLinesPortrait) {
+            @media screen and (orientation:landscape) {
+                max-height: $maxLinesLandscape * $lineHeight * 1em;
+
+                &::before {
+                    top: ($maxLinesLandscape - 1) * $lineHeight * 1em;
+                }
+            }
+        }
+
+        // Pseudo-element containing the ellipsis, as well as a soft gradient to make in-word ellipses look less harsh.
+        &::before {
+            @extend %limit-lines-ellipsis;
+            color: transparentize($fgCol, 0.7);
+            // No -ms- support in Compass? Strange!
+            background: -ms-linear-gradient(left, transparentize($bgCol, 1), $bgCol 2em);
+            @include background(linear-gradient(left, transparentize($bgCol, 1), $bgCol 2em));
+        }
+
+        &::after {
+            @extend %limit-lines-filler;
+            background: $bgCol;
+        }
+    }
+}
+
+// The ellipsis itself.
+// Fine-tune the balance between text clipped a bit too early vs. the probability of slightly orphaned ellipses
+// via the min-width property: Higher = text clipped earlier, less orphaned ellipses. And vice versa.
+%limit-lines-ellipsis {
+    min-width: 25%;
+    content: "...";
+    position: absolute;
+    right: 0;
+    padding-left: 2em; // for the gradient
+}
+
+// Pseudo-element containing a good amount of whitespace.
+// This is appended to the text to be clipped, in order to overlay (and thus hide) a superfluous ellipsis
+// occurring when the text fits exactly into the number of lines specified.
+%limit-lines-filler {
+    // generate a good amount of alternating normal spaces and non-breaking spaces
+    $whitespace: "";
+    @for $i from 1 through 1024 {
+        $whitespace: $whitespace + "  ";
+    }
+    content: $whitespace;
+    display: inline;
+    letter-spacing: 1em;
+    position: relative;
+    z-index: 1;
+    // make this a bit smaller to avoid cropping of descenders from the line above
+    font-size: 75%;
+};
