@@ -1,25 +1,13 @@
-"use strict";
-
 // Add validation hints
 Validation.defaultOptions.immediate = true;
 Validation.defaultOptions.addClassNameToContainer = true;
 
-var Session = (function ($) {
+var Session = (function ($, undefined) {
+    //always define "use strict" inside the function to prevent it affecting other scripts
     "use strict";
     return {
-
-        // HOWTO: define your functions here
-
-        // wrap select form elements for styling
-        styledSelects: function () {
-            $('select:not(.multiselect)').wrap('<div class="styled-select" />');
-        },
-        
+        //intialize module functions
         init: function (initModules) {
-
-            // HOWTO: initialise your functions
-            this.styledSelects();
-
             $.each(initModules, function(key, value) {
                 if (value === true) {
                     Session[key].init();
@@ -29,9 +17,13 @@ var Session = (function ($) {
     };
 })(window.jQuery);
 
+//initialize app on jQuery Document Ready
 jQuery(function ($) {
+    "use strict";
     FastClick.attach(document.body);
     //load modules for site separated by function
-    var initModules = {};
+    var initModules = {
+        Global: true
+    };
     Session.init(initModules);
 });
