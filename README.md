@@ -55,10 +55,12 @@ After you first boot your VM:
     npm install
     bower install
 
-After this, you can run:
+After this, you can run `gulp` and it will:
 
-* `grunt watch` : the usual watch task.
-* `grunt build` : includes tasks to prepare for production including uglify and imagemin.
+* Compile Sass
+* Build scripts
+* Opitimise images
+* Start a [BrowserSync](http://www.browsersync.io/) server, with watches on styles, js and images 
 
 ### Theme fallback
 

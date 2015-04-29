@@ -31,7 +31,7 @@
 }
 
 %drop-shadow {
-    @include box-shadow(px 4px 10px -2px $colour-drop-shadow);
+    box-shadow: 0 4px 10px -2px $colour-drop-shadow;
 }
 
 %body-font {

@@ -5,6 +5,7 @@
 bin
 docs
 node_modules
+bower_components
 spec
 tests
 tools
