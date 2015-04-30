@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 
 /** serve **/
 
-gulp.task('serve', ['sass'], function() {
+    gulp.task('serve', ['build'], function() {
 
     browserSync.init({
         proxy: "mast.dev"
@@ -99,7 +99,7 @@ gulp.task('scripts', function () {
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish'));
 
-    /* scritpts.min.js concatenate and minify */
+    /* scripts.min.js concatenate and minify */
     gulp.src([
         './js/lib/*.js',
         './js/lib/plugins/*.js',
@@ -128,4 +128,11 @@ gulp.task('images', function() {
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('default', ['build-scripts', 'images', 'serve']);
+/** default - runs serve for development work (serve calls build initially) **/
+gulp.task('default', ['serve']);
+
+/** build - prepares and updates all assets **/
+gulp.task('build', ['build-scripts', 'scripts', 'images', 'sass']);
+
+/** deploy - builds and does anything else necessary before deploying **/
+gulp.task('deploy', ['build']);
