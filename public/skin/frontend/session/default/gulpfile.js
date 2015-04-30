@@ -128,4 +128,4 @@ gulp.task('images', function() {
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('default', ['sass', 'build-scripts', 'images', 'serve']);
+gulp.task('default', ['build-scripts', 'images', 'serve']);
