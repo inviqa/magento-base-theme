@@ -47,7 +47,7 @@ Currently there is no good way of pushing updates to this repo while using the h
 
 ## Other information
 
-### Grunt and Bower
+### Gulp and Bower
 
 After you first boot your VM:
 
