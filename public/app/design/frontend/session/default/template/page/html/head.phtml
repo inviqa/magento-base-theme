@@ -6,23 +6,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
 <link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
-<!--[if lt IE 7]>
-<script type="text/javascript">
-//<![CDATA[
-    var BLANK_URL = '<?php echo $this->helper('core/js')->getJsUrl('blank.html') ?>';
-    var BLANK_IMG = '<?php echo $this->helper('core/js')->getJsUrl('spacer.gif') ?>';
-//]]>
-</script>
-<![endif]-->
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/styles.css'); ?>" media="all" />
 <?php echo $this->getCssJsHtml() ?>
 <?php echo $this->getChildHtml() ?>
 <?php echo $this->helper('core/js')->getTranslatorScript() ?>
 <?php echo $this->getIncludes() ?>
-<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/styles.css'); ?>" media="all" />
-<!--[if lt IE 9]>
-<script src="<?php echo $this->getSkinUrl('js/scripts-ie8.min.js') ?>"></script>
-<![endif]-->
-
-<!--[if IE 9]>
-<script src="<?php echo $this->getSkinUrl('js/scripts-ie9.min.js') ?>"></script>
-<![endif]-->
