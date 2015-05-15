@@ -45,7 +45,17 @@ input, select, textarea, button {
 }
 
 /* Select boxes */
-.styled-select { 
+
+/******************************************************************************************************
+<div class="input-box styled-select">
+    <select id="" name="" title="" class="validate-select">
+       <option value=""></option>
+    </select>
+</div>
+*******************************************************************************************************/
+
+.styled-select {
+    box-sizing: border-box;
     position: relative;
     overflow: hidden;
     padding: 0;
@@ -100,13 +110,14 @@ input.qty {
 /* Radio buttons and checkboxes */
 $form-radio-size: 12px;
 $form-radio-dot-size: 3px;
-$form-radio-offset: 3px;
+$form-checkbox-dox-size: 3px;
+$form-radio-offset: 2px;
 
 input[type="radio"], 
 input[type="checkbox"] {
     position: absolute;
     left: -999em;
-    + span label {
+    + label {
         display: block;
         position: relative;
         margin-bottom: 0.2em;
@@ -122,39 +133,47 @@ input[type="checkbox"] {
             border: $border-default;
         }
     }
-    &:checked + span label {
+    &:checked + label {
         &:after {
-            content: '\00D7';
+            content: '';
             display: inline-block;
             position: absolute;
-            top: $form-radio-offset - 1px;
-            left: 0;
             margin: 1px;
-            height: $form-radio-size;
-            width: $form-radio-size;
             font-size: 16px;
             line-height: $form-radio-size;
             text-align: center;
             vertical-align: middle;
+            background: $colour-form-input-checked;
+        }
+    }
+}
+input[type="checkbox"] {
+    &:checked + label {
+        &:after {
+            top: 4px;
+            left: 2px;
+            width: $form-checkbox-dox-size - 1px;
+            height: $form-checkbox-dox-size - 1px;
+            border: $form-checkbox-dox-size solid $colour-form-input-checked;
         }
     }
 }
 input[type="radio"] {
-    + span label {
+    + label {
         &:before {
+            height: $form-radio-size;
+            width: $form-radio-size;
             border-radius: 50%;
         }
     }
-    &:checked + span label {
+    &:checked + label {
         &:after {
-            content: '';
-            top: $form-radio-offset;
-            left: 0;
+            top: $form-radio-offset + 2px;
+            left: 2px;
             width: ($form-radio-dot-size * 2);
             height: ($form-radio-dot-size * 2);
             margin: 1px;
-            border: ($form-radio-size/2 - $form-radio-dot-size) solid $colour-light-background;
-            background: $colour-body-text;
+            border: ($form-radio-size/2 - $form-radio-dot-size) solid $colour-form-input-checked;
             border-radius: 50%;
         }
     }
@@ -228,11 +247,22 @@ p.required {
         }
     }
     label {
+        box-sizing: border-box;
         float: left;
         padding: 0.5em 0 0.4em 0;
         text-align: right;
         &:after {
             content: ":";
+        }
+    }
+    .control {
+        label {
+            padding: 0;
+            text-align: left;
+            width: 100%;
+            &:after {
+                content: "";
+            }
         }
     }
     .input-box {
