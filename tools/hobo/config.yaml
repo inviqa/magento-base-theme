@@ -1,0 +1,14 @@
+---
+:name: mast
+:git_url: git@github.com:inviqa/magento-base-theme.git
+:seed:
+  :name: magento
+  :url: git@github.com:inviqa/hobo-seed-magento
+  :version: 3ea421a
+:vm_ip: 10.56.62.222
+:hostname: mast.dev
+:asset_bucket: inviqa-assets-mast
+:vm:
+  :project_mount_path: "/vagrant"
+:magento_edition: enterprise
+:magento_version: 1.14.2.0

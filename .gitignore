@@ -17,6 +17,7 @@ Gemfile.lock
 phpdoc.dist.xml
 phpmd.xml
 Rakefile
+vendor
 
 public/api.php
 public/cron.php
