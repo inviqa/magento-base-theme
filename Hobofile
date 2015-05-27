@@ -11,7 +11,7 @@ namespace :config do
     end
 end
 
-task "vm:up" => [
+task "magento:initialize-vm" => [
     'magento:config:enable-errors',
     'tools:n98magerun',
     'magento:setup-scripts:run',
@@ -21,3 +21,5 @@ task "vm:up" => [
     'config:set-theme',
     'magento:cache:clear'
 ]
+
+task "vm:up" => [ 'magento:initialize-vm' ]
