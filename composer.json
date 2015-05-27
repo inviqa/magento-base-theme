@@ -18,8 +18,5 @@
     "extra": {
         "magento-root-dir": "public",
         "auto-append-gitignore": true
-    },
-    "config": {
-        "bin-dir": "bin"
     }
 }
