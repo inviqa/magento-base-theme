@@ -20,5 +20,8 @@
         "magento-root-dir": "public",
         "auto-append-gitignore": true
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "config": {
+        "bin-dir": "bin"
+    }
 }
