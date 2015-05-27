@@ -12,7 +12,12 @@ namespace :config do
 end
 
 task "vm:up" => [
-    "tools:n98magerun",
-    "config:set-theme",
-    "magento:initialize-vm"
+    'magento:config:enable-errors',
+    'tools:n98magerun',
+    'magento:setup-scripts:run',
+    'magento:config:configure-urls',
+    'magento:config:create-admin-user',
+    'magento:config:enable-rewrites',
+    'config:set-theme',
+    'magento:cache:clear'
 ]
