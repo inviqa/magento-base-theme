@@ -3,8 +3,7 @@
         "php": ">=5.4.0",
         "magento-hackathon/magento-composer-installer":"3.0.x-dev",
         "aydin-hassan/magento-core-composer-installer" : "~1.0",
-        "inviqa/magento-enterprise" : "1.14.2.0",
-        "n98/magerun": "~1.96"
+        "inviqa/magento-enterprise" : "1.14.2.0"
     },
     "repositories": [
         {
@@ -20,7 +19,6 @@
         "magento-root-dir": "public",
         "auto-append-gitignore": true
     },
-    "minimum-stability": "dev",
     "config": {
         "bin-dir": "bin"
     }

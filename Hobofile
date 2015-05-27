@@ -11,4 +11,8 @@ namespace :config do
     end
 end
 
-task "vm:up" => ["config:set-theme", "magento:initialize-vm"]
+task "vm:up" => [
+    "tools:n98magerun",
+    "config:set-theme",
+    "magento:initialize-vm"
+]
