@@ -14,10 +14,6 @@ This would reduce the amount of time it takes to set up a new theme for a projec
 
 In your browser of choice, your VM will be available at http://mast.dev
 
-## Making changes
-
-Currently there is no good way of pushing updates to this repo while using the hobo seed as your local environment. It is recommended that you test on your seed VM, then manually copy files over to your `mast-repo` directory where you can commit and push changes.
-
 ## Other information
 
 ### Gulp and Bower
