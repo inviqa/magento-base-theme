@@ -2,4 +2,13 @@
 # ^ Syntax hint
 
 require 'hobo/tasks/magento'
-task "vm:up" => ["magento:initialize-vm"]
+
+namespace :config do
+    task :'set-theme' do
+        Hobo.ui.success 'Setting session theme'
+        vm_shell("bin/n98-magerun.phar config:set design/package/name session", :realtime => true, :indent => 2)
+        Hobo.ui.separator
+    end
+end
+
+task "vm:up" => ["config:set-theme", "magento:initialize-vm"]
