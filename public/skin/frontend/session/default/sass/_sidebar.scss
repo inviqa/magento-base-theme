@@ -1,0 +1,77 @@
+/*------------------------------------------------------------------
+Sidebar
+-------------------------------------------------------------------*/
+
+.sidebar {
+    .callout {
+        display: block;
+        @include rem-fallback(margin, 1, 0);
+    }
+}
+
+/* Generic block */
+.block {
+    @include rem-fallback(margin-bottom, 1);
+    .btn-previous, .btn-remove {
+        float: right;
+        width: 13px;
+        padding-top: 12px;
+        margin-top: 3px;
+        background: url(#{$path-images}/btn_remove.gif) no-repeat 0 0;
+    }
+    .btn-previous {
+        background: url(#{$path-images}/bkg_icon-back.png) no-repeat 0 0;
+    }
+}
+.block-title {
+    @include rem-fallback(margin-bottom, 1);
+}
+.block-content {
+    ul, ol {
+        @extend %remove-list-style;
+    }
+}
+
+/* Block types */
+.block-account {
+    .current {
+        font-weight: bold;
+    }
+}
+.block-compare {
+
+}
+.block-layered-nav {
+    dt {
+        font-weight: bold;
+    }
+    dd {
+        margin-bottom: 1em;
+    }
+    .block-subtitle {
+        display: none;
+    }
+}
+.block-poll {
+    .actions {
+        margin-top: 1em;
+    }
+}
+/* Block: Cart */
+.sidebar .block-cart .block-title { background:#363636; padding:7px 17px; }
+.sidebar .block-cart .block-title strong { font-weight:bold; color:#fff; }
+.sidebar .block-cart .summary { margin:0 -17px; padding:0 12px 5px; background:#363636; color:#fff; text-align:center; position:relative; z-index:1; }
+.sidebar .block-cart .summary a { font-weight:bold; color:#fff; }
+.sidebar .block-cart .summary .subtotal { margin:3px 0 0; }
+.sidebar .block-cart .summary .subtotal .price { font-weight:bold; }
+.sidebar .block-cart .actions { margin:8px 0 13px; text-align:center; }
+.sidebar .block-cart .actions button.button { float:none; }
+.sidebar .block-cart .block-content { padding-top:0; }
+.sidebar .block-cart .block-content table { margin:5px 0 0 0; }
+.sidebar .block-cart .block-content table th { padding:1px 5px 1px 0; color:#8f8f8f; text-align:right; }
+.sidebar .block-cart .block-content table td { text-align:left; padding:1px 0; }
+.sidebar .block-cart  li a.btn-remove { float:none; background:none; margin:0; padding:0; width:auto; height:auto; overflow:visible; }
+
+.sidebar .mini-products-images-list li.item { float:left; padding:5px; text-align:center; }
+
+.block-products .mini-products-list .product-details { margin-left:65px; }

@@ -1,0 +1,41 @@
+/** Styles
+ *
+ * grunt watch
+ * from /theme/default folder
+ *
+ **/
+
+@import
+"normalize",
+"bourbon",
+"grid-settings",
+"neat",
+"colours",
+"vars",
+"fonts",
+"mixins/font-size",
+"mixins/line-height",
+"mixins/rem-filler",
+"mixins/omega-reset",
+"mixins/limit-text",
+"extends",
+"elements/forms",
+"components/messages",
+"components/breadcrumbs",
+"components/toolbar",
+"components/pager",
+"components/sorter",
+"components/tabs",
+"components/events",
+"plugins/owl-carousel",
+"global",
+"header",
+"footer",
+"navigation",
+"sidebar",
+"category",
+"product",
+"cart",
+"checkout",
+"account",
+"cms";

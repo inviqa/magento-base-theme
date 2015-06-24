@@ -1,0 +1,254 @@
+/*------------------------------------------------------------------
+    Header
+-------------------------------------------------------------------*/
+
+.header-container {
+    ul, ol {
+        @extend %remove-list-style;
+    }
+}
+
+.header-panel-wrapper {
+    background-color: $colour-header-panel-background;
+}
+
+.header-panel {
+    @extend %layout-centralize;
+    @include rem-fallback(padding-top, 1);
+    @include rem-fallback(padding-bottom, 1);
+    .welcome-msg {
+        float: left;
+        @include rem-fallback(margin, 0, 1, 0, 0);
+    }
+    .account-links .links {
+        float: left;
+    }
+    .checkout-link {
+        float: right;
+        margin-right: 0;
+    }
+    .top-links .links {
+        float: right;
+        li {
+            @include rem-fallback(margin-right, 1.6);
+        }
+        .last {
+            margin-right: 0;
+        }
+    }
+}
+
+/* switches */
+.switches {
+    float: right;
+}
+
+.switch {
+    float: right;
+    label {
+        float: left;
+    }
+    .switch-wrapper {
+        float: left;
+        position: relative;
+        z-index: 1;
+        @include rem-fallback(padding-left, 1);
+    }
+    strong.current {
+        font-weight: normal;
+    }
+    .switcher {
+        cursor: pointer;
+        @include rem-fallback(padding, 0, 1, 0, 0);
+    }
+    ul {
+        position: absolute;
+        top: 1.5em;
+        left: 0;
+        min-width: 100%;
+        @extend %drop-shadow;
+    }
+    a {
+        display: block;
+        background: $colour-switch-list-background;
+        padding: 0.5em 1em;
+        @include rem-fallback(padding, 0.5, 1);
+        &:hover {
+            background: $colour-switch-list-active-background;
+        }
+    }
+    .current {
+        display: none;
+    }
+}
+
+/* Top Shopping Cart */
+.top-cart {
+    float: right;
+    position: relative;
+    padding-right: 1em;
+    .block-title {
+        cursor: pointer;
+        padding-left: 1.8em;
+        strong {
+            display: block;
+            padding-right: 1em;
+            font-weight: normal;
+            color: $colour-top-cart-title;
+        }
+        &.expanded {
+            strong { background-position: 100% -130px; }
+        }
+    }
+    .block-content {
+        position: absolute;
+        right: 0;
+        top: 1.5em;
+        width: 22em;
+        background-color: $colour-top-cart-content-background;
+        @extend %drop-shadow;
+    }
+    .block-subtitle {
+        padding: 0.5em;
+        margin: 0;
+        background-color: $colour-top-cart-subtitle-background;
+    }
+    .close-btn {
+        @extend %image-replacement;
+        float: right;
+        width: 13px;
+        padding-top: 12px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+    }
+    .cart-empty {
+        padding: 1em;
+        margin: 0;
+    }
+    .item {
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+        &.last {
+            margin-bottom: 0;
+        }
+    }
+    table {
+        margin-bottom: 0.5em;
+        th {
+            font-weight: normal;
+            padding-right: 1em;
+            &:after {
+                content: ":"
+            }
+        }
+    }
+    .product-name {
+        margin: 0 0 0.5em 0;
+    }
+    .product-image {
+        float: left;
+        width: 50px;
+        margin-right: -50px;
+    }
+    .product-details {
+        margin-left: 65px;
+    }
+    .subtotal {
+        font-weight: bold;
+        text-align:center;
+    }
+    .actions {
+        background-color: $colour-top-cart-actions-background;
+        padding: 0.5em 1em;
+        text-align: right;
+        a {
+            float:left;
+            line-height: 1.8em;
+        }
+        button {
+            float:none;
+        }
+    }
+}
+
+.header-wrapper {
+    background-color: $colour-header-background;
+}
+
+.header {
+    @extend %layout-centralize;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    h1 {
+        margin: 0;
+    }
+    .logo-holder {
+        text-align: center;
+    }
+    .links {
+        float: right;
+        margin-bottom: 0;
+        li {
+            padding-right: 1em;
+        }
+    }
+    @include media($sm-tablet-and-above) {
+        .logo-holder {
+            text-align: left;
+            @include span-columns(3);
+        }
+    }
+}
+
+/* form-search */
+.header .form-search {
+    $search-width: 75%;
+    position: relative;
+    label, a {
+        display: none;
+    }
+    .input-text {
+        width: $search-width;
+        float: left;
+    }
+    .button {
+        width: 100% - $search-width;
+        position: absolute;
+        top: 0;
+    }
+    .search-autocomplete {
+        z-index: 999;
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 0;
+        overflow: visible;
+        ul {
+            background-color: $colour-form-search-background;
+            position: absolute;
+            width: $search-width;
+            @extend %drop-shadow;
+        }
+        li {
+            padding: 0.5em 0.5em 0.5em 2.1em;
+            cursor: pointer;
+        }
+        .amount {
+            float: right;
+            font-weight: bold;
+        }
+    }
+}
+#search_mini_form {
+    @include media($sm-tablet-and-above) {
+        @include span-columns(3);
+    }
+}
+
+.header-usp-wrapper {
+    background-color: $colour-header-usp-background;
+}
+.header-usp {
+    @extend %layout-centralize;
+}

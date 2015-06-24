@@ -1,0 +1,34 @@
+/*------------------------------------------------------------------
+    Sorter
+-------------------------------------------------------------------*/
+
+.sorter {
+    @include clearfix;
+    > * {
+        display: inline-block;
+    }
+    @include media($desktop-only) {
+        float: left;
+    }
+}
+.sort-by {
+    margin-left: 1em;
+    > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .styled-select {
+        width: 7em;
+    }
+    a {
+        &[href*="desc"]:after {
+            content: '\2191';
+        }
+        &[href*="asc"]:after {
+            content: '\2193';
+        }
+    }
+    img {
+        display: none;
+    }
+}

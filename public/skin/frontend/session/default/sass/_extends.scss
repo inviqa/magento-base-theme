@@ -1,0 +1,40 @@
+/*------------------------------------------------------------------
+    Extendable classes
+-------------------------------------------------------------------*/
+
+%visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+%image-replacement {
+    display: block;
+    border: 0;
+    text-indent: -999em;
+    overflow: hidden;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    text-align: left;
+    direction: ltr;
+}
+
+%remove-list-style {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+%drop-shadow {
+    box-shadow: 0 4px 10px -2px $colour-drop-shadow;
+}
+
+%body-font {
+    @include font-size($font-body-size);
+    @include line-height($font-body-line-height);
+}

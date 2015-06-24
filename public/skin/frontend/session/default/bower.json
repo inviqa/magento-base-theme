@@ -1,0 +1,22 @@
+{
+  "name": "session magento theme",
+  "version": "0.1",
+  "homepage": "https://github.com/inviqa/magento-base-theme",
+  "authors": [
+    "Edward Chen <edward@sessiondigital.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "bourbon": "~4.2.2",
+    "neat": "~1.7.2"
+  }
+}

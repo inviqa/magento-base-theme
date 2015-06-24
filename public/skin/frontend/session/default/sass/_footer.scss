@@ -1,0 +1,77 @@
+/*------------------------------------------------------------------
+    Footer
+-------------------------------------------------------------------*/
+
+footer {
+    @include clearfix;
+    background: $colour-footer-container-background;
+    @include rem-fallback(padding, 1);
+    @include rem-fallback(margin-top, 1);
+}
+
+.footer {
+    @extend %layout-centralize;
+    form {
+        @include clearfix;
+        @include rem-fallback(margin, 1, 0);
+        .v-fix {
+            width: 75%;
+        }
+        button {
+            width: 25%;
+        }
+    }
+    ul {
+        @include rem-fallback(margin, 1, 0);
+        padding: 0;
+        border-top: $border-default;
+        li {
+            display: block;
+            @include rem-fallback(padding, 0.5);
+            border-bottom: $border-default;
+        }
+    }
+    .copyright {
+        @include rem-fallback(margin, 1, 0);
+        @include span-columns(12);
+    }
+    @include media($sm-tablet-and-above) {
+        ul {
+            @include span-columns(6);
+            @include omega;
+        }
+        form {
+            @include span-columns(6);
+        }
+    }
+    @include media($desktop-only) {
+        ul {
+            @include span-columns(4);
+        }
+        form {
+            @include span-columns(4);
+        }
+        .copyright {
+            @include span-columns(4);
+            @include omega;
+        }
+    }
+}
+
+/* Sticky footer */
+@include media($sm-tablet-and-above) {
+    $footer-height: 250px;
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+    .wrapper {
+        margin-bottom: $footer-height;
+    }
+    footer {
+        height: $footer-height;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}

@@ -1,0 +1,104 @@
+/*------------------------------------------------------------------
+    Category
+-------------------------------------------------------------------*/
+
+.category-view .note-msg,
+.catalogsearch-result-index .note-msg,
+.category-description {
+    @include rem-fallback(margin, 1, 0);
+}
+
+.category-image {
+    @include rem-fallback(margin, 0, 0, 1, 0);
+    text-align: center;
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.category-products {
+    @include rem-fallback(margin, 1, 0);
+}
+.add-to-links {
+    @extend %remove-list-style;
+    @include rem-fallback(margin-top, 1);
+    .separator {
+        display: none;
+    }
+}
+
+/* View Type: Grid */
+.products-grid {
+    @include clearfix;
+    @include outer-container;
+    @extend %remove-list-style;
+    text-align: center;
+    .item {
+        @include rem-fallback(margin-top, 1);
+        @include rem-fallback(margin-bottom, 1);
+        .box-collateral & {
+            @include span-columns(6);
+            @include omega(2n);
+        }
+    }
+    .product-image {
+        display: block;
+        margin: 0 auto;
+        @include rem-fallback(margin-bottom, 1);
+        position: relative;
+        img {
+            height: auto;
+            max-width: 100%;
+        }
+    }
+    .product-name {
+        @include font-size($font-body-size);
+        @include line-height($font-body-line-height);
+        @include rem-fallback(margin-bottom, 0.5);
+    }
+    .rating-links {
+        display: block;
+        clear: both;
+    }
+    .price-box {
+        @include rem-fallback(margin, 0.5, 0);
+        clear: both;
+    }
+    @include media($sm-tablet-and-above) {
+        .item {
+            .category-products & {
+                @include span-columns(2 of 6);
+            }
+            .box-collateral & {
+                @include omega-reset(2n);
+                @include span-columns(3);
+                @include omega(4n);
+            }
+        }
+    }
+}
+
+/* View Type: List */
+.products-list {
+    @extend %remove-list-style;
+    li.item {
+        @include clearfix;
+    }
+    .product-image {
+        @include span-columns(2 of 6);
+    }
+    .product-shop {
+        @include span-columns(4 of 6);
+    }
+    .product-name {
+    }
+    .price-box {
+    }
+    .desc {
+    }
+}
+
+.box-collateral {
+
+}

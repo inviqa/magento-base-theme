@@ -1,0 +1,84 @@
+/*------------------------------------------------------------------
+    Navigation
+-------------------------------------------------------------------*/
+
+.nav-container {
+    @include clearfix;
+    background: $colour-nav-container-background;
+    position: relative;
+    z-index: 4;
+    @include media($sm-tablet-and-above) {
+        @include span-columns(6);
+    }
+}
+
+.nav-primary {
+    /* All Levels */
+    li {
+        padding: 1em;
+        &.over {
+            z-index: 990;
+        }
+        &.parent {
+            position: relative;
+        }
+    }
+    /* 1st Level (Top Level) */
+    li.level-top {
+        float: left;
+        position: relative;
+        z-index: 1;
+    }
+    a.level-top {
+        float: left;
+    }
+    li.over a.level-top {
+        position: relative;
+        z-index: 2;
+    }
+    li {
+        &.active {
+            background-color: $colour-nav-primary-active-background;
+        }
+        &.over {
+            background-color: $colour-nav-primary-over-background;
+        }
+    }
+
+    /* 2nd Level */
+    ul,
+    div {
+        position: absolute;
+        width: 13.5em;
+        top: 3.2em;
+        left: -10000px;
+        background: $colour-nav-primary-subnav-background;
+        @extend %drop-shadow;
+        li {
+            float: none;
+            display: block;
+            padding: 0.5em 1em;
+            a {
+                display:block;
+            }
+        }
+    }
+    div ul {
+        position: static;
+        width: auto;
+        background: none;
+        padding: 0;
+
+    }
+    /* 3rd+ Level */
+    ul ul {
+        top: 0;
+    }
+    li .shown-sub {
+        left: 0;
+        z-index: 991;
+        .shown-sub {
+            left: 100%;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+/*------------------------------------------------------------------
+Colours
+-------------------------------------------------------------------*/
+
+/* brand */
+$colour-brand-primary                    : #ec008c;
+
+/* backgrounds and borders */
+$colour-white-background                 : #fff;
+$colour-light-background                 : #efefef;
+$colour-border-default                   : #ccc;
+
+/* drop-shadow */
+$colour-drop-shadow                      : rgba(#000, 0.2);
+
+/* global-site-notice */
+$colour-notice-border                    : $colour-border-default;
+$colour-notice-background                : #ff9;
+
+/* typography */
+$colour-body-text                        : #333;
+$colour-text-muted                       : #999;
+$colour-text-light                       : #fff;
+
+/* links */
+$colour-link                             : $colour-brand-primary;
+$colour-link-active                      : $colour-brand-primary;
+
+/* traffic lights */
+$colour-success                          : #00ff00;
+$colour-warn                             : #ffcc00;
+$colour-error                            : #ff0000;
+
+/* forms */
+$colour-form-input-background            : $colour-white-background;
+$colour-form-input-border                : $colour-border-default;
+$colour-form-controls                    : $colour-light-background;
+$colour-form-textarea-default-value      : $colour-border-default;
+$colour-form-input-disabled              : $colour-border-default;
+$colour-form-input-disabled-background   : $colour-light-background;
+$colour-form-validation-error            : $colour-error;
+$colour-form-validation-error-background : $colour-error;
+$colour-form-validation-error-border     : $colour-error;
+$colour-form-required                    : $colour-error;
+$colour-form-button                      : $colour-brand-primary;
+$colour-form-button-text                 : $colour-text-light;
+$colour-form-search-background           : $colour-white-background;
+
+/* body */
+$colour-body-background                  : $colour-white-background;
+$colour-header-panel-background          : $colour-white-background;
+$colour-header-background                : $colour-white-background;
+$colour-header-usp-background            : $colour-light-background;
+
+/* switch */
+$colour-switch-list-background           : $colour-light-background;
+$colour-switch-list-active-background    : $colour-light-background;
+
+/* top-cart */
+$colour-top-cart-title                   : $colour-brand-primary;
+$colour-top-cart-subtitle-background     : $colour-light-background;
+$colour-top-cart-content-background      : $colour-light-background;
+$colour-top-cart-actions-background      : $colour-light-background;
+
+/* nav-container */
+$colour-nav-container-background         : $colour-white-background;
+$colour-nav-primary-subnav-background    : $colour-light-background;
+$colour-nav-primary-active-background    : $colour-white-background;
+$colour-nav-primary-over-background      : $colour-white-background;
+
+/* footer */
+$colour-footer-container-background      : $colour-light-background;

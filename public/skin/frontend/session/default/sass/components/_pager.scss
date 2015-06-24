@@ -1,0 +1,50 @@
+/*------------------------------------------------------------------
+    Pager
+-------------------------------------------------------------------*/
+
+.pager {
+    @include clearfix;
+    margin-bottom: 1em;
+    > * {
+        display: inline-block;
+    }
+    .pages {
+        display: block;
+        strong {
+            font-weight: normal;
+        }
+        ol, li {
+            display: inline;
+        }
+        .current {
+            font-weight: bold;
+        }
+        .prev:after {
+            content: '\2039';
+        }
+        .next:after {
+            content: '\203A';
+        }
+        img {
+            display: none;
+        }
+    }
+    .amount {
+    }
+    .styled-select {
+        display: inline-block;
+        width: auto;
+        min-width: 4em;
+    }
+    @include media($desktop-only) {
+        float: right;
+        margin-bottom: 0;
+    }
+}
+
+.limiter {
+    margin-left: 1em;
+    > * {
+        vertical-align: middle;
+    }
+}

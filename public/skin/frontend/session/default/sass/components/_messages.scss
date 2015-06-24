@@ -1,0 +1,49 @@
+/*------------------------------------------------------------------
+    Global Messages
+-------------------------------------------------------------------*/
+
+.messages {
+    padding: 0;
+    li {
+        margin: 0;
+        list-style: none;
+        ul {
+            padding: 0;
+        }
+    }
+    > li {
+        padding: 0.6em 1em 0.5em;
+        margin-bottom: 0.6em;
+        border-width: 1px;
+        border-style: solid;
+    }
+}
+.error-msg {
+    border-color: $colour-error;
+    background: lighten($colour-error, 40%);
+}
+.success-msg {
+    border-color: $colour-success;
+    background: lighten($colour-success, 40%);
+}
+.warn-msg {
+    border-color: $colour-warn;
+    background: lighten($colour-warn, 40%);
+}
+
+/* Global site notices */
+.global-site-notice {
+    border-bottom: $border-default;
+    background: $colour-notice-background;
+    .notice-inner {
+        @include outer-container;
+        @include rem-fallback(padding, 1, 0, 1, 6);
+        p {
+            margin: 0;
+            @include rem-fallback(padding, 1.2, 0, 1, 0);
+        }
+        .actions {
+            @include rem-fallback(padding-top, 1);
+        }
+    }
+}

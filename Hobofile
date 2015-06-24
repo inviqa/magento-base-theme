@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# ^ Syntax hint
+
+require 'hobo/tasks/magento'
+
+namespace :config do
+    task :'set-theme' do
+        Hobo.ui.success 'Setting session theme'
+        vm_shell("bin/n98-magerun.phar config:set design/package/name session", :realtime => true, :indent => 2)
+        Hobo.ui.separator
+    end
+end
+
+task "magento:initialize-vm" => [
+    'magento:config:enable-errors',
+    'tools:n98magerun',
+    'magento:setup-scripts:run',
+    'magento:config:configure-urls',
+    'magento:config:create-admin-user',
+    'magento:config:enable-rewrites',
+    'config:set-theme',
+    'magento:cache:clear'
+]
+
+task "vm:up" => [ 'magento:initialize-vm' ]

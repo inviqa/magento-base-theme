@@ -1,0 +1,183 @@
+/*------------------------------------------------------------------
+    Global
+-------------------------------------------------------------------*/
+
+html {
+    font-size: 75%;
+    -ms-text-size-adjust: 75%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    color: $colour-body-text;
+    font-family: $font-body;
+    @extend %body-font;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    @include rem-fallback(margin, 2, 0, 1, 0);
+}
+
+h1 {
+    font-family: $font-heading;
+    @include font-size(36);
+    @include line-height(40);
+    margin-top: 0;
+}
+h2 {
+    font-family: $font-heading;
+    @include font-size(24);
+    @include line-height(28);
+}
+h3 {
+    @include font-size(18);
+    @include line-height(22);
+}
+h4 {
+    @include font-size(16);
+    @include line-height(20);
+}
+h5 {
+    @include font-size(14);
+    @include line-height(18);
+}
+h6 {
+    @include font-size(12);
+    @include line-height(16);
+}
+
+p {
+    @include rem-fallback(margin, 1, 0, 1, 0);
+}
+
+a {
+    color: $colour-link;
+    text-decoration: none;
+    &:hover,
+    &:active {
+        color: $colour-link-active;
+        text-decoration: underline;
+    }
+}
+address {
+    font-style: normal;
+}
+
+/* Other global styles */
+caption, th, td {
+    vertical-align: top;
+}
+ul {
+    @include rem-fallback(padding-left, 1.5);
+    &.links {
+        padding-left: 0;
+        li {
+            display: inline;
+        }
+    }
+}
+ol {
+    list-style-type: none;
+    padding-left: 0;
+    &.decimal {
+        @include rem-fallback(padding-left, 1.5);
+        list-style-type: decimal;
+    }
+}
+dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout */
+
+%layout-centralize {
+    @include box-sizing(content-box);
+    @include outer-container;
+    padding: 0 percentage($outer-gutter / ($max-width + 2 * $outer-gutter));
+}
+.no-display {
+    @extend %visuallyhidden;
+}
+
+body {
+    background-color: $colour-body-background;
+}
+
+.main-container {
+    @extend %layout-centralize;
+    @include rem-fallback(padding-top, 2);
+    @include rem-fallback(padding-bottom, 2);
+}
+
+@include media($sm-tablet-and-above) {
+    .col2-left-layout,
+    .col2-right-layout {
+        .col-main {
+            @include span-columns(9);
+        }
+    }
+    .col2-left-layout {
+        .col-left {
+            @include span-columns(3);
+        }
+    }
+    .col2-right-layout {
+        .col-right {
+            @include span-columns(3);
+        }
+    }
+    .col3-layout {
+        .col-left {
+            @include span-columns(3);
+        }
+        .col-main {
+            @include span-columns(6);
+        }
+        .col-right {
+            @include span-columns(3);
+        }
+    }
+}
+
+/* Content Columns */
+
+.col2-set {
+    @include clearfix;
+    @include media($sm-tablet-and-above) {
+        .col-1,
+        .col-2 {
+            @include span-columns(6);
+        }
+        .narrow {
+            @include span-columns(4);
+        }
+        .wide {
+            @include span-columns(8);
+        }
+    }
+}
+
+.col3-set {
+    .col-1,
+    .col-2,
+    .col-3 {
+        @include span-columns(4);
+    }
+}
+
+.col4-set {
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4 {
+        @include span-columns(3);
+    }
+}

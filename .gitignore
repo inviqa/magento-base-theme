@@ -1,9 +1,11 @@
 .bundle
 .idea
 .sass-cache
+.DS_Store
 bin
 docs
 node_modules
+bower_components
 spec
 tests
 tools
@@ -15,6 +17,7 @@ Gemfile.lock
 phpdoc.dist.xml
 phpmd.xml
 Rakefile
+vendor
 
 public/api.php
 public/cron.php

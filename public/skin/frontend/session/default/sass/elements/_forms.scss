@@ -1,0 +1,330 @@
+/*------------------------------------------------------------------
+    Forms
+    Reference: http://goo.gl/ylfde
+-------------------------------------------------------------------*/
+
+$form-label-width: 25%;
+$form-input-box-width: 75%;
+$form-validation-icon-width: 2em;
+$form-element-padding: 0.3em 0.5em 0.2em;
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0 0 1em 0;
+}
+legend {
+    display: none;
+}
+
+/** Form Elements **/
+
+input, select, textarea, button {
+    margin: 0;
+    padding: $form-element-padding;
+    font-family: inherit;
+    outline: none;
+    @include appearance(none);
+    @include box-sizing(border-box);
+    border-radius: 0;
+    min-height: 2.4em;
+    vertical-align: middle;
+    &.disabled, &[disabled] {
+        background: $colour-form-input-disabled-background;
+        color: $colour-form-input-disabled;
+    }
+    @include placeholder {
+        color: $colour-form-input-disabled;
+    }
+}
+.input-text, textarea, .styled-select, .multiselect {
+    background-color: $colour-form-input-background;
+    border: 1px solid $colour-form-input-border;
+    vertical-align: top;
+    width: 100%;
+}
+
+/* Select boxes */
+.styled-select { 
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    select {
+        width: 115%;
+        background-color: transparent; 
+        background-image: none;
+        border: none;
+        box-shadow: none;
+        padding-right: 20%;
+    }
+    &:after {
+        content: '\25BE';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 1.5em;
+        background: $colour-light-background;
+        text-align: center;
+        line-height: 2.4em;
+        pointer-events: none;
+    }
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+textarea.default-value {
+    color: $colour-form-textarea-default-value;
+}
+input.qty {
+    width: 2.5em;
+}
+.customer-dob {
+    div {
+        display: inline-block;
+        width: 4em;
+        margin-right: 0.5em; 
+    }
+    label {
+        visibility: hidden;
+    }
+    input {
+        text-align: center;
+    }
+}
+
+/* Radio buttons and checkboxes */
+$form-radio-size: 12px;
+$form-radio-dot-size: 3px;
+$form-radio-offset: 3px;
+
+input[type="radio"], 
+input[type="checkbox"] {
+    position: absolute;
+    left: -999em;
+    + span label {
+        display: block;
+        position: relative;
+        margin-bottom: 0.2em;
+        &:before {
+            content: ''; 
+            display: inline-block;
+            position: relative;
+            top: $form-radio-offset;
+            margin-right: 0.75em;
+            background: $colour-light-background;
+            height: $form-radio-size;
+            width: $form-radio-size;
+            border: $border-default;
+        }
+    }
+    &:checked + span label {
+        &:after {
+            content: '\00D7';
+            display: inline-block;
+            position: absolute;
+            top: $form-radio-offset - 1px;
+            left: 0;
+            margin: 1px;
+            height: $form-radio-size;
+            width: $form-radio-size;
+            font-size: 16px;
+            line-height: $form-radio-size;
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+}
+input[type="radio"] {
+    + span label {
+        &:before {
+            border-radius: 50%;
+        }
+    }
+    &:checked + span label {
+        &:after {
+            content: '';
+            top: $form-radio-offset;
+            left: 0;
+            width: ($form-radio-dot-size * 2);
+            height: ($form-radio-dot-size * 2);
+            margin: 1px;
+            border: ($form-radio-size/2 - $form-radio-dot-size) solid $colour-light-background;
+            background: $colour-body-text;
+            border-radius: 50%;
+        }
+    }
+}
+
+
+/* Form Validation */
+.validation-advice {
+    clear: both;
+    color: $colour-form-validation-error;
+    padding: 0.5em 0 0 0;
+}
+
+.product-options .validation-error .options-list,
+input.input-text.validation-failed,
+textarea.validation-failed {
+    border-color: $colour-form-validation-error-border;
+    background: $colour-form-validation-error-background;
+}
+
+span.validation-passed,
+div.validation-passed {
+    background: url(#{$path-images}/icon_ok.gif) 100% 2px no-repeat;
+    padding-right: 2em;
+}
+
+span.validation-error,
+div.validation-error {
+    background: url(#{$path-images}/icon_error.gif) 100% 2px no-repeat;
+}
+
+.required em {
+    margin-right: 0.3em;
+    color: $colour-form-required;
+}
+p.required {
+    margin: 0;
+    color: $colour-text-muted;
+}
+
+/* Expiration date and CVV number validation fix */
+.v-fix {
+    float: left;
+}
+.v-fix .validation-advice {
+    display:block;
+    width: 12em;
+    margin-right: -12em;
+    position: relative;
+}
+
+/* Fieldset */
+.fieldset,
+.fieldset p {
+    margin-bottom: 1.5em;
+}
+
+/* Form lists */
+.form-list {
+    @extend %remove-list-style;
+    li {
+        @include clearfix;
+        margin-bottom: 1em;
+        vertical-align: top;
+        .field {
+            @include clearfix;
+            margin-bottom: 1em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    label {
+        float: left;
+        padding: 0.5em 0 0.4em 0;
+        text-align: right;
+        &:after {
+            content: ":";
+        }
+    }
+    .input-box {
+        float: left;
+        width: 100%;
+        margin-bottom: 0.2em;
+        a {
+            margin-top: 0.5em;
+        }
+    }
+    .value {
+        float: left;
+    }
+    .note {
+        clear: both;
+    }
+    p {
+        margin: 0;
+    }
+}
+
+@include media($sm-tablet-and-above) {
+    .form-list {
+        label {
+            width: $form-label-width;
+            padding: 0.5em 1em 0 0;
+            text-align: right;
+        }
+        .input-box,
+        .value,
+        .input-range {
+            width: $form-input-box-width;
+            float: right;
+        }
+        .input-box {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        .value {
+            padding: 0.2em 0 0;
+        }
+        .note {
+            margin: 0;
+            padding: 0.2em 0 0 $form-label-width;
+        }
+        p {
+            padding: 0 0 0 $form-label-width;
+        }
+        .add-field .input-box {
+            margin-left: $form-label-width;
+        }
+    }
+}
+
+/*------------------------------------------------------------------
+    Buttons
+-------------------------------------------------------------------*/
+
+button, a.button {
+    background-color: $colour-form-button;
+    border: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: $colour-form-button-text;
+}
+
+/* Buttons */
+.buttons-set {
+    @include clearfix;
+    @include rem-fallback(margin, 1, 0);
+    .back-link {
+        float: left;
+        margin: 0;
+    }
+}
+
+.buttons-set a.button,
+.buttons-set button.button {
+    float: right;
+}
+
+.buttons-set2 {
+    clear: both;
+    text-align: right;
+}
+
+.form-buttons {
+    margin: 0;
+    .button {
+        float: right;
+    }
+    p.back-link {
+        float: left;
+    }
+}
