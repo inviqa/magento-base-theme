@@ -2,19 +2,26 @@
 
 [Wiki page](https://ibuildings.jira.com/wiki/display/SESSIONMX/MAST-++Magento+Session+Theme)
 
-The aim of the theme is to create a starting point for all projects whether they are mobile, responsive or desktop redesign projects.
+## Goals
 
-This would reduce the amount of time it takes to set up a new theme for a project but reducing the time spent optimising a enterprise/default magento theme which usually takes at least a day. This would also help in standardising the structure and frontend code structure of projects, improving the consistency of code and improve efficiency when woking on multiple projects.
+The aims of MAST are to:
+
+* reduce set up time on new projects.
+* standardise the structure and tooling for frontend work.
+* improve the consistency of code to improve quality / efficiency, especially when working on multiple projects.
+* provide solutions to issues common to most projects.
+* provide a demonstrable theme to share with potential clients.
+* eventually release as an open sourced Magento theme.
 
 ## Getting set up
 
-    `hobo vm up`
+In the root directory:
 
-### In the browser
+    hobo vm up
 
-In your browser of choice, your VM will be available at http://mast.dev
+In your browser of choice, your VM will be available at [http://mast.dev](http://mast.dev).
 
-## Other information
+## Tools and settings
 
 ### Gulp and Bower
 
@@ -26,10 +33,37 @@ After you first boot your VM:
 
 After this, you can run `gulp` and it will:
 
-* Compile Sass
+* Compile SCSS to CSS
 * Build scripts
-* Opitimise images
-* Start a [BrowserSync](http://www.browsersync.io/) server, with watches on styles, js and images 
+* Optimise images
+* Generate the style guide
+* Start a [BrowserSync](http://www.browsersync.io/) server, with watches on styles, js, images, and the style guide
+
+### Pattern Lab
+
+For information on Atomic Design and documentation for pattern lab, visit the [Pattern Lab website](http://patternlab.io/).
+
+#### Viewing the style guide
+
+After gulp is run for the first time, a style guide will be generated at [http://mast.dev/style-guide/index.html](http://mast.dev/style-guide/index.html).
+
+#### Updating the style guide
+
+Source files are located at:
+
+    /public/skin/frontend/session/default/pattern-lab
+
+Note: If the theme name is changed, also update `sourceDir` indicated in:
+
+    /tools/pattern-lab/core/config/config.ini.default
+
+#### About this build
+
+MAST uses a fork of Pattern Lab which allows for configurable source and public directories. The PR from this fork to the official repo can be found here:
+
+* [Pull request #288](https://github.com/pattern-lab/patternlab-php/pull/288)
+
+This PR should be monitored and the official build should be used when the feature is merged.
 
 ### Theme fallback
 
