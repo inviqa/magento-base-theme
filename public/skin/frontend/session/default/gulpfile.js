@@ -1,4 +1,12 @@
-/*global module, require */
+/* set theme name and paths */
+
+var themeName = 'session',
+    publicJsDir = '../../../../../js/',
+    toolsDir = '../../../../../tools/',
+    patternLabDir = 'pattern-lab/'
+;
+
+/* global module, require */
 
 var gulp = require('gulp'),
     $ = require('gulp-load-plugins')({
@@ -9,7 +17,7 @@ var gulp = require('gulp'),
 
 /** serve **/
 
-    gulp.task('serve', ['build'], function() {
+gulp.task('serve', ['build'], function() {
 
     browserSync.init({
         proxy: "mast.dev"
@@ -25,6 +33,11 @@ var gulp = require('gulp'),
     ], ['scripts']);
 
     gulp.watch('./images-original/**/*', ['images']);
+
+    gulp.watch([
+        patternLabDir + 'source/_patterns/**/*.mustache',
+        patternLabDir + 'source/**/*.json'
+    ], ['styleguide']);
 
 });
 
@@ -44,9 +57,6 @@ gulp.task('sass', function() {
 });
 
 /** scripts **/
-
-var publicJsDir = '../../../../js/',
-    themeName = 'session';
 
 gulp.task('build-scripts', function () {
     //replaces multiple calls to js files with one single one with magento core files
@@ -115,6 +125,14 @@ gulp.task('scripts', function () {
 
 });
 
+/** style guide **/
+
+gulp.task('styleguide', $.shell.task([
+    'php ' + toolsDir + 'pattern-lab/core/builder.php -gp'
+]));
+
+/** images **/
+
 gulp.task('images', function() {
     "use strict";
 
@@ -132,7 +150,7 @@ gulp.task('images', function() {
 gulp.task('default', ['serve']);
 
 /** build - prepares and updates all assets **/
-gulp.task('build', ['build-scripts', 'scripts', 'images', 'sass']);
+gulp.task('build', ['build-scripts', 'scripts', 'images', 'sass', 'styleguide']);
 
 /** deploy - builds and does anything else necessary before deploying **/
 gulp.task('deploy', ['build']);
