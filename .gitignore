@@ -8,7 +8,8 @@ node_modules
 bower_components
 spec
 tests
-tools
+tools/*
+!tools/pattern-lab/
 build.xml
 composer.json
 composer.lock
@@ -44,6 +45,7 @@ public/lib/
 public/media/
 public/pkginfo/
 public/shell/
+public/style-guide/
 public/var/
 
 public/app/code
