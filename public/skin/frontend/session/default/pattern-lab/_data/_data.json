@@ -3,7 +3,7 @@
     "htmlClass": "pl",
     "bodyClass": "body",
     "theme": {
-        "name": "session/default",
+        "name": "Session Digital",
         "path": "/skin/frontend/session/default/"
     },
     "favicon": {
@@ -39,8 +39,7 @@
             "alt": "Rectangle"
         },
         "logo": {
-            "src": "images/media/logo.png",
-            "alt": "Session Digital"
+            "src": "images/media/logo.png"
         }
     },
     "headline" : {
