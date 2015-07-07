@@ -2,10 +2,15 @@
     Global
 -------------------------------------------------------------------*/
 
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 html {
     font-size: 75%;
     -ms-text-size-adjust: 75%;
     -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
 }
 
 body {
@@ -99,10 +104,10 @@ dl, dt, dd {
 /* Layout */
 
 %layout-centralize {
-    @include box-sizing(content-box);
     @include outer-container;
     padding: 0 percentage($outer-gutter / ($max-width + 2 * $outer-gutter));
 }
+
 .no-display {
     @extend %visuallyhidden;
 }

@@ -2,10 +2,25 @@
     "title" : "Pattern Lab",
     "htmlClass": "pl",
     "bodyClass": "body",
+    "theme": {
+        "name": "Session Digital",
+        "path": "/skin/frontend/session/default/"
+    },
+    "favicon": {
+        "16": "images/favicon/favicon-16x16.png",
+        "32": "images/favicon/favicon-32x32.png",
+        "apple": "images/favicon/favicon-apple.png",
+        "apple-ipad": "images/favicon/favicon-apple-ipad.png",
+        "apple-retina": "images/favicon/favicon-apple-retina.png"
+    },
     "img": {
         "landscape-4x3": {
             "src": "../../images/fpo_4x3.png",
             "alt": "4x3 Image"
+        },
+        "landscape-3x1": {
+            "src": "../../images/fpo_3x1.png",
+            "alt": "3x1 Image"
         },
         "landscape-16x9": {
             "src": "../../images/fpo_16x9.png",
@@ -22,6 +37,9 @@
         "rectangle": {
             "src": "http://placeimg.com/400/300/tech",
             "alt": "Rectangle"
+        },
+        "logo": {
+            "src": "images/media/logo.png"
         }
     },
     "headline" : {

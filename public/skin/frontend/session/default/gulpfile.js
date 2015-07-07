@@ -23,7 +23,7 @@ gulp.task('serve', ['build'], function() {
         proxy: "mast.dev"
     });
 
-    gulp.watch('./sass/*.scss', ['sass']);
+    gulp.watch('./css/sass/*.scss', ['sass']);
 
     gulp.watch([
         './js/**/*.js',
@@ -44,7 +44,7 @@ gulp.task('serve', ['build'], function() {
 /** sass **/
 
 gulp.task('sass', function() {
-    return gulp.src("./sass/*.scss")
+    return gulp.src("./css/sass/*.scss")
         .pipe($.sass({
             includePaths: [
                 './bower_components/bourbon/app/assets/stylesheets',

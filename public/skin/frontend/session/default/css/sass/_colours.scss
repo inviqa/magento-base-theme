@@ -1,0 +1,95 @@
+/*------------------------------------------------------------------
+    Colour names: only use in this file
+-------------------------------------------------------------------*/
+
+$pink           : #ec008c;
+$green          : #00ff00;
+$yellow         : #ffcc00;
+$red            : #ff0000;
+
+$white          : #ffffff;
+$light-grey     : #efefef;
+$grey           : #cccccc;
+$dark-grey      : #999999;
+$black          : #333333;
+
+/*------------------------------------------------------------------
+    Colour variables: define using colour names
+-------------------------------------------------------------------*/
+
+/* brand */
+$colour-brand-primary       : $pink;
+
+/* backgrounds */
+$colour-background-white    : $white;
+$colour-background-light    : $light-grey;
+
+/* borders */
+$colour-border-default      : $grey;
+
+/* typography */
+$colour-body-text           : $black;
+$colour-text-muted          : $dark-grey;
+$colour-text-light          : $white;
+
+/* traffic lights */
+$colour-success             : $green;
+$colour-warn                : $yellow;
+$colour-error               : $red;
+
+/* drop-shadow */
+$colour-drop-shadow         : rgba($black, 0.2);
+
+
+
+
+
+
+/* global-site-notice */
+$colour-notice-border                       : $colour-border-default;
+$colour-notice-background                   : $colour-background-light;
+
+/* links */
+$colour-link                                : $colour-brand-primary;
+$colour-link-active                         : $colour-brand-primary;
+
+/* forms */
+$colour-form-input-background               : $colour-background-white;
+$colour-form-input-border                   : $colour-border-default;
+$colour-form-controls                       : $colour-background-light;
+$colour-form-textarea-default-value         : $colour-border-default;
+$colour-form-input-disabled                 : $colour-border-default;
+$colour-form-input-disabled-background      : $colour-background-light;
+$colour-form-validation-error               : $colour-error;
+$colour-form-validation-error-background    : $colour-error;
+$colour-form-validation-error-border        : $colour-error;
+$colour-form-required                       : $colour-error;
+$colour-form-button                         : $colour-brand-primary;
+$colour-form-button-text                    : $colour-text-light;
+$colour-form-search-background              : $colour-background-white;
+$colour-form-input-checked                  : $colour-body-text;
+
+/* body */
+$colour-body-background                     : $colour-background-white;
+$colour-header-panel-background             : $colour-background-white;
+$colour-header-background                   : $colour-background-white;
+$colour-header-usp-background               : $colour-background-light;
+
+/* switch */
+$colour-switch-list-background              : $colour-background-light;
+$colour-switch-list-active-background       : $colour-background-light;
+
+/* top-cart */
+$colour-top-cart-title                      : $colour-brand-primary;
+$colour-top-cart-subtitle-background        : $colour-background-light;
+$colour-top-cart-content-background         : $colour-background-light;
+$colour-top-cart-actions-background         : $colour-background-light;
+
+/* nav-container */
+$colour-nav-container-background            : $colour-background-white;
+$colour-nav-primary-subnav-background       : $colour-background-light;
+$colour-nav-primary-active-background       : $colour-background-white;
+$colour-nav-primary-over-background         : $colour-background-white;
+
+/* footer */
+$colour-footer-container-background         : $colour-background-light;

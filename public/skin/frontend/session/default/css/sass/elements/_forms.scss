@@ -25,7 +25,6 @@ input, select, textarea, button {
     font-family: inherit;
     outline: none;
     @include appearance(none);
-    @include box-sizing(border-box);
     border-radius: 0;
     min-height: 2.4em;
     vertical-align: middle;
@@ -66,7 +65,7 @@ input, select, textarea, button {
         bottom: 0;
         right: 0;
         width: 1.5em;
-        background: $colour-light-background;
+        background: $colour-background-light;
         text-align: center;
         line-height: 2.4em;
         pointer-events: none;
@@ -116,7 +115,7 @@ input[type="checkbox"] {
             position: relative;
             top: $form-radio-offset;
             margin-right: 0.75em;
-            background: $colour-light-background;
+            background: $colour-background-light;
             height: $form-radio-size;
             width: $form-radio-size;
             border: $border-default;
@@ -153,7 +152,7 @@ input[type="radio"] {
             width: ($form-radio-dot-size * 2);
             height: ($form-radio-dot-size * 2);
             margin: 1px;
-            border: ($form-radio-size/2 - $form-radio-dot-size) solid $colour-light-background;
+            border: ($form-radio-size/2 - $form-radio-dot-size) solid $colour-background-light;
             background: $colour-body-text;
             border-radius: 50%;
         }
