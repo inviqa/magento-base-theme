@@ -9,11 +9,22 @@
     "favicon": {
         "16": "images/favicon/favicon-16x16.png",
         "32": "images/favicon/favicon-32x32.png",
-        "apple": "images/favicon/favicon-apple.png",
-        "apple-ipad": "images/favicon/favicon-apple-ipad.png",
-        "apple-retina": "images/favicon/favicon-apple-retina.png"
+        "96": "images/favicon/favicon-96x96.png",
+        "194": "images/favicon/favicon-194x194.png",
+        "apple": "images/favicon/apple-touch-icon-72x72.png",
+        "android": "images/favicon/android-chrome-72x72.png",
+        "windows": {
+            "src": "images/favicon/mstile-70x70.png",
+            "background": "#ec008c"
+        }
     },
     "img": {
+        "logo": {
+            "src": "images/media/logo.png"
+        },
+        "loader": {
+            "src": "images/loader.gif"
+        },
         "landscape-4x3": {
             "src": "../../images/fpo_4x3.png",
             "alt": "4x3 Image"
@@ -37,9 +48,6 @@
         "rectangle": {
             "src": "http://placeimg.com/400/300/tech",
             "alt": "Rectangle"
-        },
-        "logo": {
-            "src": "images/media/logo.png"
         }
     },
     "headline" : {
