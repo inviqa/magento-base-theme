@@ -32,6 +32,7 @@ After you first boot your VM:
     cd /public/skin/frontend/session/default
     npm install
     bower install
+    php ../../../../../tools/pattern-lab/core/builder.php -g
 
 After this, you can run `gulp` and it will:
 
