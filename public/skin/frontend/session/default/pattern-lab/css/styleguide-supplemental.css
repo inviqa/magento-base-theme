@@ -1,0 +1,9 @@
+/*------------------------------------------------------------------
+    Pattern Lab specific styles
+    To override default styling. These will
+    not be included in production CSS.
+-------------------------------------------------------------------*/
+
+* {
+    color: blue !important;
+}
