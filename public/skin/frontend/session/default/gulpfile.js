@@ -36,7 +36,9 @@ gulp.task('serve', ['build'], function() {
 
     gulp.watch([
         patternLabDir + '_patterns/**/*.mustache',
-        patternLabDir + '**/*.json'
+        patternLabDir + '**/*.json',
+        patternLabDir + '**/*.js',
+        patternLabDir + '**/*.scss'
     ], ['styleguide']);
 
 });
@@ -128,7 +130,7 @@ gulp.task('scripts', function () {
 /** style guide **/
 
 gulp.task('styleguide', $.shell.task([
-    'php ' + toolsDir + 'pattern-lab/core/builder.php -gp'
+    'php ' + toolsDir + 'pattern-lab/core/builder.php -g'
 ]));
 
 /** images **/
