@@ -25,6 +25,8 @@ In your browser of choice, your VM will be available at [http://mast.dev](http:/
 
 ### Gulp and Bower
 
+You should have `gulp` installed globally on your machine.
+
 After you first boot your VM:
 
     cd /public/skin/frontend/session/default

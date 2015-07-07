@@ -1,7 +1,7 @@
 /* set theme name and paths */
 
 var themeName = 'session',
-    publicJsDir = '../../../../../js/',
+    publicJsDir = '../../../../js/',
     toolsDir = '../../../../../tools/',
     patternLabDir = 'pattern-lab/'
 ;
@@ -38,7 +38,7 @@ gulp.task('serve', ['build'], function() {
         patternLabDir + '_patterns/**/*.mustache',
         patternLabDir + '**/*.json',
         patternLabDir + '**/*.js',
-        patternLabDir + '**/*.scss'
+        patternLabDir + '**/*.css'
     ], ['styleguide']);
 
 });
