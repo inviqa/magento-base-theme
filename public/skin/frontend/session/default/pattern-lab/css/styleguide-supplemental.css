@@ -1,9 +1,43 @@
 /*------------------------------------------------------------------
-    Pattern Lab specific styles
-    To override default styling. These will
-    not be included in production CSS.
+    Styles specific to Pattern Lab to override default styles.
+    These will not be included in production CSS.
 -------------------------------------------------------------------*/
 
-* {
-    color: blue !important;
+.sg-pattern-body {
+    margin: 0 1.5em;
+}
+
+.pl .sg-pattern-head,
+.sg-pattern-subhead {
+    margin: 0 1em 2em;
+    padding: 1em 0.5em 0;
+    font-size: 90%;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.sg-pattern-subhead {
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+.sg-colors {
+    padding-left: 0;
+}
+.sg-colors li {
+    list-style: none;
+    min-width: 12em;
+}
+.sg-colors .sg-label {
+    display: block;
+    margin-top: 0.25em;
+    text-align: right;
+}
+.sg-colors code {
+    float: left;
+}
+@media all and (max-width: 30em) {
+    .sg-colors .sg-swatch {
+        width: 35%;
+    }
 }
