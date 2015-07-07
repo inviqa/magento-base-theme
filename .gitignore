@@ -19,7 +19,7 @@ Gemfile.lock
 phpdoc.dist.xml
 phpmd.xml
 Rakefile
-vendor
+/vendor
 
 public/api.php
 public/cron.php
