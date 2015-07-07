@@ -35,8 +35,9 @@ gulp.task('serve', ['build'], function() {
     gulp.watch('./images-original/**/*', ['images']);
 
     gulp.watch([
-        patternLabDir + 'source/_patterns/**/*.mustache',
-        patternLabDir + 'source/**/*.json'
+        patternLabDir + '_patterns/**/*.mustache',
+        patternLabDir + '**/*.json',
+        patternLabDir + '**/*.scss'
     ], ['styleguide']);
 
 });
