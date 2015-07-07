@@ -57,6 +57,10 @@ Note: If the theme name is changed, also update `sourceDir` indicated in:
 
     /tools/pattern-lab/core/config/config.ini.default
 
+And the theme path and name in:
+
+    /public/skin/frontend/session/default/pattern-lab/_data/_data.json
+
 #### About this build
 
 MAST uses a fork of Pattern Lab which allows for configurable source and public directories. The PR from this fork to the official repo can be found here:
