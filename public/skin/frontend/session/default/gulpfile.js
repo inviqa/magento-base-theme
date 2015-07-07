@@ -1,7 +1,7 @@
 /* set theme name and paths */
 
 var themeName = 'session',
-    publicJsDir = '../../../../../js/',
+    publicJsDir = '../../../../js/',
     toolsDir = '../../../../../tools/',
     patternLabDir = 'pattern-lab/'
 ;
