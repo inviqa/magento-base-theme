@@ -3,11 +3,8 @@
 -------------------------------------------------------------------*/
 
 /* size */
-$base-font-size         : 12;
-$font-body-size         : $base-font-size;
-$font-body-line-height  : 16;
-$font-size-default      : $base-font-size;
-$font-height-default    : 16;
+$font-size-default      : 16;
+$font-height-default    : 1.5;
 
 /* weights */
 $font-weight-light      : 100;
@@ -15,8 +12,9 @@ $font-weight-default    : 400;
 $font-weight-heavy      : 700;
 $font-weight-black      : 900;
 
-/* font applications: use these variables in other files */
-$font-brand             : serif;
-$font-serif             : serif;
-$font-sans              : sans-serif;
+/* font definitions */
+$font-serif             : $georgia;
+$font-sans              : $helvetica;
+
 $font-default           : $font-sans;
+$font-brand             : $font-sans;

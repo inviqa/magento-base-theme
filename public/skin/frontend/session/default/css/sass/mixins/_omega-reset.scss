@@ -1,7 +1,7 @@
-// ------------------------------------------------------------
-// Omega reset for Bourbon Neat
-// http://joshfry.me/blog/2013/05/13/omega-reset-for-bourbon-neat/
-// ------------------------------------------------------------
+/*------------------------------------------------------------------
+    Omega reset for Bourbon Neat
+    http://joshfry.me/blog/2013/05/13/omega-reset-for-bourbon-neat/
+-------------------------------------------------------------------*/
 
 @mixin omega-reset($nth) {
     &:nth-child(#{$nth}) {

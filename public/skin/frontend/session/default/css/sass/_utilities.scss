@@ -48,3 +48,38 @@
 .font-brand {
     font-family: $font-brand;
 }
+.font-serif {
+    font-family: $font-serif;
+}
+
+/* links */
+.link-colour-default {
+    @include link-colour-default;
+}
+.link-colour-alt {
+    @include link-colour-alt;
+}
+.link-colour-brand {
+    @include link-colour-brand;
+}
+.link-colour-pop {
+    @include link-colour-pop;
+}
+.link-colour-body {
+    @include link-colour-body;
+}
+.link-colour-white {
+    @include link-colour-white;
+}
+.link-style-default {
+    @include decoration(default);
+}
+.link-style-invert {
+    @include decoration(invert);
+}
+.link-style-none {
+    @include decoration(none);
+}
+.link-style-underline {
+    @include decoration(underline);
+}

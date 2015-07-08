@@ -5,8 +5,13 @@
 /* paths */
 $path-images                : "../images";
 
+/* links */
+$link-style-default         : none;
+$link-style-active          : underline;
+
 /* borders */
 $border-default             : 1px solid $colour-border-default;
+$border-light               : 1px solid $colour-border-light;
 
 /* shadows */
 $shadow-default             : 0 4px 10px -2px $colour-drop-shadow;

@@ -3,15 +3,15 @@
 -------------------------------------------------------------------*/
 
 html {
-    font-size: 75%;
-    -ms-text-size-adjust: 75%;
-    -webkit-text-size-adjust: 100%;
+    font-size: 85%;
+    -ms-text-size-adjust: 85%;
+    -moz-text-size-adjust: 85%;
+    -webkit-text-size-adjust: 85%;
 }
 body {
     color: $colour-text-default;
     font-family: $font-default;
-    @include font-size($font-body-size);
-    @include line-height($font-body-line-height);
+    @include font-size($font-size-default);
 }
 
 /* Headings */
@@ -23,35 +23,32 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     color: $colour-brand-primary;
-    @include font-size(36);
-    @include line-height(40);
+    @include font-size(48);
     margin-top: 0;
 }
 h2 {
-    @include font-size(24);
-    @include line-height(28);
+    @include font-size(36);
 }
 h3 {
     color: $colour-brand-primary;
-    @include font-size(18);
-    @include line-height(22);
-    font-family: $font-brand;
+    @include font-size(24);
+    font-family: $font-serif;
 }
 h4 {
-    @include font-size(16);
-    @include line-height(20);
-    font-family: $font-brand;
+    @include font-size(18);
+    font-family: $font-serif;
 }
 h5 {
-    @include font-size(14);
-    @include line-height(18);
+    @include font-size(16);
+    color: $colour-brand-primary;
+    font-weight: $font-weight-default;
 }
 h6 {
-    @include font-size(12);
-    @include line-height(16);
+    @include font-size(14);
+    font-weight: $font-weight-default;
 }
 
-/* Other text elements */
+/* Block elements */
 p {
     @include rem-fallback(margin, 1, 0);
 }
@@ -60,27 +57,28 @@ blockquote {
     @include rem-fallback(padding, 0.5, 1.5);
     border-left: 3px solid $colour-brand-primary;
     color: $colour-brand-secondary;
-    font-family: $font-brand;
-    @include font-size(16);
-    @include line-height(24);
+    @include font-size(20);
+    font-family: $font-serif;
+    font-style: italic;
+    line-height: 2;
+}
+address {
+    font-style: normal;
+}
+hr {
+    @include rem-fallback(margin, 2);
+    border: 0;
+    border-bottom: $border-default;
+}
+
+/* Inline elements */
+b, strong {
+    font-weight: $font-weight-heavy;
 }
 abbr {
     cursor: help;
 }
 mark {
+    @include rem-fallback(padding, 0, 0.2);
     background: rgba($colour-brand-primary, 0.25);
-}
-address {
-    font-style: normal;
-}
-
-/* Links */
-a {
-    color: $colour-link;
-    text-decoration: none;
-    &:hover,
-    &:active {
-        color: $colour-link-active;
-        text-decoration: underline;
-    }
 }

@@ -9,8 +9,8 @@ $yellow                     : #e3a11e;
 $red                        : #a9313d;
 $white                      : #ffffff;
 $light-grey                 : #efefef;
-$grey                       : #606669;
-$dark-grey                  : #888888;
+$grey                       : #cccccc;
+$dark-grey                  : #606669;
 $black                      : #333333;
 
 /*------------------------------------------------------------------
@@ -19,7 +19,7 @@ $black                      : #333333;
 
 /* brand */
 $colour-brand-primary       : $pink;
-$colour-brand-secondary     : $grey;
+$colour-brand-secondary     : $dark-grey;
 
 /* messaging */
 $colour-info                : $blue;
@@ -34,8 +34,10 @@ $colour-text-dark           : $dark-grey;
 $colour-text-light          : $white;
 
 /* links */
-$colour-link                : $colour-brand-primary;
+$colour-link-default        : $colour-brand-primary;
 $colour-link-active         : $colour-brand-primary;
+$colour-link-alt            : $colour-brand-secondary;
+$colour-link-alt-active     : $black;
 
 /* backgrounds */
 $colour-background-white    : $white;
@@ -44,6 +46,7 @@ $colour-background-dark     : $dark-grey;
 
 /* borders */
 $colour-border-default      : $grey;
+$colour-border-light        : $light-grey;
 
 /* drop-shadow */
 $colour-drop-shadow         : rgba($black, 0.2);

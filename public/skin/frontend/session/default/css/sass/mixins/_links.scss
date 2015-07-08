@@ -1,0 +1,79 @@
+/*------------------------------------------------------------------
+    Link colour
+
+        Example of link colour with red hover colour:
+            @include decoration(black, red);
+
+        Example of persistent colours:
+            @include decoration(white);
+            @include decoration(black);
+
+        Common patterns added after initial mixin:
+            @include link-colour-default;
+            @include link-colour-brand;
+            @include link-colour-pop;
+            @include link-colour-body;
+            @include link-colour-white;
+-------------------------------------------------------------------*/
+
+@mixin link-colour($colour: $colour-link-default, $colour-active: $colour) {
+    color: $colour;
+    &:hover,
+    &:active {
+        color: $colour-active;
+    }
+}
+@mixin link-colour-default {
+    @include link-colour($colour-link-default, $colour-link-active);
+}
+@mixin link-colour-alt {
+    @include link-colour($colour-link-alt, $colour-link-alt-active);
+}
+@mixin link-colour-brand {
+    @include link-colour($colour-brand-primary);
+}
+@mixin link-colour-pop {
+    @include link-colour($colour-link-alt, $colour-brand-primary);
+}
+@mixin link-colour-body {
+    @include link-colour($colour-text-default);
+}
+@mixin link-colour-white {
+    @include link-colour($colour-text-light);
+}
+
+
+/*------------------------------------------------------------------
+    Text decoration
+
+        Example of default and inverted decoration:
+            @include decoration(default);
+            @include decoration(invert);
+
+        Example of persistent decorations:
+            @include decoration(none);
+            @include decoration(underline);
+-------------------------------------------------------------------*/
+
+
+@mixin decoration($style: default, $hover: $style) {
+    @if ($style == default or $style == hover) {
+        text-decoration: $link-style-default;
+        &:hover,
+        &:active {
+            text-decoration: $link-style-active;
+        }
+    } @else if ($style == invert) {
+        text-decoration: $link-style-active;
+        &:hover,
+        &:active {
+            text-decoration: $link-style-default;
+        }
+    } @else {
+        text-decoration: $style;
+        &:hover,
+        &:active {
+            text-decoration: $hover;
+        }
+    }
+}

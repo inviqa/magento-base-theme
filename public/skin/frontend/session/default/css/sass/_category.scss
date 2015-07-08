@@ -53,8 +53,7 @@
         }
     }
     .product-name {
-        @include font-size($font-body-size);
-        @include line-height($font-body-line-height);
+        @include font-size($font-size-default);
         @include rem-fallback(margin-bottom, 0.5);
     }
     .rating-links {
