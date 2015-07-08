@@ -36,7 +36,7 @@
         width: auto;
         min-width: 4em;
     }
-    @include media($desktop-only) {
+    @include media($full-and-up) {
         float: right;
         margin-bottom: 0;
     }

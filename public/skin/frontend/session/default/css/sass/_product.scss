@@ -6,13 +6,13 @@
     @include outer-container;
 }
 .product-shop {
-    @include media($sm-tablet-and-above) {
+    @include media($medium-and-up) {
         @include span-columns(6);
     }
 }
 .product-img-box {
     text-align: center;
-    @include media($sm-tablet-and-above) {
+    @include media($medium-and-up) {
         @include span-columns(6);
     }
 }

@@ -45,7 +45,7 @@
 .tab-container {
 }
 
-@include media($sm-tablet-and-above) {
+@include media($medium-and-up) {
     .tabs {
         dl {
             margin: 0;

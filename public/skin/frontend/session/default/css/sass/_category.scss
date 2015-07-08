@@ -65,7 +65,7 @@
         @include rem-fallback(margin, 0.5, 0);
         clear: both;
     }
-    @include media($sm-tablet-and-above) {
+    @include media($medium-and-up) {
         .item {
             .category-products & {
                 @include span-columns(2 of 6);

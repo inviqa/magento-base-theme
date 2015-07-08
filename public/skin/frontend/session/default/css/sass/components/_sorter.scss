@@ -7,7 +7,7 @@
     > * {
         display: inline-block;
     }
-    @include media($desktop-only) {
+    @include media($full-and-up) {
         float: left;
     }
 }

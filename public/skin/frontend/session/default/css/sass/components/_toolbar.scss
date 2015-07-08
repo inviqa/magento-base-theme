@@ -11,7 +11,7 @@
     p {
         margin: 0;
     }
-    @include media($desktop-only) {
+    @include media($full-and-up) {
         * > {
             display: inline-block;
         }

@@ -35,7 +35,7 @@ footer {
         @include rem-fallback(margin, 1, 0);
         @include span-columns(12);
     }
-    @include media($sm-tablet-and-above) {
+    @include media($medium-and-up) {
         ul {
             @include span-columns(6);
             @include omega;
@@ -44,7 +44,7 @@ footer {
             @include span-columns(6);
         }
     }
-    @include media($desktop-only) {
+    @include media($full-and-up) {
         ul {
             @include span-columns(4);
         }
@@ -59,7 +59,7 @@ footer {
 }
 
 /* Sticky footer */
-@include media($sm-tablet-and-above) {
+@include media($medium-and-up) {
     $footer-height: 250px;
     html {
         position: relative;

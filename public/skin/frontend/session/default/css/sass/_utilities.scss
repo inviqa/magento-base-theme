@@ -5,38 +5,39 @@
 /* visibility */
 
 .hide-small {
-    @include media($mobile-only) {
+    @include media($small-only) {
         display: none;
     }
 }
 .hide-medium {
-    @include media($tablet-only) {
+    @include media($medium-only) {
         display: none;
     }
 }
 .hide-large {
-    @include media($desktop-only) {
+    @include media($large-only) {
         display: none;
     }
 }
 
-.only-small,
-.only-medium,
-.only-large {
-    display: none;
-}
 .only-small {
-    @include media($mobile-only) {
-        display: block;
+    @include media($medium-and-up) {
+        display: none;
     }
 }
 .only-medium {
-    @include media($tablet-only) {
-        display: block;
+    @include media($small-only) {
+        display: none;
+    }
+    @include media($large-only) {
+        display: none;
     }
 }
 .only-large {
-    @include media($desktop-only) {
-        display: block;
+    @include media($small-only) {
+        display: none;
+    }
+    @include media($medium-only) {
+        display: none;
     }
 }

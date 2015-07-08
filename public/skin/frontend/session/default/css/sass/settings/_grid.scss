@@ -2,22 +2,25 @@
 
 /* Grid settings */
 $outer-gutter       : 25px;
-$max-width          : 1196px;
+$max-width          : 1240px;
 $column             : 74px;
 $gutter             : 28px;
 
 /* Breakpoints */
-$mobile-v           : 320px;
-$mobile-h           : 480px;
-$small-tablet-v     : 600px;
-$tablet-v           : 768px;
-$small-tablet-h     : 800px;
-$tablet-h           : 1024px;
+
+$xsmall             : 320px;
+$small              : 480px;
+$medium             : 600px;
+$large              : 800px;
+$full               : $max-width;
 
 /* Grid breakpoints */
-$mobile-only        : new-breakpoint(max-width $mobile-h);
-$tablet-and-below   : new-breakpoint(max-width $tablet-h);
-$tablet-only        : new-breakpoint(min-width $tablet-v max-width $tablet-h);
-$sm-tablet-and-above: new-breakpoint(min-width $small-tablet-v);
-$tablet-and-above   : new-breakpoint(min-width $tablet-v);
-$desktop-only       : new-breakpoint(min-width ($tablet-h + 1));
+$xsmall-and-up      : new-breakpoint(min-width $xsmall);
+$small-and-up       : new-breakpoint(min-width $small);
+$medium-and-up      : new-breakpoint(min-width $medium);
+$large-and-up       : new-breakpoint(min-width $large);
+$full-and-up        : new-breakpoint(min-width $full);
+
+$small-only         : new-breakpoint(max-width $medium - 1);
+$medium-only        : new-breakpoint(min-width $medium max-width $large - 1);
+$large-only         : $large-and-up;

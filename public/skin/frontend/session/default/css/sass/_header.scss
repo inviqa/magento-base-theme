@@ -193,7 +193,7 @@
             padding-right: 1em;
         }
     }
-    @include media($sm-tablet-and-above) {
+    @include media($medium-and-up) {
         .logo-holder {
             text-align: left;
             @include span-columns(3);
@@ -241,7 +241,7 @@
     }
 }
 #search_mini_form {
-    @include media($sm-tablet-and-above) {
+    @include media($medium-and-up) {
         @include span-columns(3);
     }
 }

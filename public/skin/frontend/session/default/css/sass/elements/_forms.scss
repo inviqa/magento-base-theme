@@ -253,7 +253,7 @@ p.required {
     }
 }
 
-@include media($sm-tablet-and-above) {
+@include media($medium-and-up) {
     .form-list {
         label {
             width: $form-label-width;

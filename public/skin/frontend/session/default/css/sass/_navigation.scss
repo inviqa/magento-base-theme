@@ -7,7 +7,7 @@
     background: $colour-background-white;
     position: relative;
     z-index: 4;
-    @include media($sm-tablet-and-above) {
+    @include media($medium-and-up) {
         @include span-columns(6);
     }
 }

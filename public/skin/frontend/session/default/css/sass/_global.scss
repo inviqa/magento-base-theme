@@ -119,7 +119,7 @@ dl, dt, dd {
     @include rem-fallback(padding-bottom, 2);
 }
 
-@include media($sm-tablet-and-above) {
+@include media($medium-and-up) {
     .col2-left-layout,
     .col2-right-layout {
         .col-main {
@@ -153,7 +153,7 @@ dl, dt, dd {
 
 .col2-set {
     @include clearfix;
-    @include media($sm-tablet-and-above) {
+    @include media($medium-and-up) {
         .col-1,
         .col-2 {
             @include span-columns(6);
