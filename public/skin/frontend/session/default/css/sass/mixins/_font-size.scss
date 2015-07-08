@@ -1,6 +1,6 @@
-@mixin font-size($sizeValue: $font-size-default, $line: $sizeValue * $font-height-default) {
-    font-size: ($sizeValue) + px;
-    line-height: ($line) + px;
-    font-size: ($sizeValue / $font-size-default) + rem;
-    line-height: ($line / $font-size-default) + rem;
+@mixin font-size($size: $font-size-default, $line: $font-height-default) {
+    font-size: ($size) + px;
+    line-height: ($size * $line) + px;
+    font-size: ($size / $rem-ratio) + rem;
+    line-height: ($size * $line / $rem-ratio) + rem;
 }

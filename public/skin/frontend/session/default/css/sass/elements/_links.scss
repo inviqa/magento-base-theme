@@ -6,3 +6,7 @@ a {
     @include link-colour-default;
     @include decoration(default);
 }
+
+.link-alt {
+    @include link-colour-alt;
+}

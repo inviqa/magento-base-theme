@@ -2,6 +2,10 @@
     Fonts
 -------------------------------------------------------------------*/
 
+/* set px to rem ratio of 10:1 (1.4rem = 14px)  */
+$rem-percent            : 62.5%;
+$rem-ratio              : 10;
+
 /* size */
 $font-size-default      : 16;
 $font-height-default    : 1.5;

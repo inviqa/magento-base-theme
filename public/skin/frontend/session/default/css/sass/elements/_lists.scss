@@ -1,3 +1,49 @@
 /*------------------------------------------------------------------
     Lists
 -------------------------------------------------------------------*/
+
+/* unordered list */
+ul {
+    @include rem-fallback(margin-left, 2.5);
+    padding-left: 0;
+}
+
+/* ordered list */
+ol {
+    padding-left: 0;
+    list-style-type: none;
+}
+.list-decimal {
+    @include rem-fallback(margin-left, 2.5);
+    list-style-type: decimal;
+}
+.list-alpha {
+    @include rem-fallback(margin-left, 2.5);
+    list-style-type: lower-alpha;
+}
+
+/* definition list */
+dl {
+    @include rem-fallback(margin, 1, 0);
+}
+dt {
+    @include rem-fallback(margin-bottom, 0.4);
+    @include font-size($font-size-default, 1);
+    font-weight: $font-weight-heavy;
+}
+dd {
+    margin: 0;
+    @include font-size(14, 1);
+    + dt {
+        @include rem-fallback(margin-top, 1)
+    }
+}
+
+/* inline list */
+.list-inline {
+    margin: 0;
+    padding-left: 0;
+    li {
+        display: inline;
+    }
+}

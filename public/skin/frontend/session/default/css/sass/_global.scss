@@ -18,27 +18,7 @@ body {
 caption, th, td {
     vertical-align: top;
 }
-ul {
-    @include rem-fallback(padding-left, 1.5);
-    &.links {
-        padding-left: 0;
-        li {
-            display: inline;
-        }
-    }
-}
-ol {
-    list-style-type: none;
-    padding-left: 0;
-    &.decimal {
-        @include rem-fallback(padding-left, 1.5);
-        list-style-type: decimal;
-    }
-}
-dl, dt, dd {
-    margin: 0;
-    padding: 0;
-}
+
 
 /* Layout */
 

@@ -3,18 +3,18 @@
 -------------------------------------------------------------------*/
 
 html {
-    font-size: 85%;
-    -ms-text-size-adjust: 85%;
-    -moz-text-size-adjust: 85%;
-    -webkit-text-size-adjust: 85%;
+    font-size: $rem-percent;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 body {
     color: $colour-text-default;
-    font-family: $font-default;
     @include font-size($font-size-default);
+    font-family: $font-default;
 }
 
-/* Headings */
+/* headings */
 h1, h2, h3, h4, h5, h6 {
     @include rem-fallback(margin, 2, 0, 1, 0);
     color: $colour-brand-secondary;
@@ -22,33 +22,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+    margin-top: 0;
     color: $colour-brand-primary;
     @include font-size(48);
-    margin-top: 0;
 }
 h2 {
-    @include font-size(36);
+    @include font-size(32);
+    font-family: $font-serif;
 }
 h3 {
-    color: $colour-brand-primary;
-    @include font-size(24);
-    font-family: $font-serif;
+    @include font-size(28);
 }
 h4 {
     @include font-size(18);
+    color: $colour-brand-primary;
     font-family: $font-serif;
+    font-weight: $font-weight-default;
 }
 h5 {
     @include font-size(16);
-    color: $colour-brand-primary;
     font-weight: $font-weight-default;
 }
 h6 {
     @include font-size(14);
+    color: $colour-brand-primary;
     font-weight: $font-weight-default;
 }
 
-/* Block elements */
+/* block elements */
 p {
     @include rem-fallback(margin, 1, 0);
 }
@@ -57,10 +58,9 @@ blockquote {
     @include rem-fallback(padding, 0.5, 1.5);
     border-left: 3px solid $colour-brand-primary;
     color: $colour-brand-secondary;
-    @include font-size(20);
+    @include font-size(20, 2);
     font-family: $font-serif;
     font-style: italic;
-    line-height: 2;
 }
 address {
     font-style: normal;
@@ -71,10 +71,7 @@ hr {
     border-bottom: $border-default;
 }
 
-/* Inline elements */
-b, strong {
-    font-weight: $font-weight-heavy;
-}
+/* inline elements */
 abbr {
     cursor: help;
 }
