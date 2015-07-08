@@ -23,7 +23,7 @@ gulp.task('serve', ['build'], function() {
         proxy: "mast.dev"
     });
 
-    gulp.watch('./css/sass/*.scss', ['sass']);
+    gulp.watch('./css/**/*.scss', ['sass']);
 
     gulp.watch([
         './js/**/*.js',

@@ -153,7 +153,7 @@ input[type="radio"] {
             height: ($form-radio-dot-size * 2);
             margin: 1px;
             border: ($form-radio-size/2 - $form-radio-dot-size) solid $colour-background-light;
-            background: $colour-body-text;
+            background: $colour-text-default;
             border-radius: 50%;
         }
     }

@@ -1,9 +1,9 @@
 /*------------------------------------------------------------------
     Utilities
+    Generally for use in CMS content only
 -------------------------------------------------------------------*/
 
 /* visibility */
-
 .hide-small {
     @include media($small-only) {
         display: none;
@@ -19,7 +19,6 @@
         display: none;
     }
 }
-
 .only-small {
     @include media($medium-and-up) {
         display: none;
@@ -40,4 +39,12 @@
     @include media($medium-only) {
         display: none;
     }
+}
+
+/* fonts */
+.font-default {
+    font-family: $font-default;
+}
+.font-brand {
+    font-family: $font-brand;
 }

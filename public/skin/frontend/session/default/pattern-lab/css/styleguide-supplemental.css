@@ -11,7 +11,9 @@
 .sg-pattern-subhead {
     margin: 0 1em 2em;
     padding: 1em 0.5em 0;
-    font-size: 90%;
+    color: #222222;
+    font-family: sans-serif;
+    font-size: 11px;
     font-weight: normal;
     text-transform: uppercase;
 }

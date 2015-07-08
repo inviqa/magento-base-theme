@@ -1,3 +1,86 @@
 /*------------------------------------------------------------------
     Text
 -------------------------------------------------------------------*/
+
+html {
+    font-size: 75%;
+    -ms-text-size-adjust: 75%;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    color: $colour-text-default;
+    font-family: $font-default;
+    @include font-size($font-body-size);
+    @include line-height($font-body-line-height);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    @include rem-fallback(margin, 2, 0, 1, 0);
+    color: $colour-brand-secondary;
+    font-weight: $font-weight-light;
+}
+
+h1 {
+    color: $colour-brand-primary;
+    @include font-size(36);
+    @include line-height(40);
+    margin-top: 0;
+}
+h2 {
+    @include font-size(24);
+    @include line-height(28);
+}
+h3 {
+    color: $colour-brand-primary;
+    @include font-size(18);
+    @include line-height(22);
+    font-family: $font-brand;
+}
+h4 {
+    @include font-size(16);
+    @include line-height(20);
+    font-family: $font-brand;
+}
+h5 {
+    @include font-size(14);
+    @include line-height(18);
+}
+h6 {
+    @include font-size(12);
+    @include line-height(16);
+}
+
+/* Other text elements */
+p {
+    @include rem-fallback(margin, 1, 0);
+}
+blockquote {
+    @include rem-fallback(margin, 1);
+    @include rem-fallback(padding, 0.5, 1.5);
+    border-left: 3px solid $colour-brand-primary;
+    color: $colour-brand-secondary;
+    font-family: $font-brand;
+    @include font-size(16);
+    @include line-height(24);
+}
+abbr {
+    cursor: help;
+}
+mark {
+    background: rgba($colour-brand-primary, 0.25);
+}
+address {
+    font-style: normal;
+}
+
+/* Links */
+a {
+    color: $colour-link;
+    text-decoration: none;
+    &:hover,
+    &:active {
+        color: $colour-link-active;
+        text-decoration: underline;
+    }
+}

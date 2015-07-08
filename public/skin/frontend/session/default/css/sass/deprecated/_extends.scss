@@ -30,8 +30,3 @@
     padding: 0;
     margin: 0;
 }
-
-%body-font {
-    @include font-size($font-body-size);
-    @include line-height($font-body-line-height);
-}

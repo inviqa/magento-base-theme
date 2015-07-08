@@ -9,7 +9,7 @@ $yellow                     : #e3a11e;
 $red                        : #a9313d;
 $white                      : #ffffff;
 $light-grey                 : #efefef;
-$grey                       : #cccccc;
+$grey                       : #606669;
 $dark-grey                  : #888888;
 $black                      : #333333;
 
@@ -19,6 +19,7 @@ $black                      : #333333;
 
 /* brand */
 $colour-brand-primary       : $pink;
+$colour-brand-secondary     : $grey;
 
 /* messaging */
 $colour-info                : $blue;
@@ -27,8 +28,9 @@ $colour-warn                : $yellow;
 $colour-error               : $red;
 
 /* typography */
-$colour-body-text           : $black;
-$colour-text-muted          : $dark-grey;
+$colour-text-default        : $black;
+$colour-text-muted          : $grey;
+$colour-text-dark           : $dark-grey;
 $colour-text-light          : $white;
 
 /* links */
