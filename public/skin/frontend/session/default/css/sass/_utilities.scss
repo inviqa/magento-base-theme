@@ -1,0 +1,42 @@
+/*------------------------------------------------------------------
+    Utilities
+-------------------------------------------------------------------*/
+
+/* visibility */
+
+.hide-small {
+    @include media($mobile-only) {
+        display: none;
+    }
+}
+.hide-medium {
+    @include media($tablet-only) {
+        display: none;
+    }
+}
+.hide-large {
+    @include media($desktop-only) {
+        display: none;
+    }
+}
+
+.only-small,
+.only-medium,
+.only-large {
+    display: none;
+}
+.only-small {
+    @include media($mobile-only) {
+        display: block;
+    }
+}
+.only-medium {
+    @include media($tablet-only) {
+        display: block;
+    }
+}
+.only-large {
+    @include media($desktop-only) {
+        display: block;
+    }
+}
