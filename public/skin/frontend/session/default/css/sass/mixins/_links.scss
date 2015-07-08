@@ -2,18 +2,18 @@
     Link colour
 
         Example of link colour with red hover colour:
-            @include decoration(black, red);
+            @include link-colour(black, red);
 
         Example of persistent colours:
-            @include decoration(white);
-            @include decoration(black);
+            @include link-colour(white);
+            @include link-colour(black);
 
         Common patterns added after initial mixin:
             @include link-colour-default;
             @include link-colour-brand;
             @include link-colour-pop;
             @include link-colour-body;
-            @include link-colour-white;
+            @include link-colour-light;
 -------------------------------------------------------------------*/
 
 @mixin link-colour($colour: $colour-link-default, $colour-active: $colour) {
@@ -35,10 +35,10 @@
 @mixin link-colour-pop {
     @include link-colour($colour-link-alt, $colour-brand-primary);
 }
-@mixin link-colour-body {
-    @include link-colour($colour-text-default);
+@mixin link-colour-dark {
+    @include link-colour($colour-text-dark);
 }
-@mixin link-colour-white {
+@mixin link-colour-light {
     @include link-colour($colour-text-light);
 }
 

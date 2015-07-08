@@ -65,11 +65,11 @@
 .link-colour-pop {
     @include link-colour-pop;
 }
-.link-colour-body {
-    @include link-colour-body;
+.link-colour-dark {
+    @include link-colour-dark;
 }
-.link-colour-white {
-    @include link-colour-white;
+.link-colour-light {
+    @include link-colour-light;
 }
 .link-style-default {
     @include decoration(default);
