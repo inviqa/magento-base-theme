@@ -72,14 +72,14 @@
     @include link-colour-light;
 }
 .link-style-default {
-    @include decoration(default);
+    @include link-style(default);
 }
 .link-style-invert {
-    @include decoration(invert);
+    @include link-style(invert);
 }
 .link-style-none {
-    @include decoration(none);
+    @include link-style(none);
 }
 .link-style-underline {
-    @include decoration(underline);
+    @include link-style(underline);
 }

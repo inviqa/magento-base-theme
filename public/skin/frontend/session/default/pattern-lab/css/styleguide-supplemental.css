@@ -32,7 +32,8 @@
 }
 
 .sg-colors {
-    padding-left: 0;
+    margin: 0;
+    padding: 0;
 }
 .sg-colors li {
     list-style: none;
@@ -42,11 +43,15 @@
     display: block;
     margin-top: 0.25em;
     text-align: right;
+    font-size: 12px;
 }
 .sg-colors code {
     float: left;
 }
 @media all and (max-width: 30em) {
+    .sg-colors .sg-label {
+        margin-top: 0.5em;
+    }
     .sg-colors .sg-swatch {
         width: 35%;
     }

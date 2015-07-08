@@ -4,7 +4,7 @@
 
 a {
     @include link-colour-default;
-    @include decoration(default);
+    @include link-style(default);
 }
 
 .link-alt {

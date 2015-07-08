@@ -1,3 +1,43 @@
+
 /*------------------------------------------------------------------
     Buttons
 -------------------------------------------------------------------*/
+
+button, .button {
+    display: inline-block;
+    @include rem-fallback(padding, 0, 1.5);
+    border: 0;
+    background: $colour-brand-secondary;
+    @include link-colour-light;
+    @include link-style(none);
+    @include font-size(13, 2.5);
+    text-align: center;
+    &:hover {
+        background: rgba($colour-brand-secondary, 0.9);
+    }
+    &--alt {
+        background: $colour-brand-primary;
+        &:hover {
+            background: rgba($colour-brand-primary, 0.8);
+        }
+    }
+    &--small {
+        @include rem-fallback(padding, 0, 1);
+        @include font-size(12, 2);
+    }
+    &--large {
+        @include rem-fallback(padding, 0, 3);
+        @include font-size(16, 3);
+    }
+    &--wide {
+        @include rem-fallback(margin-bottom, 0.5);
+        width: 100%;
+        @include media($medium-and-up) {
+            width: auto;
+        }
+    }
+    &--disabled, &.disabled, &[disabled] {
+        background: $colour-background-light;
+        color: $colour-text-muted;
+    }
+}

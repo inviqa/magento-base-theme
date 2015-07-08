@@ -19,7 +19,7 @@ legend {
 
 /** Form Elements **/
 
-input, select, textarea, button {
+input, select, textarea {
     margin: 0;
     padding: $form-element-padding;
     font-family: inherit;
@@ -283,47 +283,5 @@ p.required {
         .add-field .input-box {
             margin-left: $form-label-width;
         }
-    }
-}
-
-/*------------------------------------------------------------------
-    Buttons
--------------------------------------------------------------------*/
-
-button, a.button {
-    background-color: $colour-brand-primary;
-    border: 0;
-    padding-left: 1em;
-    padding-right: 1em;
-    color: $colour-text-light;
-}
-
-/* Buttons */
-.buttons-set {
-    @include clearfix;
-    @include rem-fallback(margin, 1, 0);
-    .back-link {
-        float: left;
-        margin: 0;
-    }
-}
-
-.buttons-set a.button,
-.buttons-set button.button {
-    float: right;
-}
-
-.buttons-set2 {
-    clear: both;
-    text-align: right;
-}
-
-.form-buttons {
-    margin: 0;
-    .button {
-        float: right;
-    }
-    p.back-link {
-        float: left;
     }
 }

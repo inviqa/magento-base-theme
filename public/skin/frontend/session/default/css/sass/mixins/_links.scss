@@ -56,7 +56,7 @@
 -------------------------------------------------------------------*/
 
 
-@mixin decoration($style: default, $hover: $style) {
+@mixin link-style($style: default, $hover: $style) {
     @if ($style == default or $style == hover) {
         text-decoration: $link-style-default;
         &:hover,
