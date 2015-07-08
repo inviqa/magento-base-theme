@@ -4,7 +4,7 @@
 
 footer {
     @include clearfix;
-    background: $colour-footer-container-background;
+    background: $colour-background-light;
     @include rem-fallback(padding, 1);
     @include rem-fallback(margin-top, 1);
 }

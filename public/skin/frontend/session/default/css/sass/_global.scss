@@ -14,6 +14,7 @@ html {
 }
 
 body {
+    background-color: $colour-background-white;
     color: $colour-body-text;
     font-family: $font-body;
     @extend %body-font;
@@ -110,10 +111,6 @@ dl, dt, dd {
 
 .no-display {
     @extend %visuallyhidden;
-}
-
-body {
-    background-color: $colour-body-background;
 }
 
 .main-container {

@@ -34,7 +34,7 @@
 /* Global site notices */
 .global-site-notice {
     border-bottom: $border-default;
-    background: $colour-notice-background;
+    background: $colour-background-light;
     .notice-inner {
         @include outer-container;
         @include rem-fallback(padding, 1, 0, 1, 6);

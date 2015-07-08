@@ -3,14 +3,17 @@
 -------------------------------------------------------------------*/
 
 /* paths */
-$path-images: "../images";
+$path-images            : "../images";
 
 /* fonts */
-$base-font-size: 12;
-$font-heading: sans-serif;
-$font-body: sans-serif;
-$font-body-size: $base-font-size;
-$font-body-line-height: 16;
+$base-font-size         : 12;
+$font-heading           : sans-serif;
+$font-body              : sans-serif;
+$font-body-size         : $base-font-size;
+$font-body-line-height  : 16;
 
 /* Borders */
-$border-default: 1px solid $colour-border-default;
+$border-default         : 1px solid $colour-border-default;
+
+/* Shadows */
+$shadow-default         : 0 4px 10px -2px $colour-drop-shadow;

@@ -1,5 +1,6 @@
 /*------------------------------------------------------------------
     Extendable classes
+    To be deprecated in favour of mixins
 -------------------------------------------------------------------*/
 
 %visuallyhidden {
@@ -28,10 +29,6 @@
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-%drop-shadow {
-    box-shadow: 0 4px 10px -2px $colour-drop-shadow;
 }
 
 %body-font {

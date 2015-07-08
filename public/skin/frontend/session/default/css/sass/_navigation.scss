@@ -4,7 +4,7 @@
 
 .nav-container {
     @include clearfix;
-    background: $colour-nav-container-background;
+    background: $colour-background-white;
     position: relative;
     z-index: 4;
     @include media($sm-tablet-and-above) {
@@ -38,10 +38,10 @@
     }
     li {
         &.active {
-            background-color: $colour-nav-primary-active-background;
+            background-color: $colour-background-white;
         }
         &.over {
-            background-color: $colour-nav-primary-over-background;
+            background-color: $colour-background-white;
         }
     }
 
@@ -52,8 +52,8 @@
         width: 13.5em;
         top: 3.2em;
         left: -10000px;
-        background: $colour-nav-primary-subnav-background;
-        @extend %drop-shadow;
+        background: $colour-background-light;
+        box-shadow: $shadow-default;
         li {
             float: none;
             display: block;

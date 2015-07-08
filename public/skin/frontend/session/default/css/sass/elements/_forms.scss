@@ -29,16 +29,16 @@ input, select, textarea, button {
     min-height: 2.4em;
     vertical-align: middle;
     &.disabled, &[disabled] {
-        background: $colour-form-input-disabled-background;
-        color: $colour-form-input-disabled;
+        background: $colour-background-light;
+        color: $colour-text-muted;
     }
     @include placeholder {
-        color: $colour-form-input-disabled;
+        color: $colour-text-muted;
     }
 }
 .input-text, textarea, .styled-select, .multiselect {
-    background-color: $colour-form-input-background;
-    border: 1px solid $colour-form-input-border;
+    background-color: $colour-background-white;
+    border: $border-default;
     vertical-align: top;
     width: 100%;
 }
@@ -77,7 +77,7 @@ textarea {
     resize: vertical;
 }
 textarea.default-value {
-    color: $colour-form-textarea-default-value;
+    color: $colour-text-muted;
 }
 input.qty {
     width: 2.5em;
@@ -163,15 +163,15 @@ input[type="radio"] {
 /* Form Validation */
 .validation-advice {
     clear: both;
-    color: $colour-form-validation-error;
+    color: $colour-error;
     padding: 0.5em 0 0 0;
 }
 
 .product-options .validation-error .options-list,
 input.input-text.validation-failed,
 textarea.validation-failed {
-    border-color: $colour-form-validation-error-border;
-    background: $colour-form-validation-error-background;
+    border-color: $colour-error;
+    background: $colour-error;
 }
 
 span.validation-passed,
@@ -187,7 +187,7 @@ div.validation-error {
 
 .required em {
     margin-right: 0.3em;
-    color: $colour-form-required;
+    color: $colour-error;
 }
 p.required {
     margin: 0;
@@ -291,11 +291,11 @@ p.required {
 -------------------------------------------------------------------*/
 
 button, a.button {
-    background-color: $colour-form-button;
+    background-color: $colour-brand-primary;
     border: 0;
     padding-left: 1em;
     padding-right: 1em;
-    color: $colour-form-button-text;
+    color: $colour-text-light;
 }
 
 /* Buttons */

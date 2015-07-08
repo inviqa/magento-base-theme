@@ -9,7 +9,7 @@
 }
 
 .header-panel-wrapper {
-    background-color: $colour-header-panel-background;
+    background-color: $colour-background-white;
 }
 
 .header-panel {
@@ -66,15 +66,15 @@
         top: 1.5em;
         left: 0;
         min-width: 100%;
-        @extend %drop-shadow;
+        box-shadow: $shadow-default;
     }
     a {
         display: block;
-        background: $colour-switch-list-background;
+        background: $colour-background-light;
         padding: 0.5em 1em;
         @include rem-fallback(padding, 0.5, 1);
         &:hover {
-            background: $colour-switch-list-active-background;
+            background: $colour-background-light;
         }
     }
     .current {
@@ -94,7 +94,7 @@
             display: block;
             padding-right: 1em;
             font-weight: normal;
-            color: $colour-top-cart-title;
+            color: $colour-brand-primary;
         }
         &.expanded {
             strong { background-position: 100% -130px; }
@@ -105,13 +105,13 @@
         right: 0;
         top: 1.5em;
         width: 22em;
-        background-color: $colour-top-cart-content-background;
-        @extend %drop-shadow;
+        background-color: $colour-background-light;
+        box-shadow: $shadow-default;
     }
     .block-subtitle {
         padding: 0.5em;
         margin: 0;
-        background-color: $colour-top-cart-subtitle-background;
+        background-color: $colour-background-light;
     }
     .close-btn {
         @extend %image-replacement;
@@ -159,7 +159,7 @@
         text-align:center;
     }
     .actions {
-        background-color: $colour-top-cart-actions-background;
+        background-color: $colour-background-light;
         padding: 0.5em 1em;
         text-align: right;
         a {
@@ -173,7 +173,7 @@
 }
 
 .header-wrapper {
-    background-color: $colour-header-background;
+    background-color: $colour-background-white;
 }
 
 .header {
@@ -225,10 +225,10 @@
         height: 0;
         overflow: visible;
         ul {
-            background-color: $colour-form-search-background;
+            background-color: $colour-background-white;
             position: absolute;
             width: $search-width;
-            @extend %drop-shadow;
+            box-shadow: $shadow-default;
         }
         li {
             padding: 0.5em 0.5em 0.5em 2.1em;
@@ -247,7 +247,7 @@
 }
 
 .header-usp-wrapper {
-    background-color: $colour-header-usp-background;
+    background-color: $colour-background-white;
 }
 .header-usp {
     @extend %layout-centralize;
