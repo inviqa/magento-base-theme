@@ -1,25 +1,26 @@
-/** Styles
- *
- * grunt watch
- * from /theme/default folder
- *
+/** 
+ * run gulp from /theme/default folder
  **/
 
 @import
-"normalize",
+"lib/normalize",
 "bourbon",
-"grid-settings",
 "neat",
-"colours",
-"vars",
-"fonts",
+"settings/grid",
+"settings/colours",
+"settings/vars",
+"settings/fonts",
 "mixins/font-size",
 "mixins/line-height",
 "mixins/rem-filler",
 "mixins/omega-reset",
 "mixins/limit-text",
-"extends",
+"deprecated/extends",
+"elements/text",
+"elements/lists",
+"elements/tables",
 "elements/forms",
+"elements/buttons",
 "components/messages",
 "components/breadcrumbs",
 "components/toolbar",
@@ -27,7 +28,7 @@
 "components/sorter",
 "components/tabs",
 "components/events",
-"plugins/owl-carousel",
+"lib/owl-carousel",
 "global",
 "header",
 "footer",
