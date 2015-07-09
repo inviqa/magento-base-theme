@@ -24,27 +24,27 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     margin-top: 0;
     color: $colour-brand-primary;
-    @include font-size(48);
+    @include font-size(54, 1);
 }
 h2 {
-    @include font-size(32);
+    @include font-size(32, 1);
     font-family: $font-serif;
 }
 h3 {
-    @include font-size(28);
+    @include font-size(28, 1);
 }
 h4 {
-    @include font-size(18);
+    @include font-size(18, 1);
     color: $colour-brand-primary;
     font-family: $font-serif;
     font-weight: $font-weight-default;
 }
 h5 {
-    @include font-size(16);
+    @include font-size(16, 1);
     font-weight: $font-weight-default;
 }
 h6 {
-    @include font-size(14);
+    @include font-size(14, 1);
     color: $colour-brand-primary;
     font-weight: $font-weight-default;
 }
