@@ -4,6 +4,7 @@
 -------------------------------------------------------------------*/
 
 button, .button {
+    position: relative;
     display: inline-block;
     @include rem-fallback(padding, 0, 1.5);
     border: 0;
@@ -12,13 +13,21 @@ button, .button {
     @include link-style(none);
     @include font-size(13, 2.5);
     text-align: center;
-    &:hover {
-        background: rgba($colour-brand-secondary, 0.9);
+    &:hover,
+    &:focus {
+        background: rgba($colour-brand-secondary, 0.95);
+    }
+    &:active {
+        background: $colour-brand-secondary;
     }
     &--alt {
         background: $colour-brand-primary;
-        &:hover {
-            background: rgba($colour-brand-primary, 0.8);
+        &:hover,
+        &:focus {
+            background: rgba($colour-brand-primary, 0.85);
+        }
+        &:active {
+            background: $colour-brand-primary;
         }
     }
     &--small {
