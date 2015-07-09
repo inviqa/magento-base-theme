@@ -5,6 +5,16 @@
 /* paths */
 $path-images                : "../images";
 
+/* font size */
+$font-size-default      : 16;
+$font-height-default    : 1.5;
+
+/* font weight */
+$font-weight-light      : 100;
+$font-weight-default    : 400;
+$font-weight-heavy      : 700;
+$font-weight-black      : 900;
+
 /* links */
 $link-style-default         : none;
 $link-style-active          : underline;
@@ -16,3 +26,11 @@ $border-light               : 1px solid $colour-border-light;
 /* shadows */
 $shadow-default             : 0 4px 10px -2px rgba($colour-shadow, 0.2);
 $text-shadow-default        : 1px 1px 1px rgba($colour-shadow, 0.7);
+
+/* buttons */
+$button-height-default      : 3;
+$button-h-padding-default   : 1.5;
+$button-height-small        : 2;
+$button-h-padding-small     : 1;
+$button-height-large        : 4;
+$button-h-padding-large     : 3;

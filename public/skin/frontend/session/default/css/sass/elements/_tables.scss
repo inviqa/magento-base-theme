@@ -1,3 +1,43 @@
 /*------------------------------------------------------------------
     Tables
 -------------------------------------------------------------------*/
+
+/* global  */
+table {
+    width: 100%;
+}
+th, td {
+    text-align: left;
+    @include rem-fallback(padding, 0.8, 1);
+    @include font-size(14, 1);
+}
+
+/* data table  */
+.data-table {
+    thead, tfoot {
+        border-top: $border-default;
+        border-bottom: $border-default;
+    }
+    tr {
+        &:nth-of-type(2n) {
+            background: $colour-background-light;
+        }
+    }
+}
+
+/* product table  */
+.product-table {
+}
+
+/* totals table  */
+.totals-table {
+    td {
+        &:last-of-type {
+            text-align: right;
+        }
+    }
+    &__grand {
+        border-top: $border-default;
+        font-weight: $font-weight-heavy;
+    }
+}
