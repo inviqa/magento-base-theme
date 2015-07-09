@@ -27,8 +27,11 @@ $border-light               : 1px solid $colour-border-light;
 $shadow-default             : 0 4px 10px -2px rgba($colour-shadow, 0.2);
 $text-shadow-default        : 1px 1px 1px rgba($colour-shadow, 0.7);
 
+/* forms */
+$form-input-height          : 2.5;
+
 /* buttons */
-$button-height-default      : 3;
+$button-height-default      : $form-input-height;
 $button-h-padding-default   : 1.5;
 $button-height-small        : 2;
 $button-h-padding-small     : 1;

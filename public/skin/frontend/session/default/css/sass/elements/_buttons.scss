@@ -17,7 +17,7 @@ button, .button {
     text-align: center;
     &:hover,
     &:focus {
-        background: rgba($colour-brand-secondary, 0.95);
+        background: rgba($colour-brand-secondary, 0.92);
     }
     &:active {
         background: $colour-brand-secondary;
@@ -51,8 +51,14 @@ button, .button {
             width: auto;
         }
     }
-    &--disabled, &.disabled, &[disabled] {
+    &--disabled, &[disabled], &.disabled {
         background: $colour-background-light;
-        color: $colour-text-muted;
+        @include link-colour($colour-text-muted);
+        cursor: default;
+        &:hover,
+        &:focus,
+        &:active {
+            background: $colour-background-light;
+        }
     }
 }

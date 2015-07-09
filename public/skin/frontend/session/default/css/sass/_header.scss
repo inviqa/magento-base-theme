@@ -201,50 +201,7 @@
     }
 }
 
-/* form-search */
-.header .form-search {
-    $search-width: 75%;
-    position: relative;
-    label, a {
-        display: none;
-    }
-    .input-text {
-        width: $search-width;
-        float: left;
-    }
-    .button {
-        width: 100% - $search-width;
-        position: absolute;
-        top: 0;
-    }
-    .search-autocomplete {
-        z-index: 999;
-        position: relative;
-        top: 0;
-        left: 0;
-        height: 0;
-        overflow: visible;
-        ul {
-            background-color: $colour-background-white;
-            position: absolute;
-            width: $search-width;
-            box-shadow: $shadow-default;
-        }
-        li {
-            padding: 0.5em 0.5em 0.5em 2.1em;
-            cursor: pointer;
-        }
-        .amount {
-            float: right;
-            font-weight: bold;
-        }
-    }
-}
-#search_mini_form {
-    @include media($medium-and-up) {
-        @include span-columns(3);
-    }
-}
+
 
 .header-usp-wrapper {
     background-color: $colour-background-white;
