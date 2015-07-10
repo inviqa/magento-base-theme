@@ -1,15 +1,11 @@
-@function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
-}
-
 @mixin rem-fallback($property, $values...) {
   $max: length($values);
   $pxValues: '';
   $remValues: '';
 
   @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $pxValues: #{$pxValues + $value*16}px;
+    $value: strip-units(nth($values, $i));
+    $pxValues: #{$pxValues + $value*$rem-ratio}px;
 
     @if $i < $max {
       $pxValues: #{$pxValues + " "};
@@ -17,7 +13,7 @@
   }
 
   @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
+    $value: strip-units(nth($values, $i));
     $remValues: #{$remValues + $value}rem;
 
     @if $i < $max {
