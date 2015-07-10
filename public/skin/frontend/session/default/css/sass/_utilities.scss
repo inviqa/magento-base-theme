@@ -42,12 +42,14 @@
 }
 
 /* grid */
-.grid-wrap {
+.grid {
     @include outer-container;
 }
 @for $i from 1 through 4 {
     .grid-#{$i} {
-        span-columns: 12/$i;
+        @include media($medium-and-up) {
+            @include span-columns(12/$i);
+        }
     }
 }
 

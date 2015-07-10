@@ -60,3 +60,12 @@
 .sg-visibility code {
     display: block;
 }
+
+.sg-grid {
+    background: #eeeeee;
+    text-align: center;
+    padding: 1rem;
+}
+.sg-grid:nth-of-type(even) {
+    background: #cccccc;
+}
