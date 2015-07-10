@@ -2,27 +2,23 @@
     Global Messages
 -------------------------------------------------------------------*/
 
-.messages {
-    > * {
-        @include rem-fallback(padding, 1, 1.5);
-        @include font-size(14);
-    }
-}
-.info-msg {
-    color: $colour-text-light;
-    background-color: $colour-info;
+.info-msg,
+.success-msg,
+.warn-msg,
+.error-msg {
+    @include rem-fallback(margin, 1);
+    @include rem-fallback(padding, 0.5, 1.5);
+    border-left: 3px solid $colour-info;
+    @include font-size(14);
 }
 .success-msg {
-    color: $colour-text-light;
-    background-color: $colour-success;
+    border-color: $colour-success;
 }
 .warn-msg {
-    color: $colour-text-light;
-    background-color: $colour-warn;
+    border-color: $colour-warn;
 }
 .error-msg {
-    color: $colour-text-light;
-    background-color: $colour-error;
+    border-color: $colour-error;
 }
 
 /* Global site notices */

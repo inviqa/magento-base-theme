@@ -16,7 +16,7 @@ body {
 
 /* headings */
 $headings: (
-    h1  $colour-brand-primary     $font-weight-light       $font-sans    54,
+    h1  $colour-brand-primary     $font-weight-light       $font-sans    48,
     h2  $colour-brand-secondary   $font-weight-light       $font-serif   32,
     h3  $colour-brand-primary     $font-weight-light       $font-sans    28,
     h4  $colour-brand-secondary   $font-weight-light       $font-sans    24,
@@ -46,7 +46,6 @@ blockquote {
     @include rem-fallback(margin, 1);
     @include rem-fallback(padding, 0.5, 1.5);
     border-left: 3px solid $colour-brand-primary;
-    border-left: 0.3rem solid $colour-brand-primary;
     color: $colour-brand-secondary;
     @include font-size(20, 2);
     font-family: $font-serif;
