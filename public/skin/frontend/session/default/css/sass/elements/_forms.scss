@@ -14,7 +14,7 @@ fieldset {
 
 /* labels */
 label {
-    @include font-size(12);
+    @include font-size(13);
     vertical-align: top;
     em {
         display: none;
@@ -30,9 +30,10 @@ label {
 #{$input-text} {
     @include rem-fallback(padding, 0, 0.5);
     @include rem-fallback(height, $form-input-height);
-    @include font-size(16); // stop zooming on iOS
-    font-family: $font-sans;
     border: $border-default;
+    @include font-size(16);
+    font-family: $font-sans;
+    font-weight: 400;
     &.inline {
         width: auto;
         + & {
@@ -40,7 +41,7 @@ label {
         }
     }
     @include media($small-and-up) {
-        @include font-size(12);
+        @include font-size(13);
     }
 }
 textarea {
@@ -120,7 +121,7 @@ p.required {
             clear: both;
             > label {
                 @include span-columns(4);
-                @include rem-fallback(padding, 0.3, 0.5, 0, 0);
+                @include rem-fallback(padding-top, 0.4);
                 text-align: right;
             }
             > .input-box {

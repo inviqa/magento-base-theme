@@ -4,3 +4,13 @@
     font-size: ($size / $rem-ratio) + rem;
     line-height: ($size * $line / $rem-ratio) + rem;
 }
+
+@mixin heading-size($size) {
+    @include font-size($size * $heading-size-small, 1);
+    @include media($small-and-up) {
+        @include font-size($size * $heading-size-medium, 1);
+    }
+    @include media($full-and-up) {
+        @include font-size($size * $heading-size-large, 1);
+    }
+}
