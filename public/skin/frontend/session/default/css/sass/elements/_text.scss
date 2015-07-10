@@ -15,37 +15,27 @@ body {
 }
 
 /* headings */
+$headings: (
+    h1  $colour-brand-primary     $font-weight-light       $font-sans    54,
+    h2  $colour-brand-secondary   $font-weight-light       $font-serif   32,
+    h3  $colour-brand-primary     $font-weight-light       $font-sans    28,
+    h4  $colour-brand-secondary   $font-weight-light       $font-sans    24,
+    h5  $colour-brand-primary     $font-weight-default     $font-sans    16,
+    h6  $colour-brand-secondary   $font-weight-default     $font-sans    14
+);
+@each $value in $headings {
+    #{nth($value, 1)} {
+        color: nth($value, 2);
+        font-weight: nth($value, 3);
+        font-family: nth($value, 4);
+        @include heading-size(nth($value, 5));
+    }
+}
 h1, h2, h3, h4, h5, h6 {
     @include rem-fallback(margin, 2, 0, 1, 0);
-    color: $colour-brand-secondary;
-    font-weight: $font-weight-light;
 }
-
 h1 {
     margin-top: 0;
-    color: $colour-brand-primary;
-    @include heading-size(54);
-}
-h2 {
-    @include heading-size(32);
-    font-family: $font-serif;
-}
-h3 {
-    color: $colour-brand-primary;
-    @include heading-size(28);
-    @include font-size(28, 1);
-}
-h4 {
-    @include heading-size(24);
-}
-h5 {
-    color: $colour-brand-primary;
-    @include heading-size(16);
-    font-weight: $font-weight-default;
-}
-h6 {
-    @include heading-size(14);
-    font-weight: $font-weight-default;
 }
 
 /* block elements */
