@@ -41,6 +41,16 @@
     }
 }
 
+/* grid */
+.grid-wrap {
+    @include outer-container;
+}
+@for $i from 1 through 4 {
+    .grid-#{$i} {
+        span-columns: 12/$i;
+    }
+}
+
 /* fonts */
 .font-default {
     font-family: $font-default;
