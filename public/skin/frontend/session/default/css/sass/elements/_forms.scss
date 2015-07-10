@@ -3,6 +3,8 @@
     Reference: http://goo.gl/ylfde
 -------------------------------------------------------------------*/
 
+$input-text: '[type="text"], [type="password"], [type="email"], [type="tel"], [type="url"], [type="search"], [type="number"], [type="date"], [type="month"], [type="week"], [type="datetime"], [type="datetime-local"], textarea';
+
 fieldset {
     @include clearfix;
     margin: 0;
@@ -25,19 +27,7 @@ label {
 }
 
 /* text inputs */
-[type="text"],
-[type="password"],
-[type="email"],
-[type="tel"],
-[type="url"],
-[type="search"],
-[type="number"],
-[type="date"],
-[type="month"],
-[type="week"],
-[type="datetime"],
-[type="datetime-local"],
-textarea {
+#{$input-text} {
     @include rem-fallback(padding, 0, 0.5);
     @include rem-fallback(height, $form-input-height);
     @include font-size(16); // stop zooming on iOS
@@ -55,9 +45,11 @@ textarea {
 }
 textarea {
     height: auto;
+    @include rem-fallback(padding-top, 0.3);
+    @include rem-fallback(padding-bottom, 0.3);
 }
 
-/* control */
+/* radio and checkbox */
 .control {
     .input-box {
         display: inline-block;
@@ -75,9 +67,11 @@ p.required {
     @include font-size(12);
 }
 .validation-advice {
-    @include rem-fallback(margin-top, 0.5);
     color: $colour-error;
-    @include font-size(12);
+    @include font-size(11);
+}
+.validation-failed {
+    border: $border-error;
 }
 
 /* form list */
@@ -102,18 +96,7 @@ p.required {
             display: block;
         }
     }
-    [type="text"],
-    [type="password"],
-    [type="email"],
-    [type="tel"],
-    [type="url"],
-    [type="search"],
-    [type="date"],
-    [type="month"],
-    [type="week"],
-    [type="datetime"],
-    [type="datetime-local"],
-    textarea,
+    #{$input-text},
     select {
         width: 100%;
     }
@@ -126,13 +109,15 @@ p.required {
         label {
             display: inline-block;
             width: auto;
-            @include rem-fallback(margin-right, 1);
+            @include rem-fallback(margin-right, 0.5);
             vertical-align: middle;
         }
     }
     @include media($small-and-up) {
+        @include outer-container;
         .field {
             @include outer-container;
+            clear: both;
             > label {
                 @include span-columns(4);
                 @include rem-fallback(padding, 0.3, 0.5, 0, 0);
@@ -153,12 +138,12 @@ p.required {
                 @include span-columns(3);
             }
             > .input-box {
-                @include span-columns(9);
+                @include span-columns(7);
             }
         }
         .control {
             @include shift(3);
-            @include span-columns(9);
+            @include span-columns(7);
         }
     }
     @include media($full-and-up) {
@@ -167,12 +152,12 @@ p.required {
                 @include span-columns(2);
             }
             > .input-box {
-                @include span-columns(10);
+                @include span-columns(6);
             }
         }
         .control {
             @include shift(2);
-            @include span-columns(10);
+            @include span-columns(6);
         }
     }
 }

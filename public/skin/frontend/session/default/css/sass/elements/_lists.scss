@@ -24,6 +24,13 @@ ul, ol {
     @include rem-fallback(margin-left, 2.5);
     list-style-type: lower-alpha;
 }
+.list-inline {
+    margin: 0;
+    padding-left: 0;
+    li {
+        display: inline;
+    }
+}
 
 /* definition list */
 dl {
@@ -39,14 +46,5 @@ dd {
     @include font-size(14, 1);
     + dt {
         @include rem-fallback(margin-top, 1)
-    }
-}
-
-/* inline list */
-.list-inline {
-    margin: 0;
-    padding-left: 0;
-    li {
-        display: inline;
     }
 }

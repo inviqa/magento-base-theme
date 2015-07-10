@@ -1,143 +1,56 @@
-<div class="account-create">
-    <div class="page-title">
-        <h1>Create an Account</h1>
-    </div>
-    <form action="//localhost:3000/customer/account/createpost/" method="post" id="form-validate">
-        <div class="fieldset">
-            <input type="hidden" name="success_url" value="">
-            <input type="hidden" name="error_url" value="">
-            <h2 class="legend">Personal Information</h2>
-            <ul class="form-list">
-                <li class="fields">
-                    <div class="customer-name-middlename">
-                        <div class="field name-firstname">
-                            <label for="firstname" class="required"><em>*</em>First Name</label>
-                            <div class="input-box">
-                                <input type="text" id="firstname" name="firstname" value="" title="First Name" maxlength="255" class="input-text required-entry">
-                            </div>
-                        </div>
-                        <div class="field name-middlename">
-                            <label for="middlename">Middle Name/Initial</label>
-                            <div class="input-box">
-                                <input type="text" id="middlename" name="middlename" value="" title="Middle Name/Initial" class="input-text ">
-                            </div>
-                        </div>
-                        <div class="field name-lastname">
-                            <label for="lastname" class="required"><em>*</em>Last Name</label>
-                            <div class="input-box">
-                                <input type="text" id="lastname" name="lastname" value="" title="Last Name" maxlength="255" class="input-text required-entry">
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="field">
-                    <label for="email_address" class="required"><em>*</em>Email Address</label>
-                    <div class="input-box">
-                        <input type="text" name="email" id="email_address" value="" title="Email Address" class="input-text validate-email required-entry">
-                    </div>
-                </li>
-                <li class="control">
-                    <div class="input-box">
-                        <input type="checkbox" name="is_subscribed" title="Sign Up for Newsletter" value="1" id="is_subscribed" class="checkbox">
-                    </div>
-                    <label for="is_subscribed">Sign Up for Newsletter</label>
-                </li>
-                <li class="field">
-                    <label for="month">Date of Birth</label>
-                    <div class="input-box customer-dob">
-                        <div class="dob-month">
-                           <input type="text" id="month" name="month" value="" title="Month" class="input-text validate-custom">
-                           <label for="month">MM</label>
-                       </div><div class="dob-day">
-                       <input type="text" id="day" name="day" value="" title="Day" class="input-text validate-custom">
-                       <label for="day">DD</label>
-                   </div><div class="dob-year">
-                   <input type="text" id="year" name="year" value="" title="Year" class="input-text validate-custom" autocomplete="off">
-                   <label for="year">YYYY</label>
-               </div>    <div class="dob-full" style="display:none;">
-               <input type="hidden" id="dob" name="dob">
+<ul class="form-list">
+    <li class="field">
+        <label for="example-text">Text input</label>
+        <div class="input-box">
+            <input type="text" id="example-text" placeholder="Placeholder text">
+        </div>
+    </li>
+    <li class="field">
+        <label for="example-text-required" class="required">Text input (required)</label>
+        <div class="input-box">
+            <input type="text" id="example-text-required" placeholder="Text input (required)" class="required-entry">
+        </div>
+    </li>
+    <li class="field">
+        <label for="email_address" class="required">Text input (error)</label>
+        <div class="input-box">
+            <input type="email" id="email_address" placeholder="Text input (error)" title="Email Address" class="required-entry validation-failed">
+            <div class="validation-advice">Here is a validation message</div>
+        </div>
+    </li>
+    <li class="field">
+        <label for="month">Date inputs</label>
+        <div class="input-box customer-dob">
+            <div class="dob-month">
+               <input type="text" id="month" name="month" title="Month" class="input-text">
+               <label for="month">MM</label>
            </div>
-
-           <div class="validation-advice">Here is some validation</div>
+           <div class="dob-day">
+               <input type="text" id="day" name="day" title="Day" class="input-text">
+               <label for="day">DD</label>
+           </div>
+           <div class="dob-year">
+               <input type="text" id="year" name="year" title="Year" class="input-text">
+               <label for="year">YYYY</label>
+           </div>
        </div>
-   </script>
-</li>
-<li class="field"><label for="gender">Gender</label>
-    <div class="input-box">
-        <select id="gender" name="gender" title="Gender">
-            <option value="" selected="selected"></option>
-            <option value="1">Male</option>
-            <option value="2">Female</option>
-        </select>
-    </div>
-</li>
-</ul>
-</div>
-<div class="fieldset">
-    <h2 class="legend">Login Information</h2>
-    <ul class="form-list">
-        <li class="fields">
-            <div class="field">
-                <label for="password" class="required"><em>*</em>Password</label>
-                <div class="input-box">
-                    <input type="password" name="password" id="password" title="Password" class="input-text required-entry validate-password">
-                </div>
-            </div>
-            <div class="field">
-                <label for="confirmation" class="required"><em>*</em>Confirm Password</label>
-                <div class="input-box">
-                    <input type="password" name="confirmation" title="Confirm Password" id="confirmation" class="input-text required-entry validate-cpassword">
-                </div>
-            </div>
-        </li>
-    </ul>
-
-
-</div>
-<div class="buttons-set">
-    <p class="required">* Required Fields</p>
-    <p class="back-link"><a href="//localhost:3000/customer/account/login/" class="back-link"><small>« </small>Back</a></p>
-    <button type="submit" title="Submit" class="button"><span><span>Submit</span></span></button>
-</div>
-</form>
-</div>
-
-
-<fieldset>
-    <div class="field-container">
-        <label for="text">Text Input <abbr title="Required">*</abbr></label>
-        <input id="text" type="text" placeholder="Text Input">
-    </div>
-    <div class="field-container">
-        <label for="password">Password</label>
-        <input id="password" type="password" placeholder="Type your Password">
-    </div>
-    <div class="field-container">
-        <label for="webaddress">Web Address</label>
-        <input id="webaddress" type="url" placeholder="http://yoursite.com">
-    </div>
-    <div class="field-container">
-        <label for="emailaddress">Email Address</label>
-        <input id="emailaddress" type="email" placeholder="name@email.com">
-    </div>
-    <div class="field-container">
-        <label for="search">Search</label>
-        <input id="search" type="search" placeholder="Enter Search Term">
-    </div>
-    <div class="field-container">
-        <label for="number">Number Input <abbr title="Required">*</abbr></label>
-        <input id="number" type="number" placeholder="Enter a Number" pattern="[0-9]*">
-    </div>
-    <div class="field-container">
+    </li>
+    <li class="field">
+        <label for="password">Password input</label>
+        <div class="input-box">
+            <input type="password" id="password" title="Password" value="password">
+        </div>
+    </li>
+    <li class="field">
+        <label for="number">Number input</label>
+        <div class="input-box">
+            <input type="number" id="number" title="number" min="0">
+        </div>
+    </li>
+    <li class="field">
         <label for="textarea">Textarea</label>
-        <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
-    </div>
-    <div class="field-container">
-        <label class="error">Error Input</label>
-        <input class="is-error" type="text" placeholder="Text Input">
-    </div>
-    <div class="field-container">
-        <label  class="valid">Valid</label>
-        <input  class="is-valid" type="text" placeholder="Text Input">
-    </div>
-</fieldset>
+        <div class="input-box">
+            <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+        </div>
+    </li>
+</ul>
