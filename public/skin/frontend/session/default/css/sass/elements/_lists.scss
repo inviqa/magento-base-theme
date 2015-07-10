@@ -3,15 +3,18 @@
 -------------------------------------------------------------------*/
 
 /* unordered list */
-ul {
-    @include rem-fallback(margin-left, 2.5);
-    padding-left: 0;
-}
-
-/* ordered list */
-ol {
+ul, ol {
     padding-left: 0;
     list-style-type: none;
+}
+
+/* standard list types */
+.list-bullet {
+    @include rem-fallback(margin-left, 2.5);
+    list-style-type: disc;
+    .list-bullet {
+        list-style-type: circle;
+    }
 }
 .list-decimal {
     @include rem-fallback(margin-left, 2.5);
