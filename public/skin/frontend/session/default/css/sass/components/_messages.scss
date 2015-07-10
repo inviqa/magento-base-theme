@@ -3,32 +3,26 @@
 -------------------------------------------------------------------*/
 
 .messages {
-    padding: 0;
-    li {
-        margin: 0;
-        list-style: none;
-        ul {
-            padding: 0;
-        }
-    }
-    > li {
-        padding: 0.6em 1em 0.5em;
-        margin-bottom: 0.6em;
-        border-width: 1px;
-        border-style: solid;
+    > * {
+        @include rem-fallback(padding, 1, 1.5);
+        @include font-size(14);
     }
 }
-.error-msg {
-    border-color: $colour-error;
-    background: lighten($colour-error, 40%);
+.info-msg {
+    color: $colour-text-light;
+    background-color: $colour-info;
 }
 .success-msg {
-    border-color: $colour-success;
-    background: lighten($colour-success, 40%);
+    color: $colour-text-light;
+    background-color: $colour-success;
 }
 .warn-msg {
-    border-color: $colour-warn;
-    background: lighten($colour-warn, 40%);
+    color: $colour-text-light;
+    background-color: $colour-warn;
+}
+.error-msg {
+    color: $colour-text-light;
+    background-color: $colour-error;
 }
 
 /* Global site notices */

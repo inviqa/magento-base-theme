@@ -3,7 +3,7 @@
     Reference: http://goo.gl/ylfde
 -------------------------------------------------------------------*/
 
-$input-text: '[type="text"], [type="password"], [type="email"], [type="tel"], [type="url"], [type="search"], [type="number"], [type="date"], [type="month"], [type="week"], [type="datetime"], [type="datetime-local"], textarea';
+$input-text: '[type="text"], [type="password"], [type="email"], [type="tel"], [type="url"], [type="search"], [type="number"], [type="date"], [type="month"], [type="week"], [type="datetime"], [type="datetime-local"], [multiple], textarea';
 
 fieldset {
     @include clearfix;
@@ -23,6 +23,7 @@ label {
         content: "*";
         @include rem-fallback(padding-left, 0.2);
         color: $colour-error;
+        vertical-align: top;
     }
 }
 
@@ -48,6 +49,17 @@ textarea {
     height: auto;
     @include rem-fallback(padding-top, 0.3);
     @include rem-fallback(padding-bottom, 0.3);
+}
+
+/* select */
+select:not([multiple]) {
+}
+option {
+    @include rem-fallback(padding, 0.3, 0.5);
+}
+[multiple] {
+    padding: 0;
+    height: auto;
 }
 
 /* radio and checkbox */
