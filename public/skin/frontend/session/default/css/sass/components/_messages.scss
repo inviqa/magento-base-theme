@@ -21,19 +21,18 @@
     border-color: $colour-error;
 }
 
-/* Global site notices */
+/* site notice */
 .global-site-notice {
+    @include clearfix;
     border-bottom: $border-default;
-    background: $colour-background-light;
-    .notice-inner {
-        @include outer-container;
-        @include rem-fallback(padding, 1, 0, 1, 6);
-        p {
-            margin: 0;
-            @include rem-fallback(padding, 1.2, 0, 1, 0);
-        }
-        .actions {
-            @include rem-fallback(padding-top, 1);
-        }
+    color: $colour-text-light;
+    background: $colour-background-dark;
+    @include font-size(12);
+}
+.notice-inner {
+    @include outer-container;
+    @include rem-fallback(padding, 1, 0);
+    p {
+        margin: 0;
     }
 }

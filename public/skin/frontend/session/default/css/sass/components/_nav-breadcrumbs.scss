@@ -1,0 +1,33 @@
+/*------------------------------------------------------------------
+    Breadcrumbs
+-------------------------------------------------------------------*/
+
+.breadcrumbs {
+    display: none;
+    span {
+        display: none;
+    }
+    li {
+        display: inline;
+    }
+    a {
+        display: inline-block;
+        @include link-colour-alt;
+        &:after {
+            content: '\232a';
+            float: right;
+            display: inline-block;
+            @include rem-fallback(margin, 0.1, 0, -0.1, 1.2);
+            color: $colour-brand-primary;
+        }
+    }
+    strong {
+        font-weight: $font-weight-default;
+    }
+    .home {
+
+    }
+    @include media($medium-and-up) {
+        display: block;
+    }
+}

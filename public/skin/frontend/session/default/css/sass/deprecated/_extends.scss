@@ -30,3 +30,9 @@
     padding: 0;
     margin: 0;
 }
+
+
+
+%layout-centralize {
+    @include outer-container;
+}

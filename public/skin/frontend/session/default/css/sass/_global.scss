@@ -20,12 +20,6 @@ caption, th, td {
 }
 
 
-/* Layout */
-
-%layout-centralize {
-    @include outer-container;
-    padding: 0 percentage($outer-gutter / ($max-width + 2 * $outer-gutter));
-}
 
 .no-display {
     @extend %visuallyhidden;
