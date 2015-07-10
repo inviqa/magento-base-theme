@@ -9,7 +9,7 @@ button, .button {
     @include rem-fallback(padding, 0, $button-h-padding-default);
     @include rem-fallback(height, $button-height-default);
     border: 0;
-    background: $colour-brand-secondary;
+    background: $colour-brand-primary;
     @include link-colour-light;
     @include link-style(none);
     @include font-size(13);
@@ -17,19 +17,19 @@ button, .button {
     text-align: center;
     &:hover,
     &:focus {
-        background: rgba($colour-brand-secondary, 0.92);
+        background: rgba($colour-brand-primary, 0.85);
     }
     &:active {
-        background: $colour-brand-secondary;
+        background: $colour-brand-primary;
     }
     &--alt {
-        background: $colour-brand-primary;
+        background: $colour-brand-secondary;
         &:hover,
         &:focus {
-            background: rgba($colour-brand-primary, 0.85);
+            background: rgba($colour-brand-secondary, 0.92);
         }
         &:active {
-            background: $colour-brand-primary;
+            background: $colour-brand-secondary;
         }
     }
     &--small {
