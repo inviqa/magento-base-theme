@@ -1,3 +1,108 @@
+<div class="account-create">
+    <div class="page-title">
+        <h1>Create an Account</h1>
+    </div>
+    <form action="//localhost:3000/customer/account/createpost/" method="post" id="form-validate">
+        <div class="fieldset">
+            <input type="hidden" name="success_url" value="">
+            <input type="hidden" name="error_url" value="">
+            <h2 class="legend">Personal Information</h2>
+            <ul class="form-list">
+                <li class="fields">
+                    <div class="customer-name-middlename">
+                        <div class="field name-firstname">
+                            <label for="firstname" class="required"><em>*</em>First Name</label>
+                            <div class="input-box">
+                                <input type="text" id="firstname" name="firstname" value="" title="First Name" maxlength="255" class="input-text required-entry">
+                            </div>
+                        </div>
+                        <div class="field name-middlename">
+                            <label for="middlename">Middle Name/Initial</label>
+                            <div class="input-box">
+                                <input type="text" id="middlename" name="middlename" value="" title="Middle Name/Initial" class="input-text ">
+                            </div>
+                        </div>
+                        <div class="field name-lastname">
+                            <label for="lastname" class="required"><em>*</em>Last Name</label>
+                            <div class="input-box">
+                                <input type="text" id="lastname" name="lastname" value="" title="Last Name" maxlength="255" class="input-text required-entry">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="field">
+                    <label for="email_address" class="required"><em>*</em>Email Address</label>
+                    <div class="input-box">
+                        <input type="text" name="email" id="email_address" value="" title="Email Address" class="input-text validate-email required-entry">
+                    </div>
+                </li>
+                <li class="control">
+                    <div class="input-box">
+                        <input type="checkbox" name="is_subscribed" title="Sign Up for Newsletter" value="1" id="is_subscribed" class="checkbox">
+                    </div>
+                    <label for="is_subscribed">Sign Up for Newsletter</label>
+                </li>
+                <li class="field">
+                    <label for="month">Date of Birth</label>
+                    <div class="input-box customer-dob">
+                        <div class="dob-month">
+                           <input type="text" id="month" name="month" value="" title="Month" class="input-text validate-custom">
+                           <label for="month">MM</label>
+                       </div><div class="dob-day">
+                       <input type="text" id="day" name="day" value="" title="Day" class="input-text validate-custom">
+                       <label for="day">DD</label>
+                   </div><div class="dob-year">
+                   <input type="text" id="year" name="year" value="" title="Year" class="input-text validate-custom" autocomplete="off">
+                   <label for="year">YYYY</label>
+               </div>    <div class="dob-full" style="display:none;">
+               <input type="hidden" id="dob" name="dob">
+           </div>
+
+           <div class="validation-advice">Here is some validation</div>
+       </div>
+   </script>
+</li>
+<li class="field"><label for="gender">Gender</label>
+    <div class="input-box">
+        <select id="gender" name="gender" title="Gender">
+            <option value="" selected="selected"></option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+        </select>
+    </div>
+</li>
+</ul>
+</div>
+<div class="fieldset">
+    <h2 class="legend">Login Information</h2>
+    <ul class="form-list">
+        <li class="fields">
+            <div class="field">
+                <label for="password" class="required"><em>*</em>Password</label>
+                <div class="input-box">
+                    <input type="password" name="password" id="password" title="Password" class="input-text required-entry validate-password">
+                </div>
+            </div>
+            <div class="field">
+                <label for="confirmation" class="required"><em>*</em>Confirm Password</label>
+                <div class="input-box">
+                    <input type="password" name="confirmation" title="Confirm Password" id="confirmation" class="input-text required-entry validate-cpassword">
+                </div>
+            </div>
+        </li>
+    </ul>
+
+
+</div>
+<div class="buttons-set">
+    <p class="required">* Required Fields</p>
+    <p class="back-link"><a href="//localhost:3000/customer/account/login/" class="back-link"><small>« </small>Back</a></p>
+    <button type="submit" title="Submit" class="button"><span><span>Submit</span></span></button>
+</div>
+</form>
+</div>
+
+
 <fieldset>
     <div class="field-container">
         <label for="text">Text Input <abbr title="Required">*</abbr></label>

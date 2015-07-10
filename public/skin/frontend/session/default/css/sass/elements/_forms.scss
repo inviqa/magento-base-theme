@@ -4,15 +4,24 @@
 -------------------------------------------------------------------*/
 
 fieldset {
+    @include clearfix;
     margin: 0;
     padding: 0;
     border: 0;
 }
 
+/* labels */
 label {
-    display: block;
     @include font-size(12);
     vertical-align: top;
+    em {
+        display: none;
+    }
+    &.required:after {
+        content: "*";
+        @include rem-fallback(padding-left, 0.2);
+        color: $colour-error;
+    }
 }
 
 /* text inputs */
@@ -30,9 +39,8 @@ label {
 [type="datetime-local"],
 textarea {
     @include rem-fallback(padding, 0, 0.5);
-    width: 100%;
-    @include rem-fallback(min-height, $form-input-height);
-    @include font-size(12);
+    @include rem-fallback(height, $form-input-height);
+    @include font-size(16); // stop zooming on iOS
     font-family: $font-sans;
     border: $border-default;
     &.inline {
@@ -41,7 +49,130 @@ textarea {
             @include rem-fallback(margin-right, 0.3);
         }
     }
+    @include media($small-and-up) {
+        @include font-size(12);
+    }
 }
-[type="number"] {
-    width: auto;
+textarea {
+    height: auto;
+}
+
+/* control */
+.control {
+    .input-box {
+        display: inline-block;
+        @include rem-fallback(padding-right, 0.4);
+    }
+    label {
+        display: inline-block;
+        @include rem-fallback(padding-top, 0.4);
+    }
+}
+
+/* messaging */
+p.required {
+    color: $colour-text-muted;
+    @include font-size(12);
+}
+.validation-advice {
+    @include rem-fallback(margin-top, 0.5);
+    color: $colour-error;
+    @include font-size(12);
+}
+
+/* form list */
+/*------------------------------------------------------------------
+    <ul class="form-list">
+        <li class="field">
+            <label />
+            <input />
+        </li>
+        <li class="control" />
+    </ul>
+-------------------------------------------------------------------*/
+.form-list {
+    @include rem-fallback(margin, 1, 0);
+    list-style: none;
+    .field,
+    .control {
+        @include rem-fallback(margin-bottom, 1);
+    }
+    .field {
+        label {
+            display: block;
+        }
+    }
+    [type="text"],
+    [type="password"],
+    [type="email"],
+    [type="tel"],
+    [type="url"],
+    [type="search"],
+    [type="date"],
+    [type="month"],
+    [type="week"],
+    [type="datetime"],
+    [type="datetime-local"],
+    textarea,
+    select {
+        width: 100%;
+    }
+    [class^="dob-"] {
+        display: inline-block;
+        input {
+            display: inline-block;
+            @include rem-fallback(width, 4);
+        }
+        label {
+            display: inline-block;
+            width: auto;
+            @include rem-fallback(margin-right, 1);
+            vertical-align: middle;
+        }
+    }
+    @include media($small-and-up) {
+        .field {
+            @include outer-container;
+            > label {
+                @include span-columns(4);
+                @include rem-fallback(padding, 0.3, 0.5, 0, 0);
+                text-align: right;
+            }
+            > .input-box {
+                @include span-columns(8);
+            }
+        }
+        .control {
+            @include shift(4);
+            @include span-columns(8);
+        }
+    }
+    @include media($large-and-up) {
+        .field {
+            > label {
+                @include span-columns(3);
+            }
+            > .input-box {
+                @include span-columns(9);
+            }
+        }
+        .control {
+            @include shift(3);
+            @include span-columns(9);
+        }
+    }
+    @include media($full-and-up) {
+        .field {
+            > label {
+                @include span-columns(2);
+            }
+            > .input-box {
+                @include span-columns(10);
+            }
+        }
+        .control {
+            @include shift(2);
+            @include span-columns(10);
+        }
+    }
 }
