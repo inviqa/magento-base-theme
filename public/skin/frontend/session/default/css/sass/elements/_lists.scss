@@ -9,10 +9,10 @@ ul, ol {
 }
 
 /* standard list types */
-.list-bullet {
+.list-bulleted {
     @include rem-fallback(margin-left, 2.5);
     list-style-type: disc;
-    .list-bullet {
+    .list-bulleted {
         list-style-type: circle;
     }
 }
