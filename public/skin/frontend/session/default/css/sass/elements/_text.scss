@@ -79,3 +79,8 @@ mark {
     @include rem-fallback(padding, 0, 0.2);
     background: rgba($colour-brand-primary, 0.25);
 }
+
+/* text selection colour */
+@include selection {
+  background: rgba($colour-brand-secondary, 0.25);
+}

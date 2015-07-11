@@ -3,41 +3,76 @@
     For use in style guide and CMS content only
 -------------------------------------------------------------------*/
 
+/* hidden from everyone */
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/* accessible to screenreaders: https://goo.gl/4f0vvg */
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    &.focusable:active,
+    &.focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+}
+
 /* visibility */
 .hide-small {
     @include media($small-only) {
         display: none;
+        visibility: hidden;
     }
 }
 .hide-medium {
     @include media($medium-only) {
         display: none;
+        visibility: hidden;
     }
 }
 .hide-large {
     @include media($large-only) {
         display: none;
+        visibility: hidden;
     }
 }
 .only-small {
     @include media($medium-and-up) {
         display: none;
+        visibility: hidden;
     }
 }
 .only-medium {
     @include media($small-only) {
         display: none;
+        visibility: hidden;
     }
     @include media($large-only) {
         display: none;
+        visibility: hidden;
     }
 }
 .only-large {
     @include media($small-only) {
         display: none;
+        visibility: hidden;
     }
     @include media($medium-only) {
         display: none;
+        visibility: hidden;
     }
 }
 

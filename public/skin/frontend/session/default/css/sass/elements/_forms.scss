@@ -16,6 +16,7 @@ fieldset {
 label {
     @include font-size(13);
     vertical-align: top;
+    cursor: pointer;
     em {
         display: none;
     }
@@ -35,6 +36,7 @@ label {
     @include font-size(16);
     font-family: $font-sans;
     font-weight: 400;
+    vertical-align: top;
     &.inline {
         width: auto;
         + & {
@@ -89,7 +91,7 @@ p.required {
 
 /* form list */
 /*------------------------------------------------------------------
-    <ul class="form-list">
+    <ul class="form--list">
         <li class="field">
             <label />
             <input />
@@ -97,7 +99,8 @@ p.required {
         <li class="control" />
     </ul>
 -------------------------------------------------------------------*/
-.form-list {
+.form-list,
+.form--list {
     @include rem-fallback(margin, 1, 0);
     list-style: none;
     .field,
@@ -159,18 +162,35 @@ p.required {
             @include span-columns(7);
         }
     }
-    @include media($full-and-up) {
-        .field {
-            > label {
-                @include span-columns(2);
-            }
-            > .input-box {
-                @include span-columns(6);
-            }
-        }
-        .control {
-            @include shift(2);
-            @include span-columns(6);
-        }
+}
+
+
+/* inline form */
+/*------------------------------------------------------------------
+    <div class="form--inline">
+        <button />
+        <div class="input--inline">
+            <label />
+            <input />
+        </div>
+    </div>
+-------------------------------------------------------------------*/
+
+.form--inline {
+    display: table;
+    width: 100%;
+    label {
+        display: none;
+    }
+    input {
+        display: table-cell;
+        width: 100%;
+    }
+    span {
+        width: 1%;
+        display: table-cell;
+    }
+    button {
+        vertical-align: top;
     }
 }

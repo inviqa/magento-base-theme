@@ -2,11 +2,13 @@
     Header
 -------------------------------------------------------------------*/
 
-.header-container {
-    ul, ol {
-        @extend %remove-list-style;
+.links {
+    li {
+        display: inline-block;
     }
 }
+
+
 
 .header-panel-wrapper {
     background-color: $colour-background-white;
