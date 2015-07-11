@@ -1,0 +1,38 @@
+/*------------------------------------------------------------------
+    Print stylesheet
+-------------------------------------------------------------------*/
+@media print {
+    *, *:before, *:after {
+        color: #000000 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    p, h1, h2, h3, h4 {
+        orphans: 3;
+        widows: 3;
+    }
+    h1, h2, h3, h4 {
+        page-break-after: avoid;
+    }
+    a {
+        text-decoration: underline !important;
+        &:after {
+            content: ' (' attr(href) ')';
+        }
+        &[href^="#"]:after,
+        &[href^="javascript:"]:after {
+            content: "";
+        }
+    }
+    img {
+        max-width: 100% !important;
+    }
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+}

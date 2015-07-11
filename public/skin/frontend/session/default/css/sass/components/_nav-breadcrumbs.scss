@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------
-    Breadcrumbs
+    Navigation: breadcrumbs
 -------------------------------------------------------------------*/
 
 .breadcrumbs {
@@ -23,9 +23,6 @@
     }
     strong {
         font-weight: $font-weight-default;
-    }
-    .home {
-
     }
     @include media($medium-and-up) {
         display: block;
