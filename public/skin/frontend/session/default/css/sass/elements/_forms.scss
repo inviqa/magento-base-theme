@@ -93,10 +93,10 @@ p.required {
 /*------------------------------------------------------------------
     <ul class="form--list">
         <li class="field">
-            <label />
-            <input />
+            <label>
+            <input>
         </li>
-        <li class="control" />
+        <li class="control">
     </ul>
 -------------------------------------------------------------------*/
 .form-list,
@@ -168,10 +168,10 @@ p.required {
 /* inline form */
 /*------------------------------------------------------------------
     <div class="form--inline">
-        <button />
-        <div class="input--inline">
-            <label />
-            <input />
+        <label class="visuallyhidden">
+        <input>
+        <div class="action">
+            <button>
         </div>
     </div>
 -------------------------------------------------------------------*/
@@ -179,14 +179,13 @@ p.required {
 .form--inline {
     display: table;
     width: 100%;
-    label {
-        display: none;
-    }
+    .input,
     input {
+        position: relative;
         display: table-cell;
         width: 100%;
     }
-    span {
+    .action {
         width: 1%;
         display: table-cell;
     }

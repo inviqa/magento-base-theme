@@ -15,6 +15,7 @@ button, .button {
     @include font-size(13);
     @include rem-fallback(line-height, $button-height-default);
     text-align: center;
+    white-space: nowrap;
     &:hover,
     &:focus {
         background: rgba($colour-brand-primary, 0.85);

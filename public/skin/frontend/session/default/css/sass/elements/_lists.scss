@@ -9,22 +9,22 @@ ul, ol {
 }
 
 /* standard list types */
-.list-bulleted {
+.list--bulleted {
     @include rem-fallback(margin-left, 2.5);
     list-style-type: disc;
-    .list-bulleted {
+    & & {
         list-style-type: circle;
     }
 }
-.list-decimal {
+.list--decimal {
     @include rem-fallback(margin-left, 2.5);
     list-style-type: decimal;
 }
-.list-alpha {
+.list--alpha {
     @include rem-fallback(margin-left, 2.5);
     list-style-type: lower-alpha;
 }
-.list-inline {
+.list--inline {
     margin: 0;
     padding-left: 0;
     li {
