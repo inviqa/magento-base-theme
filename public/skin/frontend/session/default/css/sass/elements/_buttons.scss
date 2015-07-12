@@ -18,7 +18,7 @@ button, .button {
     white-space: nowrap;
     &:hover,
     &:focus {
-        background: rgba($colour-brand-primary, 0.85);
+        background: rgba($colour-brand-primary, 0.75);
     }
     &:active {
         background: $colour-brand-primary;
@@ -27,7 +27,7 @@ button, .button {
         background: $colour-brand-secondary;
         &:hover,
         &:focus {
-            background: rgba($colour-brand-secondary, 0.92);
+            background: rgba($colour-brand-secondary, 0.75);
         }
         &:active {
             background: $colour-brand-secondary;

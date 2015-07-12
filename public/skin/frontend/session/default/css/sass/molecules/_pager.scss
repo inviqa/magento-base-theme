@@ -1,0 +1,59 @@
+.pages {
+    $page-size: 2.5;
+    @include font-size(13);
+    strong {
+        @include visuallyhidden;
+    }
+    li {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        @include rem-fallback(line-height, $page-size);
+    }
+    a {
+        display: inline-block;
+        @include rem-fallback(height, $page-size);
+        @include rem-fallback(min-width, $page-size);
+        background: $colour-background-light;
+        @include rem-fallback(padding, 0, 0.3);
+        @include link-colour($colour-text-default, $colour-text-light);
+        @include link-style(none);
+        &:hover {
+            background: $colour-background-dark;
+        }
+    }
+    .current {
+        @include rem-fallback(height, $page-size);
+        @include rem-fallback(min-width, $page-size);
+        background: $colour-brand-primary;
+        color: $colour-text-light;
+    }
+    .previous, .next {
+        font-size: 0;
+        min-width: 0;
+        padding: 0;
+        background: none;
+        @include link-colour($colour-brand-secondary, $colour-brand-primary);
+        &:hover {
+            background: none;
+        }
+        &:before, &:after {
+            position: relative;
+            @include rem-fallback(top, 0.2);
+            display: inline-block;
+            @include font-size(14);
+        }
+    }
+    .previous {
+        &:before {
+            @include rem-fallback(right, 0.6);
+            content: '\2329';
+        }   
+    }
+    .next {
+        &:after {
+            @include rem-fallback(left, 0.6);
+            content: '\232a';
+        }   
+    }
+}

@@ -1,9 +1,22 @@
-<ol class="pagination">
-    <li class="current"><a href="{{ url }}">1</a></li>
-    <li><a href="{{ url }}">2</a></li>
-    <li><a href="{{ url }}">3</a></li>
-    <li><a href="{{ url }}">4</a></li>
-    <li><a href="{{ url }}">5</a></li>
-    <li><a href="{{ url }}">6</a></li>
-    <li><a href="{{ url }}">7</a></li>
+<div class="pages">
+    <strong>Page:</strong>
+    <ol>
+        <li>
+            <a class="previous i-previous" href="{{ url }}" title="Previous">
+                Previous page
+            </a>
+        </li>
+        <li><a href="{{ url }}">1</a></li>
+        <li><a class="previous_jump" title="" href="{{ url }}">…</a></li>
+        <li><a href="{{ url }}">9</a></li>
+        <li class="current">10</li>
+        <li><a href="{{ url }}">11</a></li>
+        <li><a class="previous_jump" title="" href="{{ url }}">…</a></li>
+        <li><a href="{{ url }}">20</a></li>
+        <li>
+            <a class="next i-next" href="{{ url }}" title="Next">
+                Next page
+            </a>
+        </li>
+    </ol>
 </ol>
