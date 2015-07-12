@@ -1,0 +1,15 @@
+.price-box {
+    p {
+        display: inline-block;
+    }
+}
+.price-label {
+    @include visuallyhidden;
+}
+.old-price {
+    @include link-style(line-through);
+}
+.regular-price,
+.special-price {
+    color: $colour-brand-primary;
+}

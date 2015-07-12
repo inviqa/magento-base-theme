@@ -5,29 +5,13 @@
 
 /* hidden from everyone */
 .hidden {
-    display: none !important;
-    visibility: hidden;
+    @include hidden;
 }
-
-/* accessible to screenreaders: https://goo.gl/4f0vvg */
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    &.focusable:active,
-    &.focusable:focus {
-        clip: auto;
-        height: auto;
-        margin: 0;
-        overflow: visible;
-        position: static;
-        width: auto;
-    }
+    @include visuallyhidden;
+}
+.visuallyhidden-focus {
+    @include visuallyhidden-focus;
 }
 
 /* visibility */

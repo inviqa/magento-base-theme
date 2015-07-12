@@ -1,0 +1,107 @@
+/*------------------------------------------------------------------
+    List form
+    <ul class="form--list">
+        <li class="field">
+            <label>
+            <input>
+        </li>
+        <li class="control">
+    </ul>
+-------------------------------------------------------------------*/
+
+.form-list,
+.form--list {
+    @include rem-fallback(margin, 1, 0);
+    list-style: none;
+    .field,
+    .control {
+        @include rem-fallback(margin-bottom, 1);
+    }
+    .field {
+        label {
+            display: block;
+        }
+    }
+    #{$input-text},
+    select {
+        width: 100%;
+    }
+    [class^="dob-"] {
+        display: inline-block;
+        input {
+            display: inline-block;
+            @include rem-fallback(width, 4);
+        }
+        label {
+            display: inline-block;
+            width: auto;
+            @include rem-fallback(margin-right, 0.5);
+            vertical-align: middle;
+        }
+    }
+    @include media($small-and-up) {
+        @include outer-container;
+        .field {
+            @include outer-container;
+            clear: both;
+            > label {
+                @include span-columns(4);
+                @include rem-fallback(padding-top, 0.4);
+                text-align: right;
+            }
+            > .input-box {
+                @include span-columns(8);
+            }
+        }
+        .control {
+            @include shift(4);
+            @include span-columns(8);
+        }
+    }
+    @include media($large-and-up) {
+        .field {
+            > label {
+                @include span-columns(3);
+            }
+            > .input-box {
+                @include span-columns(7);
+            }
+        }
+        .control {
+            @include shift(3);
+            @include span-columns(7);
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    Inline form
+    <div class="form--inline">
+        <label>
+        <input>
+        <div class="action">
+            <button>
+        </div>
+    </div>
+-------------------------------------------------------------------*/
+
+.form--inline {
+    display: table;
+    label {
+        @include visuallyhidden;
+    }
+    .input,
+    input {
+        position: relative;
+        display: table-cell;
+        width: 100%;
+    }
+    .action {
+        width: 1%;
+        display: table-cell;
+    }
+    button {
+        vertical-align: top;
+    }
+}

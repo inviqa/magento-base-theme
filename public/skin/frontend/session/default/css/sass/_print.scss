@@ -15,16 +15,6 @@
     h1, h2, h3, h4 {
         page-break-after: avoid;
     }
-    a {
-        text-decoration: underline !important;
-        &:after {
-            content: ' (' attr(href) ')';
-        }
-        &[href^="#"]:after,
-        &[href^="javascript:"]:after {
-            content: "";
-        }
-    }
     img {
         max-width: 100% !important;
     }

@@ -1,6 +1,7 @@
 /* set theme name and paths */
 
 var themeName = 'session',
+    themeURL = 'mast.dev',
     publicJsDir = '../../../../js/',
     toolsDir = '../../../../../tools/',
     patternLabDir = 'pattern-lab/'
@@ -20,7 +21,9 @@ var gulp = require('gulp'),
 gulp.task('serve', ['build'], function() {
 
     browserSync.init({
-        proxy: "mast.dev"
+        proxy: themeURL,
+        open: true,
+        startPath: '/style-guide'
     });
 
     gulp.watch('./css/**/*.scss', ['sass']);
@@ -35,10 +38,7 @@ gulp.task('serve', ['build'], function() {
     gulp.watch('./images-original/**/*', ['images']);
 
     gulp.watch([
-        patternLabDir + '_patterns/**/*.mustache',
-        patternLabDir + '**/*.json',
-        patternLabDir + '**/*.js',
-        patternLabDir + '**/*.css'
+        patternLabDir + '**/*'
     ], ['styleguide']);
 
 });
@@ -46,15 +46,15 @@ gulp.task('serve', ['build'], function() {
 /** sass **/
 
 gulp.task('sass', function() {
-    return gulp.src("./css/sass/*.scss")
+    return gulp.src('./css/sass/*.scss')
         .pipe($.sass({
             includePaths: [
                 './bower_components/bourbon/app/assets/stylesheets',
                 './bower_components/neat/app/assets/stylesheets'
             ],
-            outputStyle: "compressed"
+            outputStyle: 'compressed'
         }))
-        .pipe(gulp.dest("./css"))
+        .pipe(gulp.dest('./css'))
         .pipe(reload({stream: true}));
 });
 
@@ -136,7 +136,7 @@ gulp.task('styleguide', $.shell.task([
 /** images **/
 
 gulp.task('images', function() {
-    "use strict";
+    'use strict';
 
     return gulp.src('./images-original/**/*')
         .pipe($.cache($.imagemin({
