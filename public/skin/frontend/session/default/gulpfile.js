@@ -22,7 +22,7 @@ gulp.task('serve', ['build'], function() {
 
     browserSync.init({
         proxy: themeURL,
-        open: true,
+        notify: false,
         startPath: '/style-guide'
     });
 

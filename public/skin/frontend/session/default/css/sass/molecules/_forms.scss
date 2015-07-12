@@ -53,7 +53,8 @@
                 @include span-columns(8);
             }
         }
-        .control {
+        .control,
+        + .button-set {
             @include shift(4);
             @include span-columns(8);
         }
@@ -67,7 +68,8 @@
                 @include span-columns(7);
             }
         }
-        .control {
+        .control,
+        + .button-set {
             @include shift(3);
             @include span-columns(7);
         }

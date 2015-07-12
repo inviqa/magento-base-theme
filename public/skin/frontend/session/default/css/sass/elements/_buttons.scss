@@ -12,7 +12,7 @@ button, .button {
     background: $colour-brand-primary;
     @include link-colour-light;
     @include link-style(none);
-    @include font-size(13);
+    @include font-size(14);
     @include rem-fallback(line-height, $button-height-default);
     text-align: center;
     white-space: nowrap;
@@ -42,13 +42,13 @@ button, .button {
     &--large {
         @include rem-fallback(padding, 0, $button-h-padding-large);
         @include rem-fallback(height, $button-height-large);
-        @include font-size(16);
+        @include font-size(18);
         @include rem-fallback(line-height, $button-height-large);
     }
     &--wide {
         @include rem-fallback(margin-bottom, 0.5);
         width: 100%;
-        @include media($medium-and-up) {
+        @include media($small-and-up) {
             width: auto;
         }
     }

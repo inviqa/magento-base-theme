@@ -5,15 +5,11 @@
 .toolbar {
     @include clearfix;
     @include rem-fallback(margin, 1, 0);
-    padding: 1em 0;
+    @include rem-fallback(padding, 1, 0);
     border-top: $border-default;
     border-bottom: $border-default;
-    p {
-        margin: 0;
-    }
-    @include media($full-and-up) {
-        * > {
-            display: inline-block;
-        }
+    @include font-size(12);
+    * {
+        vertical-align: middle;
     }
 }
