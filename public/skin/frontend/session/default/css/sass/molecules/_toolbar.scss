@@ -5,11 +5,87 @@
 .toolbar {
     @include clearfix;
     @include rem-fallback(margin, 1, 0);
-    @include rem-fallback(padding, 1, 0);
     border-top: $border-default;
     border-bottom: $border-default;
     @include font-size(12);
     * {
         vertical-align: middle;
+        white-space: nowrap;
+    }
+    .pager,
+    .sorter {
+        @include clearfix;
+        display: table;
+        @include rem-fallback(margin, 1, 0);
+    }
+    .amount,
+    .limiter,
+    .pages,
+    .view-mode,
+    .sort-by {
+        display: table-cell;
+        width: 1%;
+        margin: 0;
+    }
+    .amount {
+        display: none;
+        @include rem-fallback(padding-right, 1);
+    }
+    .pages,
+    .view-mode {
+        width: 100%;
+    }
+    .pages {
+        text-align: right;
+    }
+    @include media($small-and-up) {
+        .amount {
+            display: table-cell;
+        }
+    }
+    @include media($large-and-up) {
+        .pager {
+            float: right;
+        }
+        .sorter {
+            float: left;
+        }
+        .amount,
+        .limiter,
+        .pages,
+        .view-mode,
+        .sort-by,
+        .pager,
+        .sorter {
+            display: inline-block;
+            width: auto;
+        }
+        .sort-by,
+        .pages {
+            @include rem-fallback(padding-left, 1);
+        }
+    }
+}
+
+.view-mode {
+    label {
+        @include visuallyhidden;
+    }
+}
+
+.sort-by {
+    a {
+        font-size: 0;
+        &:after {
+            position: relative;
+            @include rem-fallback(top, 0.4);
+            @include font-size(16, 0);
+        }
+        &[href*="desc"]:after {
+            content: '\2193';
+        }
+        &[href*="asc"]:after {
+            content: '\2191';
+        }
     }
 }

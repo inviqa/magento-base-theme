@@ -20,6 +20,7 @@ $medium-and-up      : new-breakpoint(min-width $medium);
 $large-and-up       : new-breakpoint(min-width $large);
 $full-and-up        : new-breakpoint(min-width $full);
 
+$xsmall-only        : new-breakpoint(max-width $small - 1);
 $small-only         : new-breakpoint(max-width $medium - 1);
 $medium-only        : new-breakpoint(min-width $medium max-width $large - 1);
 $large-only         : $large-and-up;

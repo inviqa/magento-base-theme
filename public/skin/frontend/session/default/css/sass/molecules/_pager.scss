@@ -1,13 +1,17 @@
 .pages {
-    $page-size: 2.5;
-    @include font-size(13);
+    $page-size: 2;
+    @include font-size(11);
+    white-space: nowrap;
     strong {
         @include visuallyhidden;
+    }
+    ol {
+        margin: 0;
     }
     li {
         display: inline-block;
         text-align: center;
-        vertical-align: middle;
+        vertical-align: bottom;
         @include rem-fallback(line-height, $page-size);
     }
     a {

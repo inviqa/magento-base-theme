@@ -61,7 +61,7 @@
 }
 
 /* grid */
-.grid {
+.grid-wrap {
     @include outer-container;
 }
 @for $i from 1 through 4 {

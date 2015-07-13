@@ -1,1 +1,38 @@
-Toolbar
+<div class="toolbar">
+    <div class="pager">
+        <p class="amount">
+            <strong>26 Item(s)</strong>
+        </p>
+
+        <div class="limiter">
+            <label>Show</label>
+            <select>
+                <option value="{{ url }}" selected="selected">12</option>
+                <option value="{{ url }}">24</option>
+                <option value="{{ url }}">36</option>
+            </select>
+        </div>
+        
+        {{> molecules-pagination }}
+    </div>
+
+    <div class="sorter">
+        <p class="view-mode">
+            <label>View as:</label>
+            <strong title="Grid" class="grid">Grid</strong>
+            <a href="{{ url }}" title="List" class="list">List</a>
+        </p>
+
+        <div class="sort-by">
+            <label>Sort By</label>
+            <select>
+                <option value="{{ url }}" selected="selected">Position</option>
+                <option value="{{ url }}">Name</option>
+                <option value="{{ url }}">Price</option>
+            </select>
+            <a href="{{ url }}desc" title="Set Descending Direction">
+                Set Descending Direction
+            </a>
+        </div>
+    </div>
+</div>
