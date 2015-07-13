@@ -3,8 +3,6 @@
     Reference: http://goo.gl/ylfde
 -------------------------------------------------------------------*/
 
-$input-text: '[type="text"], [type="password"], [type="email"], [type="tel"], [type="url"], [type="search"], [type="number"], [type="date"], [type="month"], [type="week"], [type="datetime"], [type="datetime-local"], [multiple], textarea';
-
 fieldset {
     @include clearfix;
     margin: 0;
@@ -12,8 +10,8 @@ fieldset {
     border: 0;
 }
 
-/* labels */
-label {
+/* form labels */
+form label {
     @include font-size(13);
     vertical-align: top;
     cursor: pointer;
@@ -29,6 +27,7 @@ label {
 }
 
 /* text inputs */
+$input-text: '[type="text"], [type="password"], [type="email"], [type="tel"], [type="url"], [type="search"], [type="number"], [type="date"], [type="month"], [type="week"], [type="datetime"], [type="datetime-local"], [multiple], textarea';
 #{$input-text} {
     @include rem-fallback(padding, 0, 0.5);
     @include rem-fallback(height, $form-input-height);
@@ -54,8 +53,6 @@ textarea {
 }
 
 /* select */
-select:not([multiple]) {
-}
 option {
     @include rem-fallback(padding, 0.3, 0.5);
 }

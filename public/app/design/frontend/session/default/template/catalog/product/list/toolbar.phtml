@@ -52,8 +52,10 @@
         <p class="amount">
             <?php if($this->getLastPageNum()>1): ?>
                 <?php echo $this->__('Items %s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+            <?php elseif($this->getTotalNum() == 1): ?>
+                <?php echo $this->__('1 item') ?>
             <?php else: ?>
-                <?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?>
+                <?php echo $this->__('%s items', $this->getTotalNum()) ?>
             <?php endif; ?>
         </p>
 
