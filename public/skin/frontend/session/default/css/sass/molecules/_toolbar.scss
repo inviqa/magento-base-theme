@@ -5,6 +5,7 @@
 .toolbar {
     @include clearfix;
     @include rem-fallback(margin, 1, 0);
+    @include rem-fallback(padding, 0.3, 0);
     border-top: $border-default;
     border-bottom: $border-default;
     @include font-size(12);
@@ -13,13 +14,13 @@
         white-space: nowrap;
     }
     label {
-        @include font-size(12);
+        @include font-size(12, $page-size);
     }
     .pager,
     .sorter {
         @include clearfix;
         display: table;
-        @include rem-fallback(margin, 1, 0);
+        @include rem-fallback(margin, 0.7, 0);
     }
     .amount,
     .limiter,
@@ -103,6 +104,11 @@
         @include link-colour($colour-text-default, $colour-text-light);
         &:hover {
             background: $colour-background-dark;
+        }
+    }
+    @include media($large-and-up) {
+        label {
+            @include visuallyhidden;
         }
     }
 }

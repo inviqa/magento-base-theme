@@ -8,12 +8,39 @@
 <?php if($this->getCollection()->getSize()): ?>
 <div class="toolbar">
     <?php if( $this->isExpanded() ): ?>
+
+    <div class="pager">
+        <p class="amount">
+            <?php if($this->getLastPageNum()>1): ?>
+                <?php echo $this->__('Items %s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+            <?php elseif($this->getTotalNum() == 1): ?>
+                <?php echo $this->__('1 item') ?>
+            <?php else: ?>
+                <?php echo $this->__('%s items', $this->getTotalNum()) ?>
+            <?php endif; ?>
+        </p>
+
+        <div class="limiter">
+            <label><?php echo $this->__('Show') ?></label>
+            <select onchange="setLocation(this.value)">
+            <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+                <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
+                    <?php echo $_limit ?>
+                </option>
+            <?php endforeach; ?>
+            </select>
+        </div>
+
+        <?php echo $this->getPagerHtml() ?>
+
+    </div>
+
     <div class="sorter">
         <?php if( $this->isEnabledViewSwitcher() ): ?>
         <p class="view-mode">
             <?php $_modes = $this->getModes(); ?>
             <?php if($_modes && count($_modes)>1): ?>
-            <label><?php echo $this->__('View as') ?>:</label>
+            <label><?php echo $this->__('View as') ?></label>
             <?php $_i=1; $_fix=''; foreach ($this->getModes() as $_code=>$_label): ?>
                 <?php if ($_i==1 && strtolower($_code)=='list') $_fix='-fix'; ?>
                 <?php if($this->isModeActive($_code)): ?>
@@ -47,31 +74,5 @@
         </div>
     </div>
     <?php endif; ?>
-
-    <div class="pager">
-        <p class="amount">
-            <?php if($this->getLastPageNum()>1): ?>
-                <?php echo $this->__('Items %s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
-            <?php elseif($this->getTotalNum() == 1): ?>
-                <?php echo $this->__('1 item') ?>
-            <?php else: ?>
-                <?php echo $this->__('%s items', $this->getTotalNum()) ?>
-            <?php endif; ?>
-        </p>
-
-        <div class="limiter">
-            <label><?php echo $this->__('Show') ?></label>
-            <select onchange="setLocation(this.value)">
-            <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
-                <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
-                    <?php echo $_limit ?>
-                </option>
-            <?php endforeach; ?>
-            </select>
-        </div>
-
-        <?php echo $this->getPagerHtml() ?>
-
-    </div>
 </div>
 <?php endif ?>
