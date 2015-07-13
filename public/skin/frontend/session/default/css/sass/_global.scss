@@ -23,11 +23,11 @@ caption, th, td {
 
 
 .no-display {
-    @extend %visuallyhidden;
+    @include visuallyhidden;
 }
 
 .main-container {
-    @extend %layout-centralize;
+    @include outer-container;
     @include rem-fallback(padding-top, 2);
     @include rem-fallback(padding-bottom, 2);
 }

@@ -15,7 +15,7 @@
 }
 
 .header-panel {
-    @extend %layout-centralize;
+    @include outer-container;
     @include rem-fallback(padding-top, 1);
     @include rem-fallback(padding-bottom, 1);
     .welcome-msg {
@@ -116,7 +116,6 @@
         background-color: $colour-background-light;
     }
     .close-btn {
-        @extend %image-replacement;
         float: right;
         width: 13px;
         padding-top: 12px;
@@ -179,7 +178,7 @@
 }
 
 .header {
-    @extend %layout-centralize;
+    @include outer-container;
     padding-top: 1em;
     padding-bottom: 1em;
     h1 {
@@ -209,5 +208,5 @@
     background-color: $colour-background-white;
 }
 .header-usp {
-    @extend %layout-centralize;
+    @include outer-container;
 }

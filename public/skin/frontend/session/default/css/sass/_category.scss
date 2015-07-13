@@ -21,7 +21,7 @@
     @include rem-fallback(margin, 1, 0);
 }
 .add-to-links {
-    @extend %remove-list-style;
+    /*remove-list-style*/
     @include rem-fallback(margin-top, 1);
     .separator {
         display: none;
@@ -32,7 +32,7 @@
 .products-grid {
     @include clearfix;
     @include outer-container;
-    @extend %remove-list-style;
+    /*remove-list-style*/
     text-align: center;
     .item {
         @include rem-fallback(margin-top, 1);
@@ -80,7 +80,7 @@
 
 /* View Type: List */
 .products-list {
-    @extend %remove-list-style;
+    /*remove-list-style*/
     li.item {
         @include clearfix;
     }

@@ -10,7 +10,7 @@ footer {
 }
 
 .footer {
-    @extend %layout-centralize;
+    @include outer-container;
     form {
         @include clearfix;
         @include rem-fallback(margin, 1, 0);
