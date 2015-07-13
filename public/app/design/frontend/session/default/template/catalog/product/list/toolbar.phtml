@@ -1,0 +1,75 @@
+<?php
+/**
+ * Product list toolbar
+ *
+ * @see Mage_Catalog_Block_Product_List_Toolbar
+ */
+?>
+<?php if($this->getCollection()->getSize()): ?>
+<div class="toolbar">
+    <?php if( $this->isExpanded() ): ?>
+    <div class="sorter">
+        <?php if( $this->isEnabledViewSwitcher() ): ?>
+        <p class="view-mode">
+            <?php $_modes = $this->getModes(); ?>
+            <?php if($_modes && count($_modes)>1): ?>
+            <label><?php echo $this->__('View as') ?>:</label>
+            <?php $_i=1; $_fix=''; foreach ($this->getModes() as $_code=>$_label): ?>
+                <?php if ($_i==1 && strtolower($_code)=='list') $_fix='-fix'; ?>
+                <?php if($this->isModeActive($_code)): ?>
+                    <strong class="<?php echo strtolower($_code); echo $_fix; ?>" title="<?php echo $_label ?>"><?php echo $_label ?></strong>
+                <?php else: ?>
+                    <a class="<?php echo strtolower($_code); echo $_fix; ?>" title="<?php echo $_label ?>" href="<?php echo $this->getModeUrl($_code) ?>"><?php echo $_label ?></a>
+                <?php endif; ?>
+            <?php $_i++; endforeach; ?>
+            <?php endif; ?>
+        </p>
+        <?php endif; ?>
+
+        <div class="sort-by">
+            <label><?php echo $this->__('Sort by') ?></label>
+            <select onchange="setLocation(this.value)">
+            <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
+                <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
+                    <?php echo $this->__($_order) ?>
+                </option>
+            <?php endforeach; ?>
+            </select>
+            <?php if($this->getCurrentDirection() == 'desc'): ?>
+                <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" class="sort-by--asc" title="<?php echo $this->__('View ascending') ?>">
+                    <?php echo $this->__('View ascending') ?>
+                </a>
+            <?php else: ?>
+                <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" class="sort-by--desc" title="<?php echo $this->__('View descending') ?>">
+                    <?php echo $this->__('View descending') ?>
+                </a>
+            <?php endif; ?>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <div class="pager">
+        <p class="amount">
+            <?php if($this->getLastPageNum()>1): ?>
+                <?php echo $this->__('Items %s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+            <?php else: ?>
+                <?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?>
+            <?php endif; ?>
+        </p>
+
+        <div class="limiter">
+            <label><?php echo $this->__('Show') ?></label>
+            <select onchange="setLocation(this.value)">
+            <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+                <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
+                    <?php echo $_limit ?>
+                </option>
+            <?php endforeach; ?>
+            </select>
+        </div>
+
+        <?php echo $this->getPagerHtml() ?>
+
+    </div>
+</div>
+<?php endif ?>

@@ -65,6 +65,15 @@
             @include rem-fallback(padding-left, 1);
         }
     }
+    @include media($full-and-up) {
+        .amount {
+            @include rem-fallback(padding-right, 2);
+        }
+        .sort-by,
+        .pages {
+            @include rem-fallback(padding-left, 2);
+        }
+    }
 }
 
 .view-mode {
@@ -76,16 +85,18 @@
 .sort-by {
     a {
         font-size: 0;
+        @include link-style(none);
+        @include link-colour($colour-brand-secondary, $colour-brand-primary);
         &:after {
             position: relative;
             @include rem-fallback(top, 0.4);
             @include font-size(16, 0);
         }
-        &[href*="desc"]:after {
-            content: '\2193';
-        }
-        &[href*="asc"]:after {
+        &.sort-by--asc:after {
             content: '\2191';
+        }
+        &.sort-by--desc:after {
+            content: '\2193';
         }
     }
 }
