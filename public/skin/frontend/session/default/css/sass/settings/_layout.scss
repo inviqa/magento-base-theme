@@ -1,0 +1,87 @@
+/*------------------------------------------------------------------
+    Page layout
+-------------------------------------------------------------------*/
+
+/* page wrappers : centred content with padding */
+.header-panel-wrapper,
+.header-wrapper,
+.header-usp-wrapper,
+.footer-wrapper,
+.main-container,
+.notice-inner {
+    @include outer-container;
+    @include rem-fallback(padding-right, 1);
+    @include rem-fallback(padding-left, 1);
+    @include media($medium-and-up) {
+        @include rem-fallback(padding-right, 2);
+        @include rem-fallback(padding-left, 2);
+    }
+}
+
+/* page columns */
+$column-sidebar-medium     : 3.5;
+$column-sidebar-large      : 3;
+$column-sidebar-full       : 2;
+.col-left,
+.col-right {
+    @include media($medium-and-up) {
+        @include span-columns($column-sidebar-medium);
+    }
+    @include media($large-and-up) {
+        @include span-columns($column-sidebar-large);
+    }
+    @include media($full-and-up) {
+        @include span-columns($column-sidebar-full);
+    }
+}
+.col-main {
+    @include media($medium-and-up) {
+        .col2-left-layout &,
+        .col2-right-layout & {
+            @include span-columns($grid-columns - $column-sidebar-medium);
+        }
+        .col3-layout & {
+            @include span-columns($grid-columns - 2*$column-sidebar-medium);
+        }
+    }
+    @include media($large-and-up) {
+        .col2-left-layout &,
+        .col2-right-layout & {
+            @include span-columns($grid-columns - $column-sidebar-large);
+        }
+        .col3-layout & {
+            @include span-columns($grid-columns - 2*$column-sidebar-large);
+        }
+    }
+    @include media($full-and-up) {
+        .col2-left-layout &,
+        .col2-right-layout & {
+            @include span-columns($grid-columns - $column-sidebar-full);
+        }
+        .col3-layout & {
+            @include span-columns($grid-columns - 2*$column-sidebar-full);
+        }
+    }
+}
+
+/* content columns */
+.col-set {
+    @include outer-container;
+}
+@for $i from 1 through 4 {
+    .col-#{$i} {
+        @include media($medium-and-up) {
+            @include span-columns(12/$i);
+        }
+    }
+}
+.col-2 {
+    @include media($medium-and-up) {
+        &.narrow {
+            @include span-columns(4);
+        }
+        &.wide {
+            @include span-columns(8);
+        }
+    }
+}

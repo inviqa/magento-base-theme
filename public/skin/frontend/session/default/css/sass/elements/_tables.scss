@@ -10,6 +10,7 @@ th, td {
     text-align: left;
     @include rem-fallback(padding, 0.8, 1);
     @include font-size(14, 1);
+    vertical-align: top;
 }
 
 /* data table  */
