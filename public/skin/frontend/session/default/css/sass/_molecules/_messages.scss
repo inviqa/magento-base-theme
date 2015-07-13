@@ -1,15 +1,19 @@
 /*------------------------------------------------------------------
-    Global Messages
+    Messages
 -------------------------------------------------------------------*/
 
+/* site messages */
 .info-msg,
 .success-msg,
 .warn-msg,
 .error-msg {
     @include rem-fallback(margin, 1);
     @include rem-fallback(padding, 0.5, 1.5);
-    border-left: 3px solid $colour-info;
+    border-left: 3px solid $colour-brand-primary;
     @include font-size(14);
+}
+.info-msg {
+    border-color: $colour-info;
 }
 .success-msg {
     border-color: $colour-success;
@@ -31,8 +35,13 @@
 }
 .notice-inner {
     @include outer-container;
-    @include rem-fallback(padding, 1, 0);
+    @include rem-fallback(padding, 1);
+    text-align: center;
     p {
         margin: 0;
+    }
+    @include media($medium-and-up) {
+        @include rem-fallback(padding, 1, 2);
+        text-align: inherit;
     }
 }
