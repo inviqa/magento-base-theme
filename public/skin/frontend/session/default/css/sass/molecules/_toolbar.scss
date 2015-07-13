@@ -12,6 +12,9 @@
         vertical-align: middle;
         white-space: nowrap;
     }
+    label {
+        @include font-size(12);
+    }
     .pager,
     .sorter {
         @include clearfix;
@@ -67,18 +70,40 @@
     }
     @include media($full-and-up) {
         .amount {
-            @include rem-fallback(padding-right, 2);
+            @include rem-fallback(padding-right, 3);
         }
         .sort-by,
         .pages {
-            @include rem-fallback(padding-left, 2);
+            @include rem-fallback(padding-left, 3);
         }
     }
 }
 
 .view-mode {
+    @include font-size(11);
     label {
-        @include visuallyhidden;
+        @include rem-fallback(margin-right, 0.5);
+    }
+    strong, a {
+        display: inline-block;
+        @include rem-fallback(height, $page-size);
+        @include rem-fallback(min-width, $page-size);
+        @include rem-fallback(padding, 0, 0.5);
+        @include link-style(none);
+        @include font-size(11);
+        @include rem-fallback(line-height, $page-size);
+    }
+    strong {
+        color: $colour-text-light;
+        background: $colour-brand-primary;
+        font-weight: $font-weight-default;
+    }
+    a {
+        background: $colour-background-light;
+        @include link-colour($colour-text-default, $colour-text-light);
+        &:hover {
+            background: $colour-background-dark;
+        }
     }
 }
 

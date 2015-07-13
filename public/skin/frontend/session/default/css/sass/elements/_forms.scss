@@ -11,7 +11,7 @@ fieldset {
 }
 
 /* form labels */
-form label {
+label {
     @include font-size(13);
     vertical-align: top;
     cursor: pointer;
