@@ -4,6 +4,17 @@
 
 .nav-container {
     position: relative;
+    ul {
+        margin: 0;
+    }
+}
+
+// temp
+.nav-primary {
+    display: none;
+    @include media($medium-and-up) {
+        display: block;
+    }
 }
 
 @include media($medium-and-up) {
@@ -12,7 +23,7 @@
         @include rem-fallback(margin-right, 2);
         &:hover {
             ul {
-                display: block;
+                /*display: block;*/
             }
         }
     }

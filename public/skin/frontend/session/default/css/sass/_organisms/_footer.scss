@@ -2,6 +2,12 @@
     Footer
 -------------------------------------------------------------------*/
 
+
+footer {
+    background: $colour-background-dark;
+}
+
+
 footer {
     @include clearfix;
     background: $colour-background-light;
