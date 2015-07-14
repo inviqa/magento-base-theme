@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------
-    Navigation: primary
+    Category: product grid
 -------------------------------------------------------------------*/
 
 /* layout */
@@ -61,15 +61,28 @@
         height: auto;
         border: $border-light;
     }
-    .product-name {
-        @include font-size(20, 1.2);
-        a {
-            @include link-colour-pop;
-            @include link-style(none);
-        }
+    .product-image {
+        display: block;
+        @include rem-fallback(margin-bottom, 1);
     }
     .btn-cart {
         @include rem-fallback(margin, 1, 0);
+    }
+    .add-to-links {
+        a {
+            display: block;
+        }
+        .separator {
+            display: none;
+        }
+    }
+}
+.product-name {
+    margin-top: 0;
+    @include font-size(20, 1.2);
+    a {
+        @include link-colour-pop;
+        @include link-style(none);
     }
 }
 .add-to-links {
@@ -78,10 +91,6 @@
         display: inline;
     }
     a {
-        display: block;
         @include link-colour-alt;
-    }
-    .separator {
-        display: none;
     }
 }

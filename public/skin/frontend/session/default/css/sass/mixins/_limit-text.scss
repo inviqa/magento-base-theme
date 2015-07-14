@@ -69,7 +69,7 @@ $lineHeight: 1.3 // Provide the (unitless!) line-height of the text element to h
 // via the min-width property: Higher = text clipped earlier, less orphaned ellipses. And vice versa.
 %limit-lines-ellipsis {
     min-width: 25%;
-    content: "...";
+    content: "…";
     position: absolute;
     right: 0;
     padding-left: 2em; // for the gradient

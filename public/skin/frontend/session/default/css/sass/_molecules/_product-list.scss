@@ -1,0 +1,56 @@
+/*------------------------------------------------------------------
+    Category: product list
+-------------------------------------------------------------------*/
+
+/* layout */
+
+.products-list {
+}
+
+/* list items */
+
+.products-list {
+    .item {
+        position: relative;
+        @include outer-container;
+        @include rem-fallback(margin-bottom, 2);
+        @include rem-fallback(padding-bottom, 2);
+        border-bottom: $border-light;
+        &:last-of-type {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+    }
+    img {
+        width: 100%;
+        height: auto;
+        border: $border-light;
+    }
+    .desc {
+        @include font-size(14);
+        @include rem-fallback(margin-bottom, 1);
+        a {
+            white-space: nowrap;
+        }
+    }
+    .product-image {
+        float: left;
+        width: 40%;        
+        min-width: 100px;
+        max-width: 160px;
+        @include rem-fallback(margin-right, 2);
+    }
+    .product-shop {
+        overflow: hidden;
+    }
+    @include media($large-and-up) {
+        .product-name {
+            @include rem-fallback(padding-right, 14);
+        }
+        .price-box {
+            @include position(absolute, 0 0 null null);
+            text-align: right;
+        }
+    }
+}
