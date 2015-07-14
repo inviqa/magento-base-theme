@@ -18,6 +18,13 @@
             "background": "#ec008c"
         }
     },
+    "product": {
+        "name": "Product name",
+        "price": {
+            "old": "£175.00",
+            "current": "£140.00"
+        }
+    },
     "img": {
         "logo": {
             "src": "images/media/logo.png"

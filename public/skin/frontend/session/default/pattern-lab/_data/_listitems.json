@@ -23,6 +23,13 @@
                 "alt": "16x9 Image"
             }
         },
+        "product": {
+            "name": "Product with a longer name",
+            "price": {
+                "old": "£275.40",
+                "current": "£140.00"
+            }
+        },
         "headline": {
             "short": "Lorizzle pimpin' dolizzle sit amet I",
             "medium": "Rizzle adipiscing elizzle. Nullam sapien velizzle, shit volutpizzle, my"
@@ -94,6 +101,13 @@
             "landscape-16x9": {
                 "src": "http://placeimg.com/640/360/people",
                 "alt": "16x9 Image"
+            }
+        },
+        "product": {
+            "name": "Product with a longer name",
+            "price": {
+                "old": "£271.40",
+                "current": "£140.40"
             }
         },
         "headline": {
@@ -169,6 +183,13 @@
                 "alt": "16x9 Image"
             }
         },
+        "product": {
+            "name": "Product with a longer name",
+            "price": {
+                "old": "£271.40",
+                "current": "£140.40"
+            }
+        },
         "headline": {
             "short": "Bacon ipsum dolor sit amet spare rib",
             "medium": "Tongue pancetta short ribs bacon. Kielbasa ball tip cow bresaola, capic"
@@ -240,6 +261,13 @@
             "landscape-16x9": {
                 "src": "http://placeimg.com/640/360/people/greyscale",
                 "alt": "16x9 Image"
+            }
+        },
+        "product": {
+            "name": "Product with a longer name",
+            "price": {
+                "old": "£271.40",
+                "current": "£140.40"
             }
         },
         "headline": {
@@ -315,6 +343,13 @@
                 "alt": "16x9 Image"
             }
         },
+        "product": {
+            "name": "Product with a longer name",
+            "price": {
+                "old": "£271.40",
+                "current": "£140.40"
+            }
+        },
         "headline": {
             "short": "Blog meme masthead DocumentCloud Fou",
             "medium": "Square tabloid Andy Carvin stupid commenters, Nick Denton mathewi semip"
@@ -386,6 +421,13 @@
             "landscape-16x9": {
                 "src": "http://placeimg.com/640/360/people/grayscale",
                 "alt": "16x9 Image"
+            }
+        },
+        "product": {
+            "name": "Product name",
+            "price": {
+                "old": "£271.40",
+                "current": "£140.40"
             }
         },
         "headline": {
@@ -461,6 +503,13 @@
                 "alt": "16x9 Image"
             }
         },
+        "product": {
+            "name": "Product name",
+            "price": {
+                "old": "£271.40",
+                "current": "£140.40"
+            }
+        },
         "headline": {
             "short": "Now that we know who you are, I know",
             "medium": "Who I am. I'm not a mistake! It all makes sense! In a comic, you know"
@@ -532,6 +581,13 @@
             "landscape-16x9": {
                 "src": "http://placeimg.com/640/360/any/grayscale",
                 "alt": "16x9 Image"
+            }
+        },
+        "product": {
+            "name": "Product name",
+            "price": {
+                "old": "£271.40",
+                "current": "£140.00"
             }
         },
         "headline": {
@@ -607,6 +663,13 @@
                 "alt": "16x9 Image"
             }
         },
+        "product": {
+            "name": "Product name",
+            "price": {
+                "old": "£83.53",
+                "current": "£33.99"
+            }
+        },
         "headline": {
             "short": "All right. Well, take care of yourself, Han",
             "medium": "You don't believe in the Force, do you? The Force is strong with this one"
@@ -678,6 +741,13 @@
             "landscape-16x9": {
                 "src": "http://placeimg.com/640/360/arch/grayscale",
                 "alt": "16x9 Image"
+            }
+        },
+        "product": {
+            "name": "Product name",
+            "price": {
+                "old": "£83.53",
+                "current": "£33.99"
             }
         },
         "headline": {
@@ -753,6 +823,13 @@
                 "alt": "16x9 Image"
             }
         },
+        "product": {
+            "name": "Product name",
+            "price": {
+                "old": "£83.53",
+                "current": "£33.99"
+            }
+        },
         "headline": {
             "short": "Carrot cake fruitcake dessert apple",
             "medium": "Pie powder lemon drops sesame snaps cake brownie. Biscuit ice cream gin"
@@ -824,6 +901,13 @@
             "landscape-16x9": {
                 "src": "http://placeimg.com/640/360/people/sepia",
                 "alt": "16x9 Image"
+            }
+        },
+        "product": {
+            "name": "Product with a longer name",
+            "price": {
+                "old": "£83.53",
+                "current": "£33.99"
             }
         },
         "headline": {
