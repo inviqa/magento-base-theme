@@ -1,0 +1,9 @@
+.ratings {
+    @include font-size(12);
+    li {
+        display: inline;
+    }
+    a {
+        @include link-colour-alt;
+    }
+}

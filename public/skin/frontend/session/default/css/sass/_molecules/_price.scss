@@ -1,4 +1,9 @@
+/*------------------------------------------------------------------
+    Prices
+-------------------------------------------------------------------*/
+
 .price-box {
+    color: $colour-brand-primary;
     p {
         display: inline-block;
     }
@@ -6,10 +11,25 @@
 .price-label {
     @include visuallyhidden;
 }
-.old-price {
-    @include link-style(line-through);
+.minimal-price-link {
+    display: block;
+    @include font-size(12);
+    color: $colour-text-default;
 }
-.regular-price,
-.special-price {
-    color: $colour-brand-primary;
+
+/* From: xx.xx */
+.old-price,
+.price-from {
+    @include font-size(12);
+    @include link-style(line-through);
+    color: $colour-text-default;
+}
+
+/* Starting at: xx.xx */
+.minimal-price {
+    &:after {
+        content: '+';
+        @include font-size(12);
+        vertical-align: text-top;
+    }
 }
