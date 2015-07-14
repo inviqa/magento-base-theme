@@ -12,8 +12,8 @@
         @include rem-fallback(padding-bottom, 2);
         border-bottom: $border-light;
         &:last-of-type {
-            margin: 0;
-            padding: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
             border: 0;
         }
     }
