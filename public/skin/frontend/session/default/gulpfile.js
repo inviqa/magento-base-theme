@@ -26,7 +26,7 @@ gulp.task('serve', ['build'], function() {
         startPath: '/style-guide'
     });
 
-    gulp.watch('./css/**/*.scss', ['sass']);
+    gulp.watch('./css/**/*.scss', ['sass', 'sass-print']);
 
     gulp.watch([
         './js/**/*.js',
@@ -46,12 +46,22 @@ gulp.task('serve', ['build'], function() {
 /** sass **/
 
 gulp.task('sass', function() {
-    return gulp.src('./css/sass/*.scss')
+    return gulp.src([
+        './css/sass/*.scss',
+        '!./css/sass/print/*.scss'])
         .pipe($.sass({
             includePaths: [
                 './bower_components/bourbon/app/assets/stylesheets',
                 './bower_components/neat/app/assets/stylesheets'
             ],
+            outputStyle: 'compressed'
+        }))
+        .pipe(gulp.dest('./css'))
+        .pipe(reload({stream: true}));
+});
+gulp.task('sass-print', function() {
+    return gulp.src(['./css/sass/print/*.scss'])
+        .pipe($.sass({
             outputStyle: 'compressed'
         }))
         .pipe(gulp.dest('./css'))
@@ -152,7 +162,7 @@ gulp.task('images', function() {
 gulp.task('default', ['serve']);
 
 /** build - prepares and updates all assets **/
-gulp.task('build', ['build-scripts', 'scripts', 'images', 'sass', 'styleguide']);
+gulp.task('build', ['build-scripts', 'scripts', 'images', 'sass', 'sass-print', 'styleguide']);
 
 /** deploy - builds and does anything else necessary before deploying **/
 gulp.task('deploy', ['build']);

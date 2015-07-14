@@ -68,4 +68,5 @@ public/skin/frontend/rwd
 public/skin/install
 
 public/skin/frontend/*/default/css/styles.css
+public/skin/frontend/*/default/css/print.css
 public/skin/frontend/**/*.min.js
