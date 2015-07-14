@@ -23,6 +23,7 @@
                 "alt": "16x9 Image"
             }
         },
+        "number": "1",
         "product": {
             "name": "Product with a longer name",
             "price": {
@@ -103,6 +104,7 @@
                 "alt": "16x9 Image"
             }
         },
+        "number": "2",
         "product": {
             "name": "Product with a longer name",
             "price": {
@@ -183,6 +185,7 @@
                 "alt": "16x9 Image"
             }
         },
+        "number": "3",
         "product": {
             "name": "Product with a longer name",
             "price": {
@@ -263,6 +266,7 @@
                 "alt": "16x9 Image"
             }
         },
+        "number": "4",
         "product": {
             "name": "Product with a longer name",
             "price": {
@@ -343,6 +347,7 @@
                 "alt": "16x9 Image"
             }
         },
+        "number": "5",
         "product": {
             "name": "Product with a longer name",
             "price": {
@@ -423,6 +428,7 @@
                 "alt": "16x9 Image"
             }
         },
+        "number": "6",
         "product": {
             "name": "Product name",
             "price": {
@@ -503,6 +509,7 @@
                 "alt": "16x9 Image"
             }
         },
+        "number": "7",
         "product": {
             "name": "Product name",
             "price": {
@@ -583,6 +590,7 @@
                 "alt": "16x9 Image"
             }
         },
+        "number": "8",
         "product": {
             "name": "Product name",
             "price": {
@@ -663,6 +671,7 @@
                 "alt": "16x9 Image"
             }
         },
+        "number": "9",
         "product": {
             "name": "Product name",
             "price": {
@@ -743,6 +752,7 @@
                 "alt": "16x9 Image"
             }
         },
+        "number": "10",
         "product": {
             "name": "Product name",
             "price": {
@@ -823,6 +833,7 @@
                 "alt": "16x9 Image"
             }
         },
+        "number": "11",
         "product": {
             "name": "Product name",
             "price": {
@@ -903,6 +914,7 @@
                 "alt": "16x9 Image"
             }
         },
+        "number": "12",
         "product": {
             "name": "Product with a longer name",
             "price": {
