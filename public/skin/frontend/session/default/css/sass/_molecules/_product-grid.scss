@@ -1,0 +1,39 @@
+.products-grid {
+    @include outer-container;
+    @include media($xsmall-and-up) {
+        .item {
+            @include span-columns(6);
+            @include rem-fallback(margin-bottom, 2);
+            &:nth-of-type(2n) {
+                @include omega;
+            }
+        }
+    }
+    @include media($small-and-up) {
+        .item {
+            @include span-columns(4);
+            @include omega-reset(2n);
+            &:nth-of-type(3n) {
+                @include omega;
+            }
+        }
+    }
+    @include media($large-and-up) {
+        .item {
+            @include span-columns(3);
+            @include omega-reset(3n);
+            &:nth-of-type(4n) {
+                @include omega;
+            }
+        }
+    }
+    @include media($full-and-up) {
+        .item {
+            @include span-columns(12/5);
+            @include omega-reset(4n);
+            &:nth-of-type(5n) {
+                @include omega;
+            }
+        }
+    }
+}
