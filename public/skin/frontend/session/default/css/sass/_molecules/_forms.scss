@@ -14,10 +14,12 @@
     @include rem-fallback(margin, 1, 0);
     list-style: none;
     .field,
+    > li:not(.control),
     .control {
         @include rem-fallback(margin-bottom, 1);
     }
-    .field {
+    .field,
+    > li:not(.control) {
         label {
             display: block;
         }
@@ -28,6 +30,7 @@
     }
     [class^="dob-"] {
         display: inline-block;
+        @include rem-fallback(margin-right, 0.5);
         input {
             display: inline-block;
             @include rem-fallback(width, 4);
@@ -35,13 +38,13 @@
         label {
             display: inline-block;
             width: auto;
-            @include rem-fallback(margin-right, 0.5);
             vertical-align: middle;
         }
     }
     @include media($small-and-up) {
         @include outer-container;
-        .field {
+        .field,
+        > li:not(.control) {
             @include outer-container;
             clear: both;
             > label {
@@ -51,6 +54,7 @@
             }
             > .input-box {
                 @include span-columns(8);
+                @include omega;
             }
         }
         .control,
@@ -60,7 +64,8 @@
         }
     }
     @include media($large-and-up) {
-        .field {
+        .field,
+        > li:not(.control) {
             > label {
                 @include span-columns(3);
             }
