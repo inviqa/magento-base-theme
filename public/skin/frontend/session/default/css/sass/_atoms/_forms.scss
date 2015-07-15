@@ -29,9 +29,11 @@ label {
 /* text inputs */
 $input-text: '[type="text"], [type="password"], [type="email"], [type="tel"], [type="url"], [type="search"], [type="number"], [type="date"], [type="month"], [type="week"], [type="datetime"], [type="datetime-local"], [multiple], textarea';
 #{$input-text} {
+    -webkit-appearance: none;
     @include rem-fallback(padding, 0, 0.5);
     @include rem-fallback(height, $form-input-height);
     border: $border-default;
+    border-radius: 0;
     @include font-size(16);
     font-family: $font-sans;
     font-weight: 400;
@@ -53,6 +55,9 @@ textarea {
 }
 
 /* select */
+select {
+    border-radius: 0;
+}
 option {
     @include rem-fallback(padding, 0.3, 0.5);
 }

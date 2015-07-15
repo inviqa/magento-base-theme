@@ -10,12 +10,8 @@
 .main-container,
 .notice-inner {
     @include outer-container;
-    @include rem-fallback(padding-right, 1);
-    @include rem-fallback(padding-left, 1);
-    @include media($medium-and-up) {
-        @include rem-fallback(padding-right, 2);
-        @include rem-fallback(padding-left, 2);
-    }
+    @include rem-fallback(padding-right, 2);
+    @include rem-fallback(padding-left, 2);
 }
 
 /* page columns */
