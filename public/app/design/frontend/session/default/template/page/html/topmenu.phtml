@@ -9,7 +9,12 @@
 <?php if($_menu): ?>
     <input type="checkbox" id="nav-toggle" class="nav__toggle--input">
     <nav role="navigation" class="nav-container">
-        <label for="nav-toggle" class="nav__toggle--close">Close</label>
+        <div class="nav__mobile--heading">
+            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo Mage::getStoreConfig('design/header/logo_alt') ?>">
+                <img src="<?php echo $this->getSkinUrl(Mage::getStoreConfig('design/header/logo_src')) ?>" alt="<?php echo Mage::getStoreConfig('design/header/logo_alt') ?>" class="logo" />
+            </a>
+            <label for="nav-toggle" class="nav__toggle--close">Close</label>
+        </div>
         <ul id="nav" class="nav-primary">
             <?php echo $_menu ?>
         </ul>

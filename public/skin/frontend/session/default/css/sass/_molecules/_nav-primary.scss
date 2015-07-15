@@ -23,9 +23,11 @@
         @include font-size(14);
         z-index: 10;
         @include transition(margin 1s ease);
-        a {
-            display: block;
-            @include rem-fallback(padding, 0.8);
+        ul {
+            a {
+                display: block;
+                @include rem-fallback(padding, 0.8);
+            }
         }
         li.level0 {
             border-bottom: $border-light;
@@ -90,6 +92,16 @@
             border-bottom: 0.14rem * $toggle-open-size solid $colour-text-light;
         }
     }
+    &--close {
+        display: inline-block;
+        float: right;
+        &:after {
+            content: '\00D7';
+            float: right;
+            @include rem-fallback(margin-left, 0.5);
+            @include font-size(40, 0.3);
+        }
+    }
     &--input {
         display: none;
         &:checked {
@@ -99,10 +111,22 @@
         }
     }
     @include media($medium-and-up) {
-        &--label,
-        &--input {
-            display: none;
+        &--open {
+            @include hidden;
         }
+    }
+}
+.nav__mobile--heading {
+    @include clearfix;
+    @include rem-fallback(margin, 1, 1, 2);
+    a {
+        display: inline-block;
+        float: left;
+        max-width: 50%;
+        @include rem-fallback(max-height, 3);
+    }
+    @include media($medium-and-up) {
+        @include hidden;
     }
 }
 

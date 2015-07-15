@@ -15,6 +15,7 @@ header {
     @include outer-container;
     .search {
         @include fill-parent;
+        clear: both;
         @include rem-fallback(margin-bottom, 2);
     }
     .logo-holder {
@@ -29,6 +30,7 @@ header {
         }
         .search {
             margin: 0;
+            clear: none;
             @include span-columns(5);
             @include position(absolute, null 0 0 null);
         }
