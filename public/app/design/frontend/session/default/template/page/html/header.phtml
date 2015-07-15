@@ -7,12 +7,11 @@
 <header class="header-container" role="banner">
     <div class="header-panel-wrapper">
         <div class="header-panel">
-            <p class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?></p>
+            <label for="nav-toggle" class="nav__toggle--open">Open</label>
             <div class="account-links">
                 <?php echo $this->getChildHtml('accountLinks') ?>
             </div>
             <div class="switches"><?php echo $this->getChildHtml('switches') ?></div>
-            <div class="checkout-link"><?php echo $this->getChildHtml('checkoutLinks') ?></div>
             <?php echo $this->getChildHtml('topCart') ?>
             <div class="top-links">
                 <?php echo $this->getChildHtml('topLinks') ?>
@@ -23,17 +22,16 @@
         <div class="header">
             <?php if ($this->getIsHomePage()):?>
                 <h1 class="logo-holder">
-                    <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
-                        <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
-                    </a>
+                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="logo" />
                 </h1>
             <?php else:?>
                 <div class="logo-holder">
-                    <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
-                        <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+                    <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>">
+                        <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="logo" />
                     </a>
                 </div>
             <?php endif?>
+            
             <?php echo $this->getChildHtml('topMenu') ?>
             <?php echo $this->getChildHtml('topSearch') ?>
             <?php echo $this->getChildHtml('topContainer') ?>
@@ -41,7 +39,7 @@
     </div>
     <div class="header-usp-wrapper">
         <div class="header-usp">
-            <p>USP's</p>
+            <p>USPs</p>
         </div>
     </div>
 </header>
