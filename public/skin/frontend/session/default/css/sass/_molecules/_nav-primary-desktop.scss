@@ -1,0 +1,27 @@
+/*------------------------------------------------------------------
+    Navigation: primary (desktop)
+-------------------------------------------------------------------*/
+
+.nav-primary {
+    @include media($medium-and-up) {
+        li.level0 {
+            display: inline-block;
+            @include rem-fallback(margin-right, 2);
+            &:hover {
+                ul {
+                    /*display: block;*/
+                }
+            }
+        }
+        ul.level0 {
+            display: none;
+            @include position(absolute, 100% 0 null 0);
+            @include rem-fallback(padding, 1.5);
+            background: $colour-background-light;
+            @include font-size(12);
+            a {
+                @include link-colour-alt;
+            }
+        }
+    }
+}
