@@ -9,7 +9,7 @@
 .error-msg {
     @include rem-fallback(margin, 1);
     @include rem-fallback(padding, 0.5, 1.5);
-    border-left: 3px solid $colour-brand-primary;
+    border-left: $border-strong;
     @include font-size(14);
 }
 .info-msg {
@@ -35,12 +35,13 @@
 }
 .notice-inner {
     @include outer-container;
-    @include rem-fallback(padding, 1, 2);
+    @include rem-fallback(padding, 1, $page-padding-small);
     text-align: center;
     p {
         margin: 0;
     }
     @include media($medium-and-up) {
+        @include rem-fallback(padding, 1, $page-padding-large);
         text-align: inherit;
     }
 }

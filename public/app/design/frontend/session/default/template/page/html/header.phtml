@@ -31,15 +31,14 @@
                     </a>
                 </div>
             <?php endif?>
-            
-            <?php echo $this->getChildHtml('topMenu') ?>
             <?php echo $this->getChildHtml('topSearch') ?>
-            <?php echo $this->getChildHtml('topContainer') ?>
         </div>
     </div>
-    <div class="header-usp-wrapper">
+    <?php echo $this->getChildHtml('topMenu') ?>
+    <?php echo $this->getChildHtml('topContainer') ?>
+<!--     <div class="header-usp-wrapper">
         <div class="header-usp">
             <p>USPs</p>
         </div>
-    </div>
+    </div> -->
 </header>

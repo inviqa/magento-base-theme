@@ -25,10 +25,12 @@ $link-style-active          : underline;
 /* borders */
 $border-default             : 1px solid $colour-border-default;
 $border-light               : 1px solid $colour-border-light;
+$border-white               : 1px solid $colour-border-white;
 $border-error               : 1px solid $colour-error;
+$border-strong              : 3px solid $colour-brand-primary;
 
 /* shadows */
-$shadow-default             : 0 4px 16px -2px rgba($colour-shadow, 0.4);
+$shadow-default             : 0 4px 12px -4px rgba($colour-shadow, 0.4);
 $text-shadow-default        : 1px 1px 1px rgba($colour-shadow, 0.7);
 
 /* forms */

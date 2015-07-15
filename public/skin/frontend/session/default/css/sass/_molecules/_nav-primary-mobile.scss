@@ -5,9 +5,6 @@
 /* common styles */
 .nav-container {
     position: relative;
-    ul {
-        margin: 0;
-    }
 }
 
 /* fly in container */
@@ -25,6 +22,7 @@
         z-index: 10;
         @include transition(margin 1s ease);
         ul {
+            margin: 0;
             a {
                 display: block;
                 @include rem-fallback(padding, 0.8);

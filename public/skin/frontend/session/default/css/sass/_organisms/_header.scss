@@ -4,6 +4,11 @@
 
 header {
     position: relative;
+    border-bottom: $border-light;
+    @include rem-fallback(margin-bottom, 3);
+    @include media($medium-and-up) {
+        @include rem-fallback(margin-bottom, 5);
+    }
 }
 .links {
     li {
@@ -24,7 +29,6 @@ header {
     @include media($medium-and-up) {
         @include outer-container;
         position: relative;
-        @include rem-fallback(margin-bottom, 6);
         .logo-holder {
             @include span-columns(7);
         }
@@ -33,11 +37,6 @@ header {
             clear: none;
             @include span-columns(5);
             @include position(absolute, null 0 0 null);
-        }
-        .nav-container {
-            position: absolute;
-            @include rem-fallback(bottom, -5);
-            width: 100%;
         }
     }
     @include media($large-and-up) {
@@ -59,9 +58,6 @@ header {
         background: none;
     }
 }
-.header-usp-wrapper {
-    border-top: $border-light;
-}
 .header-panel {
     position: relative;
     @include link-colour($colour-text-light);
@@ -82,9 +78,9 @@ header {
 a.top-link-cart {
     @include span-columns(3);
     position: absolute;
-    @include rem-fallback(right, 2);
+    @include rem-fallback(right, $page-padding-small);
     top: 100%;
-    @include rem-fallback(margin-top, 3);
+    @include rem-fallback(margin-top, $page-padding-large);
     @include link-colour-pop;
     text-align: right;
     &:before {
@@ -94,7 +90,7 @@ a.top-link-cart {
     }
     @include media($medium-and-up) {
         @include span-columns(5);
-        @include rem-fallback(right, 2);
+        @include rem-fallback(right, 3);
         @include rem-fallback(margin-top, 2);
         white-space: nowrap;
         &:before {

@@ -45,7 +45,7 @@ p {
 blockquote {
     @include rem-fallback(margin, 1);
     @include rem-fallback(padding, 0.5, 1.5);
-    border-left: 3px solid $colour-brand-primary;
+    border-left: $border-strong;
     color: $colour-brand-secondary;
     @include font-size(20, 2);
     font-family: $font-serif;
