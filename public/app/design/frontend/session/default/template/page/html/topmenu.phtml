@@ -7,9 +7,11 @@
 ?>
 <?php $_menu = $this->getHtml('level-top') ?>
 <?php if($_menu): ?>
-<nav role="navigation" class="nav-container">
-    <ul id="nav" class="nav-primary">
-        <?php echo $_menu ?>
-    </ul>
-</nav>
+    <input type="checkbox" id="nav-toggle" class="nav__toggle--input">
+    <nav role="navigation" class="nav-container">
+        <label for="nav-toggle" class="nav__toggle--close">Close</label>
+        <ul id="nav" class="nav-primary">
+            <?php echo $_menu ?>
+        </ul>
+    </nav>
 <?php endif ?>

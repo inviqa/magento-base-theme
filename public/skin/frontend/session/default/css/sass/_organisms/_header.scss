@@ -2,20 +2,14 @@
     Header
 -------------------------------------------------------------------*/
 
-
-
 header {
     position: relative;
-    .welcome-msg {
-        display: none;
-    }
 }
 .links {
     li {
         display: inline-block;
     }
 }
-
 
 .header {
     @include outer-container;
@@ -86,7 +80,7 @@ header {
 a.top-link-cart {
     @include span-columns(3);
     position: absolute;
-    @include rem-fallback(right, 1);
+    @include rem-fallback(right, 2);
     top: 100%;
     @include rem-fallback(margin-top, 3);
     @include link-colour-pop;

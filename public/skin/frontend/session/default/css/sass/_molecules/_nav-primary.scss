@@ -13,7 +13,7 @@
 .nav-container {
     @include media($small-only) {
         @include position(fixed, 0 null 0 0);
-        /*margin-left: -100%;*/
+        margin-left: -100%;
         width: 85%;
         @include rem-fallback(max-width, 30);
         @include rem-fallback(padding, 2, 1);
@@ -22,6 +22,7 @@
         box-shadow: $shadow-default;
         @include font-size(14);
         z-index: 10;
+        @include transition(margin 1s ease);
         a {
             display: block;
             @include rem-fallback(padding, 0.8);
@@ -69,10 +70,40 @@
         }
     }
 }
-li.level0 {
-}
-ul.level0 {
-    /*display: none;*/
+
+.nav__toggle {
+    &--open {
+        $toggle-open-size   : 3;
+        display: inline-block;
+        position: relative;
+        @include rem-fallback(margin, 0.4, 3, 0, 0);
+        font-size: 0;
+        z-index: 5;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0.25rem * $toggle-open-size;
+            left: 0;
+            width: 0.7rem * $toggle-open-size;
+            height: 0.6rem * $toggle-open-size;
+            border-top: 0.375rem * $toggle-open-size double $colour-text-light;
+            border-bottom: 0.14rem * $toggle-open-size solid $colour-text-light;
+        }
+    }
+    &--input {
+        display: none;
+        &:checked {
+            ~ .nav-container {
+                margin-left: 0;
+            }
+        }
+    }
+    @include media($medium-and-up) {
+        &--label,
+        &--input {
+            display: none;
+        }
+    }
 }
 
 .nav-primary {

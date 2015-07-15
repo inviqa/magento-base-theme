@@ -35,13 +35,12 @@
 }
 .notice-inner {
     @include outer-container;
-    @include rem-fallback(padding, 1);
+    @include rem-fallback(padding, 1, 2);
     text-align: center;
     p {
         margin: 0;
     }
     @include media($medium-and-up) {
-        @include rem-fallback(padding, 1, 2);
         text-align: inherit;
     }
 }
