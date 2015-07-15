@@ -14,7 +14,7 @@
     @include rem-fallback(margin, 1, 0);
     list-style: none;
     .field,
-    > li:not(.control),
+    > li,
     .control {
         @include rem-fallback(margin-bottom, 1);
     }
