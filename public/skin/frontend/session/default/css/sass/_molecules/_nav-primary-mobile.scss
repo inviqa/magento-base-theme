@@ -85,6 +85,9 @@
             @include rem-fallback(max-height, 3);
         }
     }
+    @include media($medium-and-up) {
+        @include hidden;
+    }
 }
 
 /* main toggle */
@@ -125,6 +128,12 @@
                     margin-left: 0;
                 }
             }
+        }
+    }
+    @include media($medium-and-up) {
+        &--input,
+        &--open {
+            @include hidden;
         }
     }
 }
