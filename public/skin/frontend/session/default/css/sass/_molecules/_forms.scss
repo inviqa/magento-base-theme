@@ -71,6 +71,9 @@
             }
             > .input-box {
                 @include span-columns(7);
+                [class$="-set"] & {
+                    @include span-columns(9);
+                }
             }
         }
         .control,
