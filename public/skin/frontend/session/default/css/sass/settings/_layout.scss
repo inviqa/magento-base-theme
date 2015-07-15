@@ -65,22 +65,24 @@ $column-sidebar-full       : 2;
 }
 
 /* content columns */
-.col-set {
-    @include outer-container;
-}
-@for $i from 1 through 4 {
-    .col-#{$i} {
+@for $i from 2 through 4 {
+    .col#{$i}-set {
         @include media($medium-and-up) {
-            @include span-columns(12/$i);
+            @include outer-container;
+            @for $j from 1 through $i {
+                .col-#{$j} {
+                    @include span-columns(12/$i);
+                }
+            }
         }
     }
 }
-.col-2 {
+.col2-set {
     @include media($medium-and-up) {
-        &.narrow {
+        .narrow {
             @include span-columns(4);
         }
-        &.wide {
+        .wide {
             @include span-columns(8);
         }
     }

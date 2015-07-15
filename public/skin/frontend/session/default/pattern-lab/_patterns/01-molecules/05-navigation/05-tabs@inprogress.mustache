@@ -1,7 +1,20 @@
-<div class="tabs">
-    <ul class="tab-list">
-        <li><a href="{{ url }}" class="active">Tab 1</a></li>
-        <li><a href="{{ url }}">Tab 2</a></li>
-        <li><a href="{{ url }}">Tab 3</a></li>
-    </ul>
-</div>
+<ul class="tabs">
+    <li class="tab">
+        <label class="tab__heading tab__heading--active">Tab 1</label>
+        <div class="tab__content">
+            {{ excerpt.long }}
+        </div>
+    </li>
+    <li class="tab">
+        <label class="tab__heading">Tab 2</label>
+        <div class="tab__content">
+            {{ excerpt.long }}
+        </div>
+    </li>
+    <li class="tab">
+        <label class="tab__heading">Tab 3</label>
+        <div class="tab__content">
+            {{ excerpt.long }}
+        </div>
+    </li>
+</ul>
