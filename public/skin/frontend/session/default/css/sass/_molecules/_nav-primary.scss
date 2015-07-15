@@ -9,32 +9,92 @@
     }
 }
 
-// temp
-.nav-primary {
-    display: none;
-    @include media($medium-and-up) {
-        display: block;
-    }
-}
-
-@include media($medium-and-up) {
-    li.level0 {
-        display: inline-block;
-        @include rem-fallback(margin-right, 2);
-        &:hover {
-            ul {
-                /*display: block;*/
+/* mobile fly in menu */
+.nav-container {
+    @include media($small-only) {
+        @include position(fixed, 0 null 0 0);
+        /*margin-left: -100%;*/
+        width: 85%;
+        @include rem-fallback(max-width, 30);
+        @include rem-fallback(padding, 2, 1);
+        background: $colour-background-white;
+        border-right: $border-light;
+        box-shadow: $shadow-default;
+        @include font-size(14);
+        z-index: 10;
+        a {
+            display: block;
+            @include rem-fallback(padding, 0.8);
+        }
+        li.level0 {
+            border-bottom: $border-light;
+            > a {
+                @include font-size(18, 1.2);
+                @include link-style(none);
+            }
+            &.active {
+                ul.level0 {
+                    display: block;
+                }
+            }
+        }
+        ul.level0 {
+            display: none;
+            @include rem-fallback(padding-bottom, 0.8);
+            a {
+                @include link-colour-alt;
+                @include rem-fallback(padding, 0.3, 1, 0.3, 2);
+            }
+        }
+        .parent {
+            position: relative;
+            @include rem-fallback(padding-right, 3);
+            > a {
+                &:after {
+                    content: '\232a';
+                    position: absolute;
+                    @include rem-fallback(top, 1);
+                    @include rem-fallback(right, 0.5);
+                    @include transition(all 1s ease);
+                }
+            }
+            &.active {
+                > a {
+                    &:after {
+                        @include transform(rotate(90deg));
+                        transform-origin: 25% 50%;
+                    }
+                }
             }
         }
     }
-    ul.level0 {
-        display: none;
-        @include position(absolute, 100% 0 null 0);
-        @include rem-fallback(padding, 1.5);
-        background: $colour-background-light;
-        @include font-size(12);
-        a {
-            @include link-colour-alt;
+}
+li.level0 {
+}
+ul.level0 {
+    /*display: none;*/
+}
+
+.nav-primary {
+    @include media($medium-and-up) {
+        li.level0 {
+            display: inline-block;
+            @include rem-fallback(margin-right, 2);
+            &:hover {
+                ul {
+                    /*display: block;*/
+                }
+            }
+        }
+        ul.level0 {
+            display: none;
+            @include position(absolute, 100% 0 null 0);
+            @include rem-fallback(padding, 1.5);
+            background: $colour-background-light;
+            @include font-size(12);
+            a {
+                @include link-colour-alt;
+            }
         }
     }
 }
