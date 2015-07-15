@@ -1,0 +1,25 @@
+<?php
+/* @var $this Mage_Core_Block_Template */
+/* @var $catalogSearchHelper Mage_Catalogsearch_Helper_Data */
+?>
+<?php $catalogSearchHelper =  $this->helper('catalogsearch'); ?>
+<form id="search_mini_form" action="<?php echo $catalogSearchHelper->getResultUrl() ?>" method="get" class="search form--inline">
+    <label for="search">
+        <?php echo $this->__('Search') ?>
+    </label>
+    <div class="input">
+        <input id="search" type="text" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" value="<?php echo $catalogSearchHelper->getEscapedQueryText() ?>" class="input-text" maxlength="<?php echo $catalogSearchHelper->getMaxQueryLength();?>" placeholder="<?php echo $this->__('Search') ?>" />
+        <div id="search_autocomplete" class="search-autocomplete"></div>
+    </div>
+    <div class="action">
+        <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Search')) ?>">
+            <?php echo $this->__('Search') ?>
+        </button>
+    </div>
+    <script>
+    //<![CDATA[
+        var searchForm = new Varien.searchForm('search_mini_form', 'search', '');
+        searchForm.initAutocomplete('<?php echo $catalogSearchHelper->getSuggestUrl() ?>', 'search_autocomplete');
+    //]]>
+    </script>
+</form>

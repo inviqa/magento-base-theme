@@ -1,0 +1,16 @@
+<form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail" class="form--inline newsletter">
+    <label for="newsletter" class="visuallyhidden">
+        <?php echo $this->__('Newsletter') ?>
+    </label>
+    <input type="email" name="email" id="newsletter" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Email address')) ?>" placeholder="<?php echo Mage::helper('core')->quoteEscape($this->__('Email address')) ?>" class="input-text required-entry validate-email" />
+    <div class="action">
+        <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Subscribe')) ?>" class="button">
+            <?php echo $this->__('Subscribe') ?>
+        </button>
+    </div>
+    <script>
+    //<![CDATA[
+        var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+    //]]>
+    </script>
+</form>
