@@ -1,8 +1,111 @@
-<nav role="navigation" class="nav-container">
-    <ul id="nav" class="list--inline nav-primary">
-        <li><a href="{{ url }}">Home</a></li>
-        <li><a href="{{ url }}">About</a></li>
-        <li><a href="{{ url }}">Blog</a></li>
-        <li><a href="{{ url }}">Contact</a></li>
+<input type="checkbox" id="nav-toggle" class="nav__toggle--input" checked>
+<nav role="navigation" class="nav-container" style="{{ style }}">
+    <div class="nav__mobile--heading">
+        {{> atoms-logo }}
+        <label for="nav-toggle" class="nav__toggle--close">Close</label>
+    </div>
+    <ul id="nav" class="nav-primary">
+        <li class="level0 nav-1 first level-top parent active">
+            <a href="{{ url }}" class="level-top">Women</a>
+            <ul class="level0">
+                <li class="level1 nav-1-1 first">
+                    <a href="{{ url }}">New Arrivals</a>
+                </li>
+                <li class="level1 nav-1-2">
+                    <a href="{{ url }}">Tops &amp; Blouses</a>
+                </li>
+                <li class="level1 nav-1-3">
+                    <a href="{{ url }}">Pants &amp; Denim</a>
+                </li>
+                <li class="level1 nav-1-4 last">
+                    <a href="{{ url }}">Dresses &amp; Skirts</a>
+                </li>
+            </ul>
+        </li>
+        <li class="level0 nav-2 level-top parent">
+            <a href="{{ url }}" class="level-top">Men</a>
+            <ul class="level0">
+                <li class="level1 nav-2-1 first">
+                    <a href="{{ url }}">New Arrivals</a>
+                </li>
+                <li class="level1 nav-2-2">
+                    <a href="{{ url }}">Shirts</a>
+                </li>
+                <li class="level1 nav-2-3 parent">
+                    <a href="{{ url }}">Tees, Knits and Polos</a>
+                    <ul class="level1">
+                        <li class="level2 nav-2-3-1 first">
+                            <a href="{{ url }}">Tees</a>
+                        </li>
+                        <li class="level2 nav-2-3-2">
+                            <a href="{{ url }}">Knits</a>
+                        </li>
+                        <li class="level2 nav-2-3-3 last">
+                            <a href="{{ url }}">Polos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="level1 nav-2-4">
+                    <a href="{{ url }}">Pants &amp; Denim</a>
+                </li>
+                <li class="level1 nav-2-5 last">
+                    <a href="{{ url }}">Blazers</a>
+                </li>
+            </ul>
+        </li>
+        <li class="level0 nav-3 level-top parent">
+            <a href="{{ url }}" class="level-top">Accessories</a>
+            <ul class="level0">
+                <li class="level1 nav-3-1 first">
+                    <a href="{{ url }}">Eyewear</a>
+                </li>
+                <li class="level1 nav-3-2">
+                    <a href="{{ url }}">Jewelry</a>
+                </li>
+                <li class="level1 nav-3-3">
+                    <a href="{{ url }}">Shoes</a>
+                </li>
+                <li class="level1 nav-3-4 last">
+                    <a href="{{ url }}">Bags &amp; Luggage</a>
+                </li>
+            </ul>
+        </li>
+        <li class="level0 nav-4 level-top parent">
+            <a href="{{ url }}" class="level-top">Home &amp; Decor</a>
+            <ul class="level0">
+                <li class="level1 nav-4-1 first">
+                    <a href="{{ url }}">Books &amp; Music</a>
+                </li>
+                <li class="level1 nav-4-2">
+                    <a href="{{ url }}">Bed &amp; Bath</a>
+                </li>
+                <li class="level1 nav-4-3">
+                    <a href="{{ url }}">Electronics</a>
+                </li>
+                <li class="level1 nav-4-4 last">
+                    <a href="{{ url }}">Decorative Accents</a>
+                </li>
+            </ul>
+        </li>
+        <li class="level0 nav-5 level-top parent">
+            <a href="{{ url }}" class="level-top">Sale</a>
+            <ul class="level0">
+                <li class="level1 nav-5-1 first">
+                    <a href="{{ url }}">Women</a>
+                </li>
+                <li class="level1 nav-5-2">
+                    <a href="{{ url }}">Men</a>
+                </li>
+                <li class="level1 nav-5-3">
+                    <a href="{{ url }}">Accessories</a>
+                </li>
+                <li class="level1 nav-5-4 last">
+                    <a href="{{ url }}">Home &amp; Decor</a>
+                </li>
+            </ul>
+        </li>
+        <li class="level0 nav-6 last level-top">
+            <a href="{{ url }}" class="level-top">VIP</a>
+        </li>
     </ul>
 </nav>

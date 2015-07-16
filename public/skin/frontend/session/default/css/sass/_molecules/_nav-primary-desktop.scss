@@ -5,12 +5,13 @@
 .nav-container {
     @include media($medium-and-up) {
         @include outer-container;
-        @include rem-fallback(padding-right, 2);
-        @include rem-fallback(padding-left, 2);
+        @include rem-fallback(padding-right, $page-padding-large);
+        @include rem-fallback(padding-left, $page-padding-large);
     }
 }
 .nav-primary {
     @include media($medium-and-up) {
+        position: relative;
         margin-bottom: 0;
         a {
             display: block;
@@ -27,23 +28,24 @@
             }
             &:hover {
                 > a {
-                    border-bottom: $border-strong;
-                    z-index: 20;
-                    background: white;
+                    color: $colour-text-default;
                 }
                 ul {
                     @include outer-container;
                     display: block;
                 }
             }
+            &.active,
+            &:hover {
+                > a {
+                    border-bottom: $border-strong;
+                }
+            }
         }
         ul.level0 {
             @include outer-container;
             display: none;
-            position: absolute;
-            top: 100%;
-            @include rem-fallback(right, 2);
-            @include rem-fallback(left, 2);
+            @include position(absolute, 100% 0 null 0);
             @include rem-fallback(padding, 2);
             background: $colour-background-white;
             border-top: $border-light;
@@ -55,11 +57,12 @@
             @include span-columns(6);
             @include rem-fallback(margin-top, 1);
             @include rem-fallback(margin-bottom, 1);
-            border-left: $border-strong;
             > a {
                 @include font-size(16, 1);
                 @include link-colour($colour-brand-secondary);
-                font-family: $font-serif;
+                font-weight: $font-weight-heavy;
+                border-top: $border-default;
+                border-bottom: $border-default;
             }
             a {
                 @include rem-fallback(padding, 0.5, 1);
