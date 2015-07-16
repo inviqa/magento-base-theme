@@ -4,6 +4,8 @@
 
 html {
     font-size: $rem-percent;
+    font-weight: $font-weight-light;
+    line-height: $font-height-default;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -16,26 +18,25 @@ body {
 
 /* headings */
 $headings: (
-    h1  $colour-brand-primary     $font-weight-light       $font-sans    48,
-    h2  $colour-brand-secondary   $font-weight-light       $font-serif   32,
-    h3  $colour-brand-primary     $font-weight-light       $font-sans    28,
-    h4  $colour-brand-secondary   $font-weight-light       $font-sans    24,
-    h5  $colour-brand-primary     $font-weight-default     $font-sans    16,
-    h6  $colour-brand-secondary   $font-weight-default     $font-sans    14
+    h1  $colour-brand-primary       48,
+    h2  $colour-brand-secondary     28,
+    h3  $colour-brand-primary       24,
+    h4  $colour-brand-secondary     20,
+    h5  $colour-brand-primary       16,
+    h6  $colour-brand-secondary     14
 );
 @each $value in $headings {
     #{nth($value, 1)} {
+        @include rem-fallback(margin, 2, 0, 1, 0);
         color: nth($value, 2);
-        font-weight: nth($value, 3);
-        font-family: nth($value, 4);
-        @include heading-size(nth($value, 5));
+        @include heading-size(nth($value, 3));
+        font-weight: inherit;
+        line-height: 1;
     }
-}
-h1, h2, h3, h4, h5, h6 {
-    @include rem-fallback(margin, 2, 0, 1, 0);
 }
 h1 {
     @include rem-fallback(margin, 0, 0, 2, 0);
+    font-weight: lighter;
 }
 
 /* block elements */
@@ -49,6 +50,7 @@ blockquote {
     color: $colour-brand-secondary;
     @include font-size(20, 2);
     font-family: $font-serif;
+    font-weight: bolder;
     font-style: italic;
 }
 cite {
@@ -72,6 +74,9 @@ hr {
 }
 
 /* inline elements */
+strong, b {
+    font-weight: $font-weight-medium;
+}
 abbr {
     cursor: help;
 }

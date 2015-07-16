@@ -1,6 +1,7 @@
 $page-size: 2 !default;
 .pages {
     @include font-size(11);
+    font-weight: bolder;
     white-space: nowrap;
     strong {
         @include visuallyhidden;

@@ -86,7 +86,7 @@ a.top-link-cart {
     &:before {
         content: 'CART ICON';
         display: block;
-        font-weight: $font-weight-heavy;
+        font-weight: bolder;
     }
     @include media($medium-and-up) {
         @include span-columns(5);

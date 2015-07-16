@@ -11,6 +11,7 @@
     @include rem-fallback(padding, 0.5, 1.5);
     border-left: $border-strong;
     @include font-size(14);
+    font-weight: bolder;
 }
 .info-msg {
     border-color: $colour-info;

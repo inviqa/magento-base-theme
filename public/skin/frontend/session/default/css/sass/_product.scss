@@ -81,37 +81,3 @@
         list-style: none;
     }
 }
-
-
-
-/* Tier Prices */
-.product-pricing { background:#fbf4de; border:1px solid #e2d4c7; padding:8px; margin:20px 0; }
-.product-pricing li { line-height:1.35; margin:2px 0; }
-.product-pricing li .price { font-weight:bold; }
-.product-pricing li .benefit { font-weight:bold; }
-
-/* Block: Reviews */
-.product-view .product-main-info .review-summary-table { margin:10px 0; }
-.review-summary-table { border:0; margin:0 0 10px; }
-.review-summary-table th,
-.review-summary-table td { padding:2px 5px; }
-.review-summary-table tr.last td { border:0; }
-.review-summary-table th.label,
-.review-summary-table td.label { width:1px; white-space:nowrap; padding-left:0; background:none; }
-
-.product-view .box-reviews .pager { border-width:1px 0; margin:0; }
-.product-view .box-reviews dt { margin:10px 0; font-style:italic; }
-.product-view .box-reviews dt a { font-weight:bold; font-style:normal; margin-right:10px; }
-.product-view .box-reviews dd { margin:10px 0 20px; padding:0 0 10px; }
-.product-view .box-reviews dd p { margin:0 0 10px; }
-.product-view .box-reviews dd .date { margin:0 0 10px; font-style:italic; }
-.product-view .box-reviews dd.last { background:none; margin-bottom:0; }
-/* Add Review Form */
-.product-view .box-reviews .product-name { font-weight:normal; margin-bottom:20px; }
-.product-view .box-reviews .product-name span { font-weight:bold; }
-.product-view .box-reviews .form-list { margin:15px 0; }
-.product-view .box-reviews .form-list .input-box {}
-
-.product-view .box-reviews .form-list .review-summary-table thead { background:none; }
-.product-view .box-reviews .form-list .review-summary-table thead th { background:none; border:0; }
-.product-view .box-reviews .form-list .review-summary-table .value { text-align:center; }

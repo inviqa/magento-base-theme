@@ -9,6 +9,7 @@
     border-top: $border-default;
     border-bottom: $border-default;
     @include font-size(12);
+    font-weight: bolder;
     * {
         vertical-align: middle;
         white-space: nowrap;
@@ -41,6 +42,7 @@
     }
     .pages {
         text-align: right;
+        font-weight: inherit;
     }
     @include media($small-and-up) {
         .amount {
@@ -97,7 +99,7 @@
     strong {
         color: $colour-text-light;
         background: $colour-brand-primary;
-        font-weight: $font-weight-default;
+        font-weight: inherit;
     }
     a {
         background: $colour-background-light;

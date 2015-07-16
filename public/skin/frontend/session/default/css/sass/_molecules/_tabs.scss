@@ -14,7 +14,7 @@
             float: right;
         }
         &.current {
-            font-weight: bold;
+            font-weight: bolder;
             border-bottom: $border-default;
             &:after {
                 content: '\25BE';
@@ -71,7 +71,7 @@
             padding: 0.5em 1em;
         }
         .current {
-            font-weight: bold;
+            font-weight: bolder;
             border: $border-default;
             border-bottom-color: white;
         }
