@@ -87,7 +87,7 @@
             @include rem-fallback(padding-bottom, 0.8);
             a {
                 @include link-colour-alt;
-                @include rem-fallback(padding, 0.3, 3, 0.3, 2);
+                @include rem-fallback(padding, 0.3, 3, 0.3, 0.85);
             }
             .parent {
                 > a {
