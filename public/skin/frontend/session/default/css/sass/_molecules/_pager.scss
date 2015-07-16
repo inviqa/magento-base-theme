@@ -35,32 +35,27 @@ $page-size: 2 !default;
     .previous, .next {
         font-size: 0;
         min-width: 0;
-        @include rem-fallback(height, $page-size);
-        @include rem-fallback(width, $page-size/2);
-        overflow: hidden;
         padding: 0;
         background: none;
         @include link-colour($colour-brand-secondary, $colour-brand-primary);
-        vertical-align: middle;
         &:hover {
             background: none;
         }
-        &:before, &:after {
+        &:after {
+            content: '\27e9';
             position: relative;
             display: inline-block;
             @include font-size(14);
+            text-align: center;
+            vertical-align: middle;
+            @include rem-fallback(height, $page-size);
+            @include rem-fallback(width, $page-size/2);
+            @include rem-fallback(line-height, $page-size * 0.95);
         }
     }
     .previous {
-        &:before {
-            @include rem-fallback(right, 0.3);
-            content: '\2329';
-        }   
-    }
-    .next {
         &:after {
-            @include rem-fallback(left, 0.3);
-            content: '\232a';
+            @include transform(scaleX(-1));
         }   
     }
 }

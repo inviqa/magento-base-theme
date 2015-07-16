@@ -7,6 +7,23 @@
     position: relative;
 }
 
+/* fly in heading */
+.nav__mobile--heading {
+    @include media($small-only) {
+        @include clearfix;
+        @include rem-fallback(margin, 1, 0.5, 2);
+        a {
+            display: inline-block;
+            float: left;
+            max-width: 50%;
+            @include rem-fallback(max-height, 3);
+        }
+    }
+    @include media($medium-and-up) {
+        @include hidden;
+    }
+}
+
 /* fly in container */
 .nav-container {
     @include media($small-only) {
@@ -21,6 +38,31 @@
         @include font-size(14);
         z-index: 10;
         @include transition(margin 1s ease);
+        .parent {
+            position: relative;
+            > a {
+                position: relative;
+                @include rem-fallback(padding-right, 3);
+                &:after {
+                    content: '\27e9';
+                    display: block;
+                    @include position(absolute, 0 0 null null);
+                    @include rem-fallback(width, 3.6);
+                    @include rem-fallback(height, 3.6);
+                    @include rem-fallback(line-height, 3.3);
+                    text-align: center;
+                    vertical-align: middle;
+                    @include transition(transform 0.3s ease);
+                }
+            }
+            &.active {
+                > a {
+                    &:after {
+                        @include transform(rotate(90deg));
+                    }
+                }
+            }
+        }
         ul {
             margin: 0;
             a {
@@ -36,55 +78,44 @@
             }
             &.active {
                 ul.level0 {
-                    display: block;
+                    @include visuallyshown;
                 }
             }
         }
         ul.level0 {
-            display: none;
+            @include visuallyhidden;
             @include rem-fallback(padding-bottom, 0.8);
             a {
                 @include link-colour-alt;
-                @include rem-fallback(padding, 0.3, 1, 0.3, 2);
+                @include rem-fallback(padding, 0.3, 3, 0.3, 2);
             }
-        }
-        .parent {
-            position: relative;
-            @include rem-fallback(padding-right, 3);
-            > a {
-                &:after {
-                    content: '\232a';
-                    position: absolute;
-                    @include rem-fallback(top, 1);
-                    @include rem-fallback(right, 0.5);
-                    @include transition(all 1s ease);
-                }
-            }
-            &.active {
+            .parent {
                 > a {
                     &:after {
-                        @include transform(rotate(90deg));
-                        transform-origin: 25% 50%;
+                        @include rem-fallback(margin-right, 0.6);
+                        @include rem-fallback(width, 2.4);
+                        @include rem-fallback(height, 2.4);
+                        @include rem-fallback(line-height, 2.2);
                     }
                 }
             }
         }
-    }
-}
-/* fly in heading */
-.nav__mobile--heading {
-    @include media($small-only) {
-        @include clearfix;
-        @include rem-fallback(margin, 1, 0.5, 2);
-        a {
-            display: inline-block;
-            float: left;
-            max-width: 50%;
-            @include rem-fallback(max-height, 3);
+        li.level1 {
+            &.active {
+                ul.level1 {
+                    @include visuallyshown;
+                }
+            }
         }
-    }
-    @include media($medium-and-up) {
-        @include hidden;
+        ul.level1 {
+            @include visuallyhidden;
+            @include rem-fallback(padding-left, 1.5);
+            .parent {
+                &:after {
+                    content: none;
+                }
+            }
+        }
     }
 }
 
@@ -120,7 +151,7 @@
             }
         }
         &--input {
-            display: none;
+            @include visuallyhidden;
             &:checked {
                 ~ .nav-container {
                     margin-left: 0;

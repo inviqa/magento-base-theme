@@ -69,3 +69,8 @@
 .sg-grid:nth-of-type(even) {
     background: #cccccc;
 }
+@media all and (max-width: 37.5em) {
+    .nav-container {
+        position: absolute;
+    }
+}

@@ -10,13 +10,13 @@
     li {
         display: inline;
         & + li:before {
-            content: '\232a';
+            content: '\27e9';
             display: inline-block;
             position: relative;
-            @include rem-fallback(top, 0.1);
             @include rem-fallback(width, 1);
             @include rem-fallback(margin, 0, 0.5);
             color: $colour-brand-primary;
+            @include font-size(18);
         }
     }
     a {
