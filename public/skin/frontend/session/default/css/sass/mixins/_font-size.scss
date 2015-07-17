@@ -1,3 +1,8 @@
+/*------------------------------------------------------------------
+    Font size
+-------------------------------------------------------------------*/
+
+/* font size in REM with PX fallback, optionally sets line height */
 @mixin font-size($size: $font-size-default, $line: '') {
     font-size: ($size) + px;
     font-size: ($size / $rem-ratio) + rem;
@@ -7,6 +12,7 @@
     }
 }
 
+/* uses multipliers to proportionally resize headings */
 @mixin heading-size($size) {
     @include font-size($size * $heading-size-small);
     @include media($small-and-up) {
