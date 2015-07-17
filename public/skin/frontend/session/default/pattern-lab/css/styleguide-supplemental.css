@@ -10,7 +10,7 @@
 .pl .sg-pattern-head,
 .sg-pattern-subhead {
     margin: 0 1em 2em;
-    padding: 1em 1em 0;
+    padding: 1em;
     color: gray;
     font-family: sans-serif;
     font-size: 11px;
@@ -19,7 +19,7 @@
 }
 
 .sg-pattern-subhead {
-    margin: 3em 0 0;
+    margin: 3em 0 1em;
     padding: 0;
 }
 

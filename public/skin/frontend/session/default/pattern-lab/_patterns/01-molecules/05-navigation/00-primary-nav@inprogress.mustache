@@ -1,5 +1,5 @@
-<input type="checkbox" id="nav-toggle" class="nav__toggle--input" checked>
-<nav role="navigation" class="nav-container">
+<input type="checkbox" id="nav-toggle" class="input--toggle" {{ menu.mobile.state }}>
+<nav role="navigation" class="nav-container" style="{{ menu.mobile.style }}">
     <div class="nav__mobile--heading">
         {{> atoms-logo }}
         <label for="nav-toggle" class="nav__toggle--close">Close</label>
@@ -11,10 +11,21 @@
                 <li class="level1 nav-1-1 first">
                     <a href="{{ url }}">New Arrivals</a>
                 </li>
-                <li class="level1 nav-1-2">
+                <li class="level1 nav-1-2 parent active">
                     <a href="{{ url }}">Tops &amp; Blouses</a>
+                    <ul class="level1">
+                        <li class="level2 nav-1-2-1 first">
+                            <a href="{{ url }}">Sleeveless</a>
+                        </li>
+                        <li class="level2 nav-1-2-2">
+                            <a href="{{ url }}">Short sleeves</a>
+                        </li>
+                        <li class="level2 nav-1-2-3">
+                            <a href="{{ url }}">Long sleeves</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="level1 nav-1-3">
+                <li class="level1 nav-1-3 parent">
                     <a href="{{ url }}">Pants &amp; Denim</a>
                 </li>
                 <li class="level1 nav-1-4 last">
