@@ -38,6 +38,9 @@
         @include font-size(14);
         z-index: 10;
         @include transition(margin 1s ease);
+        :checked ~ & {
+            margin-left: 0;
+        }
         .parent {
             position: relative;
             > a {
@@ -148,14 +151,6 @@
                 float: right;
                 @include rem-fallback(margin-left, 0.5);
                 @include font-size(40, 0.3);
-            }
-        }
-        &--input {
-            @include visuallyhidden;
-            &:checked {
-                ~ .nav-container {
-                    margin-left: 0;
-                }
             }
         }
     }
