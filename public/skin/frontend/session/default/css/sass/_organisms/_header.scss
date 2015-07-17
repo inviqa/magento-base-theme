@@ -9,15 +9,18 @@ header {
     @include media($medium-and-up) {
         @include rem-fallback(margin-bottom, 5);
     }
-}
-.links {
-    li {
-        display: inline-block;
+    .links {
+        @include rem-fallback(margin, 1.2, 0);
+        li {
+            display: inline-block;
+        }
     }
 }
 
+.header-wrapper {
+    @include page-block;
+}
 .header {
-    @include outer-container;
     .search {
         @include fill-parent;
         clear: both;
@@ -50,8 +53,32 @@ header {
         }
     }
 }
+.logo-holder {
+    @include rem-fallback(margin-bottom, 2);
+    a {
+        display: block;
+    }
+    img {
+        width: 90%;
+        @include rem-fallback(min-width, 10);
+        @include rem-fallback(max-width, 30);
+    }
+    @include media($medium-and-up) {
+        margin: 0;
+        text-align: inherit;
+        a {
+            display: inline-block;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    @include media($large-and-up) {
+    }
+}
 
 .header-panel-wrapper {
+    @include page-block;
     background: $colour-background-black;
     @include rem-fallback(margin-bottom, 3);
     @include media($medium-and-up) {
@@ -76,10 +103,11 @@ header {
     }
 }
 
+// temporary
 a.top-link-cart {
     @include span-columns(3);
     position: absolute;
-    @include rem-fallback(right, $page-padding-small);
+    right: 0;
     top: 100%;
     @include rem-fallback(margin-top, $page-padding-large);
     @include link-colour-pop;
@@ -91,7 +119,6 @@ a.top-link-cart {
     }
     @include media($medium-and-up) {
         @include span-columns(5);
-        @include rem-fallback(right, 3);
         @include rem-fallback(margin-top, 2);
         white-space: nowrap;
         &:before {
@@ -101,29 +128,5 @@ a.top-link-cart {
     }
     @include media($large-and-up) {
         @include span-columns(4);
-    }
-}
-
-.logo-holder {
-    @include rem-fallback(margin-bottom, 2);
-    a {
-        display: block;
-    }
-    img {
-        width: 90%;
-        @include rem-fallback(min-width, 10);
-        @include rem-fallback(max-width, 30);
-    }
-    @include media($medium-and-up) {
-        margin: 0;
-        text-align: inherit;
-        a {
-            display: inline-block;
-        }
-        img {
-            width: 100%;
-        }
-    }
-    @include media($large-and-up) {
     }
 }

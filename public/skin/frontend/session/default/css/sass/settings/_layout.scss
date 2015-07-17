@@ -2,22 +2,11 @@
     Page layout
 -------------------------------------------------------------------*/
 
-/* page wrappers : centred content with padding */
-$page-padding-small         : 2;
-$page-padding-large         : 4;
-.header-panel,
-.header-wrapper,
-.header-usp,
-.footer-wrapper,
-.main-container,
-.notice-inner {
-    @include outer-container;
-    @include rem-fallback(padding-right, $page-padding-small);
-    @include rem-fallback(padding-left, $page-padding-small);
-    @include media($medium-and-up) {
-        @include rem-fallback(padding-right, $page-padding-large);
-        @include rem-fallback(padding-left, $page-padding-large);
-    }
+.main-container {
+    @include page-block;
+}
+.main-container-wrapper {
+    @include rem-fallback(padding-bottom, $page-padding-large);
 }
 
 /* page columns */

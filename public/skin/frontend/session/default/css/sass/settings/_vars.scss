@@ -5,6 +5,14 @@
 /* paths */
 $path-images                : "../images";
 
+/* horizontal page padding */
+$page-padding-small         : 2;
+$page-padding-large         : 4;
+
+/* sticky footer height */
+$footer-height-medium       : 370px;
+$footer-height-large        : 280px;
+
 /* font sizes */
 $font-size-default          : 16;
 $font-height-default        : 1.5;
@@ -26,6 +34,7 @@ $link-style-active          : underline;
 /* borders */
 $border-default             : 1px solid $colour-border-default;
 $border-light               : 1px solid $colour-border-light;
+$border-dark                : 1px solid $colour-border-dark;
 $border-white               : 1px solid $colour-border-white;
 $border-error               : 1px solid $colour-error;
 $border-strong              : 3px solid $colour-brand-primary;

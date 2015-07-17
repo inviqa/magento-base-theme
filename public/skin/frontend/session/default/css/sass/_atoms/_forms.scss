@@ -81,6 +81,11 @@ option {
     }
 }
 
+/* toggle inputs */
+.input--toggle {
+    display: none;
+}
+
 /* messaging */
 p.required {
     color: $colour-text-muted;

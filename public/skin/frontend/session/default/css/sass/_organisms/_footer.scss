@@ -2,82 +2,82 @@
     Footer
 -------------------------------------------------------------------*/
 
-
-footer {
-    background: $colour-background-dark;
-}
-
-
 footer {
     @include clearfix;
-    background: $colour-background-light;
-    @include rem-fallback(padding, 1);
-    @include rem-fallback(margin-top, 1);
+    @include rem-fallback(padding, 3, 0);
+    background: $colour-background-dark;
+    @include font-size(14);
+    color: $colour-text-light;
+    a {
+        @include link-colour-light;
+    }
+    label {
+        display: block;
+        @include rem-fallback(padding, 1, 0);
+        @include font-size(16);
+    }
 }
-
 .footer {
-    @include outer-container;
-    form {
-        @include clearfix;
-        @include rem-fallback(margin, 1, 0);
-        .v-fix {
-            width: 75%;
-        }
-        button {
-            width: 25%;
-        }
-    }
-    ul {
-        @include rem-fallback(margin, 1, 0);
-        padding: 0;
-        border-top: $border-default;
-        li {
-            display: block;
-            @include rem-fallback(padding, 0.5);
-            border-bottom: $border-default;
-        }
-    }
-    .copyright {
-        @include rem-fallback(margin, 1, 0);
-        @include span-columns(12);
-    }
+    @include page-block;
+}
+
+.copyright {
+    @include rem-fallback(margin-top, 3);
+    @include font-size(11);
+    text-align: center;
+}
+
+.footer__accordion {
     @include media($medium-and-up) {
-        ul {
+        @include outer-container;
+        .small-accordion__section {
             @include span-columns(6);
-            @include omega;
+            &:nth-of-type(2n) {
+                @include omega;
+            }
         }
-        form {
-            @include span-columns(6);
+        .footer-newsletter {
+            @include fill-parent;
+            @include rem-fallback(margin-top, 2);
+            @include rem-fallback(padding-top, 1);
+            border-top: $border-default;
         }
     }
-    @include media($full-and-up) {
-        ul {
+    @include media($large-and-up) {
+        .small-accordion__section {
             @include span-columns(4);
+            @include omega-reset(2n);
         }
-        form {
-            @include span-columns(4);
-        }
-        .copyright {
-            @include span-columns(4);
-            @include omega;
+        .footer-newsletter {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: 0;
         }
     }
 }
 
-/* Sticky footer */
+
+/* sticky footer */
 @include media($medium-and-up) {
-    $footer-height: 250px;
     html {
         position: relative;
         min-height: 100%;
     }
     .wrapper {
-        margin-bottom: $footer-height;
+        margin-bottom: $footer-height-medium;
     }
     footer {
-        height: $footer-height;
+        height: $footer-height-medium;
         position: absolute;
         bottom: 0;
         width: 100%;
+    }
+}
+@include media($large-and-up) {
+    .wrapper {
+        margin-bottom: $footer-height-large;
+    }
+    footer {
+        height: $footer-height-large;
     }
 }
