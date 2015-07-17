@@ -1,4 +1,5 @@
 {
+    "name": "inviqa/magento-base-theme",
     "require": {
         "php": ">=5.4.0",
         "magento-hackathon/magento-composer-installer":"3.0.x-dev",
