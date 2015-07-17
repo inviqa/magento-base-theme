@@ -16,6 +16,7 @@ $column-sidebar-full       : 2;
 .col-left,
 .col-right {
     @include media($medium-and-up) {
+        @include rem-fallback(margin-top, 0.5);
         @include span-columns($column-sidebar-medium);
     }
     @include media($large-and-up) {
@@ -60,7 +61,12 @@ $column-sidebar-full       : 2;
     .col#{$i}-set {
         @include media($medium-and-up) {
             @include outer-container;
-            @for $j from 1 through $i {
+        }
+        @for $j from 1 through $i {
+            .col-#{$j} {
+                @include rem-fallback(margin-bottom, 3);
+            }
+            @include media($medium-and-up) {
                 .col-#{$j} {
                     @include span-columns(12/$i);
                 }

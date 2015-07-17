@@ -5,6 +5,7 @@
 /* unordered list */
 ul, ol {
     list-style-type: none;
+    margin: 0;
     padding-left: 0;
 }
 
@@ -34,7 +35,7 @@ ul, ol {
 
 /* definition list */
 dl {
-    @include rem-fallback(margin, 1, 0);
+    margin: 0;
     @include font-size(14, 1.2);
 }
 dt {

@@ -8,6 +8,9 @@ footer {
     background: $colour-background-dark;
     @include font-size(14);
     color: $colour-text-light;
+}
+.footer {
+    @include page-block;
     a {
         @include link-colour-light;
     }
@@ -15,16 +18,13 @@ footer {
         display: block;
         @include rem-fallback(padding, 1, 0);
         @include font-size(16);
+        @include media($medium-and-up) {
+            @include rem-fallback(padding, 0.5, 0);
+            @include rem-fallback(margin-bottom, 1);
+            border-top: $border-default;
+            border-bottom: $border-default;
+        }
     }
-}
-.footer {
-    @include page-block;
-}
-
-.copyright {
-    @include rem-fallback(margin-top, 3);
-    @include font-size(11);
-    text-align: center;
 }
 
 .footer__accordion {
@@ -38,9 +38,6 @@ footer {
         }
         .footer-newsletter {
             @include fill-parent;
-            @include rem-fallback(margin-top, 2);
-            @include rem-fallback(padding-top, 1);
-            border-top: $border-default;
         }
     }
     @include media($large-and-up) {
@@ -48,14 +45,28 @@ footer {
             @include span-columns(4);
             @include omega-reset(2n);
         }
-        .footer-newsletter {
-            margin-top: 0;
-            padding-top: 0;
-            border-top: 0;
-        }
     }
 }
 
+.footer-newsletter {
+    @include media($medium-and-up) {
+        @include rem-fallback(margin-top, 2);
+    }
+    @include media($large-and-up) {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+    }
+}
+.newsletter {
+    @include rem-fallback(padding, 0.5, 0);
+}
+
+.copyright {
+    @include rem-fallback(margin-top, 3);
+    @include font-size(11);
+    text-align: center;
+}
 
 /* sticky footer */
 @include media($medium-and-up) {

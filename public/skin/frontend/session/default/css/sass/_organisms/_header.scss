@@ -7,7 +7,7 @@ header {
     border-bottom: $border-light;
     @include rem-fallback(margin-bottom, 3);
     @include media($medium-and-up) {
-        @include rem-fallback(margin-bottom, 5);
+        @include rem-fallback(margin-bottom, 3);
     }
     .links {
         @include rem-fallback(margin, 1.2, 0);

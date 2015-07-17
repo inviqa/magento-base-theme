@@ -1,0 +1,60 @@
+.block-layered-nav {
+    @include visuallyhidden;
+    /* mobile styles needed */
+    @include media($medium-and-up) {
+        @include visuallyshown;
+    }
+    .block-title {
+        @include visuallyhidden;
+    }
+    dt {
+        @include rem-fallback(padding, 0.4, 0.5);
+        background: $colour-brand-secondary;
+        color: $colour-text-light;
+        @include font-size(14);
+    }
+    dd {
+        @include font-size(12);
+        li {
+            text-align: right;
+            @include rem-fallback(padding, 0.4, 0.5);
+            border-bottom: $border-light;
+        }
+        a {
+            float: left;
+            @include link-colour-alt;
+        }
+    }
+    .block-subtitle {
+        display: none;
+        margin-top: 0;
+        @include rem-fallback(padding, 0.3, 0.5);
+        background: $colour-brand-primary;
+        color: $colour-text-light;
+        @include font-size(14);
+        font-weight: bolder;
+    }
+    .currently {
+        @include font-size(14);
+        @include rem-fallback(margin-bottom, 1);
+        .block-subtitle {
+            display: block;
+        }
+    }
+    .btn-remove {
+        display: inline-block;
+        float: left;
+        font-size: 0;
+        @include link-colour-pop;
+        @include link-style(none);
+        &:after {
+            content: '\00D7';
+            @include rem-fallback(margin-right, 1);
+            @include font-size(18, 1);
+        }
+    }
+    .actions {
+        @include font-size(12);
+        @include rem-fallback(margin-bottom, 2);
+    }
+}

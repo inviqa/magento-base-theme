@@ -12,7 +12,7 @@
 .nav-primary {
     @include media($medium-and-up) {
         position: relative;
-        margin-bottom: 0;
+        @include rem-fallback(margin, 1, 0, 0, 0);
         a {
             display: block;
             @include link-colour-pop;

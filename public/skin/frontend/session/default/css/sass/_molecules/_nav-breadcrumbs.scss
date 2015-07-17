@@ -4,6 +4,7 @@
 
 .breadcrumbs {
     display: none;
+    @include rem-fallback(margin-bottom, 2);
     span {
         display: none;
     }
