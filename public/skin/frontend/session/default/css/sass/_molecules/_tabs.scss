@@ -46,6 +46,12 @@
                 @include link-colour-alt;
                 border-bottom: $border-strong;
             }
+            * {
+                display: inline;
+                margin: 0;
+                padding: 0;
+                font: inherit;
+            }
         }
         input {
             ~ div {
