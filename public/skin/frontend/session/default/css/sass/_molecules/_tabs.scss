@@ -1,79 +1,73 @@
 /*------------------------------------------------------------------
-    Tabs
+    CSS tabs
+    Accordion on mobile
+    Expands to tabs on medium screens
+
+    <div class="tabs">
+        <div>
+            <input type="radio" name="tab-group-name" id="tab-group-toggle1" class="input--toggle" checked>
+            <label for="tab-group-toggle1">Heading</label>
+            <div>Content (shown)</div>
+        </div>
+        <div>
+            <input type="radio" name="tab-group-name" id="tab-group-toggle2" class="input--toggle">
+            <label for="tab-group-toggle2">Heading</label>
+            <div>Content (hidden)</div>
+        </div>
+    </div>
+
+    ISSUE  // *
+    Tab content is absolutely positioned and parent size cannot account
+    for the height of these elements. Currently a set height is used on
+    .tabs - this should possibly be replaced with Javascript.
 -------------------------------------------------------------------*/
 
 .tabs {
-    @include rem-fallback(margin, 1, 0);
-    dt {
-        border: $border-default;
-        border-bottom: 0;
-        margin: 0;
-        padding: 0.8em;
-        &:after {
-            content: '\25B8';
-            float: right;
-        }
-        &.current {
-            font-weight: bolder;
-            border-bottom: $border-default;
-            &:after {
-                content: '\25BE';
+    $tab-height     : 3;
+    $tab-container  : 30; // *
+    position: relative;
+    @include rem-fallback(margin, 2, 0);
+    @include media($small-only) {
+        @include accordion;
+    }
+    @include media($medium-and-up) {
+        @include rem-fallback(height, $tab-container); // *
+        label {
+            float: left;
+            display: block;
+            @include rem-fallback(padding, 0, 1, 1);
+            @include rem-fallback(height, $tab-height);
+            @include rem-fallback(margin-right, 0.5);
+            border-bottom: $border-white;
+            border-bottom-width: 3px;
+            @include font-size(16);
+            z-index: 2;
+            &:hover {
+                @include link-colour-alt;
+                border-bottom: $border-strong;
             }
         }
-        &.last {
-            border-bottom: $border-default;
+        input {
+            ~ div {
+                @include visuallyhidden;
+            } 
         }
-    }
-    dd {
-        display: none;
-        padding: 0.8em;
-        border-left: $border-default;
-        border-right: $border-default;
-        &.current {
-            display: block;
-        }
-    }
-    h2 {
-        display: none;
-    }
-}
+        :checked {
+            ~ label {
+                color: $colour-text-default;
+                border-bottom: $border-strong;
+                font-weight: bolder;
+            }
+            ~ div {
+                @include visuallyshown;
+                position: absolute;
+                @include rem-fallback(top, $tab-height);
+                @include rem-fallback(padding, 1, 0);
+                border-top: $border-default;
 
-.toggle-tabs {
-    display: none;
-}
-
-.tab-container {
-}
-
-@include media($medium-and-up) {
-    .tabs {
-        dl {
-            margin: 0;
-        }
-        dt {
-            display: none;
-        }
-        dd {
-            display: none;
-            margin-top: -1px;
-            padding: 1.5em 1em 1em;
-            border: $border-default;
-        }
-    }
-
-    .toggle-tabs {
-        display: block;
-        margin: 0;
-        padding: 0;
-        white-space: nowrap;
-        li {
-            display: inline-block;
-            padding: 0.5em 1em;
-        }
-        .current {
-            font-weight: bolder;
-            border: $border-default;
-            border-bottom-color: white;
+                @include rem-fallback(max-height, $tab-container - $tab-height); // *
+                overflow: auto; // *
+            }
         }
     }
 }
