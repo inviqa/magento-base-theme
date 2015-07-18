@@ -62,8 +62,10 @@
                 @include visuallyshown;
                 position: absolute;
                 @include rem-fallback(top, $tab-height);
+                width: 100%;
                 @include rem-fallback(padding, 1, 0);
                 border-top: $border-default;
+                border-bottom: $border-default;
 
                 @include rem-fallback(max-height, $tab-container - $tab-height); // *
                 overflow: auto; // *
