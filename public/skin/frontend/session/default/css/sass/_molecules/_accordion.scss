@@ -1,57 +1,22 @@
 /*------------------------------------------------------------------
     CSS accordion
+    Placed in a mixin to allow breakpoint restrictions
+
+    <div class="accordion">
+        <div>
+            <input type="radio" name="group-name" id="toggle1" class="input--toggle" checked>
+            <label for="toggle1">Heading</label>
+            <div>Content (shown)</div>
+        </div>
+        <div>
+            <input type="radio" name="group-name" id="toggle2" class="input--toggle">
+            <label for="toggle2">Heading</label>
+            <div>Content (hidden)</div>
+        </div>
+    </div>
 -------------------------------------------------------------------*/
 
 /* accordion on all screen widths */
 .accordion {
-    &__label {
-        display: block;
-        @include rem-fallback(padding, 1, 0);
-        @include font-size(16);
-        font-weight: bolder;
-    }
-    &__section {
-        border-top: $border-default;
-        &:last-of-type {
-            border-bottom: $border-default;
-        }
-    }
-    &__content {
-        max-height: 0;
-        @include transition(all 0.2s);
-        overflow: hidden;
-        :checked ~ & {
-            @include rem-fallback(margin-bottom, 1);
-            max-height: 500px;
-            @include transition(all 0.6s);
-        }
-    }
-}
-
-/* displays as blocks on larger screens */
-.small-accordion {
-    @include media($small-only) {
-        &__label {
-            display: block;
-            @include rem-fallback(padding, 1, 0);
-            @include font-size(16);
-            font-weight: bolder;
-        }
-        &__section {
-            border-top: $border-default;
-            &:last-of-type {
-                border-bottom: $border-default;
-            }
-        }
-        &__content {
-            max-height: 0;
-            @include transition(all 0.2s);
-            overflow: hidden;
-            :checked ~ & {
-                @include rem-fallback(margin-bottom, 1);
-                max-height: 500px;
-                @include transition(all 0.6s);
-            }
-        }
-    }
+    @include accordion;
 }

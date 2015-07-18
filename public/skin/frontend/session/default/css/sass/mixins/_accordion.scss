@@ -1,0 +1,45 @@
+/*------------------------------------------------------------------
+    Accordion
+    Using a mixin to allow breakpoint restrictions
+    (for example, accordion only on mobile, etc)
+
+    Optional $max-height value as transitions to height: auto;
+    is not supported.
+-------------------------------------------------------------------*/
+@mixin accordion($max-height: 50em) {
+    > div {
+        border-top: $border-default;
+        &:last-of-type {
+            border-bottom: $border-default;
+        }
+        > label {
+            position: relative;
+            display: block;
+            @include rem-fallback(padding, 1, 0);
+            @include font-size(16);
+            font-weight: bolder;
+            &:after {
+                @include arrow-right;
+                position: absolute;
+                @include rem-fallback(top, 1);
+                @include rem-fallback(right, 1);
+                @include transition(all 0.4s);
+            }
+        }
+        > div {
+            max-height: 0;
+            @include transition(all 0.2s);
+            overflow: hidden;
+        }
+    }
+    :checked ~ label {
+        &:after {
+            @include arrow-down;
+        }
+    }
+    :checked ~ div {
+        @include rem-fallback(margin-bottom, 1);
+        max-height: $max-height;
+        @include transition(all 0.6s);
+    }
+}

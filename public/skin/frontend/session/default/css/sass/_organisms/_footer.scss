@@ -23,41 +23,40 @@ footer {
             @include rem-fallback(margin-bottom, 1);
             border-top: $border-default;
             border-bottom: $border-default;
+            cursor: default;
         }
     }
 }
 
-.footer__accordion {
+.footer__content {
+    @include media($small-only) {
+        @include accordion(50em);
+    }
     @include media($medium-and-up) {
         @include outer-container;
-        .small-accordion__section {
-            @include span-columns(6);
-            &:nth-of-type(2n) {
-                @include omega;
-            }
+    }
+}
+
+.footer__column {
+    @include media($medium-and-up) {
+        @include span-columns(6);
+        &:nth-of-type(2n) {
+            @include omega;
         }
-        .footer-newsletter {
+        &--newsletter {
             @include fill-parent;
+            @include rem-fallback(margin-top, 2);
         }
     }
     @include media($large-and-up) {
-        .small-accordion__section {
-            @include span-columns(4);
-            @include omega-reset(2n);
+        @include span-columns(4);
+        @include omega-reset(2n);
+        &--newsletter {
+            margin-top: 0;
         }
     }
 }
 
-.footer-newsletter {
-    @include media($medium-and-up) {
-        @include rem-fallback(margin-top, 2);
-    }
-    @include media($large-and-up) {
-        margin-top: 0;
-        padding-top: 0;
-        border-top: 0;
-    }
-}
 .newsletter {
     @include rem-fallback(padding, 0.5, 0);
 }

@@ -11,8 +11,7 @@
     li {
         display: inline;
         & + li:before {
-            content: '\27e9';
-            display: inline-block;
+            @include arrow-right;
             position: relative;
             @include rem-fallback(width, 1);
             @include rem-fallback(margin, 0, 0.5);
