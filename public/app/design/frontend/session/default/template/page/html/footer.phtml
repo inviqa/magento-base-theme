@@ -1,30 +1,30 @@
 <footer class="footer-wrapper" role="contentinfo">
     <div class="footer">
-        <div class="accordion footer__accordion">
-            <div class="small-accordion__section">
+        <div class="footer__content">
+            <div class="footer__column">
                 <input type="radio" name="footer-toggle" id="toggle-footer1" class="input--toggle">
                 <label for="toggle-footer1">
                     <?php echo $this->__('Quick links') ?>
                 </label>
-                <div class="small-accordion__content">
+                <div>
                     <?php echo $this->getChildHtml('footer_links') ?>
                 </div>
             </div>
-            <div class="small-accordion__section">
+            <div class="footer__column">
                 <input type="radio" name="footer-toggle" id="toggle-footer2" class="input--toggle">
                 <label for="toggle-footer2">
                     <?php echo $this->__('Social media') ?>
                 </label>
-                <div class="small-accordion__content">
+                <div>
                     Social media links
                 </div>
             </div>
-            <div class="small-accordion__section footer-newsletter">
+            <div class="footer__column footer__column--newsletter">
                 <input type="radio" name="footer-toggle" id="toggle-footer3" class="input--toggle" checked>
                 <label for="toggle-footer3">
                     <?php echo $this->__('Newsletter') ?>
                 </label>
-                <div class="small-accordion__content">
+                <div>
                     <?php echo $this->getLayout()->createBlock('newsletter/subscribe')->setTemplate('newsletter/subscribe.phtml')->toHtml(); ?>
                 </div>
             </div>
