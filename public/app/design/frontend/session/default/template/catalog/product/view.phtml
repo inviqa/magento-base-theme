@@ -73,8 +73,9 @@
                 <?php foreach ($detailedInfoGroup as $alias => $html):?>
                     <div>
                         <input type="radio" name="tabs-product-info" id="product-info-toggle<?php echo $_count; ?>" class="input--toggle"<?php echo $_count == 1 ? ' checked' : ''; ?>>
-                        <label for="product-info-toggle<?php echo $_count; ?>">Tab <?php echo $_count; ?></label>
-                        <?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?>
+                        <label for="product-info-toggle<?php echo $_count; ?>">
+                            <?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?>
+                        </label>
                         <div>
                            <?php echo $html ?>
                         </div>
