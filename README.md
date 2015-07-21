@@ -29,7 +29,7 @@ You should have `gulp` installed globally on your machine.
 
 After you first boot your VM:
 
-    cd /public/skin/frontend/session/default
+    cd public/skin/frontend/session/default
     npm install
     bower install
 
@@ -53,15 +53,15 @@ After gulp is run for the first time, a style guide will be generated at [http:/
 
 Source files are located at:
 
-    /public/skin/frontend/session/default/pattern-lab
+    public/skin/frontend/session/default/pattern-lab
 
 Note: If the theme name is changed, also update `sourceDir` indicated in:
 
-    /tools/pattern-lab/core/config/config.ini.default
+    tools/pattern-lab/core/config/config.ini.default
 
 And the theme path and name in:
 
-    /public/skin/frontend/session/default/pattern-lab/_data/_data.json
+    public/skin/frontend/session/default/pattern-lab/_data/_data.json
 
 #### About this build
 
@@ -77,7 +77,7 @@ For 1.13 the `session/default` theme will fall back to `base/default`. To change
 
 In 1.14 this is already set up for you using [this method](http://alanstorm.com/magento_parent_child_themes) and can be modified in the following file:
 
-    app/design/frontend/session/default/etc/theme.xml
+    public/app/design/frontend/session/default/etc/theme.xml
 
 ### Database / setup scripts
 
