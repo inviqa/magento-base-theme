@@ -18,7 +18,17 @@
     ],
     "extra": {
         "magento-root-dir": "public",
-        "auto-append-gitignore": true
+        "auto-append-gitignore": true,
+        "path-mappings": {
+            "tools/pattern-lab": {
+                "package":"inviqa/magento-base-theme",
+                "file": "tools/pattern-lab"
+            },
+            "public/skin/frontend": {
+                "package":"inviqa/magento-base-theme",
+                "file": "public/skin/frontend"
+            }
+        }
     },
     "autoload": {
         "psr-4": {
