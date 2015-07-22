@@ -19,5 +19,10 @@
     "extra": {
         "magento-root-dir": "public",
         "auto-append-gitignore": true
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
     }
 }
