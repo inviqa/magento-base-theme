@@ -21,6 +21,44 @@ In the root directory:
 
 In your browser of choice, your VM will be available at [http://mast.dev](http://mast.dev).
 
+## Using it in a project
+
+1 - Open the project's composer.json file.
+2 - Add the `inviqa/magento-base-theme` as a project's dependency. 
+```
+  "require": {
+    "inviqa/magento-base-theme": "dev-master"
+  },
+  "repositories": [
+    {
+      "type":"vcs",
+      "url": "git@github.com:inviqa/magento-base-theme.git"
+    }
+  ],
+```
+3 - In the `composer.json` file, map the items you want to copy across during project's initial bootstrap:
+```
+  "extra": {
+    "path-mappings": {
+      "tools/pattern-lab": {
+        "package":"inviqa/magento-base-theme",
+        "file": "tools/pattern-lab"
+      },
+      "public/skin/frontend": {
+        "package":"inviqa/magento-base-theme",
+        "file": "public/skin/frontend"
+      }
+    }
+  },
+```
+4 - Add the script to the project's `composer.json` file so to trigger the copy mechanism:
+```
+  "scripts": {
+    "post-install-cmd": "Inviqa\\Mast\\Installer::postPackageInstall"
+  }
+```
+5 - Run `composer install` on the project's directory (might be handled by some other tools, like i.e. hobo with `hobo vm up`)
+
 ## Tools and settings
 
 ### Gulp and Bower
