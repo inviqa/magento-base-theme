@@ -22,15 +22,6 @@
     ],
     "extra": {
         "magento-root-dir": "public",
-        "auto-append-gitignore": true,
-        "path-mappings": {
-            "public": {
-                "package":"inviqa/MX_Navigation",
-                "file": "public"
-            }
-        }
-    },
-    "scripts": {
-      "post-install-cmd": "Inviqa\\MX_Navigation\\Installer::postPackageInstall"
+        "auto-append-gitignore": true
     }
 }
