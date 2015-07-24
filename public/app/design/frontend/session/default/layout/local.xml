@@ -55,6 +55,14 @@
             <action method="addItem"><type>skin_js</type><name>js/scripts-ie9.min.js</name><params/><if>IE 9</if></action>
         </reference>
 
+        <reference name="header">
+            <remove name="catalog.topnav" />
+            <block type="mx_navigation/html_topmenu" name="catalog.navigation" as="topMenu" template="page/html/topmenu.phtml">
+                <block type="mx_navigation/html_topmenu" name="topMenu.topLevel" template="page/html/topmenu/toplevel.phtml"/>
+                <block type="mx_navigation/html_topmenu" name="topMenu.subLevel" template="page/html/topmenu/sublevel.phtml"/>
+            </block>
+        </reference>
+
         <reference name="before_body_end">
             <block type="page/html_head" name="jsfooter" as="jsfooter" template="page/html/jsfooter.phtml">
                 <action method="addItem"><type>skin_js</type><name>js/scripts.min.js</name></action>

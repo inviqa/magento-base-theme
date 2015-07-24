@@ -3,7 +3,8 @@
         "php": ">=5.4.0",
         "magento-hackathon/magento-composer-installer":"3.0.x-dev",
         "aydin-hassan/magento-core-composer-installer" : "~1.0",
-        "inviqa/magento-enterprise" : "1.14.2.0"
+        "inviqa/magento-enterprise" : "1.14.2.0",
+        "inviqa/MX_Navigation": "*"
     },
     "repositories": [
         {
@@ -13,10 +14,23 @@
         {
             "type": "composer",
             "url": "http://packages.firegento.com"
+        },
+        {
+          "type":"vcs",
+          "url": "git@github.com:inviqa/MX_Navigation.git"
         }
     ],
     "extra": {
         "magento-root-dir": "public",
-        "auto-append-gitignore": true
+        "auto-append-gitignore": true,
+        "path-mappings": {
+            "public": {
+                "package":"inviqa/MX_Navigation",
+                "file": "public"
+            }
+        }
+    },
+    "scripts": {
+      "post-install-cmd": "Inviqa\\MX_Navigation\\Installer::postPackageInstall"
     }
 }

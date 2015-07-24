@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <MX_Navigation>
+            <version>0.1.0</version>
+        </MX_Navigation>
+    </modules>
+    <global>
+        <blocks>
+            <mx_navigation>
+                <class>MX_Navigation_Block</class>
+            </mx_navigation>
+        </blocks>
+    </global>
+</config>

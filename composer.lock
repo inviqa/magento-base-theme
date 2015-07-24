@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6075ff10a299f4cc69e19895260967a8",
+    "hash": "18025da5e639f8985b41d7f2bf3182b5",
     "packages": [
         {
             "name": "aydin-hassan/magento-core-composer-installer",
@@ -301,6 +301,41 @@
             "time": "2014-08-12 03:16:11"
         },
         {
+            "name": "inviqa/MX_Navigation",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:inviqa/MX_Navigation.git",
+                "reference": "9dbe8fd7ebfa86417a5b22f5c851f2403cdf836c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inviqa/MX_Navigation/zipball/9dbe8fd7ebfa86417a5b22f5c851f2403cdf836c",
+                "reference": "9dbe8fd7ebfa86417a5b22f5c851f2403cdf836c",
+                "shasum": ""
+            },
+            "require-dev": {
+                "aydin-hassan/magento-core-composer-installer": "~1.0",
+                "inviqa/magento-enterprise": "1.14.2.0",
+                "magento-hackathon/magento-composer-installer": "3.0.x-dev",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "magento-root-dir": "public"
+            },
+            "autoload": {
+                "psr-0": {
+                    "Inviqa\\MX_Navigation\\": "src/"
+                }
+            },
+            "support": {
+                "source": "https://github.com/inviqa/MX_Navigation/tree/master",
+                "issues": "https://github.com/inviqa/MX_Navigation/issues"
+            },
+            "time": "2015-07-23 09:21:15"
+        },
+        {
             "name": "inviqa/magento-enterprise",
             "version": "1.14.2.0",
             "source": {
@@ -414,20 +449,20 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "1.4.1",
+            "version": "1.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "2465fe486c864e30badaa4d005ebdf89dbc503f3"
+                "reference": "8dc9b9d85ab639ca60ab4608b34c1279d6ae7bce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/2465fe486c864e30badaa4d005ebdf89dbc503f3",
-                "reference": "2465fe486c864e30badaa4d005ebdf89dbc503f3",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/8dc9b9d85ab639ca60ab4608b34c1279d6ae7bce",
+                "reference": "8dc9b9d85ab639ca60ab4608b34c1279d6ae7bce",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.3.2"
             },
             "require-dev": {
                 "json-schema/json-schema-test-suite": "1.1.0",
@@ -476,7 +511,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2015-03-27 16:41:39"
+            "time": "2015-07-14 16:29:50"
         },
         {
             "name": "magento-hackathon/magento-composer-installer",
@@ -577,21 +612,20 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.6.8",
-            "target-dir": "Symfony/Component/Console",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "2343f6d8026306bd330e0c987e4c102483c213e7"
+                "reference": "8cf484449130cabfd98dcb4694ca9945802a21ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/2343f6d8026306bd330e0c987e4c102483c213e7",
-                "reference": "2343f6d8026306bd330e0c987e4c102483c213e7",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/8cf484449130cabfd98dcb4694ca9945802a21ed",
+                "reference": "8cf484449130cabfd98dcb4694ca9945802a21ed",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9"
             },
             "require-dev": {
                 "psr/log": "~1.0",
@@ -607,11 +641,11 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.7-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Symfony\\Component\\Console\\": ""
                 }
             },
@@ -631,7 +665,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-05-22 14:53:08"
+            "time": "2015-07-09 16:07:40"
         }
     ],
     "packages-dev": [],
