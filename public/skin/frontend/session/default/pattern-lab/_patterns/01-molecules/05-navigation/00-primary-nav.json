@@ -2,7 +2,7 @@
     "menu" : {
         "mobile" : {
             "state" : "checked",
-            "style" : "position: relative"
+            "style" : "position: relative; margin-left: 0;"
         }
     }
 }
