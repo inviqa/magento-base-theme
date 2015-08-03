@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <MX_Navigation>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Page/>
+            </depends>
+        </MX_Navigation>
+    </modules>
+</config>

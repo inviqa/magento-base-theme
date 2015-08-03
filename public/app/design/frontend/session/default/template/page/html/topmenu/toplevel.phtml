@@ -1,0 +1,30 @@
+<?php
+$menu = $this->getMenu();
+$addClass = '';
+if ($this->getIsLast()) {
+    $addClass .= " last";
+}
+if ($this->getIsFirst()) {
+    $addClass .= " first";
+}
+if ($menu->getIsActive()) {
+    $addClass .= " selected";
+}
+?>
+<li class="<?php echo $addClass; ?> level0 level-top <?php if ($menu->hasChildren()): ?>parent<?php endif; ?>">
+    <a href="<?php echo $menu->getUrl(); ?>" <?php echo $this->getOutermostClassCode(); ?>>
+        <span><?php echo $this->escapeHtml($menu->getName()); ?></span>
+    </a>
+<?php if ($menu->hasChildren()): ?>
+    <?php $childrenWrapClass = $this->getChildrenWrapClass(); ?>
+    <?php if (!empty($childrenWrapClass)): ?>
+        <div class="<?php echo $childrenWrapClass; ?>">
+    <?php endif; ?>
+            <ul class="level0">
+                <?php echo $this->_getHtml($menu, $childrenWrapClass); ?>
+            </ul>
+    <?php if (!empty($childrenWrapClass)): ?>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>
+</li>

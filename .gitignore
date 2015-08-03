@@ -53,8 +53,12 @@ public/shell/
 public/style-guide/
 public/var/
 
-public/app/code
+public/app/code/core
+public/app/code/local
+public/app/code/community/*
+!public/app/code/community/MX
 public/app/etc
+!public/app/etc/modules/MX_Navigation.xml
 public/app/locale
 public/app/.htaccess
 public/app/Mage.php

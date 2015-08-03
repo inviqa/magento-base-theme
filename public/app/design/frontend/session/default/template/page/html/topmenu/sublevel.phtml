@@ -1,0 +1,4 @@
+<?php $child = $this->getMenu(); ?>
+<li <?php echo $this->_getRenderedMenuItemAttributes($child); ?>>
+    <a href="<?php echo $child->getUrl(); ?>" <?php echo $this->getOutermostClassCode(); ?>><span><?php echo $this->escapeHtml($child->getName()); ?></span></a>
+</li>
