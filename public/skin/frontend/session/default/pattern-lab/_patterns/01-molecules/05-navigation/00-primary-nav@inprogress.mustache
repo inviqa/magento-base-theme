@@ -5,27 +5,21 @@
         <label for="nav-toggle" class="nav__toggle--close">Close</label>
     </div>
     <ul id="nav" class="nav-primary">
-        <li class="level0 nav-1 first level-top parent active">
+        <li class="first level0 level-top parent">
+            <input type="radio" name="menu-level-top" id="nav-1" class="input--toggle">
+            <label for="nav-1" class="only-small">Women</label>
             <a href="{{ url }}" class="level-top">Women</a>
             <ul class="level0">
+                <li class="view-all level1">
+                    <a href="{{ url }}">View All</a>
+                </li>
                 <li class="level1 nav-1-1 first">
                     <a href="{{ url }}">New Arrivals</a>
                 </li>
-                <li class="level1 nav-1-2 parent active">
+                <li class="level1 nav-1-2">
                     <a href="{{ url }}">Tops &amp; Blouses</a>
-                    <ul class="level1">
-                        <li class="level2 nav-1-2-1 first">
-                            <a href="{{ url }}">Sleeveless</a>
-                        </li>
-                        <li class="level2 nav-1-2-2">
-                            <a href="{{ url }}">Short sleeves</a>
-                        </li>
-                        <li class="level2 nav-1-2-3">
-                            <a href="{{ url }}">Long sleeves</a>
-                        </li>
-                    </ul>
                 </li>
-                <li class="level1 nav-1-3 parent">
+                <li class="level1 nav-1-3">
                     <a href="{{ url }}">Pants &amp; Denim</a>
                 </li>
                 <li class="level1 nav-1-4 last">
@@ -33,20 +27,43 @@
                 </li>
             </ul>
         </li>
-        <li class="level0 nav-2 level-top parent">
+        <li class="active level0 level-top parent">
+            <input type="radio" name="menu-level-top" id="nav-2" class="input--toggle" checked="">
+            <label for="nav-2" class="only-small">Men</label>
             <a href="{{ url }}" class="level-top">Men</a>
             <ul class="level0">
+                <li class="view-all level1">
+                    <a href="{{ url }}">View All</a>
+                </li>
                 <li class="level1 nav-2-1 first">
                     <a href="{{ url }}">New Arrivals</a>
                 </li>
-                <li class="level1 nav-2-2">
+                <li class="level1 nav-2-2 parent">
+                    <input type="radio" name="category-node-16" id="nav-2-2" class="input--toggle">
+                    <label for="nav-2-2" class="only-small">Shirts</label>
                     <a href="{{ url }}">Shirts</a>
+                    <ul class="level1">
+                        <li class="view-all level2">
+                            <a href="{{ url }}">View All</a>
+                        </li>
+                        <li class="level2 nav-2-3-2">
+                            <a href="{{ url }}">Blouses</a>
+                        </li>
+                        <li class="level2 nav-2-3-3 last">
+                            <a href="{{ url }}">Tank tops</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="level1 nav-2-3 parent">
+                <li class="level1 nav-2-3 parent active">
+                    <input type="radio" name="category-node-16" id="nav-2-3" class="input--toggle" checked>
+                    <label for="nav-2-3" class="only-small">Tees, Knits and Polos</label>
                     <a href="{{ url }}">Tees, Knits and Polos</a>
                     <ul class="level1">
-                        <li class="level2 nav-2-3-1 first">
-                            <a href="{{ url }}">Tees</a>
+                        <li class="view-all level2">
+                            <a href="{{ url }}">View All</a>
+                        </li>
+                        <li class="level2 nav-2-3-1 first active">
+                            <a href="{{ url }}">Current page</a>
                         </li>
                         <li class="level2 nav-2-3-2">
                             <a href="{{ url }}">Knits</a>
@@ -64,9 +81,14 @@
                 </li>
             </ul>
         </li>
-        <li class="level0 nav-3 level-top parent">
+        <li class=" level0 level-top parent">
+            <input type="radio" name="menu-level-top" id="nav-3" class="input--toggle">
+            <label for="nav-3" class="only-small">Accessories</label>
             <a href="{{ url }}" class="level-top">Accessories</a>
             <ul class="level0">
+                <li class="view-all level1">
+                    <a href="{{ url }}">View All</a>
+                </li>
                 <li class="level1 nav-3-1 first">
                     <a href="{{ url }}">Eyewear</a>
                 </li>
@@ -81,9 +103,14 @@
                 </li>
             </ul>
         </li>
-        <li class="level0 nav-4 level-top parent">
+        <li class=" level0 level-top parent">
+            <input type="radio" name="menu-level-top" id="nav-4" class="input--toggle">
+            <label for="nav-4" class="only-small">Home &amp; Decor</label>
             <a href="{{ url }}" class="level-top">Home &amp; Decor</a>
             <ul class="level0">
+                <li class="view-all level1">
+                    <a href="{{ url }}">View All</a>
+                </li>
                 <li class="level1 nav-4-1 first">
                     <a href="{{ url }}">Books &amp; Music</a>
                 </li>
@@ -98,9 +125,14 @@
                 </li>
             </ul>
         </li>
-        <li class="level0 nav-5 level-top parent">
+        <li class=" level0 level-top parent">
+            <input type="radio" name="menu-level-top" id="nav-5" class="input--toggle">
+            <label for="nav-5" class="only-small">Sale</label>
             <a href="{{ url }}" class="level-top">Sale</a>
             <ul class="level0">
+                <li class="view-all level1">
+                    <a href="{{ url }}">View All</a>
+                </li>
                 <li class="level1 nav-5-1 first">
                     <a href="{{ url }}">Women</a>
                 </li>
@@ -115,7 +147,7 @@
                 </li>
             </ul>
         </li>
-        <li class="level0 nav-6 last level-top">
+        <li class=" last level0 level-top">
             <a href="{{ url }}" class="level-top">VIP</a>
         </li>
     </ul>

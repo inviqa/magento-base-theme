@@ -12,7 +12,7 @@
     </a>
 
     <?php if ($child->hasChildren()): ?>
-        <?php $childrenWrapClass = '$this->getChildrenWrapClass()'; ?>
+        <?php $childrenWrapClass = $this->getChildrenWrapClass(); ?>
         <ul class="level<?php echo $this->getChildLevel(); ?> <?php if (!empty($childrenWrapClass)) echo $childrenWrapClass; ?>">
             <li class="view-all level<?php echo ($this->getChildLevel() + 1); ?>">
                 <a href="<?php echo $child->getUrl(); ?>">

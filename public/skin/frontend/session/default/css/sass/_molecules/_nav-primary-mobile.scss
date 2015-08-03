@@ -112,13 +112,6 @@
                 }
             }
         }
-        li.level1 {
-            &.active {
-                ul.level1 {
-                    @include visuallyshown;
-                }
-            }
-        }
         ul.level1 {
             @include visuallyhidden;
             @include rem-fallback(padding-left, 1.5);

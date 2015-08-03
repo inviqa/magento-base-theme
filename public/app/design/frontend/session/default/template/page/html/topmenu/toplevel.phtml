@@ -14,8 +14,8 @@ if ($menu->getIsActive()) {
 <li class="<?php echo $addClass; ?> level0 level-top<?php if ($menu->hasChildren()): ?> parent<?php endif; ?>">
 
     <?php if ($menu->hasChildren()): ?>
-        <input type="radio" name="menu-level-top" id="<?php echo $menu->getId(); ?>" class="input--toggle"<?php if ($menu->getIsActive()): ?> checked<?php endif; ?>>
-        <label for="<?php echo $menu->getId(); ?>" class="only-small">
+        <input type="radio" name="menu-level-top" id="<?php echo $menu->getPositionClass(); ?>" class="input--toggle"<?php if ($menu->getIsActive()): ?> checked<?php endif; ?>>
+        <label for="<?php echo $menu->getPositionClass(); ?>" class="only-small">
             <?php echo $this->escapeHtml($menu->getName()); ?>
         </label>
     <?php endif; ?>
