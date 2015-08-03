@@ -9,12 +9,6 @@ header {
     @include media($medium-and-up) {
         @include rem-fallback(margin-bottom, 3);
     }
-    .links {
-        @include rem-fallback(margin, 1.2, 0);
-        li {
-            display: inline-block;
-        }
-    }
 }
 
 .header-wrapper {
@@ -78,6 +72,7 @@ header {
 }
 
 .header-panel-wrapper {
+    @include rem-fallback(padding, 1);
     @include page-block;
     background: $colour-background-black;
     @include rem-fallback(margin-bottom, 3);
@@ -90,7 +85,7 @@ header {
     position: relative;
     @include link-colour($colour-text-light);
     @include font-size(12);
-    * {
+    > * {
         display: inline-block;
     }
     a {

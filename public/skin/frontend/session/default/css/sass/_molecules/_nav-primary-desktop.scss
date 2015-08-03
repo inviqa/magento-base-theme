@@ -22,6 +22,9 @@
         li.level0 {
             display: inline-block;
             @include rem-fallback(margin-right, 0.5);
+            .view-all {
+                display: none;
+            }
             > a {
                 border-bottom: 3px solid transparent;
                 @include rem-fallback(padding, 0.5, 1);
@@ -69,38 +72,43 @@
                 border-top: $border-default;
                 border-bottom: $border-default;
                 @include text-decoration(hover);
-
-            }
-            &:nth-of-type(2n+1) {
-                clear: both;
             }
             &:nth-of-type(2n) {
+                clear: both;
+            }
+            &:nth-of-type(2n+1) {
                 @include omega;
             }
             @include media($large-and-up) {
-                @include span-columns(4);
-                @include omega-reset(2n);
-                &:nth-of-type(odd) {
+                &:nth-of-type(2n) {
                     clear: none;
                 }
-                &:nth-of-type(3n) {
-                    @include omega;
+                &:nth-of-type(3n+2) {
+                    clear: both;
+                }
+                @include span-columns(4);
+                @include omega-reset(2n+1);
+                &:nth-of-type(2n+1) {
+                    margin-right: flex-gutter();
                 }
                 &:nth-of-type(3n+1) {
-                    clear: both;
+                    @include omega;
                 }
             }
             @include media($full-and-up) {
-                @include span-columns(3);
-                @include omega-reset(3n);
-                &:nth-of-type(odd) {
+                &:nth-of-type(3n+2) {
                     clear: none;
                 }
-                &:nth-of-type(4n) {
-                    @include omega;
+                &:nth-of-type(4n+2) {
+                    clear: both;
+                }
+                @include span-columns(3);
+                @include omega-reset(3n+1);
+                &:nth-of-type(3n+1) {
+                    margin-right: flex-gutter();
                 }
                 &:nth-of-type(4n+1) {
-                    clear: both;
+                    @include omega;
                 }
             }
         }

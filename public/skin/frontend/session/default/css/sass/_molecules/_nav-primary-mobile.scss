@@ -1,10 +1,18 @@
 /*------------------------------------------------------------------
-    Navigation: primary (flyout)
+    Navigation: primary (mobile)
 -------------------------------------------------------------------*/
 
 /* common styles */
 .nav-container {
     position: relative;
+    ul.level0 {
+        .active {
+            > a {
+                @include link-colour($colour-text-default);
+                font-weight: bolder;
+            }
+        }
+    }
 }
 
 /* fly in heading */
@@ -41,10 +49,17 @@
         :checked ~ & {
             margin-left: 0;
         }
+        .level-top {
+            > label, > a {
+                position: relative;
+                display: block;
+                color: $colour-brand-primary;
+                @include font-size(18, 1.2);
+            }
+        }
         .parent {
             position: relative;
-            > a {
-                position: relative;
+            > label {
                 @include rem-fallback(padding-right, 3);
                 &:after {
                     @include arrow-right;
@@ -56,42 +71,38 @@
                     vertical-align: middle;
                     @include transition(transform 0.4s ease);
                 }
+                + a {
+                    display: none;
+                }
             }
-            &.active {
-                > a {
-                    &:after {
-                        @include transform(rotate(90deg));
-                    }
+            :checked ~ label {
+                &:after {
+                    @include transform(rotate(90deg));
                 }
             }
         }
         ul {
-            a {
+            a, label {
                 display: block;
                 @include rem-fallback(padding, 0.8);
             }
         }
         li.level0 {
             border-bottom: $border-light;
-            > a {
-                @include font-size(18, 1.2);
-                @include link-style(none);
-            }
-            &.active {
-                ul.level0 {
-                    @include visuallyshown;
-                }
+            :checked ~ ul {
+                @include visuallyshown;
             }
         }
         ul.level0 {
             @include visuallyhidden;
             @include rem-fallback(padding-bottom, 0.8);
-            a {
+            a, label {
                 @include link-colour-alt;
+                @include font-size(14);
                 @include rem-fallback(padding, 0.3, 3, 0.3, 0.85);
             }
             .parent {
-                > a {
+                > label {
                     &:after {
                         @include rem-fallback(margin-right, 0.6);
                         @include rem-fallback(width, 2.4);
@@ -125,15 +136,16 @@
     @include media($small-only) {
         &--open {
             $toggle-open-size   : 3;
-            display: inline-block;
             position: relative;
-            @include rem-fallback(margin, 0.4, 3, 0, 0);
+            @include rem-fallback(width, 2.1);
+            @include rem-fallback(height, 1.8);
+            @include rem-fallback(margin-right, 1);
             font-size: 0;
             z-index: 5;
             &:before {
                 content: '';
                 position: absolute;
-                top: 0.25rem * $toggle-open-size;
+                top: $toggle-open-size;
                 left: 0;
                 width: 0.7rem * $toggle-open-size;
                 height: 0.6rem * $toggle-open-size;
@@ -156,6 +168,15 @@
         &--input,
         &--open {
             @include hidden;
+        }
+    }
+}
+
+/* sublevel toggles */
+.nav-container {
+    @include media($small-only) {
+        label {
+            display: block;
         }
     }
 }
