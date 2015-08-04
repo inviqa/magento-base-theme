@@ -14,7 +14,7 @@
     @include rem-fallback(margin, 1, 0);
     list-style: none;
     .field,
-    > li,
+    > li:not(.fields),
     .control {
         @include rem-fallback(margin-bottom, 1);
     }
@@ -62,6 +62,13 @@
             @include shift(4);
             @include span-columns(8);
         }
+        .add-field {
+            &:before {
+                content: '';
+                min-height: 1px;
+                @include span-columns(4);
+            }
+        }
     }
     @include media($large-and-up) {
         .field,
@@ -74,6 +81,11 @@
                 [class$="-set"] & {
                     @include span-columns(9);
                 }
+            }
+        }
+        .add-field {
+            &:before {
+                @include span-columns(3);
             }
         }
         .control,

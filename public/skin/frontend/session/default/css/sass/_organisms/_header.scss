@@ -5,10 +5,7 @@
 header {
     position: relative;
     border-bottom: $border-light;
-    @include rem-fallback(margin-bottom, 3);
-    @include media($medium-and-up) {
-        @include rem-fallback(margin-bottom, 3);
-    }
+    @include rem-fallback(margin-bottom, 2);
 }
 
 .header-wrapper {
@@ -83,15 +80,13 @@ header {
 }
 .header-panel {
     position: relative;
-    @include link-colour($colour-text-light);
+    color: $colour-text-light;
     @include font-size(12);
-    > * {
-        display: inline-block;
-    }
     a {
         @include link-colour($colour-text-light);
     }
     @include media($medium-and-up) {
+        color: $colour-link-alt;
         a {
             @include link-colour-pop;
         }
