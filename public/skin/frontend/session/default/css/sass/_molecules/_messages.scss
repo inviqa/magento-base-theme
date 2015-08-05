@@ -7,7 +7,7 @@
 .success-msg,
 .warn-msg,
 .error-msg {
-    @include rem-fallback(margin, 1);
+    @include rem-fallback(margin, 1, 0);
     @include rem-fallback(padding, 0.5, 1.5);
     border-left: $border-strong;
     @include font-size(14);

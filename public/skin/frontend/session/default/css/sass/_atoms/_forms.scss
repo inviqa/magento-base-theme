@@ -37,6 +37,10 @@ $input-text: '[type="text"], [type="password"], [type="email"], [type="tel"], [t
     @include font-size(16);
     font-family: $font-sans;
     vertical-align: top;
+    &[disabled] {
+        background: $colour-background-light;
+        color: $colour-text-muted;
+    }
     &.inline {
         width: auto;
         + & {
@@ -46,6 +50,9 @@ $input-text: '[type="text"], [type="password"], [type="email"], [type="tel"], [t
     @include media($small-and-up) {
         @include font-size(13);
     }
+}
+[type="number"] {
+    @include rem-fallback(width, 4);
 }
 textarea {
     height: auto;

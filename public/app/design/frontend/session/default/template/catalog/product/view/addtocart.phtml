@@ -1,0 +1,14 @@
+<?php $_product = $this->getProduct(); ?>
+<?php $buttonTitle = $this->__('Add to Cart'); ?>
+<?php if($_product->isSaleable()): ?>
+    <?php if(!$_product->isGrouped()): ?>
+        <div class="product-view__qty">
+            <label for="qty"><?php echo $this->__('Quantity') ?></label>
+            <input type="number" name="qty" id="qty" maxlength="12" min="1" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Quantity')) ?>" class="input-text qty" />
+        </div>
+    <?php endif; ?>
+    <button type="button" title="<?php echo $buttonTitle ?>" id="product-addtocart-button" class="button--wide button--large product-view__button" onclick="productAddToCartForm.submit(this)">
+        <?php echo $buttonTitle ?>
+    </button>
+    <?php echo $this->getChildHtml('', true, true) ?>
+<?php endif; ?>

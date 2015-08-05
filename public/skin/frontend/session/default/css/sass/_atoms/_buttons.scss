@@ -48,7 +48,7 @@ button, .button {
     &--wide {
         @include rem-fallback(margin-bottom, 0.5);
         width: 100%;
-        @include media($small-and-up) {
+        @include media($medium-and-up) {
             width: auto;
         }
     }

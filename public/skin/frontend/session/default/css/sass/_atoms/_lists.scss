@@ -36,7 +36,6 @@ ul, ol {
 /* definition list */
 dl {
     margin: 0;
-    @include font-size(14, 1.2);
 }
 dt {
     @include rem-fallback(margin-bottom, 0.4);

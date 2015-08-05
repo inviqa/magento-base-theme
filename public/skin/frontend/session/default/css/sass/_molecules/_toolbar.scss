@@ -133,3 +133,7 @@
         }
     }
 }
+
+.limiter {
+    @include font-size(13);
+}

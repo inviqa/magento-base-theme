@@ -4,15 +4,15 @@
     Expands to tabs on medium screens
 
     <div class="tabs">
-        <div>
+        <div class="tab__title">
             <input type="radio" name="tab-group-name" id="tab-group-toggle1" class="input--toggle" checked>
             <label for="tab-group-toggle1">Heading</label>
-            <div>Content (shown)</div>
+            <div class="tab__content">Content (shown)</div>
         </div>
-        <div>
+        <div class="tab__title">
             <input type="radio" name="tab-group-name" id="tab-group-toggle2" class="input--toggle">
             <label for="tab-group-toggle2">Heading</label>
-            <div>Content (hidden)</div>
+            <div class="tab__content">Content (hidden)</div>
         </div>
     </div>
 
@@ -24,14 +24,13 @@
 
 .tabs {
     $tab-height     : 3;
-    $tab-container  : 30; // *
+    @include clearfix;
     position: relative;
     @include rem-fallback(margin, 2, 0);
     @include media($small-only) {
         @include accordion;
     }
     @include media($medium-and-up) {
-        @include rem-fallback(height, $tab-container); // *
         label {
             float: left;
             display: block;
@@ -43,7 +42,6 @@
             @include font-size(16);
             z-index: 2;
             &:hover {
-                @include link-colour-alt;
                 border-bottom: $border-strong;
             }
             * {
@@ -54,7 +52,7 @@
             }
         }
         input {
-            ~ div {
+            ~ .tab__content {
                 @include visuallyhidden;
             } 
         }
@@ -64,18 +62,21 @@
                 border-bottom: $border-strong;
                 font-weight: bolder;
             }
-            ~ div {
+            ~ .tab__content {
                 @include visuallyshown;
                 position: absolute;
                 @include rem-fallback(top, $tab-height);
                 width: 100%;
-                @include rem-fallback(padding, 1, 0);
+                @include rem-fallback(padding, 1.5, 0);
                 border-top: $border-default;
                 border-bottom: $border-default;
-
-                @include rem-fallback(max-height, $tab-container - $tab-height); // *
-                overflow: auto; // *
             }
         }
+    }
+}
+
+.tab__content {
+    > *:last-child {
+        margin-bottom: 0;
     }
 }
