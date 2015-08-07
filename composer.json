@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Inviqa\\Mast": "src/Inviqa/Mast"
+            "Inviqa\\Mast\\": "src/Inviqa/Mast"
         }
     }
 }
