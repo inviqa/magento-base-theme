@@ -110,7 +110,7 @@ GEM
     net-ssh-multi (1.2.0)
       net-ssh (>= 2.6.5)
       net-ssh-gateway (>= 1.2.0)
-    nio4r (1.0.1)
+    nio4r (1.1.1)
     octokit (3.4.0)
       sawyer (~> 0.5.3)
     ohai (7.4.0)
@@ -201,3 +201,6 @@ DEPENDENCIES
   railsless-deploy (~> 1.1.2)
   rubygems-bundler (~> 1.4.3)
   serverspec (~> 1.9.0)
+
+BUNDLED WITH
+   1.10.6
