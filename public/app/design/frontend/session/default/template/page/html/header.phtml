@@ -3,6 +3,27 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 ?>
+<script type="application/ld+json">
+    // Organization - https://developers.google.com/structured-data/customize/overview
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "<?php echo Mage::getStoreConfig('general/store_information/name'); ?>",
+        "url": "<?php echo $this->getUrl(''); ?>",
+        "logo": "<?php echo $this->getLogoSrc(); ?>",
+        "contactPoint" : [{
+            "@type" : "ContactPoint",
+            "telephone" : "<?php echo Mage::getStoreConfig('general/store_information/phone'); ?>",
+            "contactType" : "customer service"
+        }],
+        "sameAs": [
+            "http://www.facebook.com/client",
+            "http://www.twitter.com/client",
+            "http://plus.google.com/client"
+        ]
+    }
+</script>
+
 <a id="page-top"></a>
 <header class="header-container" role="banner">
     <div class="header-panel-wrapper">
