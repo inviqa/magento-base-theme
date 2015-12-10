@@ -1,0 +1,80 @@
+<?php
+/**
+ * Magento Enterprise Edition
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Enterprise Edition End User License Agreement
+ * that is bundled with this package in the file LICENSE_EE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.magento.com/license/enterprise-edition
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     enterprise_default
+ * @copyright Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license http://www.magento.com/license/enterprise-edition
+ */
+?>
+
+<?php $_items = $this->getReviewsCollection()->getItems();?>
+<div class="box-collateral box-reviews" id="customer-reviews">
+<?php if (count($_items)):?>
+    <div class="box-title">
+        <h2><?php echo $this->__('Customer Reviews') ?></h2>
+    </div>
+    <?php echo $this->getChildHtml('toolbar') ?>
+    <div class="box-content" id="product-reviews-list">
+    <?php foreach ($_items as $_review):?>
+        <div itemscope itemtype="http://schema.org/Review">
+            <?php // this is a bit strange - usually the reviews would be embedded
+                  // onto a product page, removing the need for itemReviewed and adding
+                  // itemprop="review" to the containing div - for the purposes of base
+                  // theme I don't want to make any assumptions
+            ?>
+
+            <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Product">
+                <meta itemprop="name" content="<?php echo $this->getProduct()->getName(); ?>">
+            </div>
+
+            <a href="<?php echo $this->getReviewUrl($_review->getId()) ?>"><span itemprop="name"><?php echo $this->escapeHtml($_review->getTitle()) ?></span></a>
+
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <?php echo $this->__('Review by %s', '<span itemprop="name">' . $this->escapeHtml($_review->getNickname()) . '</span>') ?>
+            </span>
+
+            <table class="data-table review-summary-table">
+                <col />
+                <col />
+                <tbody>
+                    <?php foreach ($_review->getRatingVotes() as $_vote): ?>
+                    <tr>
+                        <th class="label"><?php echo $this->escapeHtml($_vote->getRatingCode()) ?></th>
+                        <td class="value">
+                            <div class="rating-box" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                                <meta itemprop="ratingValue" content="<?php echo $_vote->getPercent() / 20; ?>">
+                                <div class="rating" style="width:<?php echo $_vote->getPercent() ?>%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <p itemprop="reviewBody"><?php echo nl2br($this->escapeHtml($_review->getDetail())) ?></p>
+            <p class="date"><?php echo $this->__('(Posted on %s)', $this->formatDate($_review->getCreatedAt()), 'long') ?></p>
+        </div>
+    <?php endforeach; ?>
+    </div>
+    <script type="text/javascript">decorateGeneric($$('#product-reviews-list dd'), ['last']);</script>
+    <?php echo $this->getChildHtml('toolbar') ?>
+<?php endif;?>
+<?php echo $this->getChildHtml('review_form') ?>
+</div>
