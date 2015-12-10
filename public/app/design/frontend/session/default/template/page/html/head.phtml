@@ -47,4 +47,7 @@
     <meta property="og:description" content="<?php echo $this->htmlEscape($_product->getDescription()); ?>">
     <meta property="og:site_name" content="<?php echo Mage::getStoreConfig('general/store_information/name'); ?>">
     <meta property="og:image" content="<?php echo Mage::helper('catalog/image')->init($_product, 'image'); ?>">
+    <meta property="og:type" content="product">
+    <meta property="og:price:amount" content="<?php echo $_product->getFinalPrice(); ?>">
+    <meta property="og:price:currency" content="<?php echo Mage::app()->getStore()->getCurrentCurrencyCode(); ?>">
 <?php endif; ?>
