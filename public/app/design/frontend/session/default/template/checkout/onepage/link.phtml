@@ -1,0 +1,3 @@
+<?php if ($this->isPossibleOnepageCheckout()):?>
+    <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Proceed to Checkout')) ?>" class="button btn-proceed-checkout btn-checkout<?php if ($this->isDisabled()):?> no-checkout<?php endif; ?>"<?php if ($this->isDisabled()):?> disabled="disabled"<?php endif; ?> onclick="window.location='<?php echo $this->getCheckoutUrl() ?>';"><?php echo $this->__('Proceed to Checkout') ?></button>
+<?php endif?>
