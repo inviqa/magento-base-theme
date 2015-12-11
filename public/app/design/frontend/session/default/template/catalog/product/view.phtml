@@ -12,7 +12,7 @@
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->setEscapeMessageFlag(true)->toHtml() ?></div>
-<div class="product-view">
+<div class="product-view" itemscope itemtype="http://schema.org/Product">
     <form action="<?php echo $this->getSubmitUrl($_product, array('_secure' => $this->_isSecure())) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
         <?php echo $this->getBlockHtml('formkey') ?>
         <div class="no-display">
@@ -25,13 +25,21 @@
                 <?php echo $this->getChildHtml('product_type_data') ?>
             </div>
 
+            <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <meta itemprop="price" content="<?php echo $_product->getFinalPrice(); ?>">
+                <meta itemprop="priceCurrency" content="<?php echo Mage::app()->getStore()->getCurrentCurrencyCode(); ?>">
+
+                <meta itemprop="availability" content="http://schema.org/<?php echo ( $_product->isSaleable() ? 'InStock' : 'OutOfStock' ); ?>">
+                <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition">
+            </div>
+
             <div class="product-view__images">
                 <?php echo $this->getChildHtml('media') ?>
             </div>
 
             <div class="product-view__info">
                 <div class="hide-small product-view__info--primary">
-                    <h1 class="product-view__name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+                    <h1 class="product-view__name" itemprop="name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
                     <?php echo $this->getChildHtml('product_type_data') ?>
                 </div>
                 <div class="product-view__info--secondary">
@@ -71,9 +79,16 @@
                                     <?php echo $this->__('Quick overview') ?>
                                 </label>
                                 <div class="tab__content">
-                                    <?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?>
+                                    <?php if ( $_product->getManufacturer() ): ?>
+                                        <meta itemprop="brand" content="<?php echo $_product->getManufacturer(); ?>">
+                                    <?php endif; ?>
+
+                                    <div class="product-view__description" itemprop="description">
+                                        <?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?>
+                                    </div>
+
                                     <p class="product-view__sku">
-                                        <?php echo $this->__('Product number: %s', $this->escapeHtml($_product->getSku())); ?>
+                                        <?php echo $this->__('Product number: %s', '<span itemprop="sku">' . $this->escapeHtml($_product->getSku()) . '</span>'); ?>
                                     </p>
                                 </div>
                             </div>
