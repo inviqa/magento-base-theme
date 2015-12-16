@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <MX_Carousel>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <MX_Adminhtml/>
+            </depends>
+        </MX_Carousel>
+    </modules>
+</config>
