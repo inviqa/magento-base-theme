@@ -117,3 +117,15 @@
 .link-style-underline {
     @include link-style(underline);
 }
+
+.grid {
+    @include clearfix;
+    
+    &--3 &__item {
+        @include span-columns(4);
+
+        &:nth-child(3n+3) {
+            @include omega;
+        }
+    }
+}
