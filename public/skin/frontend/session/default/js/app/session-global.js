@@ -7,9 +7,10 @@ Session.Global = (function ($, Modernizr, undefined) {
      * if you want a function to be accessible from other files and objects attach it to the object which is
      * returned at the end of the function declaration in this case "SessionGlobal"
      */
-    //Owl Carousel slider available site wide if activated
-    SessionGlobal.owlCarousel = function() {
-        $("#owl-example").owlCarousel();
+    // Slick slider available site wide if activated, carousel specific settings
+    // can be added to the HTML
+    SessionGlobal.slickSlider = function() {
+        $('.js-carousel').slick();
     };
 
     //responsive video code
@@ -64,7 +65,7 @@ Session.Global = (function ($, Modernizr, undefined) {
     SessionGlobal.init = function () {
         //if you want a function either public or private to initialize on page load add it here
         SessionGlobal.responsiveVideo();
-        SessionGlobal.owlCarousel();
+        SessionGlobal.slickSlider();
         css3LimitTextFallback();
     };
 
