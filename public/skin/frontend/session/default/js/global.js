@@ -5,7 +5,7 @@
  * See: http://webpack.github.io/docs/commonjs.html
  */
 var responsiveVideo = require('./session_modules/responsivevideo'),
-    owlCarousel = require('./session_modules/owlCarousel'),
+    slickSlider = require('./session_modules/slickslider'),
     css3LimitTextFallback = require('./session_modules/css3limittext'),
     bindEvent = require('./session_modules/bindevent');
 
@@ -13,7 +13,7 @@ var responsiveVideo = require('./session_modules/responsivevideo'),
  * Initialise global JS dependencies
  */
 responsiveVideo();
-owlCarousel();
+slickSlider();
 css3LimitTextFallback();
 
 /**
