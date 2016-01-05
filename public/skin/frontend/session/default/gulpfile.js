@@ -129,7 +129,8 @@ gulp.task('build-theme-scripts', function () {
     /* jshint */
     gulp.src([
         './js/*.js',
-        './js/session_modules/*.js'
+        './js/session_modules/*.js',
+        '!./js/**/*.min.js'
     ])
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish'));
