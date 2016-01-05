@@ -4,19 +4,16 @@
 
 .breadcrumbs {
     display: none;
-    span {
-        display: none;
-    }
+    @include rem-fallback(margin-bottom, 2);
     li {
         display: inline;
         & + li:before {
-            content: '\232a';
-            display: inline-block;
+            @include arrow-right;
             position: relative;
-            @include rem-fallback(top, 0.1);
             @include rem-fallback(width, 1);
             @include rem-fallback(margin, 0, 0.5);
             color: $colour-brand-primary;
+            @include font-size(18);
         }
     }
     a {

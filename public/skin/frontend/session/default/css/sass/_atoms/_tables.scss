@@ -12,6 +12,9 @@ th, td {
     @include font-size(14, 1);
     vertical-align: top;
 }
+th {
+    font-weight: $font-weight-bold;
+}
 
 /* data table  */
 .data-table {
@@ -39,6 +42,6 @@ th, td {
     }
     &__grand {
         border-top: $border-default;
-        font-weight: $font-weight-heavy;
+        font-weight: $font-weight-bold;
     }
 }

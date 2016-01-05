@@ -7,10 +7,11 @@
 .success-msg,
 .warn-msg,
 .error-msg {
-    @include rem-fallback(margin, 1);
+    @include rem-fallback(margin, 1, 0);
     @include rem-fallback(padding, 0.5, 1.5);
-    border-left: 3px solid $colour-brand-primary;
+    border-left: $border-strong;
     @include font-size(14);
+    font-weight: bolder;
 }
 .info-msg {
     border-color: $colour-info;
@@ -34,14 +35,13 @@
     @include font-size(12);
 }
 .notice-inner {
-    @include outer-container;
-    @include rem-fallback(padding, 1);
+    @include page-block;
     text-align: center;
     p {
         margin: 0;
+        @include rem-fallback(padding, 1, 0);
     }
     @include media($medium-and-up) {
-        @include rem-fallback(padding, 1, 2);
         text-align: inherit;
     }
 }

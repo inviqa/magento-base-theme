@@ -41,7 +41,9 @@
     }
     @include media($large-and-up) {
         .product-name {
-            @include rem-fallback(padding-right, 14);
+            @include rem-fallback(margin-bottom, 2);
+            @include rem-fallback(padding-right, 16);
+            @include font-size(24, 1.1);
         }
         .price-box {
             @include position(absolute, 0 0 null null);

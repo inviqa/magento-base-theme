@@ -4,6 +4,7 @@
 
 .price-box {
     color: $colour-brand-primary;
+    font-weight: bolder;
     p {
         display: inline-block;
         margin: 0;
@@ -12,25 +13,38 @@
 .price-label {
     @include visuallyhidden;
 }
-.minimal-price-link {
-    display: block;
-    @include font-size(12);
-    color: $colour-text-default;
-}
 
-/* From: xx.xx */
-.old-price,
-.price-from {
+/* Sale price: -xx.xx- XX.XX */
+.old-price {
     @include font-size(12);
     @include link-style(line-through);
     color: $colour-text-default;
 }
 
-/* Starting at: xx.xx */
+/* From/to: XX.XX - XXX.XX */
+.price-from {
+    &:after {
+        content: ' - ';
+    }
+}
+
+/* Starting at: XX.XX+ */
 .minimal-price {
     &:after {
         content: '+';
         @include font-size(12);
         vertical-align: text-top;
     }
+}
+
+/* Lower than MSRP: Click for price */
+.map-link {
+    display: block;
+}
+
+/* As low as xx.xx */
+.minimal-price-link {
+    display: block;
+    @include font-size(12);
+    color: $colour-text-default;
 }

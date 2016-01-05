@@ -1,0 +1,21 @@
+<?php if($crumbs && is_array($crumbs)): ?>
+<div class="breadcrumbs">
+    <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+        <?php $_i = 1; ?>
+        <?php foreach($crumbs as $_crumbName=>$_crumbInfo): ?>
+            <li class="<?php echo $_crumbName ?>" itemprop="itemListElement" itemscope
+      itemtype="http://schema.org/ListItem">
+            <?php if($_crumbInfo['link']): ?>
+                <a href="<?php echo $_crumbInfo['link'] ?>" title="<?php echo $this->escapeHtml($_crumbInfo['title']) ?>" itemprop="item"><span itemprop="name"><?php echo $this->escapeHtml($_crumbInfo['label']) ?></span></a>
+            <?php elseif($_crumbInfo['last']): ?>
+                <a href="<?php echo $this->helper('core/url')->getCurrentUrl(); ?>" title="<?php echo $this->escapeHtml($_crumbInfo['title']) ?>" itemprop="item"><strong itemprop="name"><?php echo $this->escapeHtml($_crumbInfo['label']) ?></strong></a>
+            <?php else: ?>
+                <a href="<?php echo $this->helper('core/url')->getCurrentUrl(); ?>" title="<?php echo $this->escapeHtml($_crumbInfo['title']) ?>" itemprop="item"><span itemprop="name"><?php echo $this->escapeHtml($_crumbInfo['label']) ?></span></a>
+            <?php endif; ?>
+            <meta itemprop="position" content="<?php echo $_i; ?>">
+            </li>
+            <?php $_i++; ?>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>

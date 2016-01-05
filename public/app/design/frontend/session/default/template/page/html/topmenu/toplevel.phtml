@@ -1,0 +1,37 @@
+<?php
+$menu = $this->getMenu();
+$addClass = '';
+if ($this->getIsLast()) {
+    $addClass .= " last";
+}
+if ($this->getIsFirst()) {
+    $addClass .= " first";
+}
+if ($menu->getIsActive()) {
+    $addClass .= " active";
+}
+?>
+<li class="<?php echo $addClass; ?> level0 level-top<?php if ($menu->hasChildren()): ?> parent<?php endif; ?>">
+
+    <?php if ($menu->hasChildren()): ?>
+        <input type="radio" name="menu-level-top" id="<?php echo $menu->getPositionClass(); ?>" class="input--toggle"<?php if ($menu->getIsActive()): ?> checked<?php endif; ?>>
+        <label for="<?php echo $menu->getPositionClass(); ?>" class="only-small">
+            <?php echo $this->escapeHtml($menu->getName()); ?>
+        </label>
+    <?php endif; ?>
+
+    <a href="<?php echo $menu->getUrl(); ?>" <?php echo $this->getOutermostClassCode(); ?>>
+        <?php echo $this->escapeHtml($menu->getName()); ?>
+    </a>
+
+<?php if ($menu->hasChildren()): ?>
+    <ul class="level0">
+        <li class="view-all level1">
+            <a href="<?php echo $menu->getUrl(); ?>">
+                <?php echo $this->__('View All'); ?>
+            </a>
+        </li>
+        <?php echo $this->_getHtml($menu, $childrenWrapClass); ?>
+    </ul>
+<?php endif; ?>
+</li>

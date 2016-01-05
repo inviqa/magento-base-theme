@@ -1,0 +1,122 @@
+/*------------------------------------------------------------------
+    Navigation: primary (desktop)
+-------------------------------------------------------------------*/
+
+.nav-container {
+    @include media($medium-and-up) {
+        @include outer-container;
+        @include rem-fallback(padding-right, $page-padding-large);
+        @include rem-fallback(padding-left, $page-padding-large);
+    }
+}
+.nav-primary {
+    @include media($medium-and-up) {
+        position: relative;
+        @include rem-fallback(margin, 1, 0, 0, 0);
+        a {
+            display: block;
+            @include link-colour-pop;
+            @include link-style(none);
+        }
+        /* Top categories */
+        li.level0 {
+            display: inline-block;
+            @include rem-fallback(margin-right, 0.5);
+            .view-all {
+                display: none;
+            }
+            > a {
+                border-bottom: 3px solid transparent;
+                @include rem-fallback(padding, 0.5, 1);
+                @include link-style(none);
+                @include link-colour($colour-brand-secondary);
+            }
+            &:hover {
+                > a {
+                    color: $colour-text-default;
+                    border-bottom: $border-strong;
+                }
+                ul {
+                    @include outer-container;
+                    display: block;
+                }
+            }
+            &.active {
+                > a {
+                    color: $colour-text-default;
+                    font-weight: bolder;
+                    border-bottom: $border-strong;
+                }
+            }
+        }
+        /* Subcategories */
+        ul.level0 {
+            @include outer-container;
+            display: none;
+            @include position(absolute, 100% 0 null 0);
+            @include rem-fallback(padding, 2);
+            background: $colour-background-white;
+            border-top: $border-light;
+            border-bottom: $border-strong;
+            box-shadow: $shadow-default;
+            z-index: 3;
+        }
+        li.level1 {
+            @include span-columns(6);
+            @include rem-fallback(margin-top, 1);
+            @include rem-fallback(margin-bottom, 1);
+            @include font-size(14);
+            > a {
+                @include rem-fallback(margin-bottom, 0.5);
+                @include rem-fallback(padding, 0.4, 1);
+                border-top: $border-default;
+                border-bottom: $border-default;
+                @include text-decoration(hover);
+            }
+            &:nth-of-type(2n) {
+                clear: both;
+            }
+            &:nth-of-type(2n+1) {
+                @include omega;
+            }
+            @include media($large-and-up) {
+                &:nth-of-type(2n) {
+                    clear: none;
+                }
+                &:nth-of-type(3n+2) {
+                    clear: both;
+                }
+                @include span-columns(4);
+                @include omega-reset(2n+1);
+                &:nth-of-type(2n+1) {
+                    margin-right: flex-gutter();
+                }
+                &:nth-of-type(3n+1) {
+                    @include omega;
+                }
+            }
+            @include media($full-and-up) {
+                &:nth-of-type(3n+2) {
+                    clear: none;
+                }
+                &:nth-of-type(4n+2) {
+                    clear: both;
+                }
+                @include span-columns(3);
+                @include omega-reset(3n+1);
+                &:nth-of-type(3n+1) {
+                    margin-right: flex-gutter();
+                }
+                &:nth-of-type(4n+1) {
+                    @include omega;
+                }
+            }
+        }
+        /* Sub-subcategories */
+        li.level2 {
+            a {
+                @include rem-fallback(padding, 0, 0, 0.3, 1);
+            }
+        }
+    }
+}

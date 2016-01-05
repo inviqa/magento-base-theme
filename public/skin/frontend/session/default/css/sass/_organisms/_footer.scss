@@ -2,82 +2,92 @@
     Footer
 -------------------------------------------------------------------*/
 
-
-footer {
-    background: $colour-background-dark;
-}
-
-
 footer {
     @include clearfix;
-    background: $colour-background-light;
-    @include rem-fallback(padding, 1);
-    @include rem-fallback(margin-top, 1);
+    @include rem-fallback(padding, 3, 0);
+    background: $colour-background-dark;
+    @include font-size(14);
+    color: $colour-text-light;
+}
+.footer {
+    @include page-block;
+    a {
+        @include link-colour-light;
+    }
+    label {
+        display: block;
+        @include rem-fallback(padding, 1, 0);
+        @include font-size(16);
+        @include media($medium-and-up) {
+            @include rem-fallback(padding, 0.5, 0);
+            @include rem-fallback(margin-bottom, 1);
+            border-top: $border-default;
+            border-bottom: $border-default;
+            cursor: default;
+        }
+    }
 }
 
-.footer {
-    @include outer-container;
-    form {
-        @include clearfix;
-        @include rem-fallback(margin, 1, 0);
-        .v-fix {
-            width: 75%;
-        }
-        button {
-            width: 25%;
-        }
-    }
-    ul {
-        @include rem-fallback(margin, 1, 0);
-        padding: 0;
-        border-top: $border-default;
-        li {
-            display: block;
-            @include rem-fallback(padding, 0.5);
-            border-bottom: $border-default;
-        }
-    }
-    .copyright {
-        @include rem-fallback(margin, 1, 0);
-        @include span-columns(12);
+.footer__content {
+    @include media($small-only) {
+        @include accordion(50em);
     }
     @include media($medium-and-up) {
-        ul {
-            @include span-columns(6);
+        @include outer-container;
+    }
+}
+
+.footer__column {
+    @include media($medium-and-up) {
+        @include span-columns(6);
+        &:nth-of-type(2n) {
             @include omega;
         }
-        form {
-            @include span-columns(6);
+        &--newsletter {
+            @include fill-parent;
+            @include rem-fallback(margin-top, 2);
         }
     }
-    @include media($full-and-up) {
-        ul {
-            @include span-columns(4);
-        }
-        form {
-            @include span-columns(4);
-        }
-        .copyright {
-            @include span-columns(4);
-            @include omega;
+    @include media($large-and-up) {
+        @include span-columns(4);
+        @include omega-reset(2n);
+        &--newsletter {
+            margin-top: 0;
         }
     }
 }
 
-/* Sticky footer */
+.newsletter {
+    @include rem-fallback(padding, 0.5, 0);
+}
+
+.copyright {
+    @include rem-fallback(margin-top, 3);
+    @include font-size(11);
+    text-align: center;
+}
+
+/* sticky footer */
 @include media($medium-and-up) {
-    $footer-height: 250px;
     html {
         position: relative;
         min-height: 100%;
     }
     .wrapper {
-        margin-bottom: $footer-height;
+        margin-bottom: $footer-height-medium;
     }
     footer {
-        height: $footer-height;
+        height: $footer-height-medium;
         position: absolute;
         bottom: 0;
         width: 100%;
+    }
+}
+@include media($large-and-up) {
+    .wrapper {
+        margin-bottom: $footer-height-large;
+    }
+    footer {
+        height: $footer-height-large;
     }
 }

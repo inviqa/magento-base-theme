@@ -1,0 +1,18 @@
+/*------------------------------------------------------------------
+    Arrows
+    Commonly used in pseudo elements
+-------------------------------------------------------------------*/
+
+@mixin arrow-right {
+    content: '\27e9';
+    display: inline-block;
+    @include transition(transform 0.4s);
+}
+@mixin arrow-down {
+    @include arrow-right;
+    @include transform(rotate(90deg));
+}
+@mixin arrow-left {
+    @include arrow-right;
+    @include transform(scaleX(-1));
+}

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6075ff10a299f4cc69e19895260967a8",
+    "hash": "366120c40338c3d1446a21f1befc5bbc",
     "packages": [
         {
             "name": "aydin-hassan/magento-core-composer-installer",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AydinHassan/magento-core-composer-installer.git",
-                "reference": "179549e36a22644da085ca8810c9f82ba0745efe"
+                "reference": "44029feb27ee84922a57adab258cb9f98f9621a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AydinHassan/magento-core-composer-installer/zipball/179549e36a22644da085ca8810c9f82ba0745efe",
-                "reference": "179549e36a22644da085ca8810c9f82ba0745efe",
+                "url": "https://api.github.com/repos/AydinHassan/magento-core-composer-installer/zipball/44029feb27ee84922a57adab258cb9f98f9621a0",
+                "reference": "44029feb27ee84922a57adab258cb9f98f9621a0",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 }
             ],
             "description": "A composer plugin for managing Magento Core",
-            "time": "2015-02-26 17:28:18"
+            "time": "2015-07-25 08:28:51"
         },
         {
             "name": "eloquent/composer-config-reader",
@@ -414,20 +414,20 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "1.4.1",
+            "version": "1.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "2465fe486c864e30badaa4d005ebdf89dbc503f3"
+                "reference": "8dc9b9d85ab639ca60ab4608b34c1279d6ae7bce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/2465fe486c864e30badaa4d005ebdf89dbc503f3",
-                "reference": "2465fe486c864e30badaa4d005ebdf89dbc503f3",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/8dc9b9d85ab639ca60ab4608b34c1279d6ae7bce",
+                "reference": "8dc9b9d85ab639ca60ab4608b34c1279d6ae7bce",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.3.2"
             },
             "require-dev": {
                 "json-schema/json-schema-test-suite": "1.1.0",
@@ -476,7 +476,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2015-03-27 16:41:39"
+            "time": "2015-07-14 16:29:50"
         },
         {
             "name": "magento-hackathon/magento-composer-installer",
@@ -484,12 +484,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cotya/magento-composer-installer.git",
-                "reference": "8ce45c183a9491a79167622afbcbfb9d0cfeebb7"
+                "reference": "a9b0994aa4bd2c1ac7080c45ff95a8ecd8b9eb03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cotya/magento-composer-installer/zipball/8ce45c183a9491a79167622afbcbfb9d0cfeebb7",
-                "reference": "8ce45c183a9491a79167622afbcbfb9d0cfeebb7",
+                "url": "https://api.github.com/repos/Cotya/magento-composer-installer/zipball/a9b0994aa4bd2c1ac7080c45ff95a8ecd8b9eb03",
+                "reference": "a9b0994aa4bd2c1ac7080c45ff95a8ecd8b9eb03",
                 "shasum": ""
             },
             "archive": {
@@ -499,9 +499,9 @@
                 ]
             },
             "require": {
-                "composer-plugin-api": "1.0.0",
+                "composer-plugin-api": "~1.0",
                 "eloquent/composer-config-reader": "2.*",
-                "php": ">=5.3.2",
+                "php": ">=5.4",
                 "symfony/console": "~2.5"
             },
             "require-dev": {
@@ -570,28 +570,27 @@
                 "magento"
             ],
             "support": {
-                "source": "https://github.com/Cotya/magento-composer-installer/tree/3.0.3-rc.2",
+                "source": "https://github.com/Cotya/magento-composer-installer/tree/3.0",
                 "issues": "https://github.com/Cotya/magento-composer-installer/issues"
             },
-            "time": "2015-05-20 10:37:54"
+            "time": "2015-07-20 17:33:13"
         },
         {
             "name": "symfony/console",
-            "version": "v2.6.8",
-            "target-dir": "Symfony/Component/Console",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "2343f6d8026306bd330e0c987e4c102483c213e7"
+                "reference": "8cf484449130cabfd98dcb4694ca9945802a21ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/2343f6d8026306bd330e0c987e4c102483c213e7",
-                "reference": "2343f6d8026306bd330e0c987e4c102483c213e7",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/8cf484449130cabfd98dcb4694ca9945802a21ed",
+                "reference": "8cf484449130cabfd98dcb4694ca9945802a21ed",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9"
             },
             "require-dev": {
                 "psr/log": "~1.0",
@@ -607,11 +606,11 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.7-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Symfony\\Component\\Console\\": ""
                 }
             },
@@ -631,7 +630,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-05-22 14:53:08"
+            "time": "2015-07-09 16:07:40"
         }
     ],
     "packages-dev": [],

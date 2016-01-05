@@ -1,5 +1,6 @@
 {
-    "require": {
+    "name": "inviqa/magento-base-theme",
+    "require-dev": {
         "php": ">=5.4.0",
         "magento-hackathon/magento-composer-installer":"3.0.x-dev",
         "aydin-hassan/magento-core-composer-installer" : "~1.0",
@@ -18,5 +19,10 @@
     "extra": {
         "magento-root-dir": "public",
         "auto-append-gitignore": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Inviqa\\Mast\\": "src/Inviqa/Mast"
+        }
     }
 }

@@ -3,7 +3,6 @@
 -------------------------------------------------------------------*/
 
 $pink                       : #ec008c;
-$slate                      : #2f4f4f;
 $blue                       : #519db3;
 $green                      : #549867;
 $yellow                     : #e3a11e;
@@ -12,7 +11,7 @@ $white                      : #ffffff;
 $light-grey                 : #eeeeee;
 $grey                       : #999999;
 $dark-grey                  : #606669;
-$black                      : #222222;
+$black                      : #333333;
 
 /*------------------------------------------------------------------
     Colour variables: define using colour names
@@ -20,7 +19,7 @@ $black                      : #222222;
 
 /* brand */
 $colour-brand-primary       : $pink;
-$colour-brand-secondary     : $slate;
+$colour-brand-secondary     : $dark-grey;
 
 /* messaging */
 $colour-info                : $blue;
@@ -38,7 +37,7 @@ $colour-text-light          : $white;
 $colour-link-default        : $colour-brand-primary;
 $colour-link-active         : $colour-brand-primary;
 $colour-link-alt            : $colour-brand-secondary;
-$colour-link-alt-active     : $black;
+$colour-link-alt-active     : $colour-brand-secondary;
 
 /* backgrounds */
 $colour-background-white    : $white;
@@ -49,6 +48,8 @@ $colour-background-black    : $black;
 /* borders */
 $colour-border-default      : $grey;
 $colour-border-light        : $light-grey;
+$colour-border-dark         : $dark-grey;
+$colour-border-white        : $white;
 
 /* drop-shadow */
 $colour-shadow              : $black;

@@ -18,7 +18,7 @@ button, .button {
     white-space: nowrap;
     &:hover,
     &:focus {
-        background: rgba($colour-brand-primary, 0.75);
+        background: lighten($colour-brand-primary, 3%);
     }
     &:active {
         background: $colour-brand-primary;
@@ -27,7 +27,7 @@ button, .button {
         background: $colour-brand-secondary;
         &:hover,
         &:focus {
-            background: rgba($colour-brand-secondary, 0.75);
+            background: darken($colour-brand-secondary, 4%);
         }
         &:active {
             background: $colour-brand-secondary;
@@ -48,7 +48,7 @@ button, .button {
     &--wide {
         @include rem-fallback(margin-bottom, 0.5);
         width: 100%;
-        @include media($small-and-up) {
+        @include media($medium-and-up) {
             width: auto;
         }
     }

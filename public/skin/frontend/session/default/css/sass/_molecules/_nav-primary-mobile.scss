@@ -1,0 +1,175 @@
+/*------------------------------------------------------------------
+    Navigation: primary (mobile)
+-------------------------------------------------------------------*/
+
+/* common styles */
+.nav-container {
+    position: relative;
+    ul.level0 {
+        .active {
+            > a {
+                @include link-colour($colour-text-default);
+                font-weight: bolder;
+            }
+        }
+    }
+}
+
+/* fly in heading */
+.nav__mobile--heading {
+    @include media($small-only) {
+        @include clearfix;
+        @include rem-fallback(margin, 1, 0.5, 2);
+        a {
+            display: inline-block;
+            float: left;
+            max-width: 50%;
+            @include rem-fallback(max-height, 3);
+        }
+    }
+    @include media($medium-and-up) {
+        @include hidden;
+    }
+}
+
+/* fly in container */
+.nav-container {
+    @include media($small-only) {
+        @include position(fixed, 0 null 0 0);
+        margin-left: -100%;
+        width: 85%;
+        @include rem-fallback(max-width, 30);
+        @include rem-fallback(padding, 2, 1);
+        background: $colour-background-white;
+        border-right: $border-light;
+        box-shadow: $shadow-default;
+        @include font-size(14);
+        z-index: 10;
+        @include transition(margin 0.6s ease);
+        :checked ~ & {
+            margin-left: 0;
+        }
+        .level-top {
+            > label, > a {
+                position: relative;
+                display: block;
+                color: $colour-brand-primary;
+                @include font-size(18, 1.2);
+            }
+        }
+        .parent {
+            position: relative;
+            > label {
+                @include rem-fallback(padding-right, 3);
+                &:after {
+                    @include arrow-right;
+                    @include position(absolute, 0 0 null null);
+                    @include rem-fallback(width, 3.6);
+                    @include rem-fallback(height, 3.6);
+                    @include rem-fallback(line-height, 3.5);
+                    text-align: center;
+                    vertical-align: middle;
+                    @include transition(transform 0.4s ease);
+                }
+                + a {
+                    display: none;
+                }
+            }
+            :checked ~ label {
+                &:after {
+                    @include transform(rotate(90deg));
+                }
+            }
+        }
+        ul {
+            a, label {
+                display: block;
+                @include rem-fallback(padding, 0.8);
+            }
+        }
+        li.level0 {
+            border-bottom: $border-light;
+            :checked ~ ul {
+                @include visuallyshown;
+            }
+        }
+        ul.level0 {
+            @include visuallyhidden;
+            @include rem-fallback(padding-bottom, 0.8);
+            a, label {
+                @include link-colour-alt;
+                @include font-size(14);
+                @include rem-fallback(padding, 0.3, 3, 0.3, 0.85);
+            }
+            .parent {
+                > label {
+                    &:after {
+                        @include rem-fallback(margin-right, 0.6);
+                        @include rem-fallback(width, 2.4);
+                        @include rem-fallback(height, 2.4);
+                        @include rem-fallback(line-height, 2.2);
+                    }
+                }
+            }
+        }
+        ul.level1 {
+            @include visuallyhidden;
+            @include rem-fallback(padding-left, 1.5);
+            .parent {
+                &:after {
+                    content: none;
+                }
+            }
+        }
+    }
+}
+
+/* main toggle */
+.nav__toggle {
+    @include media($small-only) {
+        &--open {
+            $toggle-open-size   : 3;
+            position: relative;
+            @include rem-fallback(width, 2.1);
+            @include rem-fallback(height, 1.8);
+            @include rem-fallback(margin-right, 1);
+            font-size: 0;
+            z-index: 5;
+            &:before {
+                content: '';
+                position: absolute;
+                top: $toggle-open-size;
+                left: 0;
+                width: 0.7rem * $toggle-open-size;
+                height: 0.6rem * $toggle-open-size;
+                border-top: 0.375rem * $toggle-open-size double $colour-text-light;
+                border-bottom: 0.14rem * $toggle-open-size solid $colour-text-light;
+            }
+        }
+        &--close {
+            display: inline-block;
+            float: right;
+            &:after {
+                content: '\00D7';
+                float: right;
+                @include rem-fallback(margin-left, 0.5);
+                @include font-size(40, 0.3);
+            }
+        }
+    }
+    @include media($medium-and-up) {
+        &--input,
+        &--open {
+            @include hidden;
+        }
+    }
+}
+
+/* sublevel toggles */
+.nav-container {
+    @include media($small-only) {
+        label {
+            display: block;
+        }
+    }
+}

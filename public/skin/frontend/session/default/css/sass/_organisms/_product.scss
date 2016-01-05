@@ -1,0 +1,114 @@
+/*------------------------------------------------------------------
+    Product essential block
+-------------------------------------------------------------------*/
+
+/* layout */
+.product-view {
+    &__images,
+    &__info,
+    &__collateral {
+        @include rem-fallback(margin-bottom, 2);
+    }
+    @include media($medium-and-up) {
+        &__essential {
+            @include outer-container;
+        }
+        &__images {
+            @include span-columns(6);
+        }
+        &__info {
+            @include span-columns(6);
+            @include omega;
+        }
+        &__collateral {
+            @include fill-parent;
+            clear: both;
+        }
+    }
+    @include media($large-and-up) {
+        &__images {
+            @include span-columns(4);
+        }
+        &__info, &__collateral {
+            clear: none;
+            @include span-columns(8);
+            @include omega;
+        }
+    }
+}
+
+/* product name */
+.product-view {
+    &__info--alt {
+        text-align: center;
+        @include rem-fallback(margin-bottom, 2);
+    }
+    &__name--alt {
+        @extend h1;
+        @include rem-fallback(margin-bottom, 1);
+    }
+    &__name {
+        @include rem-fallback(margin-bottom, 1);
+    }
+    @include media($medium-and-up) {
+        &__info--alt {
+            display: none;
+        }
+    }
+}
+/* price */
+.product-view {
+    &__essential {
+        .price-box {
+            font-size: 120%;
+        }
+    }
+    @include media($medium-and-up) {
+        &__essential {
+            .price-box {
+                font-size: 150%;
+            }
+        }
+    }
+}
+
+/* sku */
+.product-view {
+    &__sku {
+        color: $colour-text-muted;
+        @include font-size(12);
+    }
+}
+
+/* options */
+.product-view__info--secondary {
+    + div {
+        border-top: $border-light;
+    }
+}
+.product-options {
+    @include rem-fallback(padding-top, 1.5);
+    select {
+        width: 100%;
+        @include rem-fallback(max-width, 40);
+    }
+}
+
+/* button */
+.product-view {
+    &__qty {
+        @include rem-fallback(padding, 1.5, 0);
+        border-bottom: $border-light;
+        label {
+            vertical-align: middle;
+            @include rem-fallback(margin-right, 0.5);
+        }
+    }
+}
+
+/* button */
+.product-view {
+    &__button {
+        @include rem-fallback(margin, 2, 0);
+    }
+}

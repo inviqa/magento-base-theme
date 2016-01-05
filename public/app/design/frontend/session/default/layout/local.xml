@@ -13,20 +13,22 @@
 <layout version="0.1.0">
 
     <default>
-        <remove name="cart_sidebar"/>                   <!--Cart Sidebar-->
+        <remove name="cart_sidebar"/>                   <!--Cart sidebar-->
         <remove name="catalog.product.related"/>        <!--Related products sidebar-->
-        <remove name="wishlist_sidebar"/>               <!--Wishlist Sidebar-->
-        <remove name="catalog.compare.sidebar"/>        <!--Compare Items Sidebar-->
-        <remove name="right.permanent.callout"/>        <!--Right Callout Sample Data-->
-        <remove name="left.permanent.callout"/>         <!--Left Callout Sample Data-->
-        <remove name="right.reports.product.viewed"/>   <!--Viewed Products-->
-        <remove name="right.reports.product.compared"/> <!--Compared Products-->
-        <remove name="left.newsletter"/>                <!--Sidebar Newsletter-->
+        <remove name="wishlist_sidebar"/>               <!--Wishlist sidebar-->
+        <remove name="catalog.compare.sidebar"/>        <!--Compare items sidebar-->
+        <remove name="right.permanent.callout"/>        <!--Right callout-->
+        <remove name="left.permanent.callout"/>         <!--Left callout-->
+        <remove name="right.reports.product.viewed"/>   <!--Viewed products-->
+        <remove name="right.reports.product.compared"/> <!--Compared products-->
+        <remove name="left.newsletter"/>                <!--Sidebar newsletter-->
         <remove name="right.poll"/>                     <!--Poll-->
-        <remove name="tags_popular"/>                   <!--Popular Tags-->
-        <remove name="paypal.partner.right.logo"/>      <!--Paypal logo Sample Data-->
-        <remove name="sale.reorder.sidebar"/>           <!--Reorder Sidebar When User Logged, in Dashboard-->
-        <remove name="invitation_link_top" />
+        <remove name="product_tag_list"/>               <!--Tag list-->
+        <remove name="tags_popular"/>                   <!--Popular tags-->
+        <remove name="paypal.partner.right.logo"/>      <!--Paypal logo-->
+        <remove name="sale.reorder.sidebar"/>           <!--Reorder sidebar in account-->
+        <remove name="invitation_link_top" />           <!--Header invitation link-->
+        <remove name="product.clone_prices" />          <!--Product view second price-->
 
         <reference name="head">
             <action method="removeItem"><type>js</type><name>prototype/prototype.js</name></action>
@@ -53,6 +55,14 @@
             <action method="addItem"><type>js</type><name>session/core.min.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/dist/ie8.min.js</name><params/><if>lt IE 9</if></action>
             <action method="addItem"><type>skin_js</type><name>js/dist/ie9.min.js</name><params/><if>IE 9</if></action>
+        </reference>
+
+        <reference name="header">
+            <remove name="catalog.topnav" />
+            <block type="mx_navigation/html_topmenu" name="catalog.navigation" as="topMenu" template="page/html/topmenu.phtml">
+                <block type="mx_navigation/html_topmenu" name="topMenu.topLevel" template="page/html/topmenu/toplevel.phtml"/>
+                <block type="mx_navigation/html_topmenu" name="topMenu.subLevel" template="page/html/topmenu/sublevel.phtml"/>
+            </block>
         </reference>
 
         <reference name="before_body_end">

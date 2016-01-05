@@ -29,13 +29,18 @@ label {
 /* text inputs */
 $input-text: '[type="text"], [type="password"], [type="email"], [type="tel"], [type="url"], [type="search"], [type="number"], [type="date"], [type="month"], [type="week"], [type="datetime"], [type="datetime-local"], [multiple], textarea';
 #{$input-text} {
+    -webkit-appearance: none;
     @include rem-fallback(padding, 0, 0.5);
     @include rem-fallback(height, $form-input-height);
     border: $border-default;
+    border-radius: 0;
     @include font-size(16);
     font-family: $font-sans;
-    font-weight: 400;
     vertical-align: top;
+    &[disabled] {
+        background: $colour-background-light;
+        color: $colour-text-muted;
+    }
     &.inline {
         width: auto;
         + & {
@@ -46,6 +51,9 @@ $input-text: '[type="text"], [type="password"], [type="email"], [type="tel"], [t
         @include font-size(13);
     }
 }
+[type="number"] {
+    @include rem-fallback(width, 4);
+}
 textarea {
     height: auto;
     @include rem-fallback(padding-top, 0.3);
@@ -53,6 +61,10 @@ textarea {
 }
 
 /* select */
+select {
+    border-radius: 0;
+    @include font-size(13);
+}
 option {
     @include rem-fallback(padding, 0.3, 0.5);
 }
@@ -67,10 +79,18 @@ option {
         display: inline-block;
         @include rem-fallback(padding-right, 0.4);
     }
+    input {
+        @include font-size(13);
+    }
     label {
         display: inline-block;
         @include rem-fallback(padding-top, 0.4);
     }
+}
+
+/* toggle inputs */
+.input--toggle {
+    display: none;
 }
 
 /* messaging */

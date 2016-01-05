@@ -1,0 +1,14 @@
+/*------------------------------------------------------------------
+    Page blocks
+    Centered content blocks with page padding
+-------------------------------------------------------------------*/
+
+@mixin page-block {
+    @include outer-container;
+    @include rem-fallback(padding-right, $page-padding-small);
+    @include rem-fallback(padding-left, $page-padding-small);
+    @include media($medium-and-up) {
+        @include rem-fallback(padding-right, $page-padding-large);
+        @include rem-fallback(padding-left, $page-padding-large);
+    }
+}

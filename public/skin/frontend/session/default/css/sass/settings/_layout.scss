@@ -2,20 +2,12 @@
     Page layout
 -------------------------------------------------------------------*/
 
-/* page wrappers : centred content with padding */
-.header-panel,
-.header-wrapper,
-.header-usp,
-.footer-wrapper,
-.main-container,
-.notice-inner {
-    @include outer-container;
-    @include rem-fallback(padding-right, 1);
-    @include rem-fallback(padding-left, 1);
-    @include media($medium-and-up) {
-        @include rem-fallback(padding-right, 2);
-        @include rem-fallback(padding-left, 2);
-    }
+.main-container {
+    @include page-block;
+}
+.main-container-wrapper {
+    @include rem-fallback(margin-top, 2);
+    @include rem-fallback(padding-bottom, $page-padding-large);
 }
 
 /* page columns */
@@ -25,6 +17,7 @@ $column-sidebar-full       : 2;
 .col-left,
 .col-right {
     @include media($medium-and-up) {
+        @include rem-fallback(margin-top, 0.5);
         @include span-columns($column-sidebar-medium);
     }
     @include media($large-and-up) {
@@ -65,22 +58,29 @@ $column-sidebar-full       : 2;
 }
 
 /* content columns */
-.col-set {
-    @include outer-container;
-}
-@for $i from 1 through 4 {
-    .col-#{$i} {
+@for $i from 2 through 4 {
+    .col#{$i}-set {
         @include media($medium-and-up) {
-            @include span-columns(12/$i);
+            @include outer-container;
+        }
+        @for $j from 1 through $i {
+            .col-#{$j} {
+                @include rem-fallback(margin-bottom, 3);
+            }
+            @include media($medium-and-up) {
+                .col-#{$j} {
+                    @include span-columns(12/$i);
+                }
+            }
         }
     }
 }
-.col-2 {
+.col2-set {
     @include media($medium-and-up) {
-        &.narrow {
+        .narrow {
             @include span-columns(4);
         }
-        &.wide {
+        .wide {
             @include span-columns(8);
         }
     }

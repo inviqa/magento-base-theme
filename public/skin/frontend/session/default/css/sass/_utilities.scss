@@ -7,6 +7,8 @@
 .hidden {
     @include hidden;
 }
+
+/* hidden, visible to screenreaders */
 .visuallyhidden,
 .no-display {
     @include visuallyhidden;
@@ -15,7 +17,7 @@
     @include visuallyhidden-focus;
 }
 
-/* visibility */
+/* element visibility */
 .hide-small {
     @include media($small-only) {
         display: none;

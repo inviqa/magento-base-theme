@@ -1,16 +1,24 @@
-@mixin font-size($size: $font-size-default, $line: $font-height-default) {
+/*------------------------------------------------------------------
+    Font size
+-------------------------------------------------------------------*/
+
+/* font size in REM with PX fallback, optionally sets line height */
+@mixin font-size($size: $font-size-default, $line: '') {
     font-size: ($size) + px;
-    line-height: ($size * $line) + px;
     font-size: ($size / $rem-ratio) + rem;
-    line-height: ($size * $line / $rem-ratio) + rem;
+    @if $line != '' {
+        line-height: ($size * $line) + px;
+        line-height: ($size * $line / $rem-ratio) + rem;
+    }
 }
 
+/* uses multipliers to proportionally resize headings */
 @mixin heading-size($size) {
-    @include font-size($size * $heading-size-small, 1);
+    @include font-size($size * $heading-size-small);
     @include media($small-and-up) {
-        @include font-size($size * $heading-size-medium, 1);
+        @include font-size($size * $heading-size-medium);
     }
     @include media($full-and-up) {
-        @include font-size($size * $heading-size-large, 1);
+        @include font-size($size * $heading-size-large);
     }
 }
