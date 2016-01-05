@@ -132,7 +132,16 @@ gulp.task('build-theme-scripts', function () {
         './js/session_modules/*.js',
         '!./js/**/*.min.js'
     ])
-        .pipe($.jshint())
+        .pipe($.jshint({
+            globalstrict: true,
+            globals: {
+                'require': false,
+                'window': false,
+                'module': true,
+                'document': false,
+                '$': true
+            }
+        }))
         .pipe($.jshint.reporter('jshint-stylish'));
 
     /**
