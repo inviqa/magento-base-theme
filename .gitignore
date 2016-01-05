@@ -4,8 +4,9 @@
 .DS_Store
 bin
 docs
-node_modules
+n98-magerun.phar
 bower_components
+node_modules
 spec
 tests
 tools/*
@@ -21,6 +22,7 @@ phpmd.xml
 Rakefile
 /vendor
 
+public/.htaccess*
 public/api.php
 public/cron.php
 public/cron.sh
@@ -38,6 +40,7 @@ public/mage
 public/php.ini.sample
 public/README.md
 public/RELEASE_NOTES.txt
+public/dev/
 public/downloader/
 public/errors/
 public/includes/
@@ -45,15 +48,21 @@ public/js/
 public/lib/
 public/media/
 public/pkginfo/
+public/privatesales/
 public/shell/
 public/style-guide/
 public/var/
 
-public/app/code
+public/app/code/core
+public/app/code/local
+public/app/code/community/*
+!public/app/code/community/MX
 public/app/etc
+!public/app/etc/modules/MX_Navigation.xml
 public/app/locale
 public/app/.htaccess
 public/app/Mage.php
+public/app/bootstrap.php
 
 public/app/design/adminhtml
 public/app/design/frontend/base
@@ -67,6 +76,5 @@ public/skin/frontend/enterprise
 public/skin/frontend/rwd
 public/skin/install
 
-public/skin/frontend/*/default/css/styles.css
-public/skin/frontend/*/default/css/print.css
+public/skin/frontend/**/*.css
 public/skin/frontend/**/*.min.js
