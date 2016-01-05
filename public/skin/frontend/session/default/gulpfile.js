@@ -13,6 +13,7 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')({
         pattern: ['gulp-*']
     }),
+    webpack = require('webpack'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload;
 
@@ -30,10 +31,8 @@ gulp.task('serve', ['build'], function() {
 
     gulp.watch([
         './js/**/*.js',
-        '!./js/scripts.min.js',
-        '!./js/scripts-ie8.min.js',
-        '!./js/scripts-ie9.min.js'
-    ], ['scripts']);
+        '!./js/dist/*.js'
+    ], ['build-theme-scripts']);
 
     gulp.watch('./images-original/**/*', ['images']);
 
@@ -70,8 +69,8 @@ gulp.task('sass-print', function() {
 
 /** scripts **/
 
-gulp.task('build-scripts', function () {
-    //replaces multiple calls to js files with one single one with magento core files
+gulp.task('build-lib-scripts', function () {
+    // reduces and concatenates library files into a single file request
     gulp.src([
         publicJsDir + 'prototype/prototype.js',
         publicJsDir + 'lib/ccard.js',
@@ -86,17 +85,26 @@ gulp.task('build-scripts', function () {
         publicJsDir + 'varien/menu.js',
         publicJsDir + 'mage/translate.js',
         publicJsDir + 'mage/cookies.js',
-        './bower_components/jquery/dist/jquery.min.js',
-        './js/lib/noconflict.js'])
+        './bower_components/jquery/dist/jquery.min.js'
+        ])
         .pipe($.concat('core.min.js'))
         .pipe($.uglify({mangle: false}))
         .pipe(gulp.dest(publicJsDir + themeName + '/'));
+
+    // third party libraries that can be lazy loaded
+    gulp.src([
+        './js/lib/**/*.js',
+        '!./js/lib/polyfills/*.js'
+    ])
+        .pipe($.concat('dist/vendor.min.js'))
+        .pipe($.uglify())
+        .pipe(gulp.dest('./js/'));
 
     //IE8 Polyfills!
     gulp.src([
         './js/lib/polyfills/*.js'
     ])
-        .pipe($.concat('scripts-ie8.min.js'))
+        .pipe($.concat('dist/ie8.min.js'))
         .pipe($.uglify())
         .pipe(gulp.dest('./js/'));
 
@@ -104,36 +112,80 @@ gulp.task('build-scripts', function () {
     gulp.src([
         './js/lib/polyfills/media.match.min.js'
     ])
-        .pipe($.concat('scripts-ie9.min.js'))
+        .pipe($.concat('dist/ie9.min.js'))
         .pipe($.uglify())
         .pipe(gulp.dest('./js/'));
 });
 
-/** scripts **/
-
-gulp.task('scripts', function () {
-
+/**
+ * Theme-specific scripts
+ * All first-party code written by Session is bundled by
+ * WebPack.
+ * WebPack auto-loads re-usable modules from session_modules
+ * and outputs them as page-specific bundles for use in
+ * sites.
+ **/
+gulp.task('build-theme-scripts', function () {
     /* jshint */
     gulp.src([
-        './js/' + themeName + '.js',
-        './js/app/*.js'
+        './js/*.js',
+        './js/session_modules/*.js'
     ])
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish'));
 
-    /* scripts.min.js concatenate and minify */
-    gulp.src([
-        './js/lib/*.js',
-        './js/lib/plugins/*.js',
-        '!./js/lib/noconflict.js',
-        '!./js/lib/modernizr.custom.js',
-        './js/' + themeName + '.js',
-        './js/app/*.js'
-    ])
-        .pipe($.concat('scripts.min.js'))
-        .pipe($.uglify())
-        .pipe(gulp.dest('./js/'))
-        .pipe(browserSync.reload({stream: true}));
+    /**
+     * WebPack configuration
+     * See: http://webpack.github.io/docs/configuration.html
+     */
+    webpack({
+        /**
+         * Entry file bundles
+         * Split into page-specific scripts to reduce file weight
+         * Create as many of these as you need
+         */
+        entry: {
+            global: './js/global',
+        },
+
+        /**
+         * Processed files for use on site
+         * output to js/dist.
+         * [name] is placeholder for entry property name
+         */
+        output: {
+            path: 'js/dist',
+            filename: '[name].min.js'
+        },
+
+        /**
+         * Environment variables imported implicitly into modules
+         * e.g. $ is overwritten as jQuery instead of prototype
+         */
+        module: {
+            loaders: [
+                {
+                    test: /\.js$/,
+                    loader: "imports?$=jquery"
+                }
+            ]
+        },
+
+        plugins: [
+            // Comment out the following line to turn off script minimising
+            new webpack.optimize.UglifyJsPlugin()
+        ],
+
+        /**
+         * Module aliases for imported global variables
+         * e.g. require('jquery') returns global jQuery object
+         */
+        externals: {
+            'jquery': 'jQuery'
+        }
+    }, function(err, stats) {
+
+    });
 
 });
 
@@ -162,7 +214,7 @@ gulp.task('images', function() {
 gulp.task('default', ['serve']);
 
 /** build - prepares and updates all assets **/
-gulp.task('build', ['build-scripts', 'scripts', 'images', 'sass', 'sass-print', 'styleguide']);
+gulp.task('build', ['build-lib-scripts', 'build-theme-scripts', 'images', 'sass', 'sass-print', 'styleguide']);
 
 /** deploy - builds and does anything else necessary before deploying **/
 gulp.task('deploy', ['build']);
