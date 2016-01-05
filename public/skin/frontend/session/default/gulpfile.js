@@ -85,13 +85,20 @@ gulp.task('build-lib-scripts', function () {
         publicJsDir + 'varien/menu.js',
         publicJsDir + 'mage/translate.js',
         publicJsDir + 'mage/cookies.js',
-        './bower_components/jquery/dist/jquery.min.js',
-        './js/lib/**/*.js',
-        '!./js/lib/modernizr.custom.js'
+        './bower_components/jquery/dist/jquery.min.js'
         ])
-        .pipe($.concat('lib.min.js'))
+        .pipe($.concat('core.min.js'))
         .pipe($.uglify({mangle: false}))
         .pipe(gulp.dest(publicJsDir + themeName + '/'));
+
+    // third party libraries that can be lazy loaded
+    gulp.src([
+        './js/lib/**/*.js',
+        '!./js/lib/polyfills/*.js'
+    ])
+        .pipe($.concat('dist/vendor.min.js'))
+        .pipe($.uglify())
+        .pipe(gulp.dest('./js/'));
 
     //IE8 Polyfills!
     gulp.src([
