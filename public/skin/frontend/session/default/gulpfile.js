@@ -85,7 +85,8 @@ gulp.task('build-lib-scripts', function () {
         publicJsDir + 'varien/menu.js',
         publicJsDir + 'mage/translate.js',
         publicJsDir + 'mage/cookies.js',
-        './bower_components/jquery/dist/jquery.min.js'
+        './bower_components/jquery/dist/jquery.min.js',
+        './js/lib/noconflict.js'
         ])
         .pipe($.concat('core.min.js'))
         .pipe($.uglify({mangle: false}))
@@ -94,7 +95,8 @@ gulp.task('build-lib-scripts', function () {
     // third party libraries that can be lazy loaded
     gulp.src([
         './js/lib/**/*.js',
-        '!./js/lib/polyfills/*.js'
+        '!./js/lib/polyfills/*.js',
+        '!./js/lib/noconflict.js'
     ])
         .pipe($.concat('dist/vendor.min.js'))
         .pipe($.uglify())
