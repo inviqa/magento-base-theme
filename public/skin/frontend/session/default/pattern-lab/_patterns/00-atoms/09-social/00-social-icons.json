@@ -1,0 +1,24 @@
+{
+    "networks": [
+        {
+            "name": "facebook",
+            "human_name": "Facebook"
+        },
+        {
+            "name": "twitter",
+            "human_name": "Twitter"
+        },
+        {
+            "name": "google-plus",
+            "human_name": "Google+"
+        },
+        {
+            "name": "pinterest",
+            "human_name": "Pinterest"
+        },
+        {
+            "name": "instagram",
+            "human_name": "Instagram"
+        }
+    ]
+}

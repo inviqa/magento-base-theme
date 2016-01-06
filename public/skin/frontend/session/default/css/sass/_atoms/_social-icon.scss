@@ -1,0 +1,40 @@
+.social-icon {
+    $_networks-list: facebook twitter google-plus pinterest instagram;
+    $_size: 1.8em;
+
+    @include font-size(20);
+    border-radius: 100%;
+    color: #fff;
+    display: inline-block;
+    height: $_size;
+    line-height: $_size;
+    text-align: center;
+    width: $_size;
+
+    &:hover,
+    &:active {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    &__icon {
+        line-height: $_size;
+    }
+
+    &__text {
+        @include visuallyhidden;
+    }
+
+    @each $_network in $_networks-list {
+        &--#{$_network} {
+            $_colour: map-get($colours-social, $_network);
+
+            background: $_colour;
+
+            &:hover,
+            &:active {
+                background: lighten($_colour, 5);
+            }
+        }
+    }
+}

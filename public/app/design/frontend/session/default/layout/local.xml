@@ -74,6 +74,10 @@
             </reference>
         </reference>
 
+        <reference name="footer">
+            <block type="core/template" name="social-links" as="social-links" template="page/html/social-links.phtml" />
+        </reference>
+
         <reference name="before_body_end">
             <block type="page/html_head" name="jsfooter" as="jsfooter" template="page/html/jsfooter.phtml">
                 <action method="addItem"><type>skin_js</type><name>js/dist/vendor.min.js</name></action>
