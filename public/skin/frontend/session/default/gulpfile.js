@@ -43,6 +43,13 @@ gulp.task('serve', ['build'], function() {
 });
 
 /** sass **/
+gulp.task('sass-lint', function() {
+    return gulp.src([
+        './css/sass/**/*.scss',
+        '!./css/sass/lib/*.scss'])
+        .pipe($.sassLint())
+        .pipe($.sassLint.format());
+});
 
 gulp.task('sass', function() {
     return gulp.src([
@@ -58,6 +65,7 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./css'))
         .pipe(reload({stream: true}));
 });
+
 gulp.task('sass-print', function() {
     return gulp.src(['./css/sass/print/*.scss'])
         .pipe($.sass({
@@ -214,7 +222,7 @@ gulp.task('images', function() {
 gulp.task('default', ['serve']);
 
 /** build - prepares and updates all assets **/
-gulp.task('build', ['build-lib-scripts', 'build-theme-scripts', 'images', 'sass', 'sass-print', 'styleguide']);
+gulp.task('build', ['build-lib-scripts', 'build-theme-scripts', 'images', 'sass-lint', 'sass', 'sass-print', 'styleguide']);
 
 /** deploy - builds and does anything else necessary before deploying **/
 gulp.task('deploy', ['build']);
