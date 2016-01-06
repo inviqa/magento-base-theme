@@ -59,10 +59,19 @@
 
         <reference name="header">
             <remove name="catalog.topnav" />
+
             <block type="mx_navigation/html_topmenu" name="catalog.navigation" as="topMenu" template="page/html/topmenu.phtml">
                 <block type="mx_navigation/html_topmenu" name="topMenu.topLevel" template="page/html/topmenu/toplevel.phtml"/>
                 <block type="mx_navigation/html_topmenu" name="topMenu.subLevel" template="page/html/topmenu/sublevel.phtml"/>
             </block>
+
+            <reference name="account.links">
+                <action method="setTemplate"><template>page/template/links-inline.phtml</template></action>
+            </reference>
+
+            <reference name="top.links">
+                <action method="setTemplate"><template>page/template/links-inline.phtml</template></action>
+            </reference>
         </reference>
 
         <reference name="before_body_end">

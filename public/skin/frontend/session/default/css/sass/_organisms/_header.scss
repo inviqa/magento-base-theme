@@ -82,6 +82,7 @@ header {
     position: relative;
     color: $colour-text-light;
     @include font-size(12);
+    text-align: right;
     a {
         @include link-colour($colour-text-light);
     }
