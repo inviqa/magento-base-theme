@@ -1,0 +1,8 @@
+/*------------------------------------------------------------------
+    Homepage
+-------------------------------------------------------------------*/
+
+.homepage-slideshow,
+.homepage-promos {
+    @include rem-fallback(margin-bottom, $page-padding-large);
+}

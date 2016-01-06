@@ -130,6 +130,7 @@
         &--open {
             $toggle-open-size   : 3;
             position: relative;
+            float: left;
             @include rem-fallback(width, 2.1);
             @include rem-fallback(height, 1.8);
             @include rem-fallback(margin-right, 1);

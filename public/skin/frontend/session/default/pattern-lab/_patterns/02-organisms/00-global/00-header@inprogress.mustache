@@ -1,8 +1,10 @@
 <header class="header-container" role="banner">
     <div class="header-panel-wrapper">
         <div class="header-panel">
+            <label for="nav-toggle" class="nav__toggle--open">Open</label>
+
             <div class="top-links">
-                <ul class="links">
+                <ul class="list  list--inline">
                     <li class="first"><a href="//localhost:3000/customer/account/" title="My Account">My Account</a></li>
                     <li><a href="//localhost:3000/wishlist/" title="My Wishlist">My Wishlist</a></li>
                     <li><a href="//localhost:3000/checkout/cart/" title="My Cart (1 item)" class="top-link-cart">My Cart (1 item)</a></li>
@@ -12,18 +14,16 @@
             </div>
         </div>
     </div>
+
     <div class="header-wrapper">
         <div class="header">
             <div class="logo-holder">
                 {{> atoms-logo }}
             </div>
-            {{> molecules-primary-nav }}
+
             {{> molecules-search }}
         </div>
     </div>
-    <div class="header-usp-wrapper">
-        <div class="header-usp">
-            <p>USPs</p>
-        </div>
-    </div>
+
+    {{> molecules-primary-nav }}
 </header>

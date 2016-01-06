@@ -74,3 +74,10 @@
         position: absolute;
     }
 }
+
+@media screen and (min-width: 600px) {
+    footer {
+        position: relative;
+        bottom: auto;
+    }
+}
