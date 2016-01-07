@@ -1,0 +1,48 @@
+.carousel {
+    &__navigation {
+        $_size: 1.5em;
+
+        @include font-size(28);
+        height: $_size;
+        margin-top: -( $_size / 2 );
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        width: $_size;
+        z-index: 1;
+
+        &--prev {
+            left: 0;
+        }
+
+        &--next {
+            right: 0;
+        }
+
+        &__icon {
+            line-height: $_size;
+        }
+
+        &__text {
+            @include visuallyhidden;
+        }
+    }
+
+    &__item {
+        padding: 0 $gutter / 2;
+    }
+
+    &--full-width &__item {
+        padding: 0;
+        width: 100%;
+
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    .slick-list {
+        margin: 0 -( $gutter / 2 );
+    }
+}

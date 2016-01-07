@@ -1,0 +1,34 @@
+<div class="js-carousel  carousel  products-grid" data-slick='{
+    "slidesToShow": 1,
+    "responsive": [
+        {
+            "breakpoint": 1240,
+            "settings": {
+                "slidesToShow": 5
+            }
+        },
+        {
+            "breakpoint": 900,
+            "settings": {
+                "slidesToShow": 4
+            }
+        },
+        {
+            "breakpoint": 480,
+            "settings": {
+                "slidesToShow": 3
+            }
+        },
+        {
+            "breakpoint": 320,
+            "settings": {
+                "slidesToShow": 2
+            }
+        }
+    ]}'>
+    {{# listItems.seven }}
+        <div class="carousel__item  item">
+            {{> molecules-product-grid-item }}
+        </div>
+    {{/ listItems.seven }}
+</div>

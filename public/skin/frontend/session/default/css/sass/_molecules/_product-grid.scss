@@ -6,7 +6,8 @@
 
 .products-grid {
     @include outer-container;
-    .item {
+    
+    > .item { // direct descendant so carousels aren't affected
         @include media($xsmall-and-up) {
             @include span-columns(6);
             &:nth-of-type(2n) {

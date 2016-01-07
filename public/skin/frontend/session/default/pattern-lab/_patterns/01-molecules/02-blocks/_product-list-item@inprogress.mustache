@@ -1,39 +1,37 @@
-<li class="item">
-    {{> atoms-product-image }}
-    <div class="product-shop">
-        <div class="f-fix">
-            <h2 class="product-name">
-                <a href="{{ url }}" title="{{ product.name }}">{{ product.name }}</a>
-            </h2>
-            <div class="ratings">
-                <div class="rating-box">
-                    <div class="rating" style="width:87%"></div>
-                </div>
-                <p class="rating-links">
-                    <a href="{{ url }}">{{ number }} Review(s)</a>
-                    <span class="separator">|</span>
-                    <a href="{{ url }}">Add Your Review</a>
-                </p>
+{{> atoms-product-image }}
+<div class="product-shop">
+    <div class="f-fix">
+        <h2 class="product-name">
+            <a href="{{ url }}" title="{{ product.name }}">{{ product.name }}</a>
+        </h2>
+        <div class="ratings">
+            <div class="rating-box">
+                <div class="rating" style="width:87%"></div>
             </div>
-            {{> molecules-price }}
-            <p>
-                <button type="button" title="Add to Cart" class="button btn-cart">
-                    Add to Cart
-                </button>
+            <p class="rating-links">
+                <a href="{{ url }}">{{ number }} Review(s)</a>
+                <span class="separator">|</span>
+                <a href="{{ url }}">Add Your Review</a>
             </p>
-            <div class="desc std">
-                {{ excerpt.medium }}
-                <a href="{{ url }}" title="{{ product.name }}" class="link-learn">Learn More</a>
-            </div>
-            <ul class="add-to-links">
-                <li>
-                    <a href="{{ url }}" class="link-wishlist">Add to Wishlist</a>
-                </li>
-                <li>
-                    <span class="separator">|</span>
-                    <a href="{{ url }}" class="link-compare">Add to Compare</a>
-                </li>
-            </ul>
         </div>
+        {{> molecules-price }}
+        <p>
+            <button type="button" title="Add to Cart" class="button btn-cart">
+                Add to Cart
+            </button>
+        </p>
+        <div class="desc std">
+            {{ excerpt.medium }}
+            <a href="{{ url }}" title="{{ product.name }}" class="link-learn">Learn More</a>
+        </div>
+        <ul class="add-to-links">
+            <li>
+                <a href="{{ url }}" class="link-wishlist">Add to Wishlist</a>
+            </li>
+            <li>
+                <span class="separator">|</span>
+                <a href="{{ url }}" class="link-compare">Add to Compare</a>
+            </li>
+        </ul>
     </div>
-</li>
+</div>
