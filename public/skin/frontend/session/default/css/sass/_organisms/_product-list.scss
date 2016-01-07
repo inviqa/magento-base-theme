@@ -1,0 +1,19 @@
+//------------------------------------------------------------------
+// Product List
+//------------------------------------------------------------------
+
+.product-list {
+    .grid-item {
+        @include outer-container;
+        @include rem-fallback(margin-bottom, 2);
+        @include rem-fallback(padding-bottom, 2);
+        position: relative;
+        border-bottom: $border-light;
+
+        &:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border: 0;
+        }
+    }
+}

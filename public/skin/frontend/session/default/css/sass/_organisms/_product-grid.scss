@@ -1,0 +1,62 @@
+//------------------------------------------------------------------
+// Product Grid
+//------------------------------------------------------------------
+
+.product-grid {
+    @include outer-container;
+
+    .grid-item {
+        @include rem-fallback(margin-bottom, 2);
+
+        @include media($xsmall-and-up) {
+            @include span-columns(6);
+
+            &:nth-of-type(2n) {
+                @include omega;
+            }
+
+            &:nth-of-type(2n+1) {
+                clear: left;
+            }
+        }
+
+        @include media($small-and-up) {
+            @include span-columns(4);
+            @include omega-reset(2n);
+
+            &:nth-of-type(3n) {
+                @include omega;
+            }
+
+            &:nth-of-type(3n+1) {
+                clear: left;
+            }
+        }
+
+        @include media($large-and-up) {
+            @include span-columns(3);
+            @include omega-reset(3n);
+
+            &:nth-of-type(4n) {
+                @include omega;
+            }
+
+            &:nth-of-type(4n+1) {
+                clear: left;
+            }
+        }
+
+        @include media($full-and-up) {
+            @include span-columns(12 / 5);
+            @include omega-reset(4n);
+
+            &:nth-of-type(5n) {
+                @include omega;
+            }
+
+            &:nth-of-type(5n+1) {
+                clear: left;
+            }
+        }
+    }
+}

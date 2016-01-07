@@ -81,3 +81,8 @@
         bottom: auto;
     }
 }
+
+.body > .product--default,
+.sg-pattern-body > .product--default {
+    max-width: 400px;
+}

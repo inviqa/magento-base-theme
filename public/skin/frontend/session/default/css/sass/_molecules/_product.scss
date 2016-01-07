@@ -1,0 +1,92 @@
+.product {
+    $_base-font-size: 12;
+    $_base-spacing: 10;
+
+    @include font-size($_base-font-size);
+    text-align: center;
+
+    &--alt {
+        @include media($small-and-up) {
+            text-align: left;
+        }
+    }
+
+    &__image {
+        margin-bottom: em($_base-spacing * 2, 18);
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+        &--alt &__image {
+            @include media($small-and-up) {
+                @include span-columns(6);
+                margin-bottom: 0;
+            }
+
+            @include media($medium-and-up) {
+                @include span-columns(4);
+            }
+
+            @include media($large-and-up) {
+                @include span-columns(3);
+            }
+        }
+
+    &__info {}
+        &--alt &__info {
+            @include media($small-and-up) {
+                @include span-columns(6);
+                @include omega;
+            }
+
+            @include media($medium-and-up) {
+                @include span-columns(8);
+                @include omega;
+            }
+
+            @include media($large-and-up) {
+                @include span-columns(9);
+                @include omega;
+            }
+        }
+
+    &__name {
+        margin-top: 0;
+        margin-bottom: em($_base-spacing, 18);
+        font-family: $font-sans;
+        font-size: em(18, $_base-font-size);
+        font-weight: $font-weight-light;
+
+        a {
+            @include link-colour-pop;
+            @include link-style(none);
+        }
+    }
+
+    &__rating {
+        margin-bottom: em($_base-spacing, 16);
+        font-size: em(16, $_base-font-size);
+    }
+
+    &__price {
+        margin-bottom: em($_base-spacing, 16);
+        font-size: em(16, $_base-font-size);
+    }
+
+    &__actions {
+        font-size: em(10, $_base-font-size);
+        text-transform: uppercase;
+
+        a {
+            @include link-colour-pop;
+            @include link-style(none);
+        }
+
+        .button {
+            margin-bottom: em($_base-spacing, 14);
+            font-size: em(14, 10);
+        }
+    }
+}
