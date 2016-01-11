@@ -40,6 +40,8 @@ ol {
 }
 
 .list--separated {
+    @extend .list--inline;
+    
     li {
         &:after {
             margin: 0 1em 0 .8em;
