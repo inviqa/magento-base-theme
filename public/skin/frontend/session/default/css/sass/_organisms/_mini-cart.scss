@@ -7,7 +7,7 @@
     }
 
     &__totals {
-        @include clearfix;
+        @extend %dl--inline;
         @include rem-fallback(margin-top, 2);
         @include rem-fallback(margin-bottom, 2);
         @include rem-fallback(padding-top, 2);
@@ -16,8 +16,6 @@
         &__label,
         &__value {
             @include font-size(14);
-            float: left;
-            line-height: 1.5;
 
             &--strong {
                 @include font-size(16);
@@ -25,12 +23,7 @@
             }
         }
 
-        &__label {
-            clear: left;
-            margin: 0 .5em 0 0;
-        }
-
-        &__value {
+        & &__value {
             float: right;
             text-align: right;
         }

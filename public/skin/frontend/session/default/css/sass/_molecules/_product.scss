@@ -101,18 +101,11 @@
         }
 
     &__options {
-        @include clearfix;
+        @extend %dl--inline;
 
         &__label,
         &__value {
-            float: left;
             font-size: em(12, $_base-font-size);
-            line-height: 1.5;
-        }
-
-        &__label {
-            clear: left;
-            margin: 0 .5em 0 0;
         }
     }
 

@@ -41,7 +41,7 @@ ol {
 
 .list--separated {
     @extend .list--inline;
-    
+
     li {
         &:after {
             margin: 0 1em 0 .8em;
@@ -74,5 +74,22 @@ dd {
 
     + dt {
         @include rem-fallback(margin-top, 1)
+    }
+}
+
+.dl--inline,
+%dl--inline {
+    @include clearfix;
+
+    dt,
+    dd {
+        float: left;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    dt {
+        clear: left;
+        margin-right: .5em;
     }
 }
