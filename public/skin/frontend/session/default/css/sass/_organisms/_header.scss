@@ -21,6 +21,11 @@ header {
         @include rem-fallback(margin-bottom, 2);
         @include font-size(14);
         position: relative;
+        text-align: center;
+
+        @include media($medium-and-up) {
+            text-align: right;
+        }
 
         &__icon {
             font-size: 1.3em;
@@ -33,6 +38,17 @@ header {
         &__total {
             font-weight: $font-weight-black;
         }
+
+        .icon-angle-down {
+            display: none;
+
+            @include media($medium-and-up) {
+                display: inline;
+            }
+        }
+            &.mobile-enabled .icon-angle-down {
+                display: inline;
+            }
     }
     .logo-holder {
         @include span-columns(9);

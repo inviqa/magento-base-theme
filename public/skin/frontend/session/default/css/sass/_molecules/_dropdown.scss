@@ -16,6 +16,12 @@
         box-shadow: $shadow-default;
     }
         &:hover &__content {
+            @include media($medium-and-up) {
+                display: block;
+            }
+        }
+
+        &.mobile-enabled:hover &__content {
             display: block;
         }
 }
