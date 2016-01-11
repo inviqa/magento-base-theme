@@ -16,4 +16,8 @@
             border: 0;
         }
     }
+        &--small .grid-item {
+            @include rem-fallback(margin-bottom, 1);
+            @include rem-fallback(padding-bottom, 1);
+        }
 }

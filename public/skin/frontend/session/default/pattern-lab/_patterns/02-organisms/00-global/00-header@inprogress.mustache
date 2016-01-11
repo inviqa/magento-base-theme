@@ -20,7 +20,22 @@
                 {{> atoms-logo }}
             </div>
 
-            {{> molecules-search }}
+            <div class="header-right">
+                <div class="header-cart  dropdown">
+                    <a href="#" class="dropdown__handle">
+                        <span class="header-cart__icon  [ icon  icon-shopping-cart ]"></span>
+                        My Cart (5)
+                        <span class="header-cart__total">£300.42</span>
+                        <span class="header-cart__icon  [ icon  icon-angle-down ]"></span>
+                    </a>
+
+                    <div class="header-cart__items  dropdown__content">
+                        {{> organisms-mini-cart }}
+                    </div>
+                </div>
+
+                {{> molecules-search }}
+            </div>
         </div>
     </div>
 
