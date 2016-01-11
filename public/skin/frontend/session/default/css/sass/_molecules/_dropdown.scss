@@ -1,0 +1,21 @@
+.dropdown {
+    &__handle {
+        @include link-colour-alt;
+        @include link-style(none);
+        cursor: pointer;
+        padding-bottom: 10px;
+    }
+
+    &__content {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 1;
+        border-bottom: $border-strong;
+        box-shadow: $shadow-default;
+    }
+        &:hover &__content {
+            display: block;
+        }
+}
