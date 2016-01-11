@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('../fonts/icomoon.eot?bn2sq5');
-    src:    url('../fonts/icomoon.eot?bn2sq5#iefix') format('embedded-opentype'),
-        url('../fonts/icomoon.ttf?bn2sq5') format('truetype'),
-        url('../fonts/icomoon.woff?bn2sq5') format('woff'),
-        url('../fonts/icomoon.svg?bn2sq5#icomoon') format('svg');
+    src:    url('../fonts/icomoon.eot?hpqpl1');
+    src:    url('../fonts/icomoon.eot?hpqpl1#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?hpqpl1') format('truetype'),
+        url('../fonts/icomoon.woff?hpqpl1') format('woff'),
+        url('../fonts/icomoon.svg?hpqpl1#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -56,6 +56,9 @@
 }
 .icon-pencil:before {
     content: "\f040";
+}
+.icon-shopping-cart:before {
+    content: "\f07a";
 }
 .icon-twitter:before {
     content: "\f099";
