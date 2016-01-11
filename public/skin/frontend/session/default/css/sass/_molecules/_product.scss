@@ -5,10 +5,19 @@
     @include font-size($_base-font-size);
     text-align: center;
 
+    &--alt,
+    &--quote {
+        @include clearfix;
+    }
+
     &--alt {
         @include media($small-and-up) {
             text-align: left;
         }
+    }
+
+    &--quote {
+        text-align: left;
     }
 
     &__image {
@@ -34,6 +43,11 @@
             }
         }
 
+        &--quote &__image {
+            @include span-columns(4);
+            margin-bottom: 0;
+        }
+
     &__info {}
         &--alt &__info {
             @include media($small-and-up) {
@@ -52,6 +66,11 @@
             }
         }
 
+        &--quote &__info {
+            @include span-columns(8);
+            @include omega;
+        }
+
     &__name {
         margin-top: 0;
         margin-bottom: em($_base-spacing, 18);
@@ -64,6 +83,9 @@
             @include link-style(none);
         }
     }
+        &--quote &__name {
+            font-size: em(14, $_base-font-size);
+        }
 
     &__rating {
         margin-bottom: em($_base-spacing, 16);
@@ -73,6 +95,25 @@
     &__price {
         margin-bottom: em($_base-spacing, 16);
         font-size: em(16, $_base-font-size);
+    }
+        &--quote &__price {
+            font-size: em(12, $_base-font-size);
+        }
+
+    &__options {
+        @include clearfix;
+
+        &__label,
+        &__value {
+            float: left;
+            font-size: em(12, $_base-font-size);
+            line-height: 1.5;
+        }
+
+        &__label {
+            clear: left;
+            margin: 0 .5em 0 0;
+        }
     }
 
     &__actions {
@@ -89,4 +130,14 @@
             font-size: em(14, 10);
         }
     }
+        &--quote &__actions {
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            .button {
+                display: block;
+                margin-bottom: 0;
+            }
+        }
 }

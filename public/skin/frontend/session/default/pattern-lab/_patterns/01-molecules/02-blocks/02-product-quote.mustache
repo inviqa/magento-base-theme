@@ -1,0 +1,33 @@
+<div class="product  product--quote">
+    <div class="product__image">
+        {{> atoms-product-image }}
+    </div>
+
+    <div class="product__info">
+        <h2 class="product__name">
+            <a href="{{ url }}" title="{{ product.name }}">{{ product.name }}</a>
+        </h2>
+
+        <div class="product__price">
+            {{> molecules-price }}
+        </div>
+
+        <dl class="product__options">
+            <dt class="product__options__label">Colour</dt>
+            <dd class="product__options__value">Blue</dt>
+
+            <dt class="product__options__label">Size</dt>
+            <dd class="product__options__value">12</dt>
+        </dl>
+
+        <div class="product__actions">
+            <button type="button" title="Edit Item" class="button  button--icon">
+                <span class="icon  icon-pencil"></span>
+            </button>
+
+            <button type="button" title="Remove Item" class="button  button--icon">
+                <span class="icon  icon-remove"></span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -86,3 +86,7 @@
 .sg-pattern-body > .product--default {
     max-width: 400px;
 }
+
+.product-list--small {
+    max-width: 300px;
+}
