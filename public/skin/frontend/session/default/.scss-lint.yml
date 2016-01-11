@@ -1,0 +1,28 @@
+linters:
+    BemDepth:
+        enabled: true
+        max_elements: 2
+
+    Indentation:
+        width: 4
+
+    SpaceBetweenParens:
+        enabled: false
+
+    ColorVariable:
+        enabled: false
+
+    NestingDepth:
+        max_depth: 10
+
+    SelectorDepth:
+        max_depth: 5
+
+    NameFormat:
+        placeholder_convention: _?[a-z0-9\-_]+
+
+    SelectorFormat:
+        convention: _?[a-z0-9\-_]+
+
+    PropertySortOrder:
+        order: smacss
