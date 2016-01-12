@@ -3,6 +3,7 @@
     $_base-spacing: 10;
 
     @include font-size($_base-font-size);
+    position: relative;
     text-align: center;
 
     &--alt,
