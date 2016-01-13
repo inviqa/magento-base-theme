@@ -4,7 +4,7 @@
 
 .product-list {
     .grid-item {
-        @include outer-container;
+        @include clearfix;
         @include rem-fallback(margin-bottom, 2);
         @include rem-fallback(padding-bottom, 2);
         position: relative;

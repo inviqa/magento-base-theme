@@ -3,8 +3,8 @@
 //------------------------------------------------------------------
 
 .product-grid {
-    @include outer-container;
-
+    @include clearfix;
+    
     .grid-item {
         @include rem-fallback(margin-bottom, 2);
 
