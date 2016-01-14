@@ -44,7 +44,7 @@ ol {
 
     li {
         &:after {
-            margin: 0 1em 0 .8em;
+            @include rem-fallback(margin, 0, 1, 0, 1.2);
             border-right: 1px solid $light-grey;
             content: '';
         }
@@ -90,6 +90,6 @@ dd {
 
     dt {
         clear: left;
-        margin-right: .5em;
+        @include rem-fallback(margin-right, 0.5);
     }
 }

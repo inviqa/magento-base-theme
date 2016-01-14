@@ -1,24 +1,24 @@
 .social-icon {
     $_networks-list: facebook twitter google-plus pinterest instagram;
-    $_size: 1.8em;
+    $_size: 3.6;
 
     @include font-size(20);
     border-radius: 100%;
-    color: #fff;
+    color: $white;
     display: inline-block;
-    height: $_size;
-    line-height: $_size;
+    @include rem-fallback(height, $_size);
+    @include rem-fallback(line-height, $_size);
     text-align: center;
-    width: $_size;
+    @include rem-fallback(width, $_size);
 
     &:hover,
     &:active {
-        color: #fff;
+        color: $white;
         text-decoration: none;
     }
 
     &__icon {
-        line-height: $_size;
+        @include rem-fallback(line-height, $_size);
     }
 
     &__text {

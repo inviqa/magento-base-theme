@@ -3,7 +3,7 @@
         @include link-colour-alt;
         @include link-style(none);
         cursor: pointer;
-        padding-bottom: 10px;
+        @include rem-fallback(padding-bottom, 10);
     }
 
     &__content {

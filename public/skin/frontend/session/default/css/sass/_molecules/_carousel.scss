@@ -1,14 +1,14 @@
 .carousel {
     &__navigation {
-        $_size: 1.5em;
+        $_size: 4.2;
 
         @include font-size(28);
-        height: $_size;
-        margin-top: -( $_size / 2 );
+        @include rem-fallback(height, $_size);
+        @include rem-fallback(margin-top, -($_size / 2));
         padding: 0;
         position: absolute;
         top: 50%;
-        width: $_size;
+        @include rem-fallback(width, $_size);
         z-index: 1;
 
         &--prev {
@@ -20,7 +20,7 @@
         }
 
         &__icon {
-            line-height: $_size;
+            @include rem-fallback(line-height, $_size);
         }
 
         &__text {
