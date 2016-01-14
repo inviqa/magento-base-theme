@@ -16,6 +16,9 @@
     }
   },
   "magento": {
+    "app": {
+      "crypt_key": "82ba7f3f9db9aec288ffbce1e0ad08e2"
+    },
     "db": {
       "password": "magento"
     }
