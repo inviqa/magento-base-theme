@@ -1,8 +1,4 @@
 .product {
-    $_base-font-size: 12;
-    $_base-spacing: 10;
-
-    @include font-size($_base-font-size);
     position: relative;
     text-align: center;
 
@@ -22,7 +18,7 @@
     }
 
     &__image {
-        margin-bottom: em($_base-spacing * 2, 18);
+        @include rem-fallback('margin-bottom', $page-padding-small);
 
         img {
             width: 100%;
@@ -74,9 +70,9 @@
 
     &__name {
         margin-top: 0;
-        margin-bottom: em($_base-spacing, 18);
+        @include rem-fallback('margin-bottom', $page-padding-small / 2);
         font-family: $font-sans;
-        font-size: em(18, $_base-font-size);
+        @include font-size(18);
         font-weight: $font-weight-light;
 
         a {
@@ -85,21 +81,21 @@
         }
     }
         &--quote &__name {
-            font-size: em(12, $_base-font-size);
+            @include font-size(12);
         }
 
     &__rating {
-        margin-bottom: em($_base-spacing, 16);
-        font-size: em(16, $_base-font-size);
+        @include rem-fallback('margin-bottom', $page-padding-small / 2);
+        @include font-size(16);
     }
 
     &__price {
-        margin-bottom: em($_base-spacing, 16);
-        font-size: em(16, $_base-font-size);
+        @include rem-fallback('margin-bottom', $page-padding-small / 2);
+        @include font-size(16);
     }
         &--quote &__price {
             margin-bottom: 0;
-            font-size: em(12, $_base-font-size);
+            @include font-size(12);
         }
 
     &__options {
@@ -107,12 +103,12 @@
 
         &__label,
         &__value {
-            font-size: em(10, $_base-font-size);
+            @include font-size(10);
         }
     }
 
     &__actions {
-        font-size: em(10, $_base-font-size);
+        @include font-size(10);
         text-transform: uppercase;
 
         a {
@@ -121,8 +117,8 @@
         }
 
         .button {
-            margin-bottom: em($_base-spacing, 14);
-            font-size: em(14, 10);
+            @include rem-fallback('margin-bottom', $page-padding-small / 2);
+            @include font-size(14);
         }
     }
         &--quote &__actions {
