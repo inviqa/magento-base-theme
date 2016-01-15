@@ -39,6 +39,11 @@ header {
             font-weight: $font-weight-black;
         }
 
+        &__items {
+            @include rem-fallback('width', 30);
+            text-align: left;
+        }
+
         .icon-angle-down {
             display: none;
 
