@@ -5,4 +5,8 @@
         margin: 0 -1px;
         color: $yellow;
     }
+
+    &__text {
+        @include visuallyhidden;
+    }
 }
