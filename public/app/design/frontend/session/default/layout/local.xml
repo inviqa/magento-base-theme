@@ -13,7 +13,6 @@
 <layout version="0.1.0">
 
     <default>
-        <remove name="cart_sidebar"/>                   <!--Cart sidebar-->
         <remove name="catalog.product.related"/>        <!--Related products sidebar-->
         <remove name="wishlist_sidebar"/>               <!--Wishlist sidebar-->
         <remove name="catalog.compare.sidebar"/>        <!--Compare items sidebar-->

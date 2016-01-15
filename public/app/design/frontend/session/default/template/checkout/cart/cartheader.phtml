@@ -5,75 +5,64 @@
  * @see Mage_Checkout_Block_Cart_Sidebar
  */
 ?>
+<?php
+    $_cartQty = $this->getSummaryCount();
+    $_items = $this->getRecentItems();
+    $_isPossibleOnepageCheckout = $_cartQty && $this->isPossibleOnepageCheckout();
+?>
 
-<div class="top-cart">
-<?php $_cartQty = $this->getSummaryCount() ?>
-<?php if ($_cartQty > 0): ?>
-    <?php $_myCart = $this->__('My Cart (%s)', '<span>' . $_cartQty . '</span>') ?>
-<?php else: ?>
-    <?php $_myCart = $this->__('My Cart (%s)', '<span>0</span>') ?>
-<?php endif ?>
-<?php if ($this->getIsLinkMode() || !$this->getIsNeedToDisplaySideBar()):?>
-    <div class="block-title no-items">
-        <ul class="links cart-link">
-            <li ><a href="<?php echo $this->getUrl('checkout/cart'); ?>"><?php echo $_myCart ?></a></li>
-        </ul>
-    </div>
-<?php else:?>
-    <div class="block-title<?php if(!$_cartQty) { echo (' no-items'); } ?>">
-        <strong id="cartHeader"><?php echo $_myCart ?></strong>
-    </div>
-    <div id="topCartContent" class="block-content" style="display:none">
-        <div class="inner-wrapper"><?php // extra div to smooth slideUp and slideDown ?>
-        <?php $_items = $this->getRecentItems() ?>
-        <?php if(count($_items)): ?>
-            <p class="block-subtitle">
-                <span onclick="Enterprise.TopCart.hideCart()" class="close-btn"><?php echo $this->__('Close'); ?></span>
-                <?php echo $this->__('Recently added item(s)') ?>
-            </p>
-            <ol id="mini-cart" class="mini-products-list">
-            <?php foreach($_items as $_item): ?>
-                <?php echo $this->getItemHtml($_item) ?>
-            <?php endforeach; ?>
-            </ol>
-            <script type="text/javascript">decorateList('mini-cart', 'none-recursive')</script>
-        <?php else: ?>
-            <p class="block-subtitle">
-                <span onclick="Enterprise.TopCart.hideCart()" class="close-btn"><?php echo $this->__('Close'); ?></span>
-                <?php echo $this->__('Recently added item(s)') ?>
-            </p>
-            <p class="cart-empty">
-                <?php echo $this->__('You have no items in your shopping cart.') ?>
-            </p>
-            <?php if ($this->getCartEmptyMessage()): ?>
-                <p class="cart-empty cart-empty-message"><?php echo $this->getCartEmptyMessage(); ?></p>
+<div class="header-cart  dropdown">
+    <a href="#" class="dropdown__handle">
+        <span class="header-cart__icon  [ icon  icon-shopping-cart ]"></span>
+
+        <?php echo $this->__('My Cart (%d)', $_cartQty ? $_cartQty : 0); ?>
+
+        <span class="header-cart__total"><?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()); ?></span>
+        <span class="header-cart__icon  [ icon  icon-angle-down ]"></span>
+    </a>
+
+    <div class="header-cart__items  dropdown__content">
+        <div class="mini-cart">
+            <h3 class="mini-cart__title"><?php echo $this->__('Recently added item(s)'); ?></h3>
+
+            <?php if (count($_items)): ?>
+                <ol class="product-list  product-list--small">
+                    <?php foreach($_items as $_item): ?>
+                        <li class="grid-item">
+                            <?php echo $this->getItemHtml($_item); ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ol>
+            <?php else: ?>
+                <p><?php echo $this->__('You have no items in your shopping cart.'); ?></p>
             <?php endif; ?>
-        <?php endif ?>
-        <?php if ($_cartQty || $this->getAllowCartLink()): ?>
-            <?php $isPossibleOnepageCheckout = $_cartQty && $this->isPossibleOnepageCheckout() ?>
-            <?php if ($isPossibleOnepageCheckout): ?>
-                <p class="subtotal">
-                    <?php if ($this->canApplyMsrp()): ?>
-                        <span class="map-cart-sidebar-total"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></span>
+
+            <?php if ($_cartQty > 0): ?>
+                <div class="mini-cart__totals">
+                    <table class="totals-table">
+                        <tbody>
+                            <tr class="totals-table__sub">
+                                <td>Subtotal</td>
+                                <td><?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()); ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mini-cart__actions">
+                    <?php if ($_isPossibleOnepageCheckout): ?>
+                        <?php echo $this->getChildHtml('extra_actions'); ?>
+
+                        <button class="button  button--large  button--wide" type="button" onclick="setLocation('<?php echo $this->getCheckoutUrl() ?>')">
+                            <?php echo $this->__('Proceed to Checkout'); ?>
+                        </button>
                     <?php else: ?>
-                        <span class="label"><?php echo $this->__('Cart Subtotal:') ?></span> <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?><?php if ($_subtotalInclTax = $this->getSubtotalInclTax()): ?> / <?php echo Mage::helper('checkout')->formatPrice($_subtotalInclTax) ?> <?php echo Mage::helper('tax')->getIncExcText(true) ?><?php endif; ?>
+                        <a class="button  button--large  button--wide" href="<?php echo $this->getUrl('checkout/cart'); ?>">
+                            <?php echo $this->__('Go to Cart') ?>
+                        </a>
                     <?php endif; ?>
-                </p>
-            <?php endif ?>
-            <div class="actions">
-                <?php if ($isPossibleOnepageCheckout): ?>
-                    <?php echo $this->getChildHtml('extra_actions') ?>
-                    <button class="button" type="button" onclick="setLocation('<?php echo $this->getCheckoutUrl() ?>')"><?php echo $this->__('Checkout') ?></button>
-                <?php endif ?>
-                <a href="<?php echo $this->getUrl('checkout/cart'); ?>"><span><?php echo $this->__('Go to Shopping Cart') ?></span></a>
-            </div>
-        <?php endif ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
-<script type="text/javascript">
-    Enterprise.TopCart.initialize('topCartContent');
-    // Below can be used to show minicart after item added
-    // Enterprise.TopCart.showCart(7);
-</script>
-<?php endif;?>
 </div>

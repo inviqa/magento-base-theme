@@ -31,32 +31,39 @@
     <div class="header-panel-wrapper">
         <div class="header-panel">
             <label for="nav-toggle" class="nav__toggle--open">Open</label>
-            <div class="account-links">
-                <?php echo $this->getChildHtml('accountLinks') ?>
-            </div>
+
             <div class="switches"><?php echo $this->getChildHtml('switches') ?></div>
-            <?php echo $this->getChildHtml('topCart') ?>
+
             <div class="top-links">
-                <?php echo $this->getChildHtml('topLinks') ?>
+                <?php echo $this->getChildHtml('accountLinks'); ?>
+                <?php echo $this->getChildHtml('topLinks'); ?>
             </div>
         </div>
     </div>
+
     <div class="header-wrapper">
         <div class="header">
             <?php if ($this->getIsHomePage()):?>
                 <h1 class="logo-holder">
-                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="logo" />
+                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="logo">
                 </h1>
             <?php else:?>
                 <div class="logo-holder">
                     <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>">
-                        <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="logo" />
+                        <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="logo">
                     </a>
                 </div>
-            <?php endif?>
-            <?php echo $this->getChildHtml('topSearch') ?>
+            <?php endif; ?>
+
+            <div class="header-right">
+                <?php echo $this->getChildHtml('topCart'); ?>
+
+                <?php echo $this->getChildHtml('topSearch'); ?>
+            </div>
         </div>
     </div>
+
+    
     <?php echo $this->getChildHtml('topMenu') ?>
     <?php echo $this->getChildHtml('topContainer') ?>
 </header>
