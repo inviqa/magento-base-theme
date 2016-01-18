@@ -2,7 +2,7 @@ DEPENDENCIES
   apache2 (~> 1.8.14)
   chef-magento
     git: git://github.com/inviqa/chef-magento.git
-    revision: 5a78f18cf6a30eeaa62cfe5e6182096309b438eb
+    revision: 1f42b3dbdedfbc36cb9608dd304c583d307bfd01
     tag: 1.0.4
   chef-php-extra
     git: git://github.com/inviqa/chef-php-extra.git
