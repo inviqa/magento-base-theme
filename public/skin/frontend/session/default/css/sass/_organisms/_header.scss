@@ -12,10 +12,48 @@ header {
     @include page-block;
 }
 .header {
-    .search {
+    .header-right {
         @include fill-parent;
         clear: both;
         @include rem-fallback(margin-bottom, 2);
+    }
+    .header-cart {
+        @include rem-fallback(margin-bottom, 2);
+        @include font-size(14);
+        position: relative;
+        text-align: center;
+
+        @include media($medium-and-up) {
+            text-align: right;
+        }
+
+        &__icon {
+            font-size: 1.3em;
+            vertical-align: top;
+            top: .1em;
+            position: relative;
+            margin: 0 .25em;
+        }
+
+        &__total {
+            font-weight: $font-weight-black;
+        }
+
+        &__items {
+            @include rem-fallback('width', 30);
+            text-align: left;
+        }
+
+        .icon-angle-down {
+            display: none;
+
+            @include media($medium-and-up) {
+                display: inline;
+            }
+        }
+            &.mobile-enabled .icon-angle-down {
+                display: inline;
+            }
     }
     .logo-holder {
         @include span-columns(9);
@@ -27,9 +65,10 @@ header {
             @include span-columns(7);
             line-height: 1;
         }
-        .search {
+        .header-right {
             margin: 0;
             clear: none;
+            text-align: right;
             @include span-columns(5);
             @include position(absolute, null 0 0 null);
         }
@@ -38,7 +77,7 @@ header {
         .logo-holder {
             @include rem-fallback(padding-right, 2);
         }
-        .search {
+        .header-right {
             @include shift(1);
             @include span-columns(4);
         }
@@ -74,7 +113,6 @@ header {
     background: $colour-background-black;
     @include rem-fallback(margin-bottom, 3);
     @include media($medium-and-up) {
-        @include rem-fallback(margin-bottom, 2);
         background: none;
     }
 }
@@ -82,6 +120,7 @@ header {
     position: relative;
     color: $colour-text-light;
     @include font-size(12);
+    text-align: right;
     a {
         @include link-colour($colour-text-light);
     }

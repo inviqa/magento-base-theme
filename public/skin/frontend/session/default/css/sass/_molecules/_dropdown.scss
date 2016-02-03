@@ -1,0 +1,27 @@
+.dropdown {
+    &__handle {
+        @include link-colour-alt;
+        @include link-style(none);
+        cursor: pointer;
+        @include rem-fallback(padding-bottom, 10);
+    }
+
+    &__content {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 1;
+        border-bottom: $border-strong;
+        box-shadow: $shadow-default;
+    }
+        &:hover &__content {
+            @include media($medium-and-up) {
+                display: block;
+            }
+        }
+
+        &.mobile-enabled:hover &__content {
+            display: block;
+        }
+}

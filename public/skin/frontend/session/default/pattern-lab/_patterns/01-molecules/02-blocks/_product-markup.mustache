@@ -1,0 +1,40 @@
+<article class="product  product--{{ style }}">
+    <div class="product__image">
+        {{> atoms-product-image }}
+    </div>
+
+    <div class="product__info">
+        <h2 class="product__name">
+            <a href="{{ url }}" title="{{ product.name }}">{{ product.name }}</a>
+        </h2>
+
+        <div class="product__rating">
+            <div class="rating">
+                <span class="rating__star  [ icon  icon-star ]"></span>
+                <span class="rating__star  [ icon  icon-star ]"></span>
+                <span class="rating__star  [ icon  icon-star ]"></span>
+                <span class="rating__star  [ icon  icon-star ]"></span>
+                <span class="rating__star  [ icon  icon-star ]"></span>
+
+                <span class="rating__text">5 Star(s)</span>
+            </div>
+        </div>
+
+        <div class="product__price">
+            {{> molecules-price }}
+        </div>
+
+        <div class="product__actions">
+            <button type="button" title="Add to Cart" class="button  btn-cart">Add to Cart</button>
+
+            <ul>
+                <li>
+                    <a href="{{ url }}" class="link-wishlist">Add to Wishlist</a>
+                </li><!--
+                --><li>
+                    <a href="{{ url }}" class="link-compare">Add to Compare</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</article>

@@ -1,29 +1,43 @@
 <header class="header-container" role="banner">
     <div class="header-panel-wrapper">
         <div class="header-panel">
+            <label for="nav-toggle" class="nav__toggle--open">Open</label>
+
             <div class="top-links">
-                <ul class="links">
+                <ul class="list--separated">
                     <li class="first"><a href="//localhost:3000/customer/account/" title="My Account">My Account</a></li>
                     <li><a href="//localhost:3000/wishlist/" title="My Wishlist">My Wishlist</a></li>
-                    <li><a href="//localhost:3000/checkout/cart/" title="My Cart (1 item)" class="top-link-cart">My Cart (1 item)</a></li>
                     <li><a href="//localhost:3000/checkout/" title="Checkout" class="top-link-checkout">Checkout</a></li>
                     <li class=" last"><a href="//localhost:3000/customer/account/login/" title="Log In">Log In</a></li>
                 </ul>
             </div>
         </div>
     </div>
+
     <div class="header-wrapper">
         <div class="header">
             <div class="logo-holder">
                 {{> atoms-logo }}
             </div>
-            {{> molecules-primary-nav }}
-            {{> molecules-search }}
+
+            <div class="header-right">
+                <div class="header-cart  dropdown">
+                    <a href="#" class="dropdown__handle">
+                        <span class="header-cart__icon  [ icon  icon-shopping-cart ]"></span>
+                        My Cart (5)
+                        <span class="header-cart__total">£300.42</span>
+                        <span class="header-cart__icon  [ icon  icon-angle-down ]"></span>
+                    </a>
+
+                    <div class="header-cart__items  dropdown__content">
+                        {{> organisms-mini-cart }}
+                    </div>
+                </div>
+
+                {{> molecules-search }}
+            </div>
         </div>
     </div>
-    <div class="header-usp-wrapper">
-        <div class="header-usp">
-            <p>USPs</p>
-        </div>
-    </div>
+
+    {{> molecules-primary-nav }}
 </header>

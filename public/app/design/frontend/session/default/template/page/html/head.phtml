@@ -33,6 +33,13 @@
 <?php echo $this->getCssJsHtml() ?>
 <?php echo $this->getChildHtml() ?>
 <?php echo $this->helper('core/js')->getTranslatorScript() ?>
+
+<script>
+    // Carousel Translations
+    Translator.add( 'Previous', '<?php echo $this->__( 'Previous' ); ?>' );
+    Translator.add( 'Next', '<?php echo $this->__( 'Next' ); ?>' );
+</script>
+
 <?php echo $this->getIncludes() ?>
 
 <?php if ($_product = Mage::registry('current_product')): ?>

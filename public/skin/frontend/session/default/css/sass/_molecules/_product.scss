@@ -1,0 +1,134 @@
+.product {
+    position: relative;
+    text-align: center;
+
+    &--alt,
+    &--quote {
+        @include clearfix;
+    }
+
+    &--alt {
+        @include media($small-and-up) {
+            text-align: left;
+        }
+    }
+
+    &--quote {
+        text-align: left;
+    }
+
+    &__image {
+        @include rem-fallback('margin-bottom', $page-padding-small);
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+        &--alt &__image {
+            @include media($small-and-up) {
+                @include span-columns(6);
+                margin-bottom: 0;
+            }
+
+            @include media($medium-and-up) {
+                @include span-columns(4);
+            }
+
+            @include media($large-and-up) {
+                @include span-columns(3);
+            }
+        }
+
+        &--quote &__image {
+            @include span-columns(3);
+            margin-bottom: 0;
+        }
+
+    &__info {}
+        &--alt &__info {
+            @include media($small-and-up) {
+                @include span-columns(6);
+                @include omega;
+            }
+
+            @include media($medium-and-up) {
+                @include span-columns(8);
+                @include omega;
+            }
+
+            @include media($large-and-up) {
+                @include span-columns(9);
+                @include omega;
+            }
+        }
+
+        &--quote &__info {
+            @include span-columns(8);
+            @include omega;
+        }
+
+    &__name {
+        margin-top: 0;
+        @include rem-fallback('margin-bottom', $page-padding-small / 2);
+        font-family: $font-sans;
+        @include font-size(18);
+        font-weight: $font-weight-light;
+
+        a {
+            @include link-colour-pop;
+            @include link-style(none);
+        }
+    }
+        &--quote &__name {
+            @include font-size(12);
+        }
+
+    &__rating {
+        @include rem-fallback('margin-bottom', $page-padding-small / 2);
+        @include font-size(16);
+    }
+
+    &__price {
+        @include rem-fallback('margin-bottom', $page-padding-small / 2);
+        @include font-size(16);
+    }
+        &--quote &__price {
+            margin-bottom: 0;
+            @include font-size(12);
+        }
+
+    &__options {
+        @extend %dl--inline;
+
+        &__label,
+        &__value {
+            @include font-size(10);
+        }
+    }
+
+    &__actions {
+        @include font-size(10);
+        text-transform: uppercase;
+
+        a {
+            @include link-colour-pop;
+            @include link-style(none);
+        }
+
+        .button {
+            @include rem-fallback('margin-bottom', $page-padding-small / 2);
+            @include font-size(14);
+        }
+    }
+        &--quote &__actions {
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            .button {
+                display: block;
+                margin-bottom: 0;
+            }
+        }
+}

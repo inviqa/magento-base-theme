@@ -1,6 +1,4 @@
-/**
- * run gulp from /theme/default folder
- **/
+// Run gulp from theme/default folder
 
 @import
 "lib/normalize",
@@ -10,6 +8,7 @@
 "settings/colours",
 "settings/vars",
 "settings/fonts",
+"lib/icomoon",
 "mixins/rem-fallback",
 "mixins/font-size",
 "mixins/page-block",
@@ -20,6 +19,7 @@
 "mixins/links",
 "mixins/accordion",
 "global",
+
 "_atoms/text",
 "_atoms/links",
 "_atoms/lists",
@@ -27,23 +27,32 @@
 "_atoms/forms",
 "_atoms/buttons",
 "_atoms/images",
+"_atoms/social-icon",
+
 "_molecules/accordion",
 "_molecules/tabs",
+"_molecules/carousel",
+"_molecules/dropdown",
 "_molecules/forms",
 "_molecules/messages",
 "_molecules/price",
+"_molecules/rating",
+"_molecules/product",
 "_molecules/pager",
 "_molecules/toolbar",
-"_molecules/tabs",
 "_molecules/nav-primary-mobile",
 "_molecules/nav-primary-desktop",
 "_molecules/nav-breadcrumbs",
 "_molecules/nav-layered",
-"_molecules/product-grid",
-"_molecules/product-list",
-"_molecules/ratings",
+
 "_organisms/header",
-"lib/slick",
 "_organisms/footer",
+"_organisms/mini-cart",
+"_organisms/product-grid",
+"_organisms/product-list",
 "_organisms/product",
+
+"lib/slick",
+
+"homepage",
 "utilities";

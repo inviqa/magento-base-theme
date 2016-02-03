@@ -62,4 +62,15 @@ button, .button {
             background: $colour-background-light;
         }
     }
+    &--icon {
+        @include link-colour-pop;
+        @include rem-fallback(padding, 0, $button-h-padding-default / 2);
+        background: transparent;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: transparent;
+        }
+    }
 }

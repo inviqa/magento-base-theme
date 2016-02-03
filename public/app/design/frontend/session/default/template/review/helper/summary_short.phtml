@@ -1,0 +1,13 @@
+<div class="rating">
+    <?php $_rating = $this->getRatingSummary() ? ceil($this->getRatingSummary() / 20) : 0; ?>
+
+    <?php if ( $_rating > 0 ): ?>
+        <?php for ($_i = 0; $_i < $_rating; $_i++): ?>
+            <span class="rating__star  [ icon  icon-star ]"></span>
+        <?php endfor; ?>
+    <?php else: ?>
+        <span class="[ rating__star  rating__star--hidden ]  icon">&nbsp;</span>
+    <?php endif; ?>
+
+    <span class="rating__text"><?php echo $this->__('%d star(s)'. $_rating); ?></span>
+</div>

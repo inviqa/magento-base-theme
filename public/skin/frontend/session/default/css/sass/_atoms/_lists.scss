@@ -1,55 +1,95 @@
-/*------------------------------------------------------------------
-    Lists
--------------------------------------------------------------------*/
+//------------------------------------------------------------------
+// Lists
+//------------------------------------------------------------------
 
-/* unordered list */
-ul, ol {
-    list-style-type: none;
+// Basic Lists
+ul,
+ol {
     margin: 0;
     padding-left: 0;
+    list-style-type: none;
 }
 
-/* standard list types */
+// Styled Lists
 .list--bulleted {
     @include rem-fallback(margin-left, 2.5);
     list-style-type: disc;
+
     & & {
         list-style-type: circle;
     }
 }
+
 .list--decimal {
     @include rem-fallback(margin-left, 2.5);
     list-style-type: decimal;
 }
+
 .list--alpha {
     @include rem-fallback(margin-left, 2.5);
     list-style-type: lower-alpha;
 }
+
 .list--inline {
     margin: 0;
     padding-left: 0;
+
     li {
         display: inline;
     }
 }
 
-/* definition list */
+.list--separated {
+    @extend .list--inline;
+
+    li {
+        &:after {
+            @include rem-fallback(margin, 0, 1, 0, 1.2);
+            border-right: 1px solid $light-grey;
+            content: '';
+        }
+
+        &:last-of-type {
+            &:after {
+                margin: 0;
+                border-right: 0;
+            }
+        }
+    }
+}
+
+// Definition Lists
 dl {
     margin: 0;
 }
+
 dt {
     @include rem-fallback(margin-bottom, 0.4);
     @include font-size($font-size-default, 1);
     font-weight: bolder;
 }
+
 dd {
     margin: 0;
+
     + dt {
         @include rem-fallback(margin-top, 1)
     }
 }
 
-/* link lists */
-.links {
-    margin: 0;
+.dl--inline,
+%dl--inline {
+    @include clearfix;
+
+    dt,
+    dd {
+        float: left;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    dt {
+        clear: left;
+        @include rem-fallback(margin-right, 0.5);
+    }
 }

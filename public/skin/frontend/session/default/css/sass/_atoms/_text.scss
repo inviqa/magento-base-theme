@@ -26,7 +26,8 @@ $headings: (
     h6  $colour-brand-secondary     14
 );
 @each $value in $headings {
-    #{nth($value, 1)} {
+    #{nth($value, 1)},
+    %#{nth($value, 1)} {
         @include rem-fallback(margin, 2, 0, 1, 0);
         color: nth($value, 2);
         @include heading-size(nth($value, 3));

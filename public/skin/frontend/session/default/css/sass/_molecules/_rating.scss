@@ -1,0 +1,12 @@
+.rating {
+    line-height: 1;
+
+    &__star {
+        margin: 0 -1px;
+        color: $yellow;
+    }
+
+    &__text {
+        @include visuallyhidden;
+    }
+}

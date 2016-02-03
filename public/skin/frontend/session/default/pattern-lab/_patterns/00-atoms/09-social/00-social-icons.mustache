@@ -1,0 +1,10 @@
+<ul class="list--inline">
+    {{#networks}}
+        <li>
+            <a class="social-icon  social-icon--{{ name }}" href="{{ url }}">
+                <span class="social-icon__text">{{ human_name }}</span>
+                <span class="social-icon__icon  [ icon  icon-{{ name }} ]"></span>
+            </a>
+        </li>
+    {{/networks}}
+</ul>
