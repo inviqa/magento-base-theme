@@ -1,10 +1,12 @@
 {
     "name": "inviqa/magento-base-theme",
+    "minimum-stability": "dev",
     "require-dev": {
         "php": ">=5.4.0",
         "magento-hackathon/magento-composer-installer":"3.0.x-dev",
         "aydin-hassan/magento-core-composer-installer" : "~1.0",
-        "inviqa/magento-enterprise" : "1.14.2.0"
+        "inviqa/magento-enterprise" : "1.14.2.0",
+        "inviqa/mx-navigation": "^0.0.3"
     },
     "repositories": [
         {
@@ -12,13 +14,23 @@
             "url": "git@github.com:inviqa/magento-enterprise.git"
         },
         {
+            "type": "vcs",
+            "url": "git@github.com:inviqa/MX_Navigation.git"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/magento-hackathon/magento-composer-installer"
+        },
+        {
             "type": "composer",
             "url": "http://packages.firegento.com"
         }
     ],
     "extra": {
-        "magento-root-dir": "public",
-        "auto-append-gitignore": true
+        "magento-root-dir": "./public/",
+        "magento-deploystrategy":"copy",
+        "auto-append-gitignore": true,
+        "with-bootstrap-patch": false
     },
     "autoload": {
         "psr-4": {
