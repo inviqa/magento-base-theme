@@ -69,9 +69,9 @@
                             <col width="80" />
                             <thead>
                                 <tr>
-                                    <th><span class="nobr"><?php echo $this->__('Carrier') ?></span></th>
-                                    <th><span class="nobr"><?php echo $this->__('Number') ?></span></th>
-                                    <th><span class="nobr"><?php echo $this->__('Action') ?></span></th>
+                                    <th><span><?php echo $this->__('Carrier') ?></span></th>
+                                    <th><span><?php echo $this->__('Number') ?></span></th>
+                                    <th><span><?php echo $this->__('Action') ?></span></th>
                                 </tr>
                             </thead>
                             <tbody id="track-info-tbody">
@@ -141,11 +141,11 @@
     <col width="200" />
     <thead>
         <tr>
-            <th><span class="nobr"><?php echo $this->__('Product Name') ?></span></th>
+            <th><span><?php echo $this->__('Product Name') ?></span></th>
             <th><?php echo $this->__('SKU') ?></th>
             <th><?php echo $this->__('Condition') ?></th>
             <th><?php echo $this->__('Resolution') ?></th>
-            <th><span class="nobr"><?php echo $this->__('Request Qty') ?></span></th>
+            <th><span><?php echo $this->__('Request Qty') ?></span></th>
             <th><?php echo $this->__('Qty') ?></th>
             <th><?php echo $this->__('Status') ?></th>
             <th></th>
@@ -170,7 +170,7 @@
             <td><?php echo $this->escapeHtml($this->getAttributeValue($item->getId(), 'resolution')) ?></td>
             <td><?php echo $this->escapeHtml($this->helper('enterprise_rma')->parseQuantity($item->getQtyRequested(), $item)); ?></td>
             <td><?php echo $this->escapeHtml($this->helper('enterprise_rma')->getQty($item));?></td>
-            <td><span class="nobr"><?php echo $this->escapeHtml($item->getStatusLabel()) ?></span></td>
+            <td><span><?php echo $this->escapeHtml($item->getStatusLabel()) ?></span></td>
             <td>
                 <a id="as_<?php echo $key ?>" href="javascript:void(0)" onclick="showHiddenForm(<?php echo $key ?>)"><?php echo $this->__('Show Details') ?></a>
                 <a id="ah_<?php echo $key ?>" style="display:none" href="javascript:void(0)" onclick="hideHiddenForm(<?php echo $key ?>)"><?php echo $this->__('Hide Details') ?></a>
