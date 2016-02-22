@@ -1,0 +1,30 @@
+options:
+  formatter: stylish
+  merge-default-rules: false
+rules:
+  bem-depth:
+    - 1
+    - max-depth: 2
+  class-name-format:
+    - 1
+    - convention: "_?[a-z0-9\\-_]+"
+  function-name-format: 1
+  id-name-format:
+    - 1
+    - convention: "_?[a-z0-9\\-_]+"
+  indentation:
+    - 1
+    - size: 4
+  mixin-name-format: 1
+  nesting-depth:
+    - 1
+    - max-depth: 10
+  no-color-literals: 0
+  placeholder-name-format:
+    - 1
+    - convention: "_?[a-z0-9\\-_]+"
+  property-sort-order:
+    - 1
+    - order: smacss
+  space-between-parens: 0
+  variable-name-format: 1
