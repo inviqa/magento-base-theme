@@ -14,7 +14,7 @@ Vagrant.require_version ">= 1.5.0"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # vagrant-hostsupdater settings
-  config.vm.hostname = "mast.dev"
+  config.vm.hostname = "mast.test"
   # config.hostsupdater.aliases = []
 
   # vagrant-omnibus settings
