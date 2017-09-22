@@ -6,7 +6,7 @@
   :url: git@github.com:inviqa/hobo-seed-magento
   :version: 3ea421a
 :vm_ip: 10.56.62.222
-:hostname: mast.dev
+:hostname: mast.test
 :asset_bucket: inviqa-assets-mast
 :vm:
   :project_mount_path: "/vagrant"
