@@ -19,7 +19,7 @@ In the root directory:
 
     hobo vm up
 
-In your browser of choice, your VM will be available at [http://mast.dev](http://mast.dev).
+In your browser of choice, your VM will be available at [http://mast.test](http://mast.test).
 
 ## Using it in a project
 
@@ -85,7 +85,7 @@ For information on Atomic Design and documentation for pattern lab, visit the [P
 
 #### Viewing the style guide
 
-After gulp is run for the first time, a style guide will be generated at [http://mast.dev/style-guide/index.html](http://mast.dev/style-guide/index.html).
+After gulp is run for the first time, a style guide will be generated at [http://mast.test/style-guide/index.html](http://mast.test/style-guide/index.html).
 
 #### Updating the style guide
 
