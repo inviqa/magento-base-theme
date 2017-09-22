@@ -1,7 +1,7 @@
 /* set theme name and paths */
 
 var themeName = 'session',
-    themeURL = 'mast.dev',
+    themeURL = 'mast.test',
     publicJsDir = '../../../../js/',
     toolsDir = '../../../../../tools/',
     patternLabDir = 'pattern-lab/'
